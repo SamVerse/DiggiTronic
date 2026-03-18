@@ -1,0 +1,328 @@
+"use client";
+
+import { useMemo, useRef, useState, useEffect } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
+import {
+  motion,
+  useScroll,
+  useTransform,
+  useMotionValue,
+  useSpring,
+  AnimatePresence,
+} from "framer-motion";
+import Hyperspeed from "@/components/Hyperspeed";
+import { ChevronDown } from "lucide-react";
+
+const VALUE_LABELS = [
+  "Growth.",
+  "Strategy.",
+  "Performance.",
+  "Impact.",
+  "Precision.",
+  "Excellence.",
+];
+
+gsap.registerPlugin(ScrollTrigger);
+
+/* ── Rotating value text cycle ──────────────────────────────────────── */
+function RotatingValue() {
+  const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    const id = setInterval(() => {
+      setIndex((i) => (i + 1) % VALUE_LABELS.length);
+    }, 1800);
+    return () => clearInterval(id);
+  }, []);
+
+  return (
+    /* Ghost spacer reserves width of the longest word so the row
+       never shifts. The rotating span sits absolutely on top. */
+    <span
+      className="relative pb-4 font-black overflow-hidden"
+      style={{ display: "inline-block", lineHeight: "1" }}
+    >
+      {/* Invisible width anchor — longest label */}
+      <span aria-hidden style={{ visibility: "hidden", pointerEvents: "none" }}>
+        Performance.
+      </span>
+
+      <AnimatePresence mode="wait">
+        <motion.span
+          key={index}
+          initial={{ y: "50%", opacity: 0, filter: "blur(8px)" }}
+          animate={{ y: "0%", opacity: 1, filter: "blur(0px)" }}
+          exit={{ y: "-50%", opacity: 0, filter: "blur(8px)" }}
+          transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+          style={{
+            position: "absolute",
+            inset: 0,
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            background: "linear-gradient(90deg, #ff4d00, #ffb347)",
+            WebkitBackgroundClip: "text",
+            WebkitTextFillColor: "transparent",
+            backgroundClip: "text",
+          }}
+        >
+          {VALUE_LABELS[index]}
+        </motion.span>
+      </AnimatePresence>
+    </span>
+  );
+}
+
+/* ── Animated scroll hint arrow ─────────────────────────────────────── */
+function ScrollHint() {
+  return (
+    <motion.div
+      className="flex flex-col items-center gap-1.5 select-none pointer-events-none"
+      initial={{ opacity: 0, y: 10 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ delay: 1.4, duration: 0.8, ease: "easeOut" }}
+    >
+      <span
+        className="text-[11px] uppercase font-mono tracking-[0.45em]"
+        style={{ color: "rgba(255,255,255,0.45)" }}
+      >
+        Scroll
+      </span>
+
+      {/* Three staggered chevrons — pulse downward */}
+      <div className="flex flex-col items-center gap-0">
+        {[0, 1, 2].map((i) => (
+          <motion.div
+            key={i}
+            animate={{ opacity: [0.3, 1, 0.3], y: [0, 5, 0] }}
+            transition={{
+              duration: 1.6,
+              repeat: Infinity,
+              delay: i * 0.18,
+              ease: "easeInOut",
+            }}
+          >
+            <ChevronDown
+              size={18}
+              strokeWidth={2}
+              style={{ color: "rgba(255,90,0,0.95)" }}
+            />
+          </motion.div>
+        ))}
+      </div>
+    </motion.div>
+  );
+}
+
+export default function ServicesCTA() {
+  const containerRef = useRef<HTMLElement | null>(null);
+  const titleRef = useRef<HTMLHeadingElement | null>(null);
+  const subtitleRef = useRef<HTMLParagraphElement | null>(null);
+  const bottomRef = useRef<HTMLDivElement | null>(null);
+
+  /* ── Mouse parallax ─────────────────────────────────────────────── */
+  const rawX = useMotionValue(0);
+  const rawY = useMotionValue(0);
+  const bgX = useSpring(rawX, { stiffness: 40, damping: 22 });
+  const bgY = useSpring(rawY, { stiffness: 40, damping: 22 });
+
+  function handleMouseMove(e: React.MouseEvent<HTMLElement>) {
+    const { left, top, width, height } =
+      containerRef.current!.getBoundingClientRect();
+    const nx = ((e.clientX - left) / width - 0.5) * 28; // ±14px
+    const ny = ((e.clientY - top) / height - 0.5) * 16; // ±8px
+    rawX.set(nx);
+    rawY.set(ny);
+  }
+
+  function handleMouseLeave() {
+    rawX.set(0);
+    rawY.set(0);
+  }
+
+  /* ── Scroll transforms ──────────────────────────────────────────── */
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start end", "end start"],
+  });
+
+  const contentOpacity = useTransform(scrollYProgress, [0, 0.15], [0, 1]);
+  const contentY = useTransform(scrollYProgress, [0, 0.15], [60, 0]);
+
+  const { scrollYProgress: parallaxProgress } = useScroll({
+    target: containerRef,
+    offset: ["start start", "end start"],
+  });
+
+  const sectionY = useTransform(parallaxProgress, [0, 1], ["0%", "90%"]);
+  const sectionFilter = useTransform(
+    parallaxProgress,
+    [0, 1],
+    ["brightness(1)", "brightness(0.4)"]
+  );
+
+  /* ── Hyperspeed options ─────────────────────────────────────────── */
+  const effectOptions = useMemo(
+    () => ({
+      onSpeedUp: () => { },
+      onSlowDown: () => { },
+      distortion: "mountainDistortion",
+      length: 400,
+      roadWidth: 10,
+      islandWidth: 2,
+      lanesPerRoad: 3,
+      fov: 90,
+      fovSpeedUp: 150,
+      speedUp: 2,
+      carLightsFade: 0.4,
+      totalSideLightSticks: 20,
+      lightPairsPerRoadWay: 40,
+      shoulderLinesWidthPercentage: 0.05,
+      brokenLinesWidthPercentage: 0.1,
+      brokenLinesLengthPercentage: 0.5,
+      lightStickWidth: [0.12, 0.5],
+      lightStickHeight: [1.3, 1.7],
+      movingAwaySpeed: [60, 80],
+      movingCloserSpeed: [-120, -160],
+      carLightsLength: [12, 80],
+      carLightsRadius: [0.05, 0.14],
+      carWidthPercentage: [0.3, 0.5],
+      carShiftX: [-0.8, 0.8],
+      carFloorSeparation: [0, 5],
+      colors: {
+        roadColor: 526344,
+        islandColor: 657930,
+        background: 0,
+        shoulderLines: 1250072,
+        brokenLines: 1250072,
+        leftCars: [16715818, 15415358, 16715818],
+        rightCars: [14342906, 12499683, 9410532],
+        sticks: 14342906,
+      },
+    }),
+    []
+  );
+
+  /* ── GSAP entrance ──────────────────────────────────────────────── */
+  useGSAP(
+    () => {
+      const titleNode = titleRef.current;
+      const subtitleNode = subtitleRef.current;
+      const bottomNode = bottomRef.current;
+
+      if (!titleNode || !subtitleNode || !bottomNode) return;
+
+      const words = titleNode.querySelectorAll(".word");
+
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: containerRef.current,
+          start: "top 20%",
+          end: "bottom center",
+          toggleActions: "play reverse play reverse",
+        },
+      });
+
+      gsap.set(words, { opacity: 1, y: 0 });
+
+      tl.from(words, {
+        y: 60,
+        opacity: 0,
+        duration: 0.7,
+        ease: "power3.out",
+        stagger: 0.1,
+      })
+        .from(subtitleNode, { y: 30, opacity: 0, duration: 0.6, ease: "power3.out" }, "-=0.5")
+        .from(bottomNode, { opacity: 0, y: 20, duration: 0.6, ease: "power3.out" }, "-=0.4");
+    },
+    { scope: containerRef }
+  );
+
+  return (
+    <motion.section
+      ref={containerRef}
+      className="relative z-20 h-screen w-full overflow-hidden max-w-none bg-[#050505]"
+      style={{ y: sectionY, filter: sectionFilter }}
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
+    >
+      {/* ── Hyperspeed — shifted by mouse parallax ──────────────── */}
+      <motion.div
+        className="absolute inset-0 z-10 pointer-events-auto"
+        style={{ x: bgX, y: bgY, scale: 1.06 }}
+      >
+        <Hyperspeed
+          isBoosting={false}
+          effectOptions={effectOptions}
+        />
+      </motion.div>
+
+      {/* ── Overlay ─────────────────────────────────────────────── */}
+      <div className="absolute inset-0 z-20 pointer-events-none backdrop-blur-sm bg-black/10" />
+
+      {/* ── Content ─────────────────────────────────────────────── */}
+      <motion.div
+        className="relative z-30 flex h-full flex-col items-center justify-center text-center px-6 pointer-events-none"
+        style={{ opacity: contentOpacity, y: contentY }}
+      >
+        {/* Kicker label */}
+        <motion.p
+          className="text-[9px] uppercase font-mono mb-6 tracking-[0.55em]"
+          style={{ color: "rgba(255,255,255,0.35)" }}
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: false }}
+          transition={{ delay: 0.2, duration: 0.6 }}
+        >
+          Full-service digital studio
+        </motion.p>
+
+        {/* Headline */}
+        <h2
+          ref={titleRef}
+          className="text-4xl md:text-5xl lg:text-6xl font-black uppercase tracking-tight [word-spacing:1rem] leading-tight max-w-5xl mx-auto text-white"
+        >
+          <span className="word inline-block">All</span>{" "}
+          <span className="word inline-block">Digital</span>{" "}
+          <span className="word inline-block">Solutions,</span>
+          <br className="hidden md:block" />
+          <span className="word inline-block">One</span>{" "}
+          <span className="word inline-block">Growth</span>{" "}
+          <span className="word inline-block">Partner.</span>
+        </h2>
+
+        {/* Subtitle */}
+        <p
+          ref={subtitleRef}
+          className="mt-6 text-base md:text-lg max-w-xl leading-relaxed"
+          style={{ color: "rgba(255,255,255,0.5)" }}
+        >
+          From creative design and video production to marketing, SEO, and AI
+          solutions — we deliver strategies that create real impact.
+        </p>
+
+        {/* ── Rotating value row ────────────────────────────────── */}
+        <div
+          ref={bottomRef}
+          className="mt-10 flex flex-col items-center gap-8"
+        >
+          <div className="flex flex-col mb-2 items-center gap-1 text-2xl md:text-3xl font-black">
+            <span style={{ color: "rgba(255,255,255,0.88)" }}>We deliver</span>
+            <RotatingValue />
+          </div>
+
+          {/* Thin separator */}
+          <div
+            className="w-px h-8"
+            style={{ background: "rgba(255,255,255,0.22)" }}
+          />
+
+          {/* Scroll hint */}
+          <ScrollHint />
+        </div>
+      </motion.div>
+    </motion.section>
+  );
+}

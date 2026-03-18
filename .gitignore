@@ -13,9 +13,19 @@
 # testing
 /coverage
 
+# git
+.git*
+
 # next.js
 /.next/
 /out/
+
+# claude
+claude/
+.claude/
+
+# lint-output.log
+.lint-output.log
 
 # production
 /build
