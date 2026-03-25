@@ -38,7 +38,6 @@ const fadeUp: Variants = {
     },
 };
 
-/* ── Social SVG icons ──────────────────────────────────────────────── */
 function TwitterIcon() {
     return (
         <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
@@ -79,7 +78,6 @@ export default function Footer() {
             className="relative w-full overflow-hidden"
             style={{ background: "#080808" }}
         >
-            {/* ── Top orange accent border ────────────────────────────────── */}
             <div
                 className="absolute top-0 left-0 right-0 h-px"
                 style={{
@@ -87,7 +85,6 @@ export default function Footer() {
                 }}
             />
 
-            {/* ── Massive background watermark ───────────────────────────── */}
             <div
                 aria-hidden
                 className="absolute inset-0 flex items-end justify-center pointer-events-none select-none overflow-hidden"
@@ -106,7 +103,6 @@ export default function Footer() {
                 </span>
             </div>
 
-            {/* ── Radial glow bottom left ─────────────────────────────────── */}
             <div
                 aria-hidden
                 className="absolute bottom-0 left-0 w-1/2 h-1/2 pointer-events-none"
@@ -116,7 +112,6 @@ export default function Footer() {
                 }}
             />
 
-            {/* ── Main content ────────────────────────────────────────────── */}
             <motion.div
                 className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 pt-20 pb-8"
                 initial="hidden"
@@ -125,13 +120,11 @@ export default function Footer() {
                 variants={staggerContainer}
             >
 
-                {/* ── Row 1: Brand + CTA ──────────────────────────────────────── */}
                 <motion.div
                     variants={fadeUp}
                     className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8 pb-12 border-b"
                     style={{ borderColor: "rgba(255,255,255,0.06)" }}
                 >
-                    {/* Brand */}
                     <div className="flex items-center gap-4">
                         <Image
                             src="/logo row.png"
@@ -156,7 +149,6 @@ export default function Footer() {
                         </div>
                     </div>
 
-                    {/* CTA block */}
                     <div className="flex flex-col items-start md:items-end gap-3">
                         <p
                             className="text-xs uppercase font-mono tracking-[0.25em]"
@@ -190,13 +182,11 @@ export default function Footer() {
                     </div>
                 </motion.div>
 
-                {/* ── Row 2: Link columns ─────────────────────────────────────── */}
                 <motion.div
                     variants={fadeUp}
                     className="grid grid-cols-2 md:grid-cols-4 gap-10 py-12 border-b"
                     style={{ borderColor: "rgba(255,255,255,0.06)" }}
                 >
-                    {/* Company */}
                     <div>
                         <p
                             className="text-[9px] uppercase font-mono mb-5"
@@ -221,7 +211,6 @@ export default function Footer() {
                         </ul>
                     </div>
 
-                    {/* Services */}
                     <div>
                         <p
                             className="text-[9px] uppercase font-mono mb-5"
@@ -246,7 +235,6 @@ export default function Footer() {
                         </ul>
                     </div>
 
-                    {/* Legal */}
                     <div>
                         <p
                             className="text-[9px] uppercase font-mono mb-5"
@@ -271,7 +259,6 @@ export default function Footer() {
                         </ul>
                     </div>
 
-                    {/* Contact */}
                     <div className="col-span-2 md:col-span-1">
                         <p
                             className="text-[9px] uppercase font-mono mb-5"
@@ -314,12 +301,10 @@ export default function Footer() {
                     </div>
                 </motion.div>
 
-                {/* ── Row 3: Bottom bar ────────────────────────────────────────── */}
                 <motion.div
                     variants={fadeUp}
                     className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-8"
                 >
-                    {/* Copyright */}
                     <p
                         className="text-xs font-mono"
                         style={{ color: "rgba(255,255,255,0.2)", letterSpacing: "0.05em" }}
@@ -335,7 +320,6 @@ export default function Footer() {
                         transition={{ duration: 2.4, repeat: Infinity, ease: "easeInOut" }}
                     />
 
-                    {/* Social icons */}
                     <div className="flex items-center gap-4">
                         {[
                             { Icon: TwitterIcon, href: "#", label: "Twitter" },

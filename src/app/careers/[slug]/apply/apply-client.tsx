@@ -9,7 +9,6 @@ import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 import type { Job } from "@/data/jobs";
 
-/* ── Floating label field (matches contact-split pattern) ─────────── */
 function FloatingField({
   label,
   type = "text",
@@ -63,7 +62,6 @@ function FloatingField({
   );
 }
 
-/* ── Floating textarea ────────────────────────────────────────────── */
 function FloatingTextarea({
   label,
   value,
@@ -111,7 +109,6 @@ function FloatingTextarea({
   );
 }
 
-/* ── Resume Drop Zone ─────────────────────────────────────────────── */
 function ResumeDropZone({
   file,
   onFile,
@@ -206,7 +203,6 @@ function ResumeDropZone({
   );
 }
 
-/* ── Submit button states ─────────────────────────────────────────── */
 type SubmitState = "idle" | "loading" | "success";
 
 /* ══════════════════════════════════════════════════════════════════ */
@@ -225,24 +221,52 @@ export default function ApplyClient({ job }: { job: Job }) {
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    setSubmitState("loading");
-    setProgress(0);
+    if (!firstName.trim() || !lastName.trim() || !email.trim() || !resume) return;
 
-    // Simulate upload progress
+    setSubmitState("loading");
+    setProgress(10);
+
+    const formData = new FormData();
+    formData.append("firstName", firstName.trim());
+    formData.append("lastName", lastName.trim());
+    formData.append("email", email.trim());
+    formData.append("mobile", mobile.trim());
+    formData.append("portfolio", portfolio.trim());
+    formData.append("cover", cover.trim());
+    formData.append("jobSlug", job.slug);
+    formData.append("resume", resume);
+
+    // Animate progress while upload is in flight
     const interval = setInterval(() => {
       setProgress((p) => {
-        if (p >= 90) { clearInterval(interval); return 90; }
-        return p + Math.random() * 18;
+        if (p >= 85) { clearInterval(interval); return 85; }
+        return p + Math.random() * 12;
       });
-    }, 120);
+    }, 200);
 
-    await new Promise((r) => setTimeout(r, 1800));
-    clearInterval(interval);
-    setProgress(100);
-    setSubmitState("success");
+    try {
+      // Do NOT set Content-Type — browser sets multipart boundary automatically
+      const res = await fetch("/api/apply", { method: "POST", body: formData });
+      clearInterval(interval);
 
-    await new Promise((r) => setTimeout(r, 600));
-    router.push(`/careers/thank-you?for=${encodeURIComponent(job.title)}`);
+      if (!res.ok) {
+        const data = await res.json().catch(() => ({}));
+        console.error("Application error:", (data as { error?: string }).error);
+        setProgress(0);
+        setSubmitState("idle");
+        return;
+      }
+
+      setProgress(100);
+      setSubmitState("success");
+      await new Promise((r) => setTimeout(r, 600));
+      router.push(`/careers/thank-you?for=${encodeURIComponent(job.title)}`);
+    } catch (err) {
+      clearInterval(interval);
+      console.error("Network error:", err);
+      setProgress(0);
+      setSubmitState("idle");
+    }
   }
 
   return (
@@ -251,7 +275,6 @@ export default function ApplyClient({ job }: { job: Job }) {
       <Navbar />
       <main className="relative overflow-x-hidden" style={{ background: "#0a0a0a" }}>
 
-        {/* ── Mini Hero ──────────────────────────────────────────── */}
         <section
           className="relative w-full flex flex-col items-center justify-center text-center overflow-hidden"
           style={{ minHeight: "38vh", paddingTop: "8rem", paddingBottom: "4rem" }}
@@ -297,11 +320,9 @@ export default function ApplyClient({ job }: { job: Job }) {
           </div>
         </section>
 
-        {/* ── Form ───────────────────────────────────────────────── */}
         <section className="relative w-full pb-28">
           <div className="max-w-2xl mx-auto px-6">
 
-            {/* Back */}
             <motion.div
               className="mb-8"
               initial={{ opacity: 0 }}
@@ -325,22 +346,17 @@ export default function ApplyClient({ job }: { job: Job }) {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3, duration: 0.75, ease: "easeOut" }}
             >
-              {/* Name row */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
                 <FloatingField label="First Name" value={firstName} onChange={setFirstName} required />
                 <FloatingField label="Last Name" value={lastName} onChange={setLastName} required />
               </div>
 
-              {/* Email */}
               <FloatingField label="Email Address" type="email" value={email} onChange={setEmail} required />
 
-              {/* Mobile */}
               <FloatingField label="Mobile Number" type="tel" value={mobile} onChange={setMobile} />
 
-              {/* Portfolio */}
               <FloatingField label="Portfolio / Website URL" type="url" value={portfolio} onChange={setPortfolio} />
 
-              {/* Resume upload */}
               <div>
                 <p
                   className="text-[9px] font-mono uppercase tracking-[0.45em] mb-3"
@@ -351,10 +367,8 @@ export default function ApplyClient({ job }: { job: Job }) {
                 <ResumeDropZone file={resume} onFile={setResume} />
               </div>
 
-              {/* Cover message */}
               <FloatingTextarea label="Cover Message" value={cover} onChange={setCover} />
 
-              {/* Submit */}
               <motion.button
                 type="submit"
                 disabled={submitState !== "idle"}
@@ -364,7 +378,6 @@ export default function ApplyClient({ job }: { job: Job }) {
                 whileTap={submitState === "idle" ? { scale: 0.98 } : {}}
                 transition={{ type: "spring", stiffness: 300, damping: 25 }}
               >
-                {/* Progress bar */}
                 {submitState === "loading" && (
                   <motion.div
                     className="absolute bottom-0 left-0 h-[3px]"

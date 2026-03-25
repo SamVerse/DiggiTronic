@@ -3,7 +3,6 @@
 import { useEffect, useRef } from "react";
 import * as THREE from "three";
 
-/* ── Canvas texture helpers ──────────────────────────────────────── */
 function roundRect(
   ctx: CanvasRenderingContext2D,
   x: number, y: number, w: number, h: number, r: number
@@ -22,7 +21,6 @@ function createBrandCardTexture(): THREE.CanvasTexture {
   canvas.width = 512; canvas.height = 320;
   const ctx = canvas.getContext("2d")!;
 
-  /* Background */
   const grad = ctx.createLinearGradient(0, 0, 512, 320);
   grad.addColorStop(0, "rgba(6,24,42,0.97)");
   grad.addColorStop(1, "rgba(2,11,22,0.97)");
@@ -30,13 +28,11 @@ function createBrandCardTexture(): THREE.CanvasTexture {
   roundRect(ctx, 0, 0, 512, 320, 16);
   ctx.fill();
 
-  /* Outer border */
   ctx.strokeStyle = "rgba(235,115,0,0.45)";
   ctx.lineWidth = 1.5;
   roundRect(ctx, 3, 3, 506, 314, 14);
   ctx.stroke();
 
-  /* Corner bracket accents */
   ctx.strokeStyle = "rgba(235,115,0,0.22)";
   ctx.lineWidth = 1;
   const bl = 22;
@@ -59,7 +55,6 @@ function createBrandCardTexture(): THREE.CanvasTexture {
   ctx.fillText("Ag", 34, 200);
   ctx.shadowBlur = 0;
 
-  /* Separator line */
   ctx.strokeStyle = "rgba(235,115,0,0.38)";
   ctx.lineWidth = 1;
   ctx.beginPath();
@@ -71,7 +66,6 @@ function createBrandCardTexture(): THREE.CanvasTexture {
   ctx.font = "500 12.5px 'Courier New', monospace";
   ctx.fillText("BRAND IDENTITY", 34, 244);
 
-  /* Colour swatches */
   const swatches = ["#EB7300", "#FF9A00", "#1A3A5C", "rgba(255,255,255,0.82)"];
   swatches.forEach((col, i) => {
     ctx.fillStyle = col;
@@ -83,7 +77,6 @@ function createBrandCardTexture(): THREE.CanvasTexture {
     ctx.stroke();
   });
 
-  /* Hex value label */
   ctx.fillStyle = "rgba(255,255,255,0.18)";
   ctx.font = "10px 'Courier New', monospace";
   ctx.fillText("#EB7300", 292, 142);
@@ -176,7 +169,6 @@ export function GraphicsVisual3D() {
     if (!container) return;
     let rafId = 0;
 
-    /* ── Renderer ──────────────────────────────────────────────── */
     const W = container.clientWidth || 560;
     const H = container.clientHeight || 620;
 
@@ -191,13 +183,11 @@ export function GraphicsVisual3D() {
     renderer.domElement.style.width = "100%";
     renderer.domElement.style.display = "block";
 
-    /* ── Scene + Camera ────────────────────────────────────────── */
     const scene = new THREE.Scene();
     // Wider FOV gives more breathing room, especially on narrow/mobile screens
     const camera = new THREE.PerspectiveCamera(62, W / H, 0.01, 100);
     camera.position.set(0, 0, 5);
 
-    /* ── Lights ────────────────────────────────────────────────── */
     scene.add(new THREE.AmbientLight(0xffffff, 0.35));
 
     const key = new THREE.DirectionalLight(0xfff4e0, 2.0);
@@ -215,16 +205,13 @@ export function GraphicsVisual3D() {
     const accentLight = new THREE.PointLight(0xEB7300, 1.2, 12);
     scene.add(accentLight);
 
-    /* ── Groups ────────────────────────────────────────────────── */
     const sceneGroup = new THREE.Group();
     scene.add(sceneGroup);
     const floatGroup = new THREE.Group();
     sceneGroup.add(floatGroup);
 
-    /* ── Responsive scale — shrink on narrow screens ───────────── */
     sceneGroup.scale.setScalar(Math.min(1.0, W / 480));
 
-    /* ── Mouse parallax ─────────────────────────────────────────── */
     const mouse = { x: 0, y: 0 };
     const targetRot = { x: 0, y: 0 };
     const onMouseMove = (e: MouseEvent) => {
@@ -367,7 +354,6 @@ export function GraphicsVisual3D() {
     ringMesh.position.set(-0.9, -2.0, 0.5);
     floatGroup.add(ringMesh);
 
-    /* ── Animation loop ──────────────────────────────────────────── */
     const clock = new THREE.Clock();
     let elapsed = 0;
 
@@ -376,17 +362,14 @@ export function GraphicsVisual3D() {
       const delta = clock.getDelta();
       elapsed += delta;
 
-      /* Float group bob + slow rock */
       floatGroup.position.y = Math.sin(elapsed * 0.65) * 0.06;
       floatGroup.rotation.z = Math.sin(elapsed * 0.42) * 0.007;
 
-      /* Brand card sway */
       brandCard.rotation.y = -0.12 + Math.sin(elapsed * 0.38) * 0.08;
       brandCard.rotation.x = 0.06 + Math.sin(elapsed * 0.25) * 0.02;
       cLines.rotation.y = brandCard.rotation.y;
       cLines.rotation.x = brandCard.rotation.x;
 
-      /* Sphere XZ orbit */
       sphere.position.x = 2.1 * Math.cos(elapsed * 0.22);
       sphere.position.z = 2.1 * Math.sin(elapsed * 0.22) - 0.3;
       sphere.rotation.y += 0.005;
@@ -398,7 +381,6 @@ export function GraphicsVisual3D() {
       hexMesh.rotation.x += 0.006;
       hexMesh.rotation.y += 0.004;
 
-      /* Cube tilted-plane orbit */
       const ca = elapsed * 0.28 + Math.PI / 3;
       const tilt = Math.sin(0.6);
       cubeMesh.position.x = 1.7 * Math.cos(ca);
@@ -408,7 +390,6 @@ export function GraphicsVisual3D() {
       cubeMesh.rotation.y += 0.007;
       cubeMesh.rotation.z += 0.004;
 
-      /* Independent element bobs */
       typCard.position.y    = 1.20 + Math.sin(elapsed * 0.55 + 1.2) * 0.08;
       typCard.position.x    = 1.80 + Math.sin(elapsed * 0.32 + 0.5) * 0.04;
       paletteGroup.position.y = 1.55 + Math.sin(elapsed * 0.48 + 0.6) * 0.07;
@@ -417,12 +398,10 @@ export function GraphicsVisual3D() {
       ringMesh.rotation.x  += 0.009;
       ringMesh.rotation.y  += 0.006;
 
-      /* Accent point light orbit */
       accentLight.position.x = 3.0 * Math.cos(elapsed * 0.18);
       accentLight.position.z = 3.0 * Math.sin(elapsed * 0.18);
       accentLight.position.y = 1.5;
 
-      /* Mouse parallax */
       targetRot.y += (mouse.x * 0.15 - targetRot.y) * 0.04;
       targetRot.x += (mouse.y * 0.08 - targetRot.x) * 0.04;
       sceneGroup.rotation.y = targetRot.y;
@@ -432,7 +411,6 @@ export function GraphicsVisual3D() {
     }
     animate();
 
-    /* ── Resize ─────────────────────────────────────────────────── */
     const ro = new ResizeObserver(() => {
       const nW = container.clientWidth || 560;
       const nH = container.clientHeight || 620;
@@ -443,7 +421,6 @@ export function GraphicsVisual3D() {
     });
     ro.observe(container);
 
-    /* ── Cleanup ──────────────────────────────────────────────────── */
     return () => {
       cancelAnimationFrame(rafId);
       ro.disconnect();

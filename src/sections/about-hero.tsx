@@ -65,7 +65,6 @@ export default function AboutHero() {
         />
       </motion.div>
 
-      {/* Subtle grid overlay */}
       <div
         aria-hidden
         className="absolute inset-0 pointer-events-none opacity-[0.025]"
@@ -77,9 +76,7 @@ export default function AboutHero() {
         }}
       />
 
-      {/* Content */}
       <div className="relative z-10 flex flex-col items-center text-center px-6">
-        {/* Kicker */}
         <motion.p
           className="text-[9px] uppercase font-mono tracking-[0.55em] mb-8"
           style={{ color: "#EB7300" }}
@@ -90,7 +87,6 @@ export default function AboutHero() {
           Digital Growth Partner
         </motion.p>
 
-        {/* Headline line 1 */}
         <h1 className="flex flex-wrap justify-center gap-x-[1.2em] gap-y-0">
           {LINE_ONE.map((word, i) => (
             <span key={i} className="overflow-hidden inline-block">
@@ -111,7 +107,6 @@ export default function AboutHero() {
           ))}
         </h1>
 
-        {/* Headline line 2 */}
         <h1 className="flex flex-wrap justify-center gap-x-[1.2em] gap-y-0 mt-1">
           {LINE_TWO.map((word, i) => (
             <span key={i} className="overflow-hidden inline-block">
@@ -136,7 +131,6 @@ export default function AboutHero() {
           ))}
         </h1>
 
-        {/* Subtext */}
         <motion.p
           className="mt-8 text-sm md:text-base leading-relaxed max-w-lg"
           style={{ color: "rgba(255,255,255,0.5)" }}
@@ -149,7 +143,6 @@ export default function AboutHero() {
         </motion.p>
       </div>
 
-      {/* Scroll indicator */}
       <motion.div
         className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 select-none pointer-events-none"
         initial={{ opacity: 0, y: 10 }}

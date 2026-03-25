@@ -30,7 +30,6 @@ export default function ServiceCta({ service }: { service: ServiceData }) {
       className="relative w-full overflow-hidden rounded-t-[2rem]"
       style={{ background: "#050505", boxShadow: "0 -12px 40px rgba(0,0,0,0.3)" }}
     >
-      {/* Scroll-driven ambient glow */}
       <motion.div
         className="absolute inset-0 pointer-events-none"
         style={{
@@ -39,7 +38,6 @@ export default function ServiceCta({ service }: { service: ServiceData }) {
         }}
       />
 
-      {/* Grid */}
       <div
         aria-hidden
         className="absolute inset-0 pointer-events-none opacity-[0.02]"
@@ -51,7 +49,6 @@ export default function ServiceCta({ service }: { service: ServiceData }) {
         }}
       />
 
-      {/* Animated top hairline */}
       <div
         className="absolute top-0 left-0 right-0 h-px"
         style={{ background: "linear-gradient(90deg, transparent, rgba(235,115,0,0.35), transparent)" }}
@@ -59,7 +56,6 @@ export default function ServiceCta({ service }: { service: ServiceData }) {
 
       <div className="relative z-10 max-w-5xl mx-auto px-6 md:px-12 py-28 md:py-40 text-center flex flex-col items-center">
 
-        {/* Kicker */}
         <motion.p
           className="text-[9px] font-mono uppercase tracking-[0.6em] mb-4"
           style={{ color: "#EB7300" }}
@@ -97,7 +93,6 @@ export default function ServiceCta({ service }: { service: ServiceData }) {
           ))}
         </div>
 
-        {/* Subtext */}
         <motion.p
           className="text-base md:text-lg leading-relaxed max-w-2xl mb-12"
           style={{ color: "rgba(255,255,255,0.6)" }}
@@ -109,7 +104,6 @@ export default function ServiceCta({ service }: { service: ServiceData }) {
           Let's build something extraordinary together. Tell us about your project and we'll craft a strategy built for your goals.
         </motion.p>
 
-        {/* Buttons */}
         <motion.div
           className="flex flex-col sm:flex-row gap-4 justify-center"
           initial="hidden"
@@ -117,7 +111,6 @@ export default function ServiceCta({ service }: { service: ServiceData }) {
           viewport={{ once: false, margin: "-40px" }}
           variants={stagger}
         >
-          {/* Primary */}
           <motion.div variants={fadeUp} whileHover={{ y: -3 }} transition={{ type: "spring", stiffness: 300, damping: 25 }}>
             <Link
               href="/contact"
@@ -138,7 +131,6 @@ export default function ServiceCta({ service }: { service: ServiceData }) {
             </Link>
           </motion.div>
 
-          {/* Secondary */}
           <motion.div variants={fadeUp} whileHover={{ y: -3 }} transition={{ type: "spring", stiffness: 300, damping: 25 }}>
             <Link
               href="/contact"
@@ -150,7 +142,6 @@ export default function ServiceCta({ service }: { service: ServiceData }) {
           </motion.div>
         </motion.div>
 
-        {/* Bottom tagline */}
         <motion.p
           className="mt-12 text-[9px] font-mono uppercase tracking-[0.5em]"
           style={{ color: "rgba(255,255,255,0.18)" }}

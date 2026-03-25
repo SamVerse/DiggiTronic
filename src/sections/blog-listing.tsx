@@ -3,9 +3,8 @@
 import { useState, useRef, useCallback } from "react";
 import { motion, AnimatePresence, Variants, useMotionValue, useSpring } from "framer-motion";
 import Link from "next/link";
-import { BLOGS, CATEGORIES, type Category } from "@/data/blogs";
+import { CATEGORIES, type Category, type Blog } from "@/data/blogs";
 
-/* ── Animation variants ─────────────────────────────────────────── */
 const fadeUp: Variants = {
     hidden: { opacity: 0, y: 60 },
     visible: {
@@ -51,7 +50,6 @@ const imageReveal: Variants = {
     },
 };
 
-/* ── Format date helper ─────────────────────────────────────────── */
 function formatDate(dateStr: string) {
     return new Date(dateStr).toLocaleDateString("en-US", {
         year: "numeric",
@@ -60,7 +58,6 @@ function formatDate(dateStr: string) {
     });
 }
 
-/* ── Blog Card — with mouse-following View Blog button ──────────── */
 function BlogCard({
     slug,
     title,
@@ -86,7 +83,6 @@ function BlogCard({
     /* Raw cursor position (relative to container) */
     const rawX = useMotionValue(0);
     const rawY = useMotionValue(0);
-    /* Smooth spring follow */
     const btnX = useSpring(rawX, { stiffness: 150, damping: 20 });
     const btnY = useSpring(rawY, { stiffness: 150, damping: 20 });
 
@@ -108,7 +104,6 @@ function BlogCard({
             viewport={{ once: true, margin: "-80px" }}
         >
             <Link href={`/blogs/${slug}`} className="block group">
-                {/* Image container */}
                 <div
                     ref={imageContainerRef}
                     className="relative overflow-hidden rounded-xl aspect-[4/3] mb-5 cursor-none"
@@ -124,7 +119,6 @@ function BlogCard({
                         className="w-full h-full object-cover transition-transform duration-[600ms] ease-[cubic-bezier(0.25,0.46,0.45,0.94)] group-hover:scale-[1.06]"
                     />
 
-                    {/* Dark overlay on hover */}
                     <div
                         className="absolute inset-0 transition-[background-color] duration-500 ease-out"
                         style={{
@@ -164,7 +158,6 @@ function BlogCard({
                         </motion.div>
                     </motion.div>
 
-                    {/* Category badge */}
                     <span
                         className="absolute top-4 left-4 text-[10px] font-mono uppercase tracking-[0.3em] rounded-full px-3.5 py-1.5"
                         style={{
@@ -178,7 +171,6 @@ function BlogCard({
                     </span>
                 </div>
 
-                {/* Text content below image */}
                 <div className="space-y-3">
                     <h3
                         className="font-black text-white text-xl md:text-2xl leading-tight transition-colors duration-300 group-hover:text-[#EB7300]"
@@ -194,7 +186,6 @@ function BlogCard({
                         {excerpt}
                     </p>
 
-                    {/* Author + Date row */}
                     <div className="flex items-center justify-between pt-1">
                         <span
                             className="text-[11px] tracking-wide"
@@ -218,21 +209,19 @@ function BlogCard({
     );
 }
 
-/* ── Main Listing Component ─────────────────────────────────────── */
-export default function BlogListing() {
+export default function BlogListing({ blogs }: { blogs: Blog[] }) {
     const [activeCategory, setActiveCategory] = useState<Category>("All");
 
     const filteredBlogs =
         activeCategory === "All"
-            ? BLOGS
-            : BLOGS.filter((b) => b.category === activeCategory);
+            ? blogs
+            : blogs.filter((b: Blog) => b.category === activeCategory);
 
     return (
         <section
             className="relative w-full"
             style={{ background: "#0a0a0a" }}
         >
-            {/* Subtle top line */}
             <div
                 className="absolute top-0 left-0 right-0 h-px"
                 style={{
@@ -242,7 +231,6 @@ export default function BlogListing() {
             />
 
             <div className="relative z-10 max-w-[1200px] mx-auto px-6 md:px-12 py-28 md:py-36">
-                {/* Section header */}
                 <motion.div
                     className="mb-6"
                     initial="hidden"
@@ -271,7 +259,6 @@ export default function BlogListing() {
                     </motion.h2>
                 </motion.div>
 
-                {/* Category Filters */}
                 <motion.div
                     className="flex flex-wrap gap-2.5 mb-16"
                     initial={{ opacity: 0, y: 20 }}
@@ -313,7 +300,7 @@ export default function BlogListing() {
                             exit={{ opacity: 0 }}
                             transition={{ duration: 0.3 }}
                         >
-                            {filteredBlogs.map((blog, i) => (
+                            {filteredBlogs.map((blog: Blog, i: number) => (
                                 <BlogCard key={blog.slug} {...blog} index={i} />
                             ))}
                         </motion.div>

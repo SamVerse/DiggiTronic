@@ -126,7 +126,6 @@ const ConnectionPath = ({
 
   return (
     <>
-      {/* Base wire */}
       <path
         d={d}
         fill="none"
@@ -169,7 +168,6 @@ export default function AICircuit() {
   const cx = 500;
   const cy = 250;
 
-  // Node Positions
   const leftNodes = [
     { id: "video", label: "Video Prod.", icon: <Video size={20} />, x: 150, y: 100, size: "normal" as const },
     { id: "social", label: "Social Media", icon: <Globe size={24} />, x: 80, y: 250, size: "large" as const },
@@ -231,7 +229,6 @@ export default function AICircuit() {
     <div className="w-full h-[500px] md:h-[650px] relative">
       <svg className="w-full h-full overflow-visible" viewBox="0 0 1000 720">
         <defs>
-          {/* Chip gradient */}
           <linearGradient id="chip-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
             <stop offset="0%" stopColor="#1a1a1a" />
             <stop offset="100%" stopColor="#000000" />
@@ -283,7 +280,6 @@ export default function AICircuit() {
           </filter>
         </defs>
 
-        {/* ── PERSPECTIVE GRID LAYER ───────────────────────────────────── */}
         <g>
 
           {/* 9 Vertical rays from VP (500,560) to bottom */}
@@ -355,7 +351,6 @@ export default function AICircuit() {
           ))}
         </g>
 
-        {/* ── SIDE-TO-CENTER CONNECTION WIRES ─────────────────────────── */}
         {leftNodes.map((node, i) => (
           <ConnectionPath
             key={node.id}
@@ -374,7 +369,6 @@ export default function AICircuit() {
           />
         ))}
 
-        {/* ── DATA PIPELINES — fan-out Bezier curves to grid ──────────── */}
         {pipelineWires.map((wire, i) => (
           <ConnectionPath
             key={`pipeline-${i}`}
@@ -385,7 +379,6 @@ export default function AICircuit() {
           />
         ))}
 
-        {/* ── CENTRAL AI CHIP ──────────────────────────────────────────── */}
         <motion.g
           initial={{ scale: 0.9, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
@@ -421,7 +414,6 @@ export default function AICircuit() {
             }}
           />
 
-          {/* Chip body */}
           <g>
             <rect
               x={cx - 90}
@@ -451,11 +443,9 @@ export default function AICircuit() {
               transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
             />
 
-            {/* Pins */}
             <rect x={cx - 20} y={cy - 78} width="40" height="8" fill="#333" rx="2" />
             <rect x={cx - 20} y={cy + 70} width="40" height="8" fill="#333" rx="2" />
 
-            {/* CPU Icon */}
             <foreignObject x={cx - 50} y={cy - 50} width="100" height="100">
               <div className="w-full h-full flex flex-col items-center justify-center">
                 <Cpu className="text-[#EB7300]" size={30} />
@@ -464,7 +454,6 @@ export default function AICircuit() {
           </g>
         </motion.g>
 
-        {/* ── NODES LAYER ─────────────────────────────────────────────── */}
         <g>
           {leftNodes.map((node, i) => (
             <CircuitNode key={node.id} {...node} delay={i * 0.1} />

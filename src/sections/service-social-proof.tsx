@@ -5,7 +5,6 @@ import { motion, Variants, useInView, animate as framAnimate } from "framer-moti
 import { Quote } from "lucide-react";
 import type { Stat } from "@/data/services";
 
-/* ── Animated counter ────────────────────────────────────────────── */
 function Counter({ value, suffix }: { value: number; suffix: string }) {
   const ref = useRef<HTMLSpanElement>(null);
   const inView = useInView(ref, { once: false, margin: "-50px" });
@@ -80,7 +79,6 @@ export default function ServiceSocialProof({
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 py-24 md:py-32">
 
-        {/* ── Stats ─────────────────────────────────────────────── */}
         <motion.div
           className="grid grid-cols-1 sm:grid-cols-3 gap-8 mb-20 place-items-center text-center"
           initial="hidden"
@@ -110,10 +108,8 @@ export default function ServiceSocialProof({
           ))}
         </motion.div>
 
-        {/* Divider */}
         <div className="h-px mb-20" style={{ background: "rgba(255,255,255,0.06)" }} />
 
-        {/* ── Testimonials ──────────────────────────────────────── */}
         <motion.div
           className="mb-12"
           initial="hidden"
@@ -152,10 +148,8 @@ export default function ServiceSocialProof({
               transition={{ delay: i * 0.15, duration: 0.75, ease: "easeOut" }}
               whileHover={{ borderColor: "rgba(235,115,0,0.2)", y: -4 }}
             >
-              {/* Quote icon */}
               <Quote size={24} style={{ color: "rgba(235,115,0,0.35)" }} />
 
-              {/* Quote text */}
               <p
                 className="text-sm leading-[1.9] flex-1 font-medium italic"
                 style={{ color: "rgba(255,255,255,0.6)" }}
@@ -163,10 +157,8 @@ export default function ServiceSocialProof({
                 "{t.quote}"
               </p>
 
-              {/* Orange accent line */}
               <div className="h-px" style={{ background: "linear-gradient(90deg, rgba(235,115,0,0.4), transparent)" }} />
 
-              {/* Author */}
               <div className="flex items-center gap-3">
                 <div
                   className="w-9 h-9 rounded-full flex items-center justify-center font-black text-white text-sm shrink-0"

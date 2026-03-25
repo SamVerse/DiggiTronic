@@ -52,7 +52,6 @@ export default function Navbar() {
             const el = document.elementFromPoint(window.innerWidth / 2, NAV_H + 4);
             setIsLightSection(getNavbarTheme(el) === "light");
 
-            // Restore pointer events
             if (nav) {
                 nav.style.pointerEvents = oldPointerEvents;
             }
@@ -112,7 +111,6 @@ export default function Navbar() {
                     />
                 </Link>
 
-                {/* Desktop nav */}
                 <div className="hidden lg:flex items-center gap-4">
                     {navlinks.map((link, index) =>
                         link.hasDropdown ? (
@@ -181,7 +179,6 @@ export default function Navbar() {
                                     </AnimatePresence>
                                 </button>
 
-                                {/* Dropdown panel */}
                                 <ServicesDropdown
                                     isOpen={isServicesOpen}
                                     isLightSection={isLightSection}
@@ -205,7 +202,6 @@ export default function Navbar() {
                                 <AnimatePresence>
                                     {hoveredIndex === index && (
                                         <>
-                                            {/* Gradient border */}
                                             <motion.div
                                                 className="absolute inset-0 rounded-full bg-linear-to-r from-[#AD390E] to-[#FFC93E] pointer-events-none"
                                                 initial={{ opacity: 0 }}
@@ -221,7 +217,6 @@ export default function Navbar() {
                                                     WebkitMaskComposite: "xor",
                                                 }}
                                             />
-                                            {/* Glow */}
                                             <motion.div
                                                 className="absolute inset-0 rounded-full opacity-30 blur-md pointer-events-none"
                                                 initial={{ opacity: 0 }}
@@ -253,14 +248,12 @@ export default function Navbar() {
                 </button>
             </motion.nav>
 
-            {/* Mobile drawer */}
             <div
                 className={`fixed inset-0 z-100 bg-black/60 backdrop-blur flex flex-col items-center justify-center text-lg gap-6 lg:hidden transition-transform duration-400 ${isMenuOpen ? "translate-x-0" : "-translate-x-full"
                     }`}
             >
                 {navlinks.map((link) =>
                     link.hasDropdown ? (
-                        /* Services + sub-items in mobile */
                         <div key={link.href} className="flex flex-col items-center gap-2">
                             <span className="text-slate-200 font-semibold">{link.text}</span>
                             <div className="flex flex-col items-center gap-1.5">

@@ -19,11 +19,9 @@ import {
 } from "lucide-react";
 import HeroCube from "./hero-cube";
 
-// ── Constants ─────────────────────────────────────────────────────────────────
 const ORBITAL_SIZE = 560; // total size of the orbital canvas
 const CUBE_SIZE = 290; // Three.js canvas
 
-// ── Orbit data ────────────────────────────────────────────────────────────────
 const ORBITS = [
   {
     radius: 130,
@@ -73,7 +71,6 @@ export default function FloatingCubeOverlay() {
     setIsLanded(latest >= vh * 0.9);
   });
 
-  // ── Position ──────────────────────────────────────────────────────────────
   // X: starts centered in hero (50vw), ends at right of agency (75vw)
   const rawX = useTransform(scrollY, [0, vh], [50, 75]);
   // Y: starts lower (78vh) so it doesn't overlap with buttons
@@ -109,7 +106,6 @@ export default function FloatingCubeOverlay() {
         overflow: "visible",
       }}
     >
-      {/* ── Radial glow ──────────────────────────────────────────────────── */}
       <div
         aria-hidden
         style={{
@@ -125,7 +121,6 @@ export default function FloatingCubeOverlay() {
         }}
       />
 
-      {/* ── Three.js cube canvas ─────────────────────────────────────────── */}
       <div
         style={{
           position: "absolute",
@@ -139,7 +134,6 @@ export default function FloatingCubeOverlay() {
         <HeroCube />
       </div>
 
-      {/* ── Orbital system — pops in when cube lands ─────────────────────── */}
       <div style={{ position: "absolute", inset: 0 }}>
         {ORBITS.map((orbit, oi) => (
           <motion.div
@@ -158,7 +152,6 @@ export default function FloatingCubeOverlay() {
               delay: orbit.delay,
             }}
           >
-            {/* Dashed orbit ring */}
             <div
               style={{
                 position: "absolute",
@@ -173,7 +166,6 @@ export default function FloatingCubeOverlay() {
               }}
             />
 
-            {/* Icons on this orbit */}
             {orbit.icons.map(({ Icon, startAngle, label }, ii) => (
               <motion.div
                 key={label}

@@ -23,18 +23,15 @@ export default function JobDetailClient({ job }: { job: Job }) {
       <Navbar />
       <main className="relative overflow-x-hidden" style={{ background: "#0a0a0a" }}>
 
-        {/* ── Hero ───────────────────────────────────────────────── */}
         <section
           className="relative w-full flex flex-col items-center justify-center text-center overflow-hidden"
           style={{ minHeight: "55vh", paddingTop: "8rem", paddingBottom: "5rem" }}
         >
-          {/* Ambient */}
           <div
             aria-hidden
             className="absolute inset-0 pointer-events-none"
             style={{ background: "radial-gradient(ellipse 65% 55% at 50% 65%, rgba(235,115,0,0.09) 0%, transparent 70%)" }}
           />
-          {/* Grid */}
           <div
             aria-hidden
             className="absolute inset-0 pointer-events-none opacity-[0.02]"
@@ -47,7 +44,6 @@ export default function JobDetailClient({ job }: { job: Job }) {
           />
 
           <div className="relative z-10 px-6">
-            {/* Kicker */}
             <motion.p
               className="text-[9px] font-mono uppercase tracking-[0.6em] mb-6"
               style={{ color: "#EB7300" }}
@@ -75,7 +71,6 @@ export default function JobDetailClient({ job }: { job: Job }) {
               ))}
             </div>
 
-            {/* Pill chips */}
             <motion.div
               className="flex flex-wrap justify-center gap-3"
               initial={{ opacity: 0, y: 10 }}
@@ -95,11 +90,9 @@ export default function JobDetailClient({ job }: { job: Job }) {
           </div>
         </section>
 
-        {/* ── Job Content ────────────────────────────────────────── */}
         <section className="relative w-full">
           <div className="max-w-3xl mx-auto px-6 pb-28">
 
-            {/* Back link */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -115,7 +108,6 @@ export default function JobDetailClient({ job }: { job: Job }) {
               </Link>
             </motion.div>
 
-            {/* Overview */}
             <motion.div
               className="mb-12"
               initial="hidden"
@@ -131,10 +123,8 @@ export default function JobDetailClient({ job }: { job: Job }) {
               </p>
             </motion.div>
 
-            {/* Divider */}
             <div className="h-px mb-12" style={{ background: "rgba(255,255,255,0.05)" }} />
 
-            {/* Responsibilities */}
             <motion.div
               className="mb-12"
               initial="hidden"
@@ -157,7 +147,6 @@ export default function JobDetailClient({ job }: { job: Job }) {
 
             <div className="h-px mb-12" style={{ background: "rgba(255,255,255,0.05)" }} />
 
-            {/* Requirements */}
             <motion.div
               className="mb-12"
               initial="hidden"
@@ -207,7 +196,6 @@ export default function JobDetailClient({ job }: { job: Job }) {
 
             <div className="h-px mb-12" style={{ background: "rgba(255,255,255,0.05)" }} />
 
-            {/* Benefits */}
             <motion.div
               className="mb-14"
               initial="hidden"
@@ -231,7 +219,6 @@ export default function JobDetailClient({ job }: { job: Job }) {
               </div>
             </motion.div>
 
-            {/* Apply CTA */}
             <motion.div
               initial="hidden"
               whileInView="visible"

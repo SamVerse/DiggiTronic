@@ -3,12 +3,9 @@
 import { useEffect, useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 
-/* ────────────────────────────────────────────────────────────────────────────
    CubeAmbient — cinematic ground-plane + energy FX behind the floating cube.
    Positioned in the hero section, fades out as the user scrolls.
-   ──────────────────────────────────────────────────────────────────────────── */
 
-// ── Floating spark / particle ─────────────────────────────────────────────────
 function Particle({
     delay,
     duration,
@@ -48,7 +45,6 @@ function Particle({
     );
 }
 
-// ── Horizontal scan line ──────────────────────────────────────────────────────
 function ScanLine({ delay, duration }: { delay: number; duration: number }) {
     return (
         <motion.div
@@ -79,7 +75,6 @@ export default function CubeAmbient() {
     });
     const ambientOpacity = useTransform(scrollYProgress, [0, 0.45], [1, 0]);
 
-    // Canvas-based perspective grid
     const canvasRef = useRef<HTMLCanvasElement>(null);
 
     useEffect(() => {
@@ -114,7 +109,6 @@ export default function CubeAmbient() {
             // Bottom edge (ground plane horizon)
             const groundY = H * 0.92;
 
-            // ── Horizontal perspective lines ──────────────────────────────────
             const hLines = 14;
             for (let i = 0; i <= hLines; i++) {
                 const progress = i / hLines; // 0 → 1  (horizon → bottom)
@@ -125,7 +119,6 @@ export default function CubeAmbient() {
                 const xLeft = vpX - W * 0.54 * spread;
                 const xRight = vpX + W * 0.54 * spread;
 
-                // Pulse alpha
                 const pulse = 0.5 + Math.sin(t * 2 + i * 0.6) * 0.25;
                 const alpha = (0.06 + progress * 0.12) * pulse;
 
@@ -137,11 +130,9 @@ export default function CubeAmbient() {
                 ctx.stroke();
             }
 
-            // ── Vertical converging lines ─────────────────────────────────────
             const vLines = 18;
             for (let i = 0; i <= vLines; i++) {
                 const ratio = i / vLines;
-                // Bottom-edge position
                 const bx = (vpX - W * 0.54) + W * 1.08 * ratio;
 
                 const pulse = 0.5 + Math.sin(t * 1.5 + i * 0.5) * 0.3;
@@ -155,7 +146,6 @@ export default function CubeAmbient() {
                 ctx.stroke();
             }
 
-            // ── Concentric energy rings around vanishing point ────────────────
             const rings = 4;
             for (let r = 0; r < rings; r++) {
                 const baseRadius = 40 + r * 55;
@@ -170,7 +160,6 @@ export default function CubeAmbient() {
                 ctx.stroke();
             }
 
-            // ── Center glow core ──────────────────────────────────────────────
             const glowRadius = 60 + Math.sin(t * 1.8) * 10;
             const gradient = ctx.createRadialGradient(vpX, vpY + 30, 0, vpX, vpY + 30, glowRadius);
             gradient.addColorStop(0, `rgba(255, 77, 0, ${0.12 + Math.sin(t * 2) * 0.05})`);
@@ -191,7 +180,6 @@ export default function CubeAmbient() {
         };
     }, []);
 
-    // ── Pre-generate particles ──────────────────────────────────────────────────
     const particles = Array.from({ length: 16 }, (_, i) => ({
         id: i,
         delay: i * 0.5 + Math.random() * 2,
@@ -207,14 +195,12 @@ export default function CubeAmbient() {
             className="absolute inset-0 pointer-events-none z-5"
             style={{ opacity: ambientOpacity }}
         >
-            {/* ── Perspective grid canvas ──────────────────────────────────────── */}
             <canvas
                 ref={canvasRef}
                 className="absolute w-full h-full"
                 style={{ bottom: 0, left: 0 }}
             />
 
-            {/* ── Large radial glow behind cube zone ───────────────────────────── */}
             <div
                 className="absolute"
                 style={{
@@ -229,7 +215,6 @@ export default function CubeAmbient() {
                 }}
             />
 
-            {/* ── Reflected glow on "floor" ────────────────────────────────────── */}
             <div
                 className="absolute"
                 style={{
@@ -244,22 +229,18 @@ export default function CubeAmbient() {
                 }}
             />
 
-            {/* ── Scan lines sweeping up ───────────────────────────────────────── */}
             <div className="absolute inset-0 overflow-hidden">
                 <ScanLine delay={0} duration={6} />
                 <ScanLine delay={2} duration={7} />
                 <ScanLine delay={4.5} duration={5.5} />
             </div>
 
-            {/* ── Floating particles / sparks ──────────────────────────────────── */}
             <div className="absolute inset-0 overflow-hidden">
                 {particles.map((p) => (
                     <Particle key={p.id} {...p} />
                 ))}
             </div>
 
-            {/* ── Corner accent lines — data-flow vibe ─────────────────────────── */}
-            {/* Bottom-left */}
             <motion.div
                 className="absolute"
                 style={{
@@ -292,7 +273,6 @@ export default function CubeAmbient() {
                 }}
             />
 
-            {/* Bottom-right */}
             <motion.div
                 className="absolute"
                 style={{
@@ -330,7 +310,6 @@ export default function CubeAmbient() {
                 }}
             />
 
-            {/* ── Subtle data labels floating near corners (storytelling) ───────── */}
             <motion.span
                 className="absolute text-[8px] font-mono uppercase tracking-[0.4em] select-none"
                 style={{ left: "22%", bottom: "18%", color: "rgba(255,77,0,0.30)" }}

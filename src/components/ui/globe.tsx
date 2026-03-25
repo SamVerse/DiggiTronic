@@ -84,7 +84,6 @@ export function Globe({ globeConfig, data }: WorldProps) {
     ...globeConfig,
   };
 
-  // Initialize globe only once
   useEffect(() => {
     if (!globeRef.current && groupRef.current) {
       globeRef.current = new ThreeGlobe();
@@ -202,7 +201,6 @@ export function Globe({ globeConfig, data }: WorldProps) {
     defaultProps.maxRings,
   ]);
 
-  // Handle rings animation with cleanup
   useEffect(() => {
     if (!globeRef.current || !isInitialized || !data) return;
 

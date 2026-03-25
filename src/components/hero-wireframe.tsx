@@ -14,7 +14,6 @@ export default function HeroWireframe() {
         const W = 1600;
         const H = 800;
 
-        // ── Renderer ──────────────────────────────────────────────────────────────
         const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
         renderer.setSize(W, H);
         // Don't scale CSS style of DOM element (keep it 1600x800 pixel exact)
@@ -26,7 +25,6 @@ export default function HeroWireframe() {
         renderer.toneMappingExposure = 1.2;
         mount.appendChild(renderer.domElement);
 
-        // ── Scene / Camera ────────────────────────────────────────────────────────
         const scene = new THREE.Scene();
         const camera = new THREE.PerspectiveCamera(35, W / H, 0.1, 100);
         camera.position.set(11, 7, 14); // Zoomed out to decrease overall size
@@ -35,7 +33,6 @@ export default function HeroWireframe() {
         const group = new THREE.Group();
         scene.add(group);
 
-        // ── 1. Extended Wireframe Tunnel ──────────────────────────────────────────
         const wireMat = new THREE.LineBasicMaterial({
             color: 0x444444,
             transparent: true,
@@ -62,20 +59,17 @@ export default function HeroWireframe() {
                 group.add(boxEdges);
             }
 
-            // Add inscribed circles between boxes
             const circle = new THREE.LineSegments(circleGeo, wireMat);
             circle.position.x = i * wireSize - wireSize / 2;
             circle.rotation.z = Math.PI / 2;
             group.add(circle);
         }
-        // Final circle on far right
         const lastCircle = new THREE.LineSegments(circleGeo, wireMat);
         lastCircle.position.x = 4.5 * wireSize;
         lastCircle.rotation.z = Math.PI / 2;
         group.add(lastCircle);
 
 
-        // ── 2. Continuous Energy Beam ─────────────────────────────────────────────
         const beamGroup = new THREE.Group();
         group.add(beamGroup);
 
@@ -120,7 +114,6 @@ export default function HeroWireframe() {
         const beamLight = new THREE.PointLight(0xff5500, 100, 20);
         beamGroup.add(beamLight);
 
-        // ── 3. Subtle Ambient Background Particles ────────────────────────────────
         const starCount = 300; // More particles to fill the wide view
         const starGeo = new THREE.BufferGeometry();
         const starPos = new Float32Array(starCount * 3);
@@ -140,7 +133,6 @@ export default function HeroWireframe() {
         group.add(stars);
 
 
-        // ── Interaction ───────────────────────────────────────────────────────────
         let targetX = 0;
         let targetY = 0;
         let currentX = 0;
@@ -153,7 +145,6 @@ export default function HeroWireframe() {
         window.addEventListener("mousemove", onMouseMove);
 
 
-        // ── Animation Loop ────────────────────────────────────────────────────────
         let t = 0;
         let rafId = 0;
 
@@ -167,11 +158,9 @@ export default function HeroWireframe() {
             const wrapX = ((cycle + 15) % 30) - 15; // wrap from -15 to +15
             beamGroup.position.x = wrapX;
 
-            // Pulse the beam intensity
             beam.scale.y = 0.8 + Math.sin(t * 15) * 0.2;
             beam.scale.z = 0.8 + Math.sin(t * 15) * 0.2;
 
-            // Rotate stars very slowly
             stars.rotation.y = t * 0.05;
 
             // Smooth mouse tilt (sync with main cube)

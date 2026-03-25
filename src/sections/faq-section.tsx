@@ -77,7 +77,6 @@ function FaqItem({
         onClick={onToggle}
         aria-expanded={isOpen}
       >
-        {/* Number ─────────────────────────────────────────────────── */}
         <motion.span
           className="text-xs font-mono flex-shrink-0 mt-1 transition-colors duration-300"
           animate={{ color: isOpen ? "#ff4d00" : "rgba(255,255,255,0.2)" }}
@@ -87,7 +86,6 @@ function FaqItem({
           {num}
         </motion.span>
 
-        {/* Question ──────────────────────────────────────────────── */}
         <span
           className="flex-1 font-black leading-tight transition-colors duration-300"
           style={{
@@ -98,7 +96,6 @@ function FaqItem({
           {item.q}
         </span>
 
-        {/* Plus / X icon ──────────────────────────────────────────── */}
         <motion.span
           className="flex-shrink-0 mt-1 text-xl font-light leading-none"
           animate={{
@@ -111,7 +108,6 @@ function FaqItem({
         </motion.span>
       </button>
 
-      {/* Answer — AnimatePresence for smooth open/close ────────── */}
       <AnimatePresence initial={false}>
         {isOpen && (
           <motion.div
@@ -122,7 +118,6 @@ function FaqItem({
             style={{ overflow: "hidden" }}
           >
             <div className="pl-10 md:pl-14 pb-6 pr-8">
-              {/* Orange accent line */}
               <motion.div
                 className="w-8 h-0.5 mb-4 rounded-full"
                 initial={{ scaleX: 0 }}
@@ -149,7 +144,6 @@ export default function FAQSection() {
   const contentRef = useRef<HTMLDivElement>(null);
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
-  /* ── GSAP stagger entrance for each item ────────────────────────── */
   useGSAP(
     () => {
       if (!contentRef.current) return;
@@ -189,7 +183,6 @@ export default function FAQSection() {
         boxShadow: "0 -16px 60px rgba(0,0,0,0.6)",
       }}
     >
-      {/* ── Subtle vignette glow ───────────────────────────────────── */}
       <div
         aria-hidden
         className="absolute inset-0 pointer-events-none"
@@ -201,7 +194,6 @@ export default function FAQSection() {
 
       <div className="relative z-10 max-w-5xl mx-auto px-6 md:px-12 py-24 md:py-32">
 
-        {/* ── Section header ─────────────────────────────────────────── */}
         <motion.div
           className="mb-16 md:mb-20"
           initial="hidden"
@@ -236,8 +228,6 @@ export default function FAQSection() {
           </motion.h2>
         </motion.div>
 
-        {/* ── FAQ accordion ──────────────────────────────────────────── */}
-        {/* Top border */}
         <div className="h-px mb-0" style={{ background: "rgba(255,255,255,0.07)" }} />
 
         <div ref={contentRef}>

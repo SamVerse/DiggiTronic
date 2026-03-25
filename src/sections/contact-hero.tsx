@@ -16,13 +16,11 @@ const LINE_TWO = ["EXTRAORDINARY."];
 export default function ContactHero() {
   const sectionRef = useRef<HTMLElement>(null);
 
-  /* Mouse parallax on glow */
   const rawX = useMotionValue(0);
   const rawY = useMotionValue(0);
   const glowX = useSpring(rawX, { stiffness: 35, damping: 20 });
   const glowY = useSpring(rawY, { stiffness: 35, damping: 20 });
 
-  /* Scroll-out parallax */
   const { scrollYProgress } = useScroll({
     target: sectionRef,
     offset: ["start start", "end start"],
@@ -53,7 +51,6 @@ export default function ContactHero() {
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
     >
-      {/* Floating ambient blobs */}
       <motion.div
         aria-hidden
         className="absolute rounded-full pointer-events-none"
@@ -83,7 +80,6 @@ export default function ContactHero() {
         transition={{ duration: 14, repeat: Infinity, ease: "easeInOut", delay: 2 }}
       />
 
-      {/* Mouse-driven glow */}
       <motion.div
         aria-hidden
         className="absolute inset-0 pointer-events-none"
@@ -98,7 +94,6 @@ export default function ContactHero() {
         />
       </motion.div>
 
-      {/* Subtle grid */}
       <div
         aria-hidden
         className="absolute inset-0 pointer-events-none opacity-[0.022]"
@@ -110,9 +105,7 @@ export default function ContactHero() {
         }}
       />
 
-      {/* Content */}
       <div className="relative z-10 flex flex-col items-center text-center px-6 max-w-5xl">
-        {/* Kicker */}
         <motion.p
           className="text-[9px] font-mono uppercase tracking-[0.6em] mb-8"
           style={{ color: "#EB7300" }}
@@ -123,7 +116,6 @@ export default function ContactHero() {
           Let's Talk
         </motion.p>
 
-        {/* Line 1 */}
         <h1 className="flex flex-wrap justify-center gap-x-[0.3em]">
           {LINE_ONE.map((word, i) => (
             <span key={i} className="overflow-hidden inline-block">
@@ -174,7 +166,6 @@ export default function ContactHero() {
           ))}
         </h1>
 
-        {/* Subtext */}
         <motion.p
           className="mt-8 text-sm md:text-base leading-relaxed max-w-md"
           style={{ color: "rgba(255,255,255,0.45)" }}
@@ -186,7 +177,6 @@ export default function ContactHero() {
         </motion.p>
       </div>
 
-      {/* Scroll indicator */}
       <motion.div
         className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 pointer-events-none select-none"
         initial={{ opacity: 0 }}

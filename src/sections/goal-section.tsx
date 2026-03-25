@@ -395,7 +395,6 @@ export default function GoalSection() {
             </div>
 
             <div ref={visualsRef} className="relative w-full max-w-xl">
-              {/* Accent glow */}
               <div
                 className="absolute -right-8 -top-10 h-24 w-24 rounded-full"
                 style={{

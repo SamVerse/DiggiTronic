@@ -26,7 +26,6 @@ const VALUE_LABELS = [
 
 gsap.registerPlugin(ScrollTrigger);
 
-/* ── Rotating value text cycle ──────────────────────────────────────── */
 function RotatingValue() {
   const [index, setIndex] = useState(0);
 
@@ -75,7 +74,6 @@ function RotatingValue() {
   );
 }
 
-/* ── Animated scroll hint arrow ─────────────────────────────────────── */
 function ScrollHint() {
   return (
     <motion.div
@@ -122,7 +120,6 @@ export default function ServicesCTA() {
   const subtitleRef = useRef<HTMLParagraphElement | null>(null);
   const bottomRef = useRef<HTMLDivElement | null>(null);
 
-  /* ── Mouse parallax ─────────────────────────────────────────────── */
   const rawX = useMotionValue(0);
   const rawY = useMotionValue(0);
   const bgX = useSpring(rawX, { stiffness: 40, damping: 22 });
@@ -142,7 +139,6 @@ export default function ServicesCTA() {
     rawY.set(0);
   }
 
-  /* ── Scroll transforms ──────────────────────────────────────────── */
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start end", "end start"],
@@ -163,7 +159,6 @@ export default function ServicesCTA() {
     ["brightness(1)", "brightness(0.4)"]
   );
 
-  /* ── Hyperspeed options ─────────────────────────────────────────── */
   const effectOptions = useMemo(
     () => ({
       onSpeedUp: () => { },
@@ -205,7 +200,6 @@ export default function ServicesCTA() {
     []
   );
 
-  /* ── GSAP entrance ──────────────────────────────────────────────── */
   useGSAP(
     () => {
       const titleNode = titleRef.current;
@@ -248,7 +242,6 @@ export default function ServicesCTA() {
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
     >
-      {/* ── Hyperspeed — shifted by mouse parallax ──────────────── */}
       <motion.div
         className="absolute inset-0 z-10 pointer-events-auto"
         style={{ x: bgX, y: bgY, scale: 1.06 }}
@@ -259,15 +252,12 @@ export default function ServicesCTA() {
         />
       </motion.div>
 
-      {/* ── Overlay ─────────────────────────────────────────────── */}
       <div className="absolute inset-0 z-20 pointer-events-none backdrop-blur-sm bg-black/10" />
 
-      {/* ── Content ─────────────────────────────────────────────── */}
       <motion.div
         className="relative z-30 flex h-full flex-col items-center justify-center text-center px-6 pointer-events-none"
         style={{ opacity: contentOpacity, y: contentY }}
       >
-        {/* Kicker label */}
         <motion.p
           className="text-[9px] uppercase font-mono mb-6 tracking-[0.55em]"
           style={{ color: "rgba(255,255,255,0.35)" }}
@@ -279,7 +269,6 @@ export default function ServicesCTA() {
           Full-service digital studio
         </motion.p>
 
-        {/* Headline */}
         <h2
           ref={titleRef}
           className="text-4xl md:text-5xl lg:text-6xl font-black uppercase tracking-tight [word-spacing:1rem] leading-tight max-w-5xl mx-auto text-white"
@@ -293,7 +282,6 @@ export default function ServicesCTA() {
           <span className="word inline-block">Partner.</span>
         </h2>
 
-        {/* Subtitle */}
         <p
           ref={subtitleRef}
           className="mt-6 text-base md:text-lg max-w-xl leading-relaxed"
@@ -303,7 +291,6 @@ export default function ServicesCTA() {
           solutions — we deliver strategies that create real impact.
         </p>
 
-        {/* ── Rotating value row ────────────────────────────────── */}
         <div
           ref={bottomRef}
           className="mt-10 flex flex-col items-center gap-8"
@@ -313,13 +300,11 @@ export default function ServicesCTA() {
             <RotatingValue />
           </div>
 
-          {/* Thin separator */}
           <div
             className="w-px h-8"
             style={{ background: "rgba(255,255,255,0.22)" }}
           />
 
-          {/* Scroll hint */}
           <ScrollHint />
         </div>
       </motion.div>

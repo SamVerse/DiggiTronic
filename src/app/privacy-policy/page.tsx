@@ -70,12 +70,10 @@ export default function PrivacyPolicyPage() {
       <Navbar />
       <main className="relative overflow-x-hidden" style={{ background: "#0a0a0a" }}>
 
-        {/* ── Hero ────────────────────────────────────────────── */}
         <section
           className="relative w-full flex flex-col items-center justify-center text-center overflow-hidden"
           style={{ minHeight: "52vh", paddingTop: "8rem", paddingBottom: "5rem" }}
         >
-          {/* Ambient glow */}
           <div
             aria-hidden
             className="absolute inset-0 pointer-events-none"
@@ -84,7 +82,6 @@ export default function PrivacyPolicyPage() {
                 "radial-gradient(ellipse 60% 50% at 50% 60%, rgba(235,115,0,0.09) 0%, transparent 70%)",
             }}
           />
-          {/* Grid */}
           <div
             aria-hidden
             className="absolute inset-0 pointer-events-none opacity-[0.02]"
@@ -135,11 +132,9 @@ export default function PrivacyPolicyPage() {
           </div>
         </section>
 
-        {/* ── Content ─────────────────────────────────────────── */}
         <section className="relative w-full">
           <div className="max-w-2xl mx-auto px-6 pb-28">
 
-            {/* Intro */}
             <motion.p
               className="text-sm leading-[1.9] mb-16"
               style={{ color: "rgba(255,255,255,0.45)" }}
@@ -151,7 +146,6 @@ export default function PrivacyPolicyPage() {
               At DiggiTronic, we are committed to protecting your privacy and handling your personal data with transparency and care. This Privacy Policy explains what information we collect, how we use it, and the rights you have over your data.
             </motion.p>
 
-            {/* Sections */}
             <div className="flex flex-col gap-12">
               {SECTIONS.map((s) => (
                 <motion.div
@@ -161,23 +155,19 @@ export default function PrivacyPolicyPage() {
                   viewport={{ once: false, margin: "-40px" }}
                   variants={fadeUp}
                 >
-                  {/* Number */}
                   <span
                     className="block text-[9px] font-mono uppercase tracking-[0.5em] mb-2"
                     style={{ color: "#EB7300" }}
                   >
                     {s.num}
                   </span>
-                  {/* Title */}
                   <h2 className="font-black text-white text-lg md:text-xl mb-4">
                     {s.title}
                   </h2>
-                  {/* Divider */}
                   <div
                     className="h-px mb-5"
                     style={{ background: "rgba(255,255,255,0.05)" }}
                   />
-                  {/* Body */}
                   <p
                     className="text-sm leading-[1.9]"
                     style={{ color: "rgba(255,255,255,0.48)" }}

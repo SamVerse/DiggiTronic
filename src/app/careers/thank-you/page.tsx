@@ -8,7 +8,6 @@ import LenisScroll from "@/components/lenis-scroll";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 
-/* ── Word-clip line ───────────────────────────────────────────────── */
 function HeadlineLine({
   words,
   color,
@@ -46,25 +45,21 @@ function HeadlineLine({
   );
 }
 
-/* ── Pulsing check circle ─────────────────────────────────────────── */
 function CheckCircle() {
   return (
     <div className="relative flex items-center justify-center" style={{ width: 120, height: 120 }}>
-      {/* Outer pulse ring */}
       <motion.div
         className="absolute rounded-full"
         style={{ background: "rgba(235,115,0,0.15)", width: 120, height: 120 }}
         animate={{ scale: [1, 1.6, 1], opacity: [0.5, 0, 0.5] }}
         transition={{ duration: 2.5, repeat: Infinity, ease: "easeOut" }}
       />
-      {/* Mid ring */}
       <motion.div
         className="absolute rounded-full"
         style={{ background: "rgba(235,115,0,0.1)", width: 90, height: 90 }}
         animate={{ scale: [1, 1.3, 1], opacity: [0.6, 0, 0.6] }}
         transition={{ duration: 2.5, repeat: Infinity, delay: 0.4, ease: "easeOut" }}
       />
-      {/* Inner circle */}
       <motion.div
         className="relative z-10 flex items-center justify-center rounded-full"
         style={{ width: 72, height: 72, background: "linear-gradient(135deg, #EB7300, #ff9a00)", boxShadow: "0 0 40px rgba(235,115,0,0.4)" }}
@@ -97,7 +92,6 @@ function CheckCircle() {
   );
 }
 
-/* ── Inner content (uses useSearchParams — must be in Suspense) ───── */
 function ThankYouContent() {
   const searchParams = useSearchParams();
   const jobTitle = searchParams.get("for");
@@ -108,7 +102,6 @@ function ThankYouContent() {
   return (
     <main className="relative overflow-x-hidden" style={{ background: "#0a0a0a" }}>
 
-      {/* Scroll-driven ambient glow */}
       <motion.div
         className="fixed inset-0 pointer-events-none z-0"
         style={{
@@ -117,12 +110,10 @@ function ThankYouContent() {
         }}
       />
 
-      {/* Full-screen centered panel */}
       <section
         className="relative z-10 w-full min-h-screen flex flex-col items-center justify-center text-center px-6"
         style={{ paddingTop: "7rem", paddingBottom: "6rem" }}
       >
-        {/* Grid */}
         <div
           aria-hidden
           className="absolute inset-0 pointer-events-none opacity-[0.02]"
@@ -134,7 +125,6 @@ function ThankYouContent() {
           }}
         />
 
-        {/* Check circle */}
         <motion.div
           className="mb-12"
           initial={{ opacity: 0, scale: 0.5 }}
@@ -144,7 +134,6 @@ function ThankYouContent() {
           <CheckCircle />
         </motion.div>
 
-        {/* Job title badge */}
         {jobTitle && (
           <motion.div
             className="mb-8"
@@ -169,7 +158,6 @@ function ThankYouContent() {
           <HeadlineLine words={["STARTS", "HERE."]} color="#ffffff" startIdx={4} />
         </div>
 
-        {/* Subtext */}
         <motion.p
           className="text-sm leading-[1.9] max-w-md mb-12"
           style={{ color: "rgba(255,255,255,0.4)" }}
@@ -180,7 +168,6 @@ function ThankYouContent() {
           Thank you for applying. Our team will review your application and contact you within 3–5 business days.
         </motion.p>
 
-        {/* Back button */}
         <motion.div
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}

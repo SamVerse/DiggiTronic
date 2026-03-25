@@ -126,7 +126,6 @@ function ShowcaseCard({
           flexDirection: "column",
         }}
       >
-        {/* Grid lines */}
         <div
           style={{
             position: "absolute",
@@ -141,7 +140,6 @@ function ShowcaseCard({
 
         {/* ── TOP AREA (55%) ── */}
         <div style={{ flex: "0 0 55%", padding: "1.5rem 1.5rem 1rem", position: "relative" }}>
-          {/* Progress meter bar */}
           <div
             style={{
               height: 3,
@@ -165,7 +163,6 @@ function ShowcaseCard({
             />
           </div>
 
-          {/* Content mockup rows */}
           <div style={{ display: "flex", flexDirection: "column", gap: 7, marginBottom: "1.2rem" }}>
             {MOCKUP_ROWS.map((row, ri) => (
               <div
@@ -180,7 +177,6 @@ function ShowcaseCard({
             ))}
           </div>
 
-          {/* Big metric */}
           <div>
             <span
               style={{
@@ -209,7 +205,6 @@ function ShowcaseCard({
           </div>
         </div>
 
-        {/* Divider */}
         <div style={{ height: 1, background: "rgba(255,255,255,0.06)", margin: "0 1.5rem" }} />
 
         {/* ── BOTTOM PANEL (45%) ── */}
@@ -222,7 +217,6 @@ function ShowcaseCard({
             justifyContent: "space-between",
           }}
         >
-          {/* Category tag */}
           <div style={{ marginBottom: 8 }}>
             <span
               style={{
@@ -241,7 +235,6 @@ function ShowcaseCard({
             </span>
           </div>
 
-          {/* Label */}
           <p
             style={{
               fontWeight: 900,
@@ -257,7 +250,6 @@ function ShowcaseCard({
             {item.label}
           </p>
 
-          {/* Pills row */}
           <div style={{ display: "flex", gap: 6, flexWrap: "wrap", marginTop: 12 }}>
             {[item.weeks, item.result].map((pill, pi) => (
               <span
@@ -279,7 +271,6 @@ function ShowcaseCard({
             ))}
           </div>
 
-          {/* Index + orange line */}
           <div style={{ display: "flex", alignItems: "center", gap: 10, marginTop: 14 }}>
             <span
               style={{
@@ -307,7 +298,6 @@ function ShowcaseCard({
           </div>
         </div>
 
-        {/* Hover glow overlay */}
         <div
           className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
           style={{
@@ -335,7 +325,6 @@ export default function ServiceShowcase({ service }: { service: ServiceData }) {
       />
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 py-24 md:py-32">
-        {/* Header */}
         <motion.div
           className="mb-14"
           initial="hidden"
@@ -381,7 +370,6 @@ export default function ServiceShowcase({ service }: { service: ServiceData }) {
           {SHOWCASE_ITEMS.map((item, i) => (
             <ShowcaseCard key={i} item={item} index={i} />
           ))}
-          {/* Right padding */}
           <div style={{ minWidth: 48, flexShrink: 0 }} />
         </motion.div>
       </div>

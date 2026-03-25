@@ -4,7 +4,6 @@ import { useRef, useEffect } from "react";
 import { motion, Variants, useInView, animate as framAnimate } from "framer-motion";
 import type { ServiceData } from "@/data/services";
 
-/* ── Animated counter ───────────────────────────────────────────── */
 function Counter({ value, suffix }: { value: number; suffix: string }) {
   const ref = useRef<HTMLSpanElement>(null);
   const inView = useInView(ref, { once: false, margin: "-50px" });
@@ -48,13 +47,11 @@ export default function ServiceOverview({ service }: { service: ServiceData }) {
         boxShadow: "0 -12px 40px rgba(0,0,0,0.3)",
       }}
     >
-      {/* Top accent hairline */}
       <div
         className="absolute top-0 left-0 right-0 h-px"
         style={{ background: "linear-gradient(90deg, transparent, rgba(235,115,0,0.25), transparent)" }}
       />
 
-      {/* Giant watermark number */}
       <div
         aria-hidden
         className="absolute top-0 right-0 font-black leading-none pointer-events-none select-none"
@@ -106,7 +103,6 @@ export default function ServiceOverview({ service }: { service: ServiceData }) {
               {service.overview.body}
             </motion.p>
 
-            {/* Highlight callout */}
             <motion.div
               variants={fadeUp}
               className="rounded-xl py-4 px-5"

@@ -80,12 +80,10 @@ export default function TermsPage() {
       <Navbar />
       <main className="relative overflow-x-hidden" style={{ background: "#0a0a0a" }}>
 
-        {/* ── Hero ────────────────────────────────────────────── */}
         <section
           className="relative w-full flex flex-col items-center justify-center text-center overflow-hidden"
           style={{ minHeight: "52vh", paddingTop: "8rem", paddingBottom: "5rem" }}
         >
-          {/* Ambient glow */}
           <div
             aria-hidden
             className="absolute inset-0 pointer-events-none"
@@ -94,7 +92,6 @@ export default function TermsPage() {
                 "radial-gradient(ellipse 60% 50% at 50% 60%, rgba(235,115,0,0.09) 0%, transparent 70%)",
             }}
           />
-          {/* Grid */}
           <div
             aria-hidden
             className="absolute inset-0 pointer-events-none opacity-[0.02]"
@@ -145,11 +142,9 @@ export default function TermsPage() {
           </div>
         </section>
 
-        {/* ── Content ─────────────────────────────────────────── */}
         <section className="relative w-full">
           <div className="max-w-2xl mx-auto px-6 pb-28">
 
-            {/* Intro */}
             <motion.p
               className="text-sm leading-[1.9] mb-16"
               style={{ color: "rgba(255,255,255,0.45)" }}
@@ -161,7 +156,6 @@ export default function TermsPage() {
               These Terms &amp; Conditions govern your use of the DiggiTronic website and the services we provide. By engaging us, you agree to these terms in full. Please read them carefully before proceeding.
             </motion.p>
 
-            {/* Sections */}
             <div className="flex flex-col gap-12">
               {SECTIONS.map((s) => (
                 <motion.div

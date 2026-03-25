@@ -14,7 +14,6 @@ import { JOBS } from "@/data/jobs";
 
 gsap.registerPlugin(ScrollTrigger);
 
-/* ── Animation variants ─────────────────────────────────────────── */
 const fadeUp: Variants = {
   hidden: { opacity: 0, y: 40, filter: "blur(4px)" },
   visible: { opacity: 1, y: 0, filter: "blur(0px)", transition: { duration: 0.8, ease: "easeOut" } },
@@ -24,14 +23,12 @@ const stagger: Variants = {
   visible: { transition: { staggerChildren: 0.12 } },
 };
 
-/* ── Hero headline data ─────────────────────────────────────────── */
 const HERO_LINES = [
   { words: ["BUILD", "THE", "FUTURE"], orange: false },
   { words: ["OF", "DIGITAL"], orange: false },
   { words: ["WITH", "US."], orange: true },
 ];
 
-/* ── Culture pillars ─────────────────────────────────────────────── */
 const PILLARS = [
   { num: "01", label: "Creative Freedom", desc: "Your ideas shape outcomes. Always." },
   { num: "02", label: "Collaboration First", desc: "Small teams, big impact, loud voices." },
@@ -39,7 +36,6 @@ const PILLARS = [
   { num: "04", label: "Ship Fast, Ship Bold", desc: "We bias toward action, not perfection." },
 ];
 
-/* ── Company highlight grid ───────────────────────────────────────── */
 const HIGHLIGHT_CARDS = [
   {
     id: "projects", stat: 150, suffix: "+", label: "Projects Delivered",
@@ -67,7 +63,6 @@ const HIGHLIGHT_CARDS = [
   },
 ];
 
-/* ── Why Join cards ──────────────────────────────────────────────── */
 const WHY_JOIN = [
   {
     num: "01",
@@ -96,7 +91,6 @@ const WHY_JOIN = [
   },
 ];
 
-/* ── Animated number counter ─────────────────────────────────────── */
 function Counter({ value, suffix }: { value: number; suffix: string }) {
   const ref = useRef<HTMLSpanElement>(null);
   const inView = useInView(ref, { once: false, margin: "-50px" });
@@ -120,7 +114,6 @@ function Counter({ value, suffix }: { value: number; suffix: string }) {
   return <span ref={ref}>0{suffix}</span>;
 }
 
-/* ── Job preview card ────────────────────────────────────────────── */
 function JobCard({ slug, title, department, location, type, experience }: {
   slug: string; title: string; department: string;
   location: string; type: string; experience: string;
@@ -216,7 +209,6 @@ export default function CareersPage() {
   });
   const jobsY = useTransform(jobsProgress, [0, 1], ["0vh", "40vh"]);
 
-  /* Mouse parallax on ambient glow */
   const glowX = useMotionValue(0);
   const glowY = useMotionValue(0);
   const springGlowX = useSpring(glowX, { stiffness: 60, damping: 20 });
@@ -233,7 +225,6 @@ export default function CareersPage() {
     return () => window.removeEventListener("mousemove", handle);
   }, [glowX, glowY]);
 
-  /* GSAP stagger entrances */
   useGSAP(() => {
     if (cultureCardsRef.current) {
       gsap.from(cultureCardsRef.current.querySelectorAll(".pillar-card"), {
@@ -476,7 +467,6 @@ export default function CareersPage() {
             className="absolute top-0 left-0 right-0 h-px"
             style={{ background: "linear-gradient(90deg, transparent, rgba(235,115,0,0.18), transparent)" }}
           />
-          {/* Ambient glow */}
           <div
             className="absolute inset-0 pointer-events-none"
             style={{ background: "radial-gradient(ellipse 55% 35% at 50% 0%, rgba(235,115,0,0.05) 0%, transparent 70%)" }}
@@ -484,7 +474,6 @@ export default function CareersPage() {
 
           <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 py-24 md:py-32">
 
-            {/* Section header */}
             <motion.div
               className="mb-14"
               initial="hidden"
@@ -506,7 +495,6 @@ export default function CareersPage() {
               </motion.h2>
             </motion.div>
 
-            {/* Bento grid */}
             <div ref={gridCardsRef} className="grid grid-cols-1 md:grid-cols-3 gap-4">
 
               {/* Card 1 — 150+ Projects (tall, row-span-2) */}

@@ -127,7 +127,6 @@ export default function ClientsSection() {
         filter: sectionFilter,
       }}
     >
-      {/* ── Subtle radial glow behind marquee ──────────────────────────── */}
       <div
         aria-hidden
         className="absolute inset-0 pointer-events-none"
@@ -137,7 +136,6 @@ export default function ClientsSection() {
         }}
       />
 
-      {/* ── Grid noise texture ─────────────────────────────────────────── */}
       <div
         aria-hidden
         className="absolute inset-0 pointer-events-none opacity-[0.015]"
@@ -151,7 +149,6 @@ export default function ClientsSection() {
       />
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 pt-24 pb-10">
-        {/* ── Section header ─────────────────────────────────────────────── */}
         <motion.div
           className="flex flex-col items-center text-center mb-16"
           initial="hidden"
@@ -196,13 +193,11 @@ export default function ClientsSection() {
         </motion.div>
       </div>
 
-      {/* ── Dual marquee system ─────────────────────────────────────────── */}
       <div className="relative z-10 flex flex-col gap-4 pb-24">
         <MarqueeRow clients={CLIENTS_ROW1} direction="left" duration={36} delay={0.3} />
         <MarqueeRow clients={CLIENTS_ROW2} direction="right" duration={52} delay={0.5} />
       </div>
 
-      {/* ── Bottom fade to next section ────────────────────────────────── */}
       <div
         aria-hidden
         className="absolute bottom-0 left-0 right-0 h-24 pointer-events-none"

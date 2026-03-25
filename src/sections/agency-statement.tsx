@@ -22,7 +22,6 @@ const STATS = [
   { value: 40, suffix: "+", label: "Happy Clients" },
 ];
 
-/* ── Animated number counter ──────────────────────────────────────── */
 function Counter({ value, suffix }: { value: number; suffix: string }) {
   const ref = useRef<HTMLSpanElement>(null);
   const inView = useInView(ref, { once: false, margin: "-50px" });
@@ -68,7 +67,6 @@ export default function AgencyStatement() {
   // Gracefully darkens to convey depth as it gets buried.
   const sectionFilter = useTransform(parallaxProgress, [0, 1], ["brightness(1)", "brightness(0.4)"]);
 
-  // Variants for premium animations
   const fadeLeft: any = {
     hidden: { opacity: 0, x: -60, filter: "blur(4px)" },
     visible: { opacity: 1, x: 0, filter: "blur(0px)", transition: { duration: 0.8, ease: "easeOut" } }
@@ -106,7 +104,6 @@ export default function AgencyStatement() {
         filter: sectionFilter,
       }}
     >
-      {/* ── Watermark background layer ─────────────────────────────────── */}
       <motion.div
         aria-hidden
         style={{ y: watermarkY }}
@@ -124,7 +121,6 @@ export default function AgencyStatement() {
         />
       </motion.div>
 
-      {/* ── Decorative vertical line ───────────────────────────────────── */}
       <motion.div
         aria-hidden
         style={{ y: decorLineY }}
@@ -136,7 +132,6 @@ export default function AgencyStatement() {
           ══════════════════════════════════════════════════════ */}
       <div className="lg:hidden flex flex-col w-full">
 
-        {/* ── Text content ─────────────────────────────────────────────── */}
         <motion.div
           className="flex flex-col px-6 pt-8 pb-4 relative z-10"
           initial="hidden"
@@ -176,7 +171,6 @@ export default function AgencyStatement() {
           </motion.p>
         </motion.div>
 
-        {/* ── Cube area ─────────────────────────────────────────────────── */}
         <motion.div
           className="relative w-full flex items-center justify-center"
           style={{ height: "420px" }}
@@ -191,7 +185,6 @@ export default function AgencyStatement() {
           </div>
         </motion.div>
 
-        {/* ── Stats grid ───────────────────────────────────────────────── */}
         <motion.div
           className="px-6 pb-4 relative z-10"
           initial="hidden"
@@ -227,7 +220,6 @@ export default function AgencyStatement() {
         {/* Using justify-between so top content and bottom stats never collide   */}
         <div className="absolute top-0 bottom-0 left-0 right-[52%] flex flex-col justify-between py-16 px-10 xl:px-20 z-10">
 
-          {/* TOP: label + headline + body */}
           <motion.div
             className="flex flex-col justify-center flex-1 min-h-0"
             initial="hidden"
@@ -291,7 +283,6 @@ export default function AgencyStatement() {
           </motion.div>
         </div>
 
-        {/* ── Right half: Cube ─────────────────────────────────────────── */}
         <motion.div
           className="absolute top-0 bottom-0 right-0 w-[52%] flex items-center justify-center z-10"
           initial="hidden"
@@ -303,7 +294,6 @@ export default function AgencyStatement() {
         </motion.div>
       </div>
 
-      {/* ── Marquee ticker (always visible) ──────────────────────────────── */}
       <div className="relative w-full overflow-hidden border-t border-gray-100 z-10 bg-white">
         <motion.div
           className="flex whitespace-nowrap py-3"

@@ -14,11 +14,9 @@ import {
 import type { LucideIcon } from "lucide-react";
 import HeroCube from "./hero-cube";
 
-// ── Constants ─────────────────────────────────────────────────────────────────
 const ORBITAL_SIZE = 560;
 const CUBE_SIZE = 290;
 
-// ── Orbit data — agency services ──────────────────────────────────────────────
 const ORBITS: {
     radius: number;
     duration: number;
@@ -81,7 +79,6 @@ export default function AgencyCube() {
                 className="relative flex items-center justify-center"
                 style={{ width: ORBITAL_SIZE, height: ORBITAL_SIZE }}
             >
-                {/* ── Radial glow ──────────────────────────────────────────────────── */}
                 <div
                     aria-hidden
                     style={{
@@ -98,7 +95,6 @@ export default function AgencyCube() {
                     }}
                 />
 
-                {/* ── Three.js cube canvas ─────────────────────────────────────────── */}
                 <div
                     style={{
                         position: "absolute",
@@ -113,7 +109,6 @@ export default function AgencyCube() {
                     <HeroCube />
                 </div>
 
-                {/* ── Orbital system — pops in when cube lands ─────────────────────── */}
                 <div style={{ position: "absolute", inset: 0, pointerEvents: "none" }}>
                     {ORBITS.map((orbit, oi) => (
                         <motion.div
@@ -147,7 +142,6 @@ export default function AgencyCube() {
                                 }}
                             />
 
-                            {/* Icon+Label Items on this orbit */}
                             {orbit.items.map(({ Icon, label, startAngle }, ii) => (
                                 <motion.div
                                     key={label}

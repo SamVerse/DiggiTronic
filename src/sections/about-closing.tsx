@@ -16,7 +16,6 @@ const LINES = [
 export default function AboutClosing() {
   const sectionRef = useRef<HTMLElement>(null);
 
-  /* Background glow intensity on scroll-in */
   const { scrollYProgress: inProgress } = useScroll({
     target: sectionRef,
     offset: ["start end", "end start"],
@@ -48,7 +47,6 @@ export default function AboutClosing() {
         />
       </motion.div>
 
-      {/* Subtle grid */}
       <div
         aria-hidden
         className="absolute inset-0 pointer-events-none opacity-[0.02]"
@@ -62,7 +60,6 @@ export default function AboutClosing() {
 
       <div className="relative z-10 flex flex-col items-center text-center px-6 py-28 md:py-36">
 
-        {/* Kicker */}
         <motion.p
           className="text-[9px] uppercase font-mono tracking-[0.55em] mb-12"
           style={{ color: "rgba(235,115,0,0.7)" }}
@@ -98,7 +95,6 @@ export default function AboutClosing() {
           ))}
         </div>
 
-        {/* Animated underline under last line */}
         <motion.div
           className="mt-4 rounded-full"
           style={{ height: "3px", background: "#EB7300" }}
@@ -108,7 +104,6 @@ export default function AboutClosing() {
           transition={{ delay: 0.45, duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
         />
 
-        {/* Closing micro-line */}
         <motion.p
           className="mt-10 text-[9px] uppercase font-mono tracking-[0.5em]"
           style={{ color: "rgba(255,255,255,0.3)" }}

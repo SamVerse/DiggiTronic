@@ -48,7 +48,6 @@ const staggerContainer: Variants = {
 export default function AboutTeam() {
   const sectionRef = useRef<HTMLElement>(null);
 
-  /* Parallax scroll-out */
   const { scrollYProgress } = useScroll({
     target: sectionRef,
     offset: ["start start", "end start"],
@@ -73,7 +72,6 @@ export default function AboutTeam() {
     >
       <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 py-28 md:py-36">
 
-        {/* Header */}
         <motion.div
           className="mb-16 flex flex-col"
           initial="hidden"
@@ -96,7 +94,6 @@ export default function AboutTeam() {
           </motion.h2>
         </motion.div>
 
-        {/* Team grid */}
         <motion.div
           className="grid grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12"
           initial="hidden"
@@ -110,7 +107,6 @@ export default function AboutTeam() {
               variants={fadeUp}
               className="flex flex-col items-center text-center group"
             >
-              {/* Avatar */}
               <motion.div
                 className={`relative w-36 h-36 md:w-44 md:h-44 rounded-full bg-gradient-to-br ${member.color} flex items-center justify-center overflow-hidden cursor-default`}
                 style={{ filter: "grayscale(0.85)" }}
@@ -127,7 +123,6 @@ export default function AboutTeam() {
                   {member.initial}
                 </span>
 
-                {/* Hover overlay */}
                 <motion.div
                   className="absolute inset-0 rounded-full"
                   style={{
@@ -140,10 +135,8 @@ export default function AboutTeam() {
                 />
               </motion.div>
 
-              {/* Name */}
               <p className="mt-5 font-black text-gray-900 text-sm">{member.name}</p>
 
-              {/* Role */}
               <p
                 className="text-[10px] uppercase tracking-[0.25em] text-gray-400 mt-1"
               >

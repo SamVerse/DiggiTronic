@@ -1,10 +1,6 @@
 import { notFound } from "next/navigation";
 import BlogDetailClient from "./blog-detail-client";
-import { BLOGS, getBlogBySlug } from "@/data/blogs";
-
-export function generateStaticParams() {
-    return BLOGS.map((b) => ({ slug: b.slug }));
-}
+import { getBlogBySlug, getRelatedBlogs } from "@/lib/blogs";
 
 export default async function BlogDetailPage({
     params,
@@ -12,7 +8,10 @@ export default async function BlogDetailPage({
     params: Promise<{ slug: string }>;
 }) {
     const { slug } = await params;
-    const blog = getBlogBySlug(slug);
+    const [blog, relatedBlogs] = await Promise.all([
+        getBlogBySlug(slug),
+        getRelatedBlogs(slug, 3),
+    ]);
     if (!blog) notFound();
-    return <BlogDetailClient blog={blog} />;
+    return <BlogDetailClient blog={blog} relatedBlogs={relatedBlogs} />;
 }

@@ -85,7 +85,6 @@ export default function ServicesDropdown({ isOpen, isLightSection, onClose }: Pr
                     exit={{ opacity: 0, y: -6, filter: "blur(4px)", scale: 0.99 }}
                     transition={{ duration: 0.28, ease: [0.16, 1, 0.3, 1] }}
                 >
-                    {/* Subtle top accent line */}
                     <div
                         className="absolute top-0 left-0 right-0 h-px"
                         style={{
@@ -94,7 +93,6 @@ export default function ServicesDropdown({ isOpen, isLightSection, onClose }: Pr
                         }}
                     />
 
-                    {/* Service grid */}
                     <motion.div
                         className="grid grid-cols-2 gap-px p-2"
                         style={{
@@ -122,13 +120,11 @@ export default function ServicesDropdown({ isOpen, isLightSection, onClose }: Pr
                                         (e.currentTarget as HTMLElement).style.background = "transparent";
                                     }}
                                 >
-                                    {/* Left orange accent bar */}
                                     <div
                                         className="absolute left-0 top-2 bottom-2 w-0.5 rounded-full origin-center scale-y-0 group-hover:scale-y-100 transition-transform duration-300 ease-out"
                                         style={{ background: "#ff4d00" }}
                                     />
 
-                                    {/* Text content */}
                                     <div className="flex-1 min-w-0 pl-1">
                                         <p
                                             className="text-[13px] font-semibold leading-tight transition-colors duration-200"
@@ -144,7 +140,6 @@ export default function ServicesDropdown({ isOpen, isLightSection, onClose }: Pr
                                         </p>
                                     </div>
 
-                                    {/* Arrow */}
                                     <ArrowRight
                                         size={13}
                                         className="shrink-0 opacity-0 -translate-x-1 transition-all duration-200 ease-out group-hover:opacity-100 group-hover:translate-x-0"
@@ -155,7 +150,6 @@ export default function ServicesDropdown({ isOpen, isLightSection, onClose }: Pr
                         ))}
                     </motion.div>
 
-                    {/* Bottom CTA strip */}
                     <div
                         className="px-4 py-3 flex items-center justify-between"
                         style={{

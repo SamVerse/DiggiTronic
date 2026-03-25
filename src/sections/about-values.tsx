@@ -85,7 +85,6 @@ function ValueCard({ value, index }: { value: typeof VALUES[0]; index: number })
           transition: { duration: 0.3, ease: "easeOut" },
         }}
       >
-        {/* Glass background */}
         <div
           className="absolute inset-0 rounded-3xl"
           style={{
@@ -95,7 +94,6 @@ function ValueCard({ value, index }: { value: typeof VALUES[0]; index: number })
           }}
         />
 
-        {/* Hover glow layer */}
         <motion.div
           className="absolute inset-0 rounded-3xl pointer-events-none"
           style={{
@@ -109,7 +107,6 @@ function ValueCard({ value, index }: { value: typeof VALUES[0]; index: number })
           transition={{ duration: 0.3 }}
         />
 
-        {/* Content */}
         <div className="relative z-10">
           <span
             className="text-[9px] font-mono tracking-[0.4em]"
@@ -132,7 +129,6 @@ function ValueCard({ value, index }: { value: typeof VALUES[0]; index: number })
             {value.body}
           </p>
 
-          {/* Bottom accent line */}
           <div className="mt-8">
             <motion.div
               className="h-0.5 rounded-full"
@@ -152,14 +148,12 @@ export default function AboutValues() {
   const sectionRef = useRef<HTMLElement>(null);
   const gridRef = useRef<HTMLDivElement>(null);
 
-  /* Parallax scroll-out */
   const { scrollYProgress } = useScroll({
     target: sectionRef,
     offset: ["start start", "end start"],
   });
   const sectionY = useTransform(scrollYProgress, [0, 1], ["0%", "60%"]);
 
-  /* GSAP stagger entrance */
   useGSAP(
     () => {
       const cards = gridRef.current?.querySelectorAll(".value-card");
@@ -190,7 +184,6 @@ export default function AboutValues() {
         y: sectionY,
       }}
     >
-      {/* Subtle radial glow */}
       <div
         aria-hidden
         className="absolute inset-0 pointer-events-none"
@@ -201,7 +194,6 @@ export default function AboutValues() {
       />
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 py-28 md:py-36">
-        {/* Header */}
         <motion.div
           className="mb-16 flex flex-col items-center text-center"
           initial="hidden"
@@ -234,7 +226,6 @@ export default function AboutValues() {
           </motion.h2>
         </motion.div>
 
-        {/* Cards grid */}
         <div
           ref={gridRef}
           className="grid grid-cols-1 md:grid-cols-2 gap-5"

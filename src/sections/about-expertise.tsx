@@ -58,7 +58,6 @@ const staggerContainer: Variants = {
   visible: { transition: { staggerChildren: 0.1 } },
 };
 
-/* Animated counter */
 function Counter({ value, suffix }: { value: number; suffix: string }) {
   const ref = useRef<HTMLSpanElement>(null);
   const inView = useInView(ref, { once: false, margin: "-50px" });
@@ -94,7 +93,6 @@ export default function AboutExpertise() {
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 py-24 md:py-32">
 
-        {/* Section header */}
         <motion.div
           className="mb-16"
           initial="hidden"
@@ -125,7 +123,6 @@ export default function AboutExpertise() {
           </motion.h2>
         </motion.div>
 
-        {/* Stats row */}
         <motion.div
           className="grid grid-cols-3 gap-4 md:gap-8 mb-20 pb-16"
           initial="hidden"
@@ -156,7 +153,6 @@ export default function AboutExpertise() {
           ))}
         </motion.div>
 
-        {/* Services grid */}
         <motion.div
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"
           initial="hidden"

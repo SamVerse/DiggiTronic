@@ -13,7 +13,6 @@ export function VideoVisual3D() {
 
     let rafId = 0;
 
-    /* ── Renderer ──────────────────────────────────────────────────── */
     const W = container.clientWidth || 560;
     const H = container.clientHeight || 500;
 
@@ -29,13 +28,11 @@ export function VideoVisual3D() {
     renderer.domElement.style.width = "100%";
     renderer.domElement.style.display = "block";
 
-    /* ── Scene + Camera ────────────────────────────────────────────── */
     const scene = new THREE.Scene();
     const FOV = 50;
     const camera = new THREE.PerspectiveCamera(FOV, W / H, 0.01, 200);
     // camera position set dynamically after model loads
 
-    /* ── Lighting ──────────────────────────────────────────────────── */
     scene.add(new THREE.AmbientLight(0xffffff, 0.4));
 
     const key = new THREE.DirectionalLight(0xffeedd, 2.2);
@@ -54,11 +51,9 @@ export function VideoVisual3D() {
     top.position.set(0, 6, 5);
     scene.add(top);
 
-    /* ── Scene group — receives mouse parallax ──────────────────────── */
     const sceneGroup = new THREE.Group();
     scene.add(sceneGroup);
 
-    /* ── Mouse parallax state ───────────────────────────────────────── */
     const mouse = { x: 0, y: 0 };
     const targetRot = { x: 0, y: 0 };
 
@@ -68,7 +63,6 @@ export function VideoVisual3D() {
     };
     window.addEventListener("mousemove", onMouseMove);
 
-    /* ── Hover point light ─────────────────────────────────────────── */
     let isHovered = false;
     const pointLight = new THREE.PointLight(0xff8030, 1.5, 20);
     sceneGroup.add(pointLight);
@@ -78,7 +72,6 @@ export function VideoVisual3D() {
     renderer.domElement.addEventListener("mouseenter", onMouseEnter);
     renderer.domElement.addEventListener("mouseleave", onMouseLeave);
 
-    /* ── Load GLB Camera Model ─────────────────────────────────────── */
     const loader = new GLTFLoader();
     loader.load(
       "/3d-models/dae_-_bilora_bella_46_camera_-_game_ready_asset.glb",
@@ -98,7 +91,6 @@ export function VideoVisual3D() {
         // Log real dims so we can tune offsets
         console.log("[GLB] size:", size, "maxDim:", maxDim, "center:", center);
 
-        // Center model at world origin
         model.position.x -= center.x;
         model.position.y -= center.y;
         model.position.z -= center.z;
@@ -116,7 +108,6 @@ export function VideoVisual3D() {
         camera.lookAt(0, 0, 0);
         camera.updateProjectionMatrix();
 
-        // Point light next to camera
         pointLight.position.set(1.5, 1.5, dist * 0.8);
 
         // Fine-tune offsets proportional to targetSize so they scale correctly
@@ -126,7 +117,6 @@ export function VideoVisual3D() {
       (err) => console.error("GLTFLoader error:", err)
     );
 
-    /* ── Film grain ────────────────────────────────────────────────── */
     const baseVS = /* glsl */`
       varying vec2 vUv;
       void main() { vUv = uv; gl_Position = projectionMatrix * modelViewMatrix * vec4(position,1.0); }
@@ -148,7 +138,6 @@ export function VideoVisual3D() {
     grainMesh.position.z = -5;
     scene.add(grainMesh);
 
-    /* ── Animation loop ────────────────────────────────────────────── */
     const clock = new THREE.Clock();
     let elapsed = 0;
 
@@ -158,7 +147,6 @@ export function VideoVisual3D() {
       elapsed += delta;
       grainMat.uniforms.time.value = elapsed;
 
-      // Continuous floating
       sceneGroup.position.y = Math.sin(elapsed * 0.7) * 0.05;
       sceneGroup.rotation.z = Math.sin(elapsed * 0.45) * 0.008;
 
@@ -174,7 +162,6 @@ export function VideoVisual3D() {
     }
     animate();
 
-    /* ── Resize ────────────────────────────────────────────────────── */
     const resizeObserver = new ResizeObserver(() => {
       const nW = container.clientWidth || 560;
       const nH = container.clientHeight || 500;
@@ -184,7 +171,6 @@ export function VideoVisual3D() {
     });
     resizeObserver.observe(container);
 
-    /* ── Cleanup ───────────────────────────────────────────────────── */
     return () => {
       cancelAnimationFrame(rafId);
       resizeObserver.disconnect();

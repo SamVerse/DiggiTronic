@@ -19,7 +19,6 @@ import type { ServiceOffering } from "@/data/services";
 
 gsap.registerPlugin(ScrollTrigger);
 
-/* ── Icon map ────────────────────────────────────────────────────── */
 const ICON_MAP: Record<string, LucideIcon> = {
   Film, Box, Sparkles, Play,
   Share2, TrendingUp,
@@ -56,7 +55,6 @@ function OfferingRow({ offering, index }: { offering: ServiceOffering; index: nu
         transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
       />
 
-      {/* Number */}
       <span
         className="shrink-0 font-mono font-black tabular-nums"
         style={{
@@ -69,7 +67,6 @@ function OfferingRow({ offering, index }: { offering: ServiceOffering; index: nu
         {String(index + 1).padStart(2, "0")}
       </span>
 
-      {/* Title + desc */}
       <div className="flex-1 min-w-0">
         <p
           className="font-black text-white transition-colors duration-300 group-hover:text-[#EB7300] leading-tight mb-2"
@@ -85,7 +82,6 @@ function OfferingRow({ offering, index }: { offering: ServiceOffering; index: nu
         </p>
       </div>
 
-      {/* Icon box */}
       <motion.div
         className="shrink-0 rounded-xl flex items-center justify-center"
         style={{
@@ -138,7 +134,6 @@ export default function ServiceOfferings({ offerings }: { offerings: ServiceOffe
       />
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 py-24 md:py-32">
-        {/* Header */}
         <motion.div
           className="mb-4"
           initial="hidden"
@@ -169,7 +164,6 @@ export default function ServiceOfferings({ offerings }: { offerings: ServiceOffe
           </motion.div>
         </motion.div>
 
-        {/* Editorial row list */}
         <div
           ref={listRef}
           className="flex flex-col border-t"

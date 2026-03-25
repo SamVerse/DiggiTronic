@@ -9,7 +9,6 @@ import type { UseCase } from "@/data/services";
 
 gsap.registerPlugin(ScrollTrigger);
 
-/* ── Per-service layout configs ─────────────────────────────────── */
 type CardSpan = { col: string; minH: number };
 type LayoutConfig = { gridClass: string; spans: CardSpan[]; accent: string };
 
@@ -104,7 +103,6 @@ const DEFAULT_LAYOUT: LayoutConfig = {
   accent: "#EB7300",
 };
 
-/* ── Card ───────────────────────────────────────────────────────── */
 function UseCaseCard({
   useCase,
   index,
@@ -140,7 +138,6 @@ function UseCaseCard({
       whileHover={{ scale: 1.012 }}
       transition={{ type: "spring", stiffness: 280, damping: 26 }}
     >
-      {/* Base dark gradient */}
       <motion.div
         className="absolute inset-0 pointer-events-none"
         style={{ background: "linear-gradient(to top, rgba(0,0,0,0.96) 0%, rgba(0,0,0,0.35) 55%, transparent 100%)" }}
@@ -148,7 +145,6 @@ function UseCaseCard({
         transition={{ duration: 0.35 }}
       />
 
-      {/* Accent glow on hover */}
       <motion.div
         className="absolute inset-0 pointer-events-none"
         style={{ background: `radial-gradient(ellipse 90% 55% at 50% 90%, ${accentColor}1c 0%, transparent 65%)` }}
@@ -172,7 +168,6 @@ function UseCaseCard({
         />
       </div>
 
-      {/* Left accent bar */}
       <motion.div
         className="absolute left-0 top-0 bottom-0 w-[3px] rounded-full pointer-events-none"
         style={{ background: `linear-gradient(to bottom, transparent, ${accentColor}, transparent)` }}
@@ -180,7 +175,6 @@ function UseCaseCard({
         transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
       />
 
-      {/* Top-left index + label */}
       <div className="absolute top-6 left-7 flex items-center gap-3 z-10">
         <motion.span
           className="font-black font-mono"
@@ -196,7 +190,6 @@ function UseCaseCard({
         </span>
       </div>
 
-      {/* Ghost number watermark */}
       <motion.div
         className="absolute top-3 right-5 font-black select-none pointer-events-none"
         style={{ fontSize: "clamp(4rem, 8vw, 7rem)", lineHeight: 1, letterSpacing: "-0.05em" }}
@@ -237,7 +230,6 @@ function UseCaseCard({
         transition={{ type: "spring", stiffness: 520, damping: 44 }}
       >
         <div className="p-7">
-          {/* Pill badge */}
           <motion.div
             className="inline-flex items-center gap-2 mb-4 px-3 py-1 rounded-full"
             style={{ background: `${accentColor}15`, border: `1px solid ${accentColor}30` }}
@@ -250,7 +242,6 @@ function UseCaseCard({
             </span>
           </motion.div>
 
-          {/* Title */}
           <motion.h3
             className="font-black text-white mb-3"
             style={{ fontSize: "clamp(1.25rem, 2.2vw, 1.75rem)", letterSpacing: "-0.025em", lineHeight: 1.05 }}
@@ -260,7 +251,6 @@ function UseCaseCard({
             {useCase.title}
           </motion.h3>
 
-          {/* Description */}
           <motion.p
             className="text-xs leading-[1.9] max-w-sm"
             style={{ color: "rgba(255,255,255,0.52)" }}
@@ -270,7 +260,6 @@ function UseCaseCard({
             {useCase.desc}
           </motion.p>
 
-          {/* Accent line */}
           <motion.div
             className="mt-5 h-px rounded-full"
             style={{ background: `linear-gradient(90deg, ${accentColor}, transparent)`, originX: 0 }}
@@ -283,7 +272,6 @@ function UseCaseCard({
   );
 }
 
-/* ── Section ─────────────────────────────────────────────────────── */
 export default function ServiceUseCases({ useCases, slug }: { useCases: UseCase[]; slug: string }) {
   const cardsRef = useRef<HTMLDivElement>(null);
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
@@ -313,7 +301,6 @@ export default function ServiceUseCases({ useCases, slug }: { useCases: UseCase[
       />
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 py-16 md:py-20">
-        {/* Header */}
         <motion.div
           className="mb-14"
           initial={{ opacity: 0, y: 24 }}
@@ -340,7 +327,6 @@ export default function ServiceUseCases({ useCases, slug }: { useCases: UseCase[
           </div>
         </motion.div>
 
-        {/* Bento grid */}
         <div ref={cardsRef} className={`grid gap-4 ${layout.gridClass}`}>
           {useCases.map((uc, i) => (
             <UseCaseCard

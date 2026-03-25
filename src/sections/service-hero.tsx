@@ -11,7 +11,6 @@ import { SERVICE_VISUALS } from "@/components/service-visuals";
 export default function ServiceHero({ service }: { service: ServiceData }) {
   const sectionRef = useRef<HTMLElement>(null);
 
-  /* Scroll parallax exit */
   const { scrollYProgress } = useScroll({
     target: sectionRef,
     offset: ["start start", "end start"],
@@ -19,7 +18,6 @@ export default function ServiceHero({ service }: { service: ServiceData }) {
   const sectionY = useTransform(scrollYProgress, [0, 1], ["0%", "45%"]);
   const sectionBrightness = useTransform(scrollYProgress, [0, 1], ["brightness(1)", "brightness(0.4)"]);
 
-  /* Mouse-tracked ambient glow */
   const rawX = useMotionValue(0);
   const rawY = useMotionValue(0);
   const glowX = useSpring(rawX, { stiffness: 40, damping: 20 });
@@ -43,7 +41,6 @@ export default function ServiceHero({ service }: { service: ServiceData }) {
       className="relative w-full min-h-screen flex items-center overflow-hidden"
       style={{ background: "#0a0a0a", y: sectionY, filter: sectionBrightness }}
     >
-      {/* Ambient glow */}
       <motion.div
         aria-hidden
         className="absolute inset-0 pointer-events-none"
@@ -54,7 +51,6 @@ export default function ServiceHero({ service }: { service: ServiceData }) {
         }}
       />
 
-      {/* Grid overlay */}
       <div
         aria-hidden
         className="absolute inset-0 pointer-events-none opacity-[0.025]"
@@ -66,21 +62,17 @@ export default function ServiceHero({ service }: { service: ServiceData }) {
         }}
       />
 
-      {/* Gradient bottom fade into next section */}
       <div
         aria-hidden
         className="absolute bottom-0 left-0 right-0 h-32 pointer-events-none"
         style={{ background: "linear-gradient(to bottom, transparent, #0a0a0a)" }}
       />
 
-      {/* Two-column layout */}
       <div
         className="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-[1fr_1fr] gap-12 lg:gap-16 items-center"
         style={{ paddingTop: "8rem", paddingBottom: "6rem" }}
       >
-        {/* ── Left: Content ─────────────────────────────────────── */}
         <div className="flex flex-col">
-          {/* Kicker */}
           <motion.p
             className="text-[9px] font-mono uppercase tracking-[0.6em] mb-8"
             style={{ color: "#EB7300" }}
@@ -116,7 +108,6 @@ export default function ServiceHero({ service }: { service: ServiceData }) {
             ))}
           </div>
 
-          {/* Orange accent underline */}
           <motion.div
             className="h-0.5 rounded-full mb-7"
             style={{ background: "linear-gradient(90deg, #EB7300, transparent)", originX: 0 }}
@@ -125,7 +116,6 @@ export default function ServiceHero({ service }: { service: ServiceData }) {
             transition={{ delay: 0.6, duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
           />
 
-          {/* Tagline */}
           <motion.p
             className="font-black text-white mb-4"
             style={{ fontSize: "clamp(1rem, 2vw, 1.3rem)", letterSpacing: "-0.01em", color: "rgba(255,255,255,0.75)" }}
@@ -136,7 +126,6 @@ export default function ServiceHero({ service }: { service: ServiceData }) {
             {service.tagline}
           </motion.p>
 
-          {/* Description */}
           <motion.p
             className="text-sm leading-[1.85] mb-10 max-w-md"
             style={{ color: "rgba(255,255,255,0.42)" }}
@@ -147,7 +136,6 @@ export default function ServiceHero({ service }: { service: ServiceData }) {
             {service.description}
           </motion.p>
 
-          {/* CTA buttons */}
           <motion.div
             className="flex flex-wrap gap-4"
             initial={{ opacity: 0, y: 10 }}
@@ -179,7 +167,6 @@ export default function ServiceHero({ service }: { service: ServiceData }) {
           </motion.div>
         </div>
 
-        {/* ── Right: Visual ──────────────────────────────────────── */}
         <motion.div
           className="relative flex items-center justify-center"
           initial={{ opacity: 0, x: 30 }}
@@ -193,7 +180,6 @@ export default function ServiceHero({ service }: { service: ServiceData }) {
         </motion.div>
       </div>
 
-      {/* Scroll indicator */}
       <motion.div
         className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 pointer-events-none select-none"
         initial={{ opacity: 0 }}

@@ -10,7 +10,6 @@ const World = dynamic(
   { ssr: false }
 );
 
-// ── Globe config — blue earth, orange arcs ─────────────────────────────────
 const GLOBE_CONFIG = {
   pointSize: 1.6,
   globeColor: "#050e1c",       // deep navy — the "earth" body
@@ -59,7 +58,6 @@ export default function HeroGlobe() {
       ref={wrapRef}
       className="relative w-full pointer-events-none select-none"
       style={{
-        // ── ✏️ CONFIGURABLE: height of the baseline globe bounding box ───
         // We set overflow to "visible" below so it is NO LONGER clipped at the top!
         // The globe rays can freely extend upwards behind the "No Boundaries" text.
         height: "clamp(280px, 50vw, 780px)",
@@ -81,7 +79,6 @@ export default function HeroGlobe() {
         <div
           className="absolute left-1/2 top-[-10%] sm:top-[5%] md:top-[20%] lg:top-[50%] -translate-x-1/2"
           style={{
-            // ── ✏️ CONFIGURABLE: Canvas positioning ───────────────────────
             // `height`      — Because overflow is visible, making this taller just increases the 3D sphere size.
             // Responsive positioning is now handled via Tailwind classes above!
             width: "100%",

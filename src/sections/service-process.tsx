@@ -59,14 +59,12 @@ export default function ServiceProcess() {
         className="absolute top-0 left-0 right-0 h-px"
         style={{ background: "linear-gradient(90deg, transparent, rgba(235,115,0,0.2), transparent)" }}
       />
-      {/* Ambient */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{ background: "radial-gradient(ellipse 55% 35% at 50% 0%, rgba(235,115,0,0.04) 0%, transparent 65%)" }}
       />
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 py-24 md:py-32">
-        {/* Header */}
         <motion.div
           className="mb-16"
           initial="hidden"
@@ -95,14 +93,11 @@ export default function ServiceProcess() {
 
           {/* Left — step list */}
           <div ref={containerRef} className="flex flex-col">
-            {/* Vertical progress line */}
             <div className="relative flex flex-col">
-              {/* Background rail */}
               <div
                 className="absolute left-4 top-4 bottom-4 w-px"
                 style={{ background: "rgba(255,255,255,0.06)" }}
               />
-              {/* Active fill */}
               <motion.div
                 className="absolute left-4 top-4 w-px"
                 style={{ background: "linear-gradient(to bottom, #EB7300, rgba(235,115,0,0.1))", originY: 0 }}
@@ -125,7 +120,6 @@ export default function ServiceProcess() {
                     viewport={{ once: false, margin: "-40px" }}
                     transition={{ delay: i * 0.1, duration: 0.5, ease: "easeOut" }}
                   >
-                    {/* Step circle */}
                     <div
                       className="relative z-10 w-8 h-8 rounded-full flex items-center justify-center shrink-0 transition-all duration-300"
                       style={{
@@ -141,7 +135,6 @@ export default function ServiceProcess() {
                       <Icon size={13} color={isActive ? "#fff" : isDone ? "#EB7300" : "rgba(255,255,255,0.35)"} />
                     </div>
 
-                    {/* Label */}
                     <div className="flex-1">
                       <div className="flex items-baseline gap-2.5">
                         <span
@@ -162,7 +155,6 @@ export default function ServiceProcess() {
                       </div>
                     </div>
 
-                    {/* Active indicator dot */}
                     {isActive && (
                       <motion.div
                         className="w-1.5 h-1.5 rounded-full shrink-0"
@@ -191,7 +183,6 @@ export default function ServiceProcess() {
                 border: "1px solid rgba(255,255,255,0.07)",
               }}
             >
-              {/* Step number watermark */}
               <div
                 className="font-black leading-none mb-4 select-none"
                 style={{
@@ -223,7 +214,6 @@ export default function ServiceProcess() {
                 {STEPS[activeStep].desc}
               </p>
 
-              {/* Next step hint */}
               {activeStep < STEPS.length - 1 && (
                 <button
                   onClick={() => setActiveStep(activeStep + 1)}

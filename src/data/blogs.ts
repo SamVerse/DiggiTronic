@@ -21,6 +21,8 @@ export const CATEGORIES = [
 
 export type Category = (typeof CATEGORIES)[number];
 
+// BLOGS array kept here only for the seed script (scripts/seed-blogs.ts).
+// All runtime blog fetching uses src/lib/blogs.ts (Supabase queries).
 export const BLOGS: Blog[] = [
   {
     slug: "future-of-digital-branding",
@@ -31,7 +33,7 @@ export const BLOGS: Blog[] = [
     readTime: "7 min read",
     excerpt:
       "How modern brands are evolving in a digital-first world — and what it takes to stay relevant in an era of constant disruption.",
-    coverImage: "/images/blog/1.webp",
+    coverImage: "https://yissbsrdgroglsghzkoq.supabase.co/storage/v1/object/public/blog-images/1.webp",
     content: `
       <p class="blog-intro">The rules of branding have changed. In a world where attention spans are shrinking and digital touchpoints are multiplying, the brands that thrive are those that dare to evolve. This isn't just about logos and color palettes anymore — it's about creating living, breathing digital identities.</p>
 
@@ -39,7 +41,7 @@ export const BLOGS: Blog[] = [
       <p>Traditional branding was built for print, billboards, and static media. But today's brands exist in motion — they animate, they respond, they adapt. A modern brand identity must feel alive across every screen size, every platform, and every interaction point.</p>
       
       <figure>
-        <img src="/images/blog/1.webp" alt="Dynamic digital branding concepts in action" />
+        <img src="https://yissbsrdgroglsghzkoq.supabase.co/storage/v1/object/public/blog-images/1.webp" alt="Dynamic digital branding concepts in action" />
         <figcaption>A living brand identity adapts to context and motion.</figcaption>
       </figure>
 
@@ -76,7 +78,7 @@ export const BLOGS: Blog[] = [
     readTime: "9 min read",
     excerpt:
       "The search landscape is changing rapidly. Here's how to stay ahead with strategies that align with where Google is heading.",
-    coverImage: "/images/blog/2.png",
+    coverImage: "https://yissbsrdgroglsghzkoq.supabase.co/storage/v1/object/public/blog-images/2.png",
     content: `
       <p class="blog-intro">Search engine optimization is in the middle of its most significant transformation since the introduction of mobile-first indexing. With AI overviews, zero-click searches, and evolving user intent models, the playbook for 2025 looks radically different.</p>
 
@@ -84,7 +86,7 @@ export const BLOGS: Blog[] = [
       <p>Google's AI-generated summaries now appear for a growing percentage of queries. This means traditional position-one rankings don't guarantee the same traffic they once did. The new goal? Getting your content cited within AI overviews.</p>
       
       <figure>
-        <img src="/images/blog/2.png" alt="Search engine metrics and AI integration data" />
+        <img src="https://yissbsrdgroglsghzkoq.supabase.co/storage/v1/object/public/blog-images/2.png" alt="Search engine metrics and AI integration data" />
         <figcaption>AI overviews are reshaping user search journeys.</figcaption>
       </figure>
 
@@ -124,7 +126,7 @@ export const BLOGS: Blog[] = [
     readTime: "8 min read",
     excerpt:
       "A deep dive into conversion-driven design strategies that turn visitors into customers without sacrificing aesthetics.",
-    coverImage: "/images/blog/3.png",
+    coverImage: "https://yissbsrdgroglsghzkoq.supabase.co/storage/v1/object/public/blog-images/3.png",
     content: `
       <p class="blog-intro">Beautiful websites that don't convert are expensive art projects. At DiggiTronic, we believe the best digital experiences are ones where stunning design and conversion performance work in perfect harmony.</p>
 
@@ -132,7 +134,7 @@ export const BLOGS: Blog[] = [
       <p>Every design decision influences user behavior. Color choices trigger emotional responses. Layout patterns guide eye movement. Typography affects readability and trust. Understanding these psychological principles is the foundation of conversion-driven design.</p>
       
       <figure>
-        <img src="/images/blog/3.png" alt="High-converting website interfaces and flows" />
+        <img src="https://yissbsrdgroglsghzkoq.supabase.co/storage/v1/object/public/blog-images/3.png" alt="High-converting website interfaces and flows" />
         <figcaption>Optimized user flows naturally drive better conversion rates.</figcaption>
       </figure>
 
@@ -172,7 +174,7 @@ export const BLOGS: Blog[] = [
     readTime: "6 min read",
     excerpt:
       "Why content marketing remains the highest-ROI channel for digital growth — and how to do it right in 2025.",
-    coverImage: "/images/blog/4.png",
+    coverImage: "https://yissbsrdgroglsghzkoq.supabase.co/storage/v1/object/public/blog-images/4.png",
     content: `
       <p class="blog-intro">In a world saturated with ads, content marketing stands out as the strategy that builds trust, authority, and long-term growth. But most brands are still doing it wrong.</p>
 
@@ -181,7 +183,7 @@ export const BLOGS: Blog[] = [
       <p>The math is simple: content marketing costs 62% less than traditional marketing and generates 3x as many leads. Yet most companies still allocate the majority of their budget to channels with diminishing returns.</p>
 
       <figure>
-        <img src="/images/blog/4.png" alt="Visualizing the ROI of sustained content efforts over time" />
+        <img src="https://yissbsrdgroglsghzkoq.supabase.co/storage/v1/object/public/blog-images/4.png" alt="Visualizing the ROI of sustained content efforts over time" />
         <figcaption>Content marketing creates a compounding return on investment.</figcaption>
       </figure>
 
@@ -216,7 +218,7 @@ export const BLOGS: Blog[] = [
     readTime: "10 min read",
     excerpt:
       "From automated workflows to AI-assisted creativity, here's how artificial intelligence is reshaping the agency landscape.",
-    coverImage: "/images/blog/blog5.png",
+    coverImage: "https://yissbsrdgroglsghzkoq.supabase.co/storage/v1/object/public/blog-images/blog5.png",
     content: `
       <p class="blog-intro">Artificial intelligence isn't coming for digital agencies — it's already here. The agencies that embrace AI as a force multiplier are pulling ahead. Those that resist it risk becoming irrelevant.</p>
 
@@ -224,7 +226,7 @@ export const BLOGS: Blog[] = [
       <p>The fear that AI will replace creative professionals is largely misguided. What AI actually does is eliminate the tedious parts of creative work — initial research, copy variations, image generation for mood boards, data analysis — freeing humans to focus on strategy, nuance, and creative direction.</p>
       
       <figure>
-        <img src="/images/blog/blog5.png" alt="Artificial intelligence dashboards and creative integration tools" />
+        <img src="https://yissbsrdgroglsghzkoq.supabase.co/storage/v1/object/public/blog-images/blog5.png" alt="Artificial intelligence dashboards and creative integration tools" />
         <figcaption>AI platforms act as an amplifying layer for human creativity.</figcaption>
       </figure>
 
@@ -261,7 +263,7 @@ export const BLOGS: Blog[] = [
     readTime: "8 min read",
     excerpt:
       "A no-fluff guide to building a social media presence that actually drives business results in 2025.",
-    coverImage: "/images/blog/blog6.png",
+    coverImage: "https://yissbsrdgroglsghzkoq.supabase.co/storage/v1/object/public/blog-images/blog6.png",
     content: `
       <p class="blog-intro">Social media marketing in 2025 is a completely different game than it was even two years ago. Algorithm changes, platform shifts, and evolving user behavior demand a fresh approach. Here's the strategy framework that drives real results.</p>
 
@@ -269,7 +271,7 @@ export const BLOGS: Blog[] = [
       <p>The biggest mistake brands make is trying to be active on every platform. Instead of spreading resources thin across six channels, dominate two or three where your audience actually lives. Quality engagement on fewer platforms always outperforms mediocre presence everywhere.</p>
       
       <figure>
-        <img src="/images/blog/blog6.png" alt="Social media analytics and strategic platform distribution" />
+        <img src="https://yissbsrdgroglsghzkoq.supabase.co/storage/v1/object/public/blog-images/blog6.png" alt="Social media analytics and strategic platform distribution" />
         <figcaption>Strategic platform selection yields far better engagement than spreading too thin.</figcaption>
       </figure>
 
@@ -304,7 +306,7 @@ export const BLOGS: Blog[] = [
     readTime: "5 min read",
     excerpt:
       "Typography is the invisible architecture of the web. Here's why getting it right is the difference between good and extraordinary.",
-    coverImage: "/images/blog/blog7.png",
+    coverImage: "https://yissbsrdgroglsghzkoq.supabase.co/storage/v1/object/public/blog-images/blog7.png",
     content: `
       <p class="blog-intro">95% of the information on the web is written language. If your typography is wrong, almost everything about your website is wrong. Yet typography remains the most underestimated element of web design.</p>
 
@@ -312,7 +314,7 @@ export const BLOGS: Blog[] = [
       <p>Great typography isn't just about choosing a pretty font. It's about hierarchy, rhythm, spacing, and readability. It's about creating a visual system that guides the eye, establishes mood, and communicates brand personality — all without the user consciously noticing.</p>
       
       <figure>
-        <img src="/images/blog/blog7.png" alt="An elegant typographic hierarchy layout across different viewports" />
+        <img src="https://yissbsrdgroglsghzkoq.supabase.co/storage/v1/object/public/blog-images/blog7.png" alt="An elegant typographic hierarchy layout across different viewports" />
         <figcaption>Beautiful typography establishes a site's personality before a user reads a single word.</figcaption>
       </figure>
 
@@ -347,7 +349,7 @@ export const BLOGS: Blog[] = [
     readTime: "7 min read",
     excerpt:
       "How to build a brand identity that resonates across every digital touchpoint — from website to social media to email.",
-    coverImage: "/images/blog/blog8.png",
+    coverImage: "https://yissbsrdgroglsghzkoq.supabase.co/storage/v1/object/public/blog-images/blog8.png",
     content: `
       <p class="blog-intro">A brand identity is more than a logo. In the digital age, it's a complete ecosystem of visual, verbal, and experiential elements that together create a cohesive perception in your audience's mind.</p>
 
@@ -355,7 +357,7 @@ export const BLOGS: Blog[] = [
       <p>Your logo is just the tip of the iceberg. A comprehensive digital brand identity includes typography systems, color architecture, iconography, illustration style, photography direction, motion language, voice and tone guidelines, and UX patterns. Each element must work independently and in concert.</p>
       
       <figure>
-        <img src="/images/blog/blog8.png" alt="A unified digital brand system mapped out on a design canvas" />
+        <img src="https://yissbsrdgroglsghzkoq.supabase.co/storage/v1/object/public/blog-images/blog8.png" alt="A unified digital brand system mapped out on a design canvas" />
         <figcaption>Modern brand guidelines must address UI components and interactive states.</figcaption>
       </figure>
 
@@ -383,21 +385,3 @@ export const BLOGS: Blog[] = [
   },
 ];
 
-export function getBlogBySlug(slug: string): Blog | undefined {
-  return BLOGS.find((b) => b.slug === slug);
-}
-
-export function getRelatedBlogs(currentSlug: string, limit = 3): Blog[] {
-  const current = getBlogBySlug(currentSlug);
-  if (!current) return BLOGS.slice(0, limit);
-
-  // Prefer same-category blogs, then fall back to others
-  const sameCategory = BLOGS.filter(
-    (b) => b.slug !== currentSlug && b.category === current.category
-  );
-  const others = BLOGS.filter(
-    (b) => b.slug !== currentSlug && b.category !== current.category
-  );
-
-  return [...sameCategory, ...others].slice(0, limit);
-}

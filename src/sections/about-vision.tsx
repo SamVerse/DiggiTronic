@@ -34,7 +34,6 @@ const underline: Variants = {
 export default function AboutVision() {
   const sectionRef = useRef<HTMLElement>(null);
 
-  /* Parallax scroll-out */
   const { scrollYProgress } = useScroll({
     target: sectionRef,
     offset: ["start start", "end start"],
@@ -59,7 +58,6 @@ export default function AboutVision() {
     >
       <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 py-28 md:py-36">
 
-        {/* Label */}
         <motion.p
           className="text-[9px] uppercase font-mono tracking-[0.55em] text-gray-400 mb-16 text-center"
           initial={{ opacity: 0, y: 16 }}
@@ -70,7 +68,6 @@ export default function AboutVision() {
           Our Direction
         </motion.p>
 
-        {/* Split grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 relative">
 
           {/* Vertical divider (desktop only) */}
@@ -88,7 +85,6 @@ export default function AboutVision() {
             viewport={{ once: false, margin: "-80px" }}
             variants={fadeLeft}
           >
-            {/* Decorative watermark number */}
             <span
               aria-hidden
               className="absolute z-[-1] -top-4 left-0 font-black text-gray-100 pointer-events-none select-none hidden lg:block"
@@ -111,7 +107,6 @@ export default function AboutVision() {
               To become a globally recognized digital growth partner.
             </h2>
 
-            {/* Orange underline */}
             <motion.div
               variants={underline}
               className="mt-5 mb-6 origin-left"
@@ -132,7 +127,6 @@ export default function AboutVision() {
             viewport={{ once: false, margin: "-80px" }}
             variants={fadeRight}
           >
-            {/* Decorative watermark number */}
             <span
               aria-hidden
               className="absolute z-[-1] -top-4 right-0 font-black text-gray-100 pointer-events-none select-none hidden lg:block"
@@ -155,7 +149,6 @@ export default function AboutVision() {
               To empower businesses with innovative digital solutions.
             </h2>
 
-            {/* Orange underline */}
             <motion.div
               variants={underline}
               className="mt-5 mb-6 origin-left"

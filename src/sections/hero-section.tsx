@@ -9,7 +9,6 @@ import LightRays from "@/components/LightRays";
 export default function HeroSection() {
   const sectionRef = useRef<HTMLElement>(null);
 
-  // Tracks 0→1 as the hero scrolls off the top of the viewport
   const { scrollYProgress } = useScroll({
     target: sectionRef,
     offset: ["start start", "end start"],
@@ -48,7 +47,6 @@ export default function HeroSection() {
           />
         </div>
 
-        {/* 2. MAIN HERO CONTENT */}
         <div className="relative z-10 flex flex-col items-center w-full px-4">
           <motion.a
             className="flex items-center mt-48 gap-2 border border-slate-800 bg-slate-900/50 text-gray-300 rounded-full px-4 py-2 backdrop-blur-sm"
@@ -116,7 +114,6 @@ export default function HeroSection() {
         </div>
       </div>
 
-      {/* ── Globe — top dome only, bottom fades into hero bg ──────── */}
       <div className="absolute bottom-0 left-0 right-0 w-full z-0 flex justify-center translate-y-[10%] pointer-events-none">
         <HeroGlobe />
       </div>

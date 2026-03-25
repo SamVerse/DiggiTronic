@@ -60,10 +60,8 @@ export default function TiltedImage({
   );
 
 
-  // Slight scale-up to enhance presence
   const scrollScale = useTransform(scrollYProgress, [0, 0.6, 1], [1, 1, 1.08]);
 
-  // Extra depth after rotation starts
   const scrollZ = useTransform(scrollYProgress, [0, 0.6, 1], [40, 40, 120]);
 
   function handleMouse(e: MouseEvent<HTMLElement>) {

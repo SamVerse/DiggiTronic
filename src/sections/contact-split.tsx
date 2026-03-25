@@ -8,7 +8,6 @@ import {
 } from "framer-motion";
 import { CheckCircle } from "lucide-react";
 
-/* ─── Animation Variants ──────────────────────────────────── */
 const fadeUp: Variants = {
   hidden: { opacity: 0, y: 40, filter: "blur(4px)" },
   visible: {
@@ -23,7 +22,6 @@ const stagger: Variants = {
   visible: { transition: { staggerChildren: 0.13 } },
 };
 
-/* ─── Budget Options ──────────────────────────────────────── */
 const BUDGETS = [
   { label: "< $500", id: "xs" },
   { label: "$500–1K", id: "sm" },
@@ -32,7 +30,6 @@ const BUDGETS = [
   { label: "$10K+", id: "xl" },
 ];
 
-/* ─── Floating Label Field ────────────────────────────────── */
 interface FieldProps {
   label: string;
   type?: string;
@@ -72,7 +69,6 @@ function FloatingField({
         className="relative"
         style={{ borderBottom: `1px solid ${borderColor}`, transition: "border-color 0.3s" }}
       >
-        {/* Floating label */}
         <label
           htmlFor={uid}
           className="absolute left-0 pointer-events-none font-mono uppercase tracking-wider transition-all duration-300"
@@ -116,7 +112,6 @@ function FloatingField({
           />
         )}
 
-        {/* Orange animated underline on focus */}
         <motion.div
           className="absolute bottom-0 left-0 h-px"
           style={{ background: "#EB7300" }}
@@ -129,7 +124,6 @@ function FloatingField({
   );
 }
 
-/* ─── Budget Card ─────────────────────────────────────────── */
 function BudgetCard({
   label,
   selected,
@@ -166,7 +160,6 @@ function BudgetCard({
   );
 }
 
-/* ─── Success Panel ───────────────────────────────────────── */
 function SuccessPanel() {
   return (
     <motion.div
@@ -176,7 +169,6 @@ function SuccessPanel() {
       animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
       transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
     >
-      {/* Pulsing check circle */}
       <motion.div
         className="relative flex items-center justify-center"
         style={{ width: "80px", height: "80px" }}
@@ -212,11 +204,9 @@ function SuccessPanel() {
   );
 }
 
-/* ─── Main Component ──────────────────────────────────────── */
 export default function ContactSplit() {
   const sectionRef = useRef<HTMLElement>(null);
 
-  /* Form state */
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [mobile, setMobile] = useState("");
@@ -240,7 +230,7 @@ export default function ContactSplit() {
     return e;
   }
 
-  function handleSubmit(ev: React.FormEvent) {
+  async function handleSubmit(ev: React.FormEvent) {
     ev.preventDefault();
     const errs = validate();
     if (Object.keys(errs).length > 0) {
@@ -251,10 +241,44 @@ export default function ContactSplit() {
     }
     setErrors({});
     setIsSubmitting(true);
-    setTimeout(() => {
+
+    // Map budget ID (e.g. "xs") to its display label (e.g. "< $500")
+    const budgetLabel = budget
+      ? BUDGETS.find((b) => b.id === budget)?.label ?? null
+      : null;
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          firstName,
+          lastName,
+          mobile,
+          email,
+          company,
+          service,
+          budget: budgetLabel,
+        }),
+      });
+
+      if (!res.ok) {
+        const data = await res.json().catch(() => ({}));
+        console.error("Contact submission error:", (data as { error?: string }).error);
+        setFormShake(true);
+        setTimeout(() => setFormShake(false), 600);
+        setIsSubmitting(false);
+        return;
+      }
+
       setIsSubmitting(false);
       setIsSuccess(true);
-    }, 1700);
+    } catch (err) {
+      console.error("Network error:", err);
+      setFormShake(true);
+      setTimeout(() => setFormShake(false), 600);
+      setIsSubmitting(false);
+    }
   }
 
   return (
@@ -263,7 +287,6 @@ export default function ContactSplit() {
       className="relative w-full"
       style={{ background: "#0a0a0a" }}
     >
-      {/* Subtle divider from hero */}
       <div
         className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-16 pointer-events-none"
         style={{
@@ -275,7 +298,6 @@ export default function ContactSplit() {
       <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 py-24 md:py-32">
         <div className="grid grid-cols-1 lg:grid-cols-[2fr_3fr] gap-16 lg:gap-20 items-start">
 
-          {/* ── LEFT: Emotional Side ─────────────────────── */}
           <motion.div
             className="lg:sticky lg:top-28 flex flex-col"
             initial="hidden"
@@ -283,7 +305,6 @@ export default function ContactSplit() {
             viewport={{ once: false, margin: "-80px" }}
             variants={stagger}
           >
-            {/* Big statement */}
             <div className="flex flex-col gap-1 mb-8">
               {[
                 { text: "You Think.", color: "white" },
@@ -316,7 +337,6 @@ export default function ContactSplit() {
               ))}
             </div>
 
-            {/* Orange accent line */}
             <motion.div
               className="mb-8 origin-left"
               variants={{
@@ -339,7 +359,6 @@ export default function ContactSplit() {
               performance.
             </motion.p>
 
-            {/* Micro-badges */}
             <motion.div
               variants={stagger}
               className="flex flex-col gap-3"
@@ -374,7 +393,6 @@ export default function ContactSplit() {
             </motion.div>
           </motion.div>
 
-          {/* ── RIGHT: Form ──────────────────────────────── */}
           <motion.div
             initial={{ opacity: 0, y: 50, filter: "blur(6px)" }}
             whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
@@ -401,7 +419,6 @@ export default function ContactSplit() {
                     exit={{ opacity: 0, y: -20, filter: "blur(8px)" }}
                     transition={{ duration: 0.4 }}
                   >
-                    {/* Section label */}
                     <div className="mb-1">
                       <p
                         className="text-[9px] font-mono uppercase tracking-[0.5em]"
@@ -417,7 +434,6 @@ export default function ContactSplit() {
                       </h3>
                     </div>
 
-                    {/* Row: First + Last name */}
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-7">
                       <FloatingField
                         label="First Name"
@@ -435,7 +451,6 @@ export default function ContactSplit() {
                       />
                     </div>
 
-                    {/* Mobile */}
                     <FloatingField
                       label="Mobile Number"
                       type="tel"
@@ -445,7 +460,6 @@ export default function ContactSplit() {
                       error={!!errors.mobile}
                     />
 
-                    {/* Email */}
                     <FloatingField
                       label="Email Address"
                       type="email"
@@ -455,14 +469,12 @@ export default function ContactSplit() {
                       error={!!errors.email}
                     />
 
-                    {/* Company */}
                     <FloatingField
                       label="Company Name"
                       value={company}
                       onChange={setCompany}
                     />
 
-                    {/* Service description */}
                     <FloatingField
                       label="Service Description"
                       value={service}
@@ -473,7 +485,6 @@ export default function ContactSplit() {
                       error={!!errors.service}
                     />
 
-                    {/* Budget selector */}
                     <div>
                       <p
                         className="text-[9px] font-mono uppercase tracking-[0.45em] mb-4"
@@ -495,13 +506,11 @@ export default function ContactSplit() {
                       </div>
                     </div>
 
-                    {/* Thin separator */}
                     <div
                       className="w-full h-px"
                       style={{ background: "rgba(255,255,255,0.06)" }}
                     />
 
-                    {/* Submit */}
                     <motion.button
                       type="submit"
                       disabled={isSubmitting}
@@ -538,7 +547,6 @@ export default function ContactSplit() {
                             animate={{ opacity: 1 }}
                             exit={{ opacity: 0 }}
                           >
-                            {/* Animated progress bar at bottom */}
                             <motion.div
                               className="absolute bottom-0 left-0 h-[3px] rounded-full"
                               style={{ background: "rgba(255,255,255,0.5)" }}
@@ -546,7 +554,6 @@ export default function ContactSplit() {
                               animate={{ width: "88%" }}
                               transition={{ duration: 1.6, ease: "easeInOut" }}
                             />
-                            {/* Animated dots */}
                             <span>Processing</span>
                             <span className="flex gap-1">
                               {[0, 1, 2].map((d) => (

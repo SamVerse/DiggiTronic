@@ -14,7 +14,6 @@ export default function HeroCube() {
     const W = mount.clientWidth || 300;
     const H = mount.clientHeight || 300;
 
-    // ── Renderer ──────────────────────────────────────────────────────────────
     const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
     renderer.setSize(W, H);
     renderer.domElement.style.width = `${W}px`;
@@ -25,18 +24,15 @@ export default function HeroCube() {
     renderer.toneMappingExposure = 1.2;
     mount.appendChild(renderer.domElement);
 
-    // ── Scene / Camera ────────────────────────────────────────────────────────
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(35, W / H, 0.1, 100);
     // Positioned to give an isometric 3/4 view of the sequence
     camera.position.set(5.5, 4.0, 7.5);
     camera.lookAt(0, 0, 0);
 
-    // Group for mouse interaction tilt
     const group = new THREE.Group();
     scene.add(group);
 
-    // ── 1. Main Premium Split Cube ───────────────────────────────────────────
     const cubeSize = 2.0;
     const splitGroup = new THREE.Group();
     group.add(splitGroup);
@@ -57,7 +53,6 @@ export default function HeroCube() {
     const gradientTex = new THREE.CanvasTexture(canvas);
     gradientTex.colorSpace = THREE.SRGBColorSpace;
 
-    // TOP BLOCK
     const topHeight = 1.5;
     const topGeo = new THREE.BoxGeometry(cubeSize, topHeight, cubeSize);
     const topMat = new THREE.MeshPhysicalMaterial({
@@ -89,13 +84,11 @@ export default function HeroCube() {
     splitGroup.add(botMesh);
 
 
-    // ── 2. Fake Traveling Light (To match HeroWireframe orb) ────────────────
     const passingLight = new THREE.PointLight(0xffffff, 0, 15);
     // It will move along X axis mimicking the orb to illuminate the cube
     group.add(passingLight);
 
 
-    // ── 3. Lighting Setup ─────────────────────────────────────────────────────
     const topLight = new THREE.DirectionalLight(0xffffff, 3.0);
     topLight.position.set(0, 8, 2);
     group.add(topLight);
@@ -112,7 +105,6 @@ export default function HeroCube() {
     scene.add(new THREE.AmbientLight(0xffffff, 0.6));
 
 
-    // ── 4. Mouse Interaction ──────────────────────────────────────────────────
     let targetX = 0;
     let targetY = 0;
     let currentX = 0;
@@ -125,7 +117,6 @@ export default function HeroCube() {
     window.addEventListener("mousemove", onMouseMove);
 
 
-    // ── Animation Loop ────────────────────────────────────────────────────────
     let t = 0;
     let rafId = 0;
 
@@ -134,7 +125,6 @@ export default function HeroCube() {
       // Synchronize time roughly with HeroWireframe
       t += 0.005;
 
-      // ── ✏️ CONFIGURABLE: Floating Animation ──────────────────────────────
       // `floatSpeed`: How fast it bobs up and down (e.g., 3 is slow, 6 is fast)
       const floatSpeed = 3.5;
       // `floatAmount`: How far it travels up and down (e.g., 0.1 is subtle, 0.4 is intense)
@@ -147,7 +137,6 @@ export default function HeroCube() {
       currentX += (targetX - currentX) * 0.1;
       currentY += (targetY - currentY) * 0.1;
 
-      // ── ✏️ CONFIGURABLE: Mouse Responsiveness & Tilt Limit ───────────────
       // `rotationIntensity`: How fast it rotates relatively to the mouse distance 
       const rotationIntensity = 1.5;
 
@@ -166,7 +155,6 @@ export default function HeroCube() {
     };
     animate();
 
-    // ── Cleanup ───────────────────────────────────────────────────────────────
     return () => {
       cancelAnimationFrame(rafId);
       window.removeEventListener("mousemove", onMouseMove);

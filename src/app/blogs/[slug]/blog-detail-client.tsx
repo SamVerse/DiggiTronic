@@ -13,9 +13,7 @@ import LenisScroll from "@/components/lenis-scroll";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 import type { Blog } from "@/data/blogs";
-import { getRelatedBlogs } from "@/data/blogs";
 
-/* ── Animation variants ─────────────────────────────────────────── */
 const fadeUp: Variants = {
     hidden: { opacity: 0, y: 30, filter: "blur(4px)" },
     visible: {
@@ -31,7 +29,6 @@ const stagger: Variants = {
     visible: { transition: { staggerChildren: 0.12 } },
 };
 
-/* ── Format date helper ─────────────────────────────────────────── */
 function formatDate(dateStr: string) {
     return new Date(dateStr).toLocaleDateString("en-US", {
         year: "numeric",
@@ -40,7 +37,6 @@ function formatDate(dateStr: string) {
     });
 }
 
-/* ── Share Icons ─────────────────────────────────────────────────── */
 function XIcon() {
     return (
         <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
@@ -57,7 +53,6 @@ function LinkedInIcon() {
     );
 }
 
-/* ── Related Blog Card ──────────────────────────────────────────── */
 function RelatedCard({ blog }: { blog: Blog }) {
     return (
         <Link href={`/blogs/${blog.slug}`} className="block group">
@@ -66,7 +61,6 @@ function RelatedCard({ blog }: { blog: Blog }) {
                 whileHover={{ y: -8, borderColor: "rgba(235,115,0,0.3)" }}
                 transition={{ type: "spring", stiffness: 300, damping: 25 }}
             >
-                {/* Image */}
                 <div className="relative overflow-hidden aspect-[16/10]">
                     <img
                         src={blog.coverImage}
@@ -92,7 +86,6 @@ function RelatedCard({ blog }: { blog: Blog }) {
                     </span>
                 </div>
 
-                {/* Content */}
                 <div className="p-6 flex-1 flex flex-col">
                     <h3
                         className="font-black text-white text-lg leading-tight mb-3 transition-colors duration-300 group-hover:text-[#EB7300]"
@@ -128,13 +121,11 @@ function RelatedCard({ blog }: { blog: Blog }) {
 }
 
 /* ══════════════════════════════════════════════════════════════════ */
-export default function BlogDetailClient({ blog }: { blog: Blog }) {
+export default function BlogDetailClient({ blog, relatedBlogs }: { blog: Blog; relatedBlogs: Blog[] }) {
     const articleRef = useRef<HTMLElement>(null);
     const heroImageRef = useRef<HTMLDivElement>(null);
     const words = blog.title.split(" ");
-    const relatedBlogs = getRelatedBlogs(blog.slug, 3);
 
-    /* Reading progress */
     const { scrollYProgress } = useScroll({
         target: articleRef,
         offset: ["start start", "end end"],
@@ -145,14 +136,12 @@ export default function BlogDetailClient({ blog }: { blog: Blog }) {
         restDelta: 0.001,
     });
 
-    /* Hero parallax */
     const { scrollYProgress: heroScrollProgress } = useScroll({
         target: heroImageRef,
         offset: ["start start", "end start"],
     });
     const heroY = useTransform(heroScrollProgress, [0, 1], ["0%", "30%"]);
 
-    /* Build share URLs */
     const blogUrl = typeof window !== "undefined"
         ? window.location.href
         : `https://digitronic.in/blogs/${blog.slug}`;
@@ -164,7 +153,6 @@ export default function BlogDetailClient({ blog }: { blog: Blog }) {
             <LenisScroll />
             <Navbar />
 
-            {/* ── Reading progress bar ────────────────────────────────── */}
             <motion.div
                 className="fixed top-0 left-0 right-0 h-[3px] z-[200] origin-left"
                 style={{
@@ -178,9 +166,7 @@ export default function BlogDetailClient({ blog }: { blog: Blog }) {
                 className="relative overflow-x-hidden"
                 style={{ background: "#0a0a0a" }}
             >
-                {/* ── Hero Section ────────────────────────────────────────── */}
                 <section className="relative w-full overflow-hidden">
-                    {/* Cover image with parallax */}
                     <div
                         ref={heroImageRef}
                         className="relative w-full overflow-hidden"
@@ -194,7 +180,6 @@ export default function BlogDetailClient({ blog }: { blog: Blog }) {
                             />
                         </motion.div>
 
-                        {/* Dark overlay */}
                         <div
                             className="absolute inset-0 pointer-events-none"
                             style={{
@@ -204,12 +189,10 @@ export default function BlogDetailClient({ blog }: { blog: Blog }) {
                         />
                     </div>
 
-                    {/* Hero content overlapping bottom of image */}
                     <div
                         className="relative z-10 max-w-3xl mx-auto px-6"
                         style={{ marginTop: "-12rem" }}
                     >
-                        {/* Back link */}
                         <motion.div
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
@@ -229,7 +212,6 @@ export default function BlogDetailClient({ blog }: { blog: Blog }) {
                             </Link>
                         </motion.div>
 
-                        {/* Category + Meta */}
                         <motion.div
                             className="flex flex-wrap items-center gap-3 mb-6"
                             initial={{ opacity: 0, y: 10 }}
@@ -273,14 +255,12 @@ export default function BlogDetailClient({ blog }: { blog: Blog }) {
                             ))}
                         </div>
 
-                        {/* Author row */}
                         <motion.div
                             className="flex items-center gap-4 pb-10"
                             initial={{ opacity: 0, y: 10 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.7, duration: 0.6 }}
                         >
-                            {/* Author avatar */}
                             <div
                                 className="w-10 h-10 rounded-full flex items-center justify-center text-xs font-black shrink-0"
                                 style={{
@@ -312,7 +292,6 @@ export default function BlogDetailClient({ blog }: { blog: Blog }) {
                     </div>
                 </section>
 
-                {/* ── Meta Grid — Date / Author / Time / Share ────────────── */}
                 <section className="relative w-full">
                     <div className="max-w-3xl mx-auto px-6">
                         <motion.div
@@ -323,7 +302,6 @@ export default function BlogDetailClient({ blog }: { blog: Blog }) {
                             viewport={{ once: true }}
                             transition={{ duration: 0.6, delay: 0.1 }}
                         >
-                            {/* Date */}
                             <div>
                                 <p
                                     className="text-[10px] font-mono uppercase tracking-[0.35em] mb-2"
@@ -339,7 +317,6 @@ export default function BlogDetailClient({ blog }: { blog: Blog }) {
                                 </p>
                             </div>
 
-                            {/* Author */}
                             <div>
                                 <p
                                     className="text-[10px] font-mono uppercase tracking-[0.35em] mb-2"
@@ -355,7 +332,6 @@ export default function BlogDetailClient({ blog }: { blog: Blog }) {
                                 </p>
                             </div>
 
-                            {/* Time */}
                             <div>
                                 <p
                                     className="text-[10px] font-mono uppercase tracking-[0.35em] mb-2"
@@ -371,7 +347,6 @@ export default function BlogDetailClient({ blog }: { blog: Blog }) {
                                 </p>
                             </div>
 
-                            {/* Share this post */}
                             <div>
                                 <p
                                     className="text-[10px] font-mono uppercase tracking-[0.35em] mb-2"
@@ -406,10 +381,8 @@ export default function BlogDetailClient({ blog }: { blog: Blog }) {
                     </div>
                 </section>
 
-                {/* ── Article Content ─────────────────────────────────────── */}
                 <section className="relative w-full">
                     <div className="max-w-3xl mx-auto px-6 py-16 md:py-20">
-                        {/* Blog content */}
                         <motion.div
                             className="blog-content"
                             initial="hidden"
@@ -421,7 +394,6 @@ export default function BlogDetailClient({ blog }: { blog: Blog }) {
                     </div>
                 </section>
 
-                {/* ── Related Articles ────────────────────────────────────── */}
                 {relatedBlogs.length > 0 && (
                     <section
                         className="relative w-full"
@@ -483,9 +455,7 @@ export default function BlogDetailClient({ blog }: { blog: Blog }) {
             </main>
             <Footer />
 
-            {/* ── Blog content styles ───────────────────────────────────── */}
             <style jsx global>{`
-        /* ─── Base typography ─────────────────────────────────────── */
         .blog-content h2 {
           font-weight: 900;
           color: #ffffff;
@@ -531,7 +501,6 @@ export default function BlogDetailClient({ blog }: { blog: Blog }) {
           font-weight: 800;
         }
 
-        /* ─── Blockquotes ─────────────────────────────────────────── */
         .blog-content blockquote {
           position: relative;
           margin: 2.5rem 0;
@@ -560,7 +529,6 @@ export default function BlogDetailClient({ blog }: { blog: Blog }) {
           margin-top: 0.5rem;
         }
 
-        /* ─── Callout boxes ───────────────────────────────────────── */
         .blog-content .blog-callout {
           margin: 2rem 0;
           padding: 1.25rem 1.5rem;
@@ -577,7 +545,6 @@ export default function BlogDetailClient({ blog }: { blog: Blog }) {
           letter-spacing: 0.1em;
         }
 
-        /* ─── Code blocks ─────────────────────────────────────────── */
         .blog-content pre {
           margin: 2rem 0;
           padding: 1.5rem;
@@ -607,7 +574,6 @@ export default function BlogDetailClient({ blog }: { blog: Blog }) {
           color: inherit;
         }
 
-        /* ─── Images ──────────────────────────────────────────────── */
         .blog-content img {
           width: 100%;
           border-radius: 0.75rem;
@@ -631,7 +597,6 @@ export default function BlogDetailClient({ blog }: { blog: Blog }) {
           font-style: italic;
         }
 
-        /* ─── Lists ───────────────────────────────────────────────── */
         .blog-content ul,
         .blog-content ol {
           margin: 1.5rem 0;
@@ -653,7 +618,6 @@ export default function BlogDetailClient({ blog }: { blog: Blog }) {
           font-weight: 700;
         }
 
-        /* ─── Horizontal rules ────────────────────────────────────── */
         .blog-content hr {
           border: none;
           height: 1px;
@@ -661,7 +625,6 @@ export default function BlogDetailClient({ blog }: { blog: Blog }) {
           margin: 3rem 0;
         }
 
-        /* ─── Links ───────────────────────────────────────────────── */
         .blog-content a {
           color: #eb7300;
           text-decoration: underline;
@@ -674,7 +637,6 @@ export default function BlogDetailClient({ blog }: { blog: Blog }) {
           text-decoration-color: #eb7300;
         }
 
-        /* ─── Video embeds ────────────────────────────────────────── */
         .blog-content .video-embed {
           position: relative;
           width: 100%;

@@ -19,13 +19,11 @@ const HERO_LINES = [
 export default function BlogHero() {
     const sectionRef = useRef<HTMLElement>(null);
 
-    /* Mouse parallax on glow */
     const rawX = useMotionValue(0);
     const rawY = useMotionValue(0);
     const glowX = useSpring(rawX, { stiffness: 35, damping: 20 });
     const glowY = useSpring(rawY, { stiffness: 35, damping: 20 });
 
-    /* Scroll-out parallax */
     const { scrollYProgress } = useScroll({
         target: sectionRef,
         offset: ["start start", "end start"],
@@ -59,7 +57,6 @@ export default function BlogHero() {
             onMouseMove={handleMouseMove}
             onMouseLeave={handleMouseLeave}
         >
-            {/* Floating ambient blobs */}
             <motion.div
                 aria-hidden
                 className="absolute rounded-full pointer-events-none"
@@ -94,7 +91,6 @@ export default function BlogHero() {
                 }}
             />
 
-            {/* Mouse-driven glow */}
             <motion.div
                 aria-hidden
                 className="absolute inset-0 pointer-events-none"
@@ -109,7 +105,6 @@ export default function BlogHero() {
                 />
             </motion.div>
 
-            {/* Subtle grid */}
             <div
                 aria-hidden
                 className="absolute inset-0 pointer-events-none opacity-[0.022]"
@@ -121,9 +116,7 @@ export default function BlogHero() {
                 }}
             />
 
-            {/* Content */}
             <div className="relative z-10 flex flex-col items-center text-center px-6 max-w-6xl">
-                {/* Kicker */}
                 <motion.p
                     className="text-[9px] font-mono uppercase tracking-[0.6em] mb-8"
                     style={{ color: "#EB7300" }}
@@ -176,7 +169,6 @@ export default function BlogHero() {
                     ))}
                 </div>
 
-                {/* Subtext */}
                 <motion.p
                     className="text-sm md:text-base leading-relaxed max-w-lg mx-auto"
                     style={{ color: "rgba(255,255,255,0.45)" }}
@@ -189,7 +181,6 @@ export default function BlogHero() {
                 </motion.p>
             </div>
 
-            {/* Scroll indicator */}
             <motion.div
                 className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 pointer-events-none select-none"
                 initial={{ opacity: 0 }}

@@ -41,18 +41,15 @@ export default function ListingsPage() {
       <Navbar />
       <main className="relative overflow-x-hidden" style={{ background: "#0a0a0a" }}>
 
-        {/* ── Hero ─────────────────────────────────────────────── */}
         <section
           className="relative w-full flex flex-col items-center justify-center text-center overflow-hidden"
           style={{ minHeight: "42vh", paddingTop: "8rem", paddingBottom: "5rem" }}
         >
-          {/* Ambient glow */}
           <div
             aria-hidden
             className="absolute inset-0 pointer-events-none"
             style={{ background: "radial-gradient(ellipse 60% 50% at 50% 60%, rgba(235,115,0,0.08) 0%, transparent 70%)" }}
           />
-          {/* Grid */}
           <div
             aria-hidden
             className="absolute inset-0 pointer-events-none opacity-[0.02]"
@@ -99,11 +96,9 @@ export default function ListingsPage() {
           </div>
         </section>
 
-        {/* ── Listings ─────────────────────────────────────────── */}
         <section className="relative w-full">
           <div className="max-w-4xl mx-auto px-6 pb-28">
 
-            {/* Filter hint */}
             <motion.div
               className="flex items-center justify-between mb-10"
               initial="hidden"
@@ -132,7 +127,6 @@ export default function ListingsPage() {
               </motion.p>
             </motion.div>
 
-            {/* Job listing cards */}
             <div ref={cardsRef} className="flex flex-col gap-6">
               {JOBS.map((job, i) => (
                 <Link key={job.slug} href={`/careers/${job.slug}`} className="block group">
@@ -141,14 +135,12 @@ export default function ListingsPage() {
                     whileHover={{ y: -5, borderColor: "rgba(235,115,0,0.25)" }}
                     transition={{ type: "spring", stiffness: 300, damping: 25 }}
                   >
-                    {/* Hover glow */}
                     <div
                       className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
                       style={{ background: "radial-gradient(ellipse 50% 60% at 0% 50%, rgba(235,115,0,0.04) 0%, transparent 70%)" }}
                     />
 
                     <div className="relative z-10">
-                      {/* Number + title row */}
                       <div className="flex items-start gap-6 mb-5">
                         <span
                           className="text-[9px] font-mono uppercase tracking-[0.5em] pt-1 shrink-0"
@@ -163,7 +155,6 @@ export default function ListingsPage() {
                           >
                             {job.title}
                           </h2>
-                          {/* Orange accent line */}
                           <motion.div
                             className="h-[2px] rounded-full mb-4"
                             style={{ background: "rgba(235,115,0,0.5)", width: "0%" }}
@@ -174,7 +165,6 @@ export default function ListingsPage() {
                         </div>
                       </div>
 
-                      {/* Meta row */}
                       <div className="flex flex-wrap gap-x-6 gap-y-2 mb-5 pl-12">
                         {[
                           { label: "Dept", value: job.department },
@@ -193,7 +183,6 @@ export default function ListingsPage() {
                         ))}
                       </div>
 
-                      {/* Overview excerpt */}
                       <p
                         className="text-sm leading-[1.8] mb-6 pl-12 line-clamp-2"
                         style={{ color: "rgba(255,255,255,0.4)" }}
@@ -201,7 +190,6 @@ export default function ListingsPage() {
                         {job.overview}
                       </p>
 
-                      {/* CTA */}
                       <div className="pl-12 flex items-center gap-6">
                         <span
                           className="inline-flex items-center gap-1.5 text-xs font-black uppercase tracking-[0.25em]"

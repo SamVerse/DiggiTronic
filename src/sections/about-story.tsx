@@ -38,7 +38,6 @@ const staggerContainer: Variants = {
 export default function AboutStory() {
   const sectionRef = useRef<HTMLElement>(null);
 
-  /* Watermark parallax */
   const { scrollYProgress } = useScroll({
     target: sectionRef,
     offset: ["start end", "end start"],
@@ -74,7 +73,6 @@ export default function AboutStory() {
       <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 py-32 md:py-40">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
 
-          {/* Left: text content */}
           <motion.div
             initial="hidden"
             whileInView="visible"
@@ -104,7 +102,6 @@ export default function AboutStory() {
               bold ambition.
             </motion.h2>
 
-            {/* Orange accent line */}
             <motion.div
               variants={{
                 hidden: { scaleX: 0, originX: 0 },
@@ -139,7 +136,6 @@ export default function AboutStory() {
             </motion.p>
           </motion.div>
 
-          {/* Right: stat pills */}
           <motion.div
             className="flex flex-col gap-4"
             initial="hidden"
@@ -166,14 +162,12 @@ export default function AboutStory() {
                   backdropFilter: "blur(8px)",
                 }}
               >
-                {/* Numbered indicator */}
                 <span
                   className="text-[9px] font-mono tracking-widest shrink-0"
                   style={{ color: "#EB7300" }}
                 >
                   0{i + 1}
                 </span>
-                {/* Divider */}
                 <div
                   className="w-px self-stretch"
                   style={{ background: "rgba(235,115,0,0.25)" }}

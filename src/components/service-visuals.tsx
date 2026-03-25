@@ -6,7 +6,6 @@ import AiCircuit from "./ai-circuit";
 import { VideoVisual3D } from "./video-visual-3d";
 import { GraphicsVisual3D } from "./graphics-visual-3d";
 
-/* ── Shared helpers ──────────────────────────────────────────────── */
 const float = (delay = 0, range = 10) => ({
   animate: { y: [0, -range, 0] },
   transition: { duration: 4 + delay * 0.5, repeat: Infinity, ease: "easeInOut" as const, delay },
@@ -96,7 +95,6 @@ export function SocialVisual() {
   const smoothX = useSpring(rawX, { stiffness: 85, damping: 20 });
   const smoothY = useSpring(rawY, { stiffness: 85, damping: 20 });
 
-  /* Phone 3D tilt */
   const rotY = useTransform(smoothX, [-0.5, 0.5], [-14, 14]);
   const rotX = useTransform(smoothY, [-0.5, 0.5], [8, -8]);
 
@@ -111,7 +109,6 @@ export function SocialVisual() {
   const p4x = useTransform(smoothX, [-0.5, 0.5], [-13, 13]);   // reach — far
   const p5x = useTransform(smoothX, [-0.5, 0.5], [10, -10]);   // eng rate
 
-  /* Custom cursor */
   const curX = useMotionValue(-120);
   const curY = useMotionValue(-120);
 
@@ -150,7 +147,6 @@ export function SocialVisual() {
           boxShadow: "0 0 12px rgba(160,130,255,0.25), inset 0 0 6px rgba(160,130,255,0.08)",
         }}
       />
-      {/* Inner cursor dot */}
       <motion.div
         className="absolute pointer-events-none rounded-full"
         style={{
@@ -246,7 +242,6 @@ export function SocialVisual() {
         animate={{ y: [0, -9, 0], rotateZ: [-0.4, 0.4, -0.4] }}
         transition={{ duration: 5.5, repeat: Infinity, ease: "easeInOut" as const }}
       >
-        {/* Mouse-tracking spotlight on screen */}
         <motion.div
           style={{
             position: "absolute", width: 120, height: 120, borderRadius: "50%",
@@ -256,10 +251,8 @@ export function SocialVisual() {
           }}
         />
 
-        {/* Notch */}
         <div style={{ position: "absolute", top: 9, left: "50%", transform: "translateX(-50%)", width: 58, height: 14, borderRadius: 20, background: "#050d18", zIndex: 10, border: "1px solid rgba(255,255,255,0.06)" }} />
 
-        {/* Stories bar */}
         <div style={{ display: "flex", gap: 5, padding: "30px 10px 8px", borderBottom: "1px solid rgba(255,255,255,0.05)", alignItems: "center" }}>
           {[0, 1, 2, 3].map((i) => (
             <motion.div key={i}
@@ -272,7 +265,6 @@ export function SocialVisual() {
           <div style={{ width: 16, height: 16, borderRadius: "50%", background: "rgba(255,255,255,0.05)" }} />
         </div>
 
-        {/* Post 1 */}
         <div style={{ padding: "8px 10px" }}>
           <div style={{ display: "flex", gap: 6, alignItems: "center", marginBottom: 6 }}>
             <div style={{ width: 22, height: 22, borderRadius: "50%", background: "linear-gradient(135deg, rgba(235,115,0,0.5), rgba(235,115,0,0.2))", border: "1px solid rgba(235,115,0,0.3)" }} />
@@ -301,7 +293,6 @@ export function SocialVisual() {
           <div style={{ height: 52, borderRadius: 8, background: "linear-gradient(135deg, rgba(100,80,200,0.22), rgba(0,180,100,0.12))" }} />
         </div>
 
-        {/* Bottom nav */}
         <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, height: 44, background: "rgba(5,13,24,0.95)", borderTop: "1px solid rgba(255,255,255,0.05)", display: "flex", alignItems: "center", justifyContent: "space-around", padding: "0 8px" }}>
           {["⌂", "◎", "＋", "♡", "👤"].map((icon, i) => (
             <span key={i} style={{ fontSize: i === 2 ? 14 : 10, color: i === 0 ? "rgba(235,115,0,0.8)" : "rgba(255,255,255,0.2)" }}>{icon}</span>
@@ -329,7 +320,6 @@ export function DevVisual() {
     <div className="relative w-full h-full flex items-center justify-center" style={{ minHeight: 380 }}>
       <div className="absolute inset-0 pointer-events-none" style={{ background: "radial-gradient(ellipse 60% 50% at 50% 50%, rgba(100,120,255,0.08) 0%, transparent 70%)" }} />
 
-      {/* Code editor */}
       <motion.div
         className="relative w-full rounded-xl overflow-hidden"
         style={{
@@ -341,14 +331,12 @@ export function DevVisual() {
         }}
         {...float(0, 10)}
       >
-        {/* Editor chrome */}
         <div className="flex items-center gap-1.5 px-3 py-2.5" style={{ background: "rgba(255,255,255,0.03)", borderBottom: "1px solid rgba(255,255,255,0.06)" }}>
           {["#ff5f57", "#febc2e", "#28c840"].map((c) => (
             <div key={c} className="w-2.5 h-2.5 rounded-full" style={{ background: c }} />
           ))}
           <span className="ml-2 text-[9px] font-mono" style={{ color: "rgba(255,255,255,0.25)" }}>page.tsx</span>
         </div>
-        {/* Line numbers + code */}
         <div className="p-4 font-mono text-[10px] leading-[1.8]">
           {LINES.map((l, i) => (
             <motion.div
@@ -365,7 +353,6 @@ export function DevVisual() {
         </div>
       </motion.div>
 
-      {/* Floating UI chips */}
       {[
         { label: "Button", top: "15%", right: "2%", delay: 0.4 },
         { label: "<Card />", bottom: "20%", right: "0%", delay: 0.8 },
@@ -529,7 +516,6 @@ export function MarketingVisual() {
       >
         <p style={{ fontSize: 9, color: "rgba(100,150,255,0.75)", fontFamily: "monospace", marginBottom: 4 }}>Impressions</p>
         <p style={{ fontSize: 13, fontWeight: 900, color: "white", marginBottom: 5 }}>2.4M</p>
-        {/* Mini sparkline */}
         <div style={{ display: "flex", alignItems: "flex-end", gap: 2, height: 14 }}>
           {spark.map((h, i) => (
             <motion.div key={i} style={{ width: 3, borderRadius: 1, background: i === spark.length - 1 ? "#6090ff" : "rgba(80,120,255,0.4)" }}
@@ -585,7 +571,6 @@ export function SeoVisual() {
     <div className="relative w-full h-full flex items-center justify-center" style={{ minHeight: 380 }}>
       <div className="absolute inset-0 pointer-events-none" style={{ background: "radial-gradient(ellipse 60% 50% at 50% 50%, rgba(0,180,100,0.07) 0%, transparent 70%)" }} />
 
-      {/* Ranking card */}
       <motion.div
         className="relative rounded-2xl overflow-hidden"
         style={{
@@ -601,7 +586,6 @@ export function SeoVisual() {
           <span className="text-[10px] font-mono" style={{ color: "rgba(0,200,120,0.8)" }}>↑ Climbing</span>
         </div>
 
-        {/* Position tracker */}
         <div className="px-4 py-4">
           <div className="flex items-end justify-center gap-2 mb-4">
             {positions.map((pos, i) => {
@@ -639,7 +623,6 @@ export function SeoVisual() {
             })}
           </div>
 
-          {/* Search result snippets */}
           {[
             { width: "90%", label: "your-brand.com  ★ Position 1" },
             { width: "80%", label: "competitor.com    Position 2" },
@@ -676,7 +659,6 @@ export function SeoVisual() {
         transition={{ opacity: { delay: 0.9 }, x: { delay: 0.9, duration: 0.5 }, y: { duration: 3.5, repeat: Infinity, ease: "easeInOut", delay: 0.9 } }}
       >
         <p style={{ fontSize: 9, color: "rgba(120,150,255,0.75)", fontFamily: "monospace", marginBottom: 4 }}>Domain Authority</p>
-        {/* DA score ring */}
         <div style={{ display: "flex", alignItems: "center", gap: 7 }}>
           <svg width="28" height="28" viewBox="0 0 28 28">
             <circle cx="14" cy="14" r="11" fill="none" stroke="rgba(100,130,255,0.15)" strokeWidth="2.5" />
@@ -702,7 +684,6 @@ export function SeoVisual() {
       >
         <p style={{ fontSize: 9, color: "rgba(235,115,0,0.75)", fontFamily: "monospace", marginBottom: 2 }}>Backlinks</p>
         <p style={{ fontSize: 13, fontWeight: 900, color: "white", marginBottom: 5 }}>12.8K</p>
-        {/* Mini dot progress */}
         <div style={{ display: "flex", gap: 3 }}>
           {[1,1,1,1,1,0.4,0.2,0.1].map((op, i) => (
             <motion.div key={i}
@@ -792,7 +773,6 @@ export function GraphicsVisual() {
 }
 
 
-/* ── Registry ─────────────────────────────────────────────────────── */
 export const SERVICE_VISUALS: Record<string, React.ComponentType> = {
   video: VideoVisual,
   social: SocialVisual,

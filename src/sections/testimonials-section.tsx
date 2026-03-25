@@ -70,7 +70,6 @@ export default function TestimonialsSection() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
 
-  /* ── Auto-advance testimonials ──────────────────────────────────── */
   useEffect(() => {
     if (isHovered) return;
     const id = setInterval(() => {
@@ -79,7 +78,6 @@ export default function TestimonialsSection() {
     return () => clearInterval(id);
   }, [isHovered]);
 
-  /* ── Parallax scroll-under-next-section ─────────────────────────── */
   const { scrollYProgress } = useScroll({
     target: sectionRef,
     offset: ["start start", "end start"],
@@ -87,7 +85,6 @@ export default function TestimonialsSection() {
 
   const sectionY = useTransform(scrollYProgress, [0, 1], ["0%", "80%"]);
 
-  /* ── Background watermark parallax ──────────────────────────────── */
   const { scrollYProgress: inProgress } = useScroll({
     target: sectionRef,
     offset: ["start end", "end start"],
@@ -108,7 +105,6 @@ export default function TestimonialsSection() {
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      {/* ── Massive quotation mark watermark ─────────────────────────── */}
       <motion.div
         aria-hidden
         style={{ y: quoteY }}
@@ -131,7 +127,6 @@ export default function TestimonialsSection() {
         className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 py-24"
       >
 
-        {/* ── Section label ─────────────────────────────────────────────── */}
         <motion.div
           className="mb-16"
           initial="hidden"
@@ -172,7 +167,6 @@ export default function TestimonialsSection() {
           className="hidden lg:flex gap-12 xl:gap-20 items-start"
         >
 
-          {/* LEFT: Active testimonial quote ─────────────────────────── */}
           <div className="flex-1 min-w-0">
             <AnimatePresence mode="wait">
               <motion.div
@@ -192,7 +186,6 @@ export default function TestimonialsSection() {
                 </blockquote>
 
                 <div className="mt-8 flex items-center gap-4">
-                  {/* Avatar initial */}
                   <div
                     className="w-12 h-12 rounded-full flex items-center justify-center font-black text-lg text-white flex-shrink-0"
                     style={{ background: "linear-gradient(135deg, #ff4d00, #ff6a00)" }}
@@ -209,7 +202,6 @@ export default function TestimonialsSection() {
               </motion.div>
             </AnimatePresence>
 
-            {/* Progress bar ────────────────────────────────────────── */}
             <div className="mt-12 flex gap-2">
               {TESTIMONIALS.map((_, i) => (
                 <button
@@ -237,7 +229,6 @@ export default function TestimonialsSection() {
             </div>
           </div>
 
-          {/* RIGHT: Stacked navigator cards ─────────────────────────── */}
           <div className="w-72 xl:w-80 flex flex-col gap-3 flex-shrink-0">
             {TESTIMONIALS.map((t, i) => {
               const isActive = i === activeIndex;
@@ -259,7 +250,6 @@ export default function TestimonialsSection() {
                   transition={{ duration: 0.3 }}
                   style={{ borderWidth: "1px", willChange: "transform" }}
                 >
-                  {/* Orange left accent */}
                   <div className="flex gap-3 items-start">
                     <motion.div
                       className="w-0.5 self-stretch rounded-full flex-shrink-0 mt-1"
@@ -341,7 +331,6 @@ export default function TestimonialsSection() {
             </motion.div>
           </AnimatePresence>
 
-          {/* Dot nav */}
           <div className="flex justify-center gap-2 mt-6">
             {TESTIMONIALS.map((_, i) => (
               <button
