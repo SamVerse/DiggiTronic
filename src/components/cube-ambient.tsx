@@ -3,8 +3,8 @@
 import { useEffect, useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 
-   CubeAmbient — cinematic ground-plane + energy FX behind the floating cube.
-   Positioned in the hero section, fades out as the user scrolls.
+// CubeAmbient — cinematic ground-plane + energy FX behind the floating cube.
+// Positioned in the hero section, fades out as the user scrolls.
 
 function Particle({
     delay,
