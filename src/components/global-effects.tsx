@@ -34,21 +34,6 @@ export default function GlobalEffects() {
         style={{ scaleY: scrollYProgress, background: "#EB7300" }}
       />
 
-      {/* Cursor glow — subtle radial halo tracking cursor */}
-      <motion.div
-        className="fixed pointer-events-none z-[9998] rounded-full hidden md:block"
-        style={{
-          x: springX,
-          y: springY,
-          translateX: "-50%",
-          translateY: "-50%",
-          width: "200px",
-          height: "200px",
-          background:
-            "radial-gradient(circle, rgba(235,115,0,0.10) 0%, transparent 68%)",
-          mixBlendMode: "screen",
-        }}
-      />
     </>
   );
 }

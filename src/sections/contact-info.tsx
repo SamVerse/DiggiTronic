@@ -129,59 +129,7 @@ export default function ContactInfo() {
           ))}
         </motion.div>
 
-        <motion.div
-          className="mt-16 relative overflow-hidden rounded-3xl"
-          style={{ height: "380px" }}
-          initial={{ opacity: 0, scale: 0.97, filter: "blur(8px)" }}
-          whileInView={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
-          viewport={{ once: false, margin: "-60px" }}
-          transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-        >
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14436.6283744!2d55.2697871!3d25.1855522!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f682e1e8a8891%3A0x1e90e94f6e79fc47!2sBusiness%20Bay%20-%20Dubai!5e0!3m2!1sen!2sae!4v1710000000000"
-            width="100%"
-            height="100%"
-            style={{
-              border: 0,
-              filter: "grayscale(80%) invert(85%) hue-rotate(180deg)",
-            }}
-            allowFullScreen
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-            title="DiggiTronic Office Location"
-          />
 
-          <div
-            className="absolute inset-0 pointer-events-none"
-            style={{
-              background:
-                "linear-gradient(to bottom, rgba(5,5,5,0.65) 0%, transparent 25%, transparent 75%, rgba(5,5,5,0.65) 100%)",
-            }}
-          />
-
-          <div
-            className="absolute inset-0 pointer-events-none"
-            style={{
-              background:
-                "linear-gradient(to right, rgba(5,5,5,0.4) 0%, transparent 20%, transparent 80%, rgba(5,5,5,0.4) 100%)",
-            }}
-          />
-
-          <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-            <div className="relative flex items-center justify-center">
-              <motion.div
-                className="absolute rounded-full"
-                style={{ background: "rgba(235,115,0,0.2)", width: "60px", height: "60px" }}
-                animate={{ scale: [1, 1.8, 1], opacity: [0.5, 0, 0.5] }}
-                transition={{ duration: 2.5, repeat: Infinity, ease: "easeOut" }}
-              />
-              <div
-                className="w-4 h-4 rounded-full border-2"
-                style={{ background: "#EB7300", borderColor: "rgba(235,115,0,0.4)" }}
-              />
-            </div>
-          </div>
-        </motion.div>
 
         <motion.div
           className="mt-10 flex flex-col md:flex-row items-center justify-between gap-4"
@@ -191,16 +139,16 @@ export default function ContactInfo() {
           transition={{ duration: 0.8, delay: 0.2 }}
         >
           <p
-            className="text-[9px] font-mono uppercase tracking-[0.5em]"
+            className="text-[11px] font-mono uppercase tracking-[0.5em]"
             style={{ color: "rgba(255,255,255,0.2)" }}
           >
-            DiggiTronic — Digital Growth Studio
+            DiggiTronic
           </p>
           <p
-            className="text-[9px] font-mono uppercase tracking-[0.5em]"
+            className="text-[11px] font-mono uppercase tracking-[0.5em]"
             style={{ color: "rgba(255,255,255,0.2)" }}
           >
-            Dubai · Global
+            Delhi · India
           </p>
         </motion.div>
       </div>

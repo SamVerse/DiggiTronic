@@ -14,7 +14,7 @@ const GLOBE_CONFIG = {
   pointSize: 1.6,
   globeColor: "#050e1c",       // deep navy — the "earth" body
   showAtmosphere: true,
-  atmosphereColor: "#0468BF",  // highly visible navy atmosphere
+  atmosphereColor: "#ff4d00",  // highly visible navy atmosphere
   atmosphereAltitude: 0.25,
   emissive: "#0b1b31",
   emissiveIntensity: 0.8,

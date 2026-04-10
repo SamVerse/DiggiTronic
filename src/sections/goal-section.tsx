@@ -315,13 +315,13 @@ export default function GoalSection() {
 
   return (
     <section className="relative z-30 bg-[#050505] pt-36 pb-16 md:pt-44 md:pb-24 px-4 md:px-8 lg:px-16 rounded-t-[2rem] shadow-[0_-16px_60px_rgba(0,0,0,0.5)]">
-      <p
+      {/* <p
         ref={frameworkTextRef}
         className="text-[10px] uppercase tracking-[0.55em] text-gray-400 mb-4 font-mono ml-24 max-w-[1200px] mx-auto"
         style={{ opacity: 0 }}
       >
         Our Framework
-      </p>
+      </p> */}
       <div
         ref={containerRef}
         className="relative mx-auto max-w-[1200px] overflow-hidden rounded-3xl border border-white/10 bg-[#141414] px-6 py-10 md:px-10 md:py-28 shadow-[0_30px_80px_rgba(0,0,0,0.6)]"
@@ -329,7 +329,6 @@ export default function GoalSection() {
       >
         <div className="absolute -inset-4 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.06),transparent_70%)]"></div>
         <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(255,255,255,0.04)_1px,transparent_1px),linear-gradient(180deg,rgba(255,255,255,0.04)_1px,transparent_1px)] bg-size-[48px_48px] opacity-40"></div>
-        <div className="absolute -left-10 top-8 h-40 w-40 rounded-full bg-[radial-gradient(circle,rgba(255,77,0,0.35),transparent_70%)] blur-3xl"></div>
 
         <div className="relative z-10 flex flex-col gap-10 lg:flex-row">
           <div className="flex flex-row lg:flex-col items-center self-center lg:-space-y-3">

@@ -1,13 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { supabase } from "@/lib/supabase";
 
-const VALID_BUDGETS = new Set([
-  "< $500",
-  "$500–1K",
-  "$1K–5K",
-  "$5K–10K",
-  "$10K+",
-]);
+
 
 // 3 submissions per IP per 60 seconds.
 // Resets on server restart — sufficient for a low-traffic lead site.
@@ -53,7 +47,7 @@ export async function POST(req: NextRequest) {
   const email = typeof body.email === "string" ? body.email : "";
   const company = typeof body.company === "string" ? body.company : "";
   const service = typeof body.service === "string" ? body.service : "";
-  const budget = typeof body.budget === "string" ? body.budget : null;
+
 
   const errors: string[] = [];
   if (!firstName.trim()) errors.push("First name is required.");
@@ -62,7 +56,7 @@ export async function POST(req: NextRequest) {
   if (!email.trim() || !email.includes("@") || !email.includes("."))
     errors.push("A valid email address is required.");
   if (!service.trim()) errors.push("Service description is required.");
-  if (budget && !VALID_BUDGETS.has(budget)) errors.push("Invalid budget selection.");
+
 
   if (firstName.length > 100) errors.push("First name is too long.");
   if (lastName.length > 100) errors.push("Last name is too long.");
@@ -82,7 +76,7 @@ export async function POST(req: NextRequest) {
     email: email.trim().toLowerCase(),
     company: company.trim() || null,
     service: service.trim(),
-    budget: budget || null,
+
     ip_address: ip,
     user_agent: req.headers.get("user-agent") ?? null,
   });

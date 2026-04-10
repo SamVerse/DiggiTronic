@@ -39,26 +39,21 @@ export default function AboutVision() {
     offset: ["start start", "end start"],
   });
   const sectionY = useTransform(scrollYProgress, [0, 1], ["0%", "80%"]);
-  const sectionFilter = useTransform(
-    scrollYProgress,
-    [0, 1],
-    ["brightness(1)", "brightness(0.6)"]
-  );
 
   return (
     <motion.section
       ref={sectionRef}
       data-navbar-theme="light"
-      className="relative z-10 w-full bg-white overflow-hidden rounded-t-[2rem]"
+      className="relative z-10 w-full overflow-hidden rounded-t-[2rem]"
       style={{
+        backgroundColor: '#ffffff',
         boxShadow: "0 -16px 60px rgba(0,0,0,0.3)",
         y: sectionY,
-        filter: sectionFilter,
       }}
     >
       <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 py-28 md:py-36">
 
-        <motion.p
+        {/* <motion.p
           className="text-[9px] uppercase font-mono tracking-[0.55em] text-gray-400 mb-16 text-center"
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -66,7 +61,7 @@ export default function AboutVision() {
           transition={{ duration: 0.7, ease: "easeOut" }}
         >
           Our Direction
-        </motion.p>
+        </motion.p> */}
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 relative">
 

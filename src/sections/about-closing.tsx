@@ -105,14 +105,14 @@ export default function AboutClosing() {
         />
 
         <motion.p
-          className="mt-10 text-[9px] uppercase font-mono tracking-[0.5em]"
+          className="mt-10 text-[10px] uppercase font-mono tracking-[0.5em]"
           style={{ color: "rgba(255,255,255,0.3)" }}
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: false, margin: "-60px" }}
           transition={{ delay: 0.8, duration: 0.8, ease: "easeOut" }}
         >
-          DiggiTronic — Digital Growth Studio
+          DiggiTronic
         </motion.p>
       </div>
     </motion.section>

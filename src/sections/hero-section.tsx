@@ -106,7 +106,17 @@ export default function HeroSection() {
               Book a Free Consultation
               <ArrowRight className="size-5" />
             </button>
-            <button className="border border-slate-700 text-gray-300 active:scale-95 hover:bg-white/5 transition rounded-full px-8 h-12">
+            <button className="group relative border border-slate-700 text-gray-300 active:scale-95 hover:bg-white/5 transition rounded-full px-8 h-12">
+              <div
+                className="absolute inset-0 rounded-full bg-linear-to-r from-[#AD390E] to-[#FFC93E] pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-200"
+                style={{
+                  padding: "1.5px",
+                  mask: "linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)",
+                  WebkitMask: "linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)",
+                  maskComposite: "exclude",
+                  WebkitMaskComposite: "xor",
+                }}
+              />
               View Our Services
             </button>
           </motion.div>

@@ -22,13 +22,7 @@ const stagger: Variants = {
   visible: { transition: { staggerChildren: 0.13 } },
 };
 
-const BUDGETS = [
-  { label: "< $500", id: "xs" },
-  { label: "$500–1K", id: "sm" },
-  { label: "$1K–5K", id: "md" },
-  { label: "$5K–10K", id: "lg" },
-  { label: "$10K+", id: "xl" },
-];
+
 
 interface FieldProps {
   label: string;
@@ -60,8 +54,8 @@ function FloatingField({
   const borderColor = error
     ? "rgba(239,68,68,0.8)"
     : focused
-    ? "#EB7300"
-    : "rgba(255,255,255,0.15)";
+      ? "#EB7300"
+      : "rgba(255,255,255,0.15)";
 
   return (
     <div className="relative w-full">
@@ -78,8 +72,8 @@ function FloatingField({
             color: error
               ? "rgba(239,68,68,0.8)"
               : focused
-              ? "#EB7300"
-              : "rgba(255,255,255,0.35)",
+                ? "#EB7300"
+                : "rgba(255,255,255,0.35)",
           }}
         >
           {label}
@@ -124,41 +118,7 @@ function FloatingField({
   );
 }
 
-function BudgetCard({
-  label,
-  selected,
-  onClick,
-}: {
-  label: string;
-  selected: boolean;
-  onClick: () => void;
-}) {
-  return (
-    <motion.button
-      type="button"
-      onClick={onClick}
-      className="rounded-xl px-3 py-3 text-[10px] font-mono text-center cursor-pointer tracking-wider uppercase transition-shadow duration-300"
-      style={{
-        border: selected
-          ? "1px solid #EB7300"
-          : "1px solid rgba(255,255,255,0.08)",
-        background: selected
-          ? "rgba(235,115,0,0.09)"
-          : "rgba(255,255,255,0.02)",
-        color: selected ? "#EB7300" : "rgba(255,255,255,0.45)",
-        boxShadow: selected ? "0 0 18px rgba(235,115,0,0.18)" : "none",
-      }}
-      whileHover={{
-        borderColor: selected ? "#EB7300" : "rgba(235,115,0,0.4)",
-        color: selected ? "#EB7300" : "rgba(255,255,255,0.75)",
-      }}
-      whileTap={{ scale: 0.95 }}
-      transition={{ duration: 0.2 }}
-    >
-      {label}
-    </motion.button>
-  );
-}
+
 
 function SuccessPanel() {
   return (
@@ -195,10 +155,10 @@ function SuccessPanel() {
       </div>
 
       <p
-        className="text-[9px] font-mono uppercase tracking-[0.4em]"
+        className="text-[10px] font-mono uppercase tracking-[0.4em]"
         style={{ color: "rgba(235,115,0,0.6)" }}
       >
-        DiggiTronic — Digital Growth Studio
+        DiggiTronic
       </p>
     </motion.div>
   );
@@ -213,7 +173,6 @@ export default function ContactSplit() {
   const [email, setEmail] = useState("");
   const [company, setCompany] = useState("");
   const [service, setService] = useState("");
-  const [budget, setBudget] = useState<string | null>(null);
   const [errors, setErrors] = useState<Record<string, boolean>>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
@@ -242,11 +201,6 @@ export default function ContactSplit() {
     setErrors({});
     setIsSubmitting(true);
 
-    // Map budget ID (e.g. "xs") to its display label (e.g. "< $500")
-    const budgetLabel = budget
-      ? BUDGETS.find((b) => b.id === budget)?.label ?? null
-      : null;
-
     try {
       const res = await fetch("/api/contact", {
         method: "POST",
@@ -258,7 +212,6 @@ export default function ContactSplit() {
           email,
           company,
           service,
-          budget: budgetLabel,
         }),
       });
 
@@ -485,26 +438,7 @@ export default function ContactSplit() {
                       error={!!errors.service}
                     />
 
-                    <div>
-                      <p
-                        className="text-[9px] font-mono uppercase tracking-[0.45em] mb-4"
-                        style={{ color: "rgba(255,255,255,0.35)" }}
-                      >
-                        Expected Budget
-                      </p>
-                      <div className="grid grid-cols-3 sm:grid-cols-5 gap-2">
-                        {BUDGETS.map((b) => (
-                          <BudgetCard
-                            key={b.id}
-                            label={b.label}
-                            selected={budget === b.id}
-                            onClick={() =>
-                              setBudget(budget === b.id ? null : b.id)
-                            }
-                          />
-                        ))}
-                      </div>
-                    </div>
+
 
                     <div
                       className="w-full h-px"
@@ -514,19 +448,22 @@ export default function ContactSplit() {
                     <motion.button
                       type="submit"
                       disabled={isSubmitting}
-                      className="relative w-full h-14 rounded-2xl font-black text-white text-sm tracking-[0.12em] uppercase overflow-hidden cursor-pointer disabled:cursor-not-allowed"
-                      style={{ background: "#EB7300" }}
-                      whileHover={
-                        !isSubmitting
-                          ? {
-                              y: -3,
-                              boxShadow: "0 12px 36px rgba(235,115,0,0.38)",
-                            }
-                          : {}
-                      }
+                      className="group relative w-full h-14 rounded-2xl font-black text-white text-sm tracking-[0.12em] uppercase overflow-hidden cursor-pointer disabled:cursor-not-allowed border"
+                      style={{ borderColor: "rgba(255,255,255,0.15)" }}
+                      whileHover={!isSubmitting ? { y: -3 } : {}}
                       whileTap={!isSubmitting ? { scale: 0.97 } : {}}
                       transition={{ duration: 0.25 }}
                     >
+                      <div
+                        className="absolute inset-0 rounded-2xl bg-linear-to-r from-[#AD390E] to-[#FFC93E] pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-200"
+                        style={{
+                          padding: "1.5px",
+                          mask: "linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)",
+                          WebkitMask: "linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)",
+                          maskComposite: "exclude",
+                          WebkitMaskComposite: "xor",
+                        }}
+                      />
                       <AnimatePresence mode="wait">
                         {!isSubmitting ? (
                           <motion.span

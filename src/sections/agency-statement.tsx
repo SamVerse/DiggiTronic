@@ -64,8 +64,6 @@ export default function AgencyStatement() {
 
   // Moves down by 30% of its height, making it scroll much slower than the viewport.
   const sectionY = useTransform(parallaxProgress, [0, 1], ["0%", "80%"]);
-  // Gracefully darkens to convey depth as it gets buried.
-  const sectionFilter = useTransform(parallaxProgress, [0, 1], ["brightness(1)", "brightness(0.4)"]);
 
   const fadeLeft: any = {
     hidden: { opacity: 0, x: -60, filter: "blur(4px)" },
@@ -97,13 +95,14 @@ export default function AgencyStatement() {
       id="agency-statement"
       data-navbar-theme="light"
       ref={sectionRef}
-      className="relative z-10 w-full bg-white overflow-hidden rounded-t-[2rem]"
+      className="relative z-10 w-full overflow-hidden rounded-t-[2rem]"
       style={{
+        backgroundColor: '#ffffff',
         boxShadow: "0 -16px 60px rgba(0,0,0,0.3)",
         y: sectionY,
-        filter: sectionFilter,
       }}
     >
+      {/* 
       <motion.div
         aria-hidden
         style={{ y: watermarkY }}
@@ -120,12 +119,15 @@ export default function AgencyStatement() {
           }}
         />
       </motion.div>
+      */}
 
+      {/*
       <motion.div
         aria-hidden
         style={{ y: decorLineY }}
         className="absolute top-0 bottom-0 left-[48%] hidden xl:block w-px bg-gray-100 pointer-events-none"
       />
+      */}
 
       {/* ══════════════════════════════════════════════════════
           MOBILE LAYOUT  (< lg) — stacked column
@@ -139,9 +141,9 @@ export default function AgencyStatement() {
           viewport={{ once: false, margin: "-100px" }}
           variants={staggerContainer}
         >
-          <motion.p variants={fadeLeft} className="text-[9px] uppercase tracking-[0.55em] text-gray-400 mb-5 font-mono">
+          {/* <motion.p variants={fadeLeft} className="text-[9px] uppercase tracking-[0.55em] text-gray-400 mb-5 font-mono">
             What we do
-          </motion.p>
+          </motion.p> */}
 
           <motion.h2
             variants={fadeLeft}
@@ -227,9 +229,9 @@ export default function AgencyStatement() {
             viewport={{ once: false, margin: "-150px" }}
             variants={staggerContainer}
           >
-            <motion.p variants={fadeLeft} className="text-[9px] uppercase tracking-[0.55em] text-gray-400 mb-6 font-mono">
+            {/* <motion.p variants={fadeLeft} className="text-[9px] uppercase tracking-[0.55em] text-gray-400 mb-6 font-mono">
               What we do
-            </motion.p>
+            </motion.p> */}
 
             <motion.h2
               variants={fadeLeft}
@@ -294,7 +296,7 @@ export default function AgencyStatement() {
         </motion.div>
       </div>
 
-      <div className="relative w-full overflow-hidden border-t border-gray-100 z-10 bg-white">
+      <div className="relative w-full overflow-hidden border-t border-gray-100 z-10" style={{ backgroundColor: '#ffffff' }}>
         <motion.div
           className="flex whitespace-nowrap py-3"
           animate={{ x: ["0%", "-50%"] }}

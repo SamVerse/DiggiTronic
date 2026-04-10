@@ -111,11 +111,6 @@ export default function ClientsSection() {
   });
 
   const sectionY = useTransform(scrollYProgress, [0, 1], ["0%", "60%"]);
-  const sectionFilter = useTransform(
-    scrollYProgress,
-    [0, 1],
-    ["brightness(1)", "brightness(0.5)"]
-  );
 
   return (
     <motion.section
@@ -124,7 +119,6 @@ export default function ClientsSection() {
       style={{
         background: "#050505",
         y: sectionY,
-        filter: sectionFilter,
       }}
     >
       <div
@@ -156,13 +150,13 @@ export default function ClientsSection() {
           viewport={{ once: false, margin: "-80px" }}
           variants={staggerContainer}
         >
-          <motion.p
+          {/* <motion.p
             variants={fadeUp}
             className="text-[9px] uppercase font-mono mb-5"
             style={{ color: "rgba(255,255,255,0.65)", letterSpacing: "0.55em" }}
           >
             Our Clients
-          </motion.p>
+          </motion.p> */}
 
           <motion.h2
             variants={fadeUp}

@@ -8,7 +8,6 @@ import {
   useMotionValue,
   useSpring,
 } from "framer-motion";
-import { ChevronDown } from "lucide-react";
 
 const LINE_ONE = ["WE", "DON'T", "JUST", "BUILD", "BRANDS."];
 const LINE_TWO = ["WE", "ENGINEER", "DIGITAL", "IMPACT."];
@@ -143,30 +142,6 @@ export default function AboutHero() {
         </motion.p>
       </div>
 
-      <motion.div
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 select-none pointer-events-none"
-        initial={{ opacity: 0, y: 10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 1.3, duration: 0.8, ease: "easeOut" }}
-      >
-        <span
-          className="text-[9px] uppercase font-mono tracking-[0.45em]"
-          style={{ color: "rgba(255,255,255,0.35)" }}
-        >
-          Scroll
-        </span>
-        <div className="flex flex-col items-center gap-0">
-          {[0, 1, 2].map((i) => (
-            <motion.div
-              key={i}
-              animate={{ opacity: [0.25, 1, 0.25], y: [0, 5, 0] }}
-              transition={{ duration: 1.6, repeat: Infinity, delay: i * 0.18, ease: "easeInOut" }}
-            >
-              <ChevronDown size={17} strokeWidth={2} style={{ color: "#EB7300" }} />
-            </motion.div>
-          ))}
-        </div>
-      </motion.div>
     </motion.section>
   );
 }

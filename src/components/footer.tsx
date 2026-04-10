@@ -312,13 +312,7 @@ export default function Footer() {
                         &copy; {year} Digitronic. All rights reserved.
                     </p>
 
-                    {/* Pulsing orange dot — center */}
-                    <motion.span
-                        className="w-1.5 h-1.5 rounded-full shrink-0 hidden sm:block"
-                        style={{ background: "#ff4d00" }}
-                        animate={{ opacity: [0.4, 1, 0.4], scale: [1, 1.3, 1] }}
-                        transition={{ duration: 2.4, repeat: Infinity, ease: "easeInOut" }}
-                    />
+
 
                     <div className="flex items-center gap-4">
                         {[

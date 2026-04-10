@@ -6,13 +6,13 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import {
-  Film, Box, Sparkles, Play,
-  Share2, TrendingUp,
-  Globe, Layers, Smartphone, Gamepad2,
-  Target, Users, Link, Mail,
-  BarChart2, Hash, Search,
-  Video, Languages, Mic, Cpu,
-  Palette, Image, Monitor, PenTool, BarChart,
+  Film, Box, Wand2, Sparkles,
+  Megaphone, TrendingUp,
+  Code, Layout, Smartphone, Gamepad2,
+  MousePointer, Users, Handshake, Mail,
+  Trophy, Hash, Search,
+  Video, Languages, Mic, Brain,
+  Palette, Image, Monitor, Brush, PieChart,
   LucideIcon,
 } from "lucide-react";
 import type { ServiceOffering } from "@/data/services";
@@ -20,13 +20,13 @@ import type { ServiceOffering } from "@/data/services";
 gsap.registerPlugin(ScrollTrigger);
 
 const ICON_MAP: Record<string, LucideIcon> = {
-  Film, Box, Sparkles, Play,
-  Share2, TrendingUp,
-  Globe, Layers, Smartphone, Gamepad2,
-  Target, Users, Link, Mail,
-  BarChart2, Hash, Search,
-  Video, Languages, Mic, Cpu,
-  Palette, Image, Monitor, PenTool, BarChart,
+  Film, Box, Wand2, Sparkles,
+  Megaphone, TrendingUp,
+  Code, Layout, Smartphone, Gamepad2,
+  MousePointer, Users, Handshake, Mail,
+  Trophy, Hash, Search,
+  Video, Languages, Mic, Brain,
+  Palette, Image, Monitor, Brush, PieChart,
 };
 
 const fadeUp: Variants = {

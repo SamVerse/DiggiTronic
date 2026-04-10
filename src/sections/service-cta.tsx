@@ -131,12 +131,22 @@ export default function ServiceCta({ service }: { service: ServiceData }) {
             </Link>
           </motion.div>
 
-          <motion.div variants={fadeUp} whileHover={{ y: -3 }} transition={{ type: "spring", stiffness: 300, damping: 25 }}>
+          <motion.div variants={fadeUp} whileHover={{ y: -3 }} transition={{ type: "spring", stiffness: 300, damping: 25 }} className="group">
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 px-8 py-4 rounded-full font-black text-sm border transition-all hover:border-[#EB7300]/50 hover:text-[#EB7300]"
+              className="relative inline-flex items-center gap-2 px-8 py-4 rounded-full font-black text-sm border transition-all"
               style={{ borderColor: "rgba(255,255,255,0.15)", color: "rgba(255,255,255,0.55)" }}
             >
+              <div
+                className="absolute inset-0 rounded-full bg-linear-to-r from-[#AD390E] to-[#FFC93E] pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-200"
+                style={{
+                  padding: "1.5px",
+                  mask: "linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)",
+                  WebkitMask: "linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)",
+                  maskComposite: "exclude",
+                  WebkitMaskComposite: "xor",
+                }}
+              />
               Download Brochure
             </Link>
           </motion.div>

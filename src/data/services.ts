@@ -56,8 +56,8 @@ export const SERVICES: ServiceData[] = [
     offerings: [
       { icon: "Film", title: "2D Animation", desc: "Flat and motion graphic animations that simplify complex ideas." },
       { icon: "Box", title: "3D Animation", desc: "Photorealistic 3D visuals for products, spaces, and brand worlds." },
-      { icon: "Sparkles", title: "Motion Graphics", desc: "Dynamic title sequences, kinetic text, and brand motion systems." },
-      { icon: "Play", title: "Logo Animation", desc: "Animated logo reveals that make your brand impossible to forget." },
+      { icon: "Wand2", title: "Motion Graphics", desc: "Dynamic title sequences, kinetic text, and brand motion systems." },
+      { icon: "Sparkles", title: "Logo Animation", desc: "Animated logo reveals that make your brand impossible to forget." },
     ],
     useCases: [
       {
@@ -105,7 +105,7 @@ export const SERVICES: ServiceData[] = [
         "We don't post to fill a calendar. We post with purpose — every piece of content is part of a larger strategy built to grow your brand.",
     },
     offerings: [
-      { icon: "Share2", title: "Social Media Marketing", desc: "End-to-end social strategy, content creation, and community management." },
+      { icon: "Megaphone", title: "Social Media Marketing", desc: "End-to-end social strategy, content creation, and community management." },
       { icon: "TrendingUp", title: "Social Media Optimisation", desc: "Profile audits, bio optimisation, and algorithmic tuning for maximum reach." },
     ],
     useCases: [
@@ -154,8 +154,8 @@ export const SERVICES: ServiceData[] = [
         "We don't use templates. Every line of code and pixel of design is crafted for your brand's unique goals and audience.",
     },
     offerings: [
-      { icon: "Globe", title: "Website Development", desc: "Custom websites built on Next.js and modern stacks — fast, beautiful, and conversion-optimised." },
-      { icon: "Layers", title: "UI/UX Design", desc: "User-centered design systems and high-fidelity prototypes that guide seamless experiences." },
+      { icon: "Code", title: "Website Development", desc: "Custom websites built on Next.js and modern stacks — fast, beautiful, and conversion-optimised." },
+      { icon: "Layout", title: "UI/UX Design", desc: "User-centered design systems and high-fidelity prototypes that guide seamless experiences." },
       { icon: "Smartphone", title: "App Development", desc: "Cross-platform mobile applications with intuitive interfaces and robust backends." },
       { icon: "Gamepad2", title: "Game Development", desc: "Browser and mobile games with immersive mechanics built for engagement and retention." },
     ],
@@ -205,9 +205,9 @@ export const SERVICES: ServiceData[] = [
         "We don't set campaigns and forget. We monitor, iterate, and scale what's working — every single day.",
     },
     offerings: [
-      { icon: "Target", title: "Paid Advertising", desc: "Google, Meta, and platform-native ad campaigns optimised for maximum ROAS." },
+      { icon: "MousePointer", title: "Paid Advertising", desc: "Google, Meta, and platform-native ad campaigns optimised for maximum ROAS." },
       { icon: "Users", title: "Influencer Marketing", desc: "End-to-end influencer partnerships from identification to performance tracking." },
-      { icon: "Link", title: "Affiliate Marketing", desc: "Scalable affiliate programs that turn partners into your best growth channel." },
+      { icon: "Handshake", title: "Affiliate Marketing", desc: "Scalable affiliate programs that turn partners into your best growth channel." },
       { icon: "Mail", title: "Email Marketing", desc: "Automated email sequences and newsletters that nurture leads and drive repeat revenue." },
     ],
     useCases: [
@@ -256,7 +256,7 @@ export const SERVICES: ServiceData[] = [
         "SEO is a long game, and we play it seriously. We don't chase hacks — we build authority that lasts.",
     },
     offerings: [
-      { icon: "BarChart2", title: "Website Ranking", desc: "Keyword research, on-page optimisation, and authority building to rank for high-intent terms." },
+      { icon: "Trophy", title: "Website Ranking", desc: "Keyword research, on-page optimisation, and authority building to rank for high-intent terms." },
       { icon: "Hash", title: "Social Ranking", desc: "Platform-specific optimisation to rank content on YouTube, Pinterest, and social search." },
       { icon: "Search", title: "SEO Audit", desc: "Complete technical, on-page, and off-page analysis with a detailed remediation roadmap." },
     ],
@@ -309,7 +309,7 @@ export const SERVICES: ServiceData[] = [
       { icon: "Video", title: "AI Video Generation", desc: "Scalable video content at a fraction of traditional production time and cost." },
       { icon: "Languages", title: "AI Translation", desc: "Localise your content for global markets with AI-powered, culturally-aware translation." },
       { icon: "Mic", title: "AI Voice Over", desc: "Natural-sounding AI voice overs in multiple languages for any content format." },
-      { icon: "Cpu", title: "Custom AI Models", desc: "Fine-tuned AI models trained on your brand data for unique, on-brand outputs." },
+      { icon: "Brain", title: "Custom AI Models", desc: "Fine-tuned AI models trained on your brand data for unique, on-brand outputs." },
     ],
     useCases: [
       {
@@ -361,8 +361,8 @@ export const SERVICES: ServiceData[] = [
       { icon: "Image", title: "Social Media Graphics", desc: "Scroll-stopping social templates, post designs, and animated story assets." },
       { icon: "Monitor", title: "Website Design", desc: "High-fidelity UI/UX designs for websites that convert, delight, and perform." },
       { icon: "Smartphone", title: "App Design", desc: "Mobile app interfaces designed for intuitive user experience and visual excellence." },
-      { icon: "PenTool", title: "Logo Design", desc: "Iconic, versatile logos that capture your brand essence and stand the test of time." },
-      { icon: "BarChart", title: "Infographics", desc: "Data-driven visual storytelling that makes complex information beautiful and shareable." },
+      { icon: "Brush", title: "Logo Design", desc: "Iconic, versatile logos that capture your brand essence and stand the test of time." },
+      { icon: "PieChart", title: "Infographics", desc: "Data-driven visual storytelling that makes complex information beautiful and shareable." },
     ],
     useCases: [
       {

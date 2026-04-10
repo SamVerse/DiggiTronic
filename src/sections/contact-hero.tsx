@@ -8,7 +8,6 @@ import {
   useMotionValue,
   useSpring,
 } from "framer-motion";
-import { ChevronDown } from "lucide-react";
 
 const LINE_ONE = ["LET'S", "BUILD", "SOMETHING"];
 const LINE_TWO = ["EXTRAORDINARY."];
@@ -177,33 +176,6 @@ export default function ContactHero() {
         </motion.p>
       </div>
 
-      <motion.div
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 pointer-events-none select-none"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.3, duration: 0.8 }}
-      >
-        <span
-          className="text-[8px] font-mono uppercase tracking-[0.5em]"
-          style={{ color: "rgba(255,255,255,0.3)" }}
-        >
-          Scroll
-        </span>
-        {[0, 1, 2].map((i) => (
-          <motion.div
-            key={i}
-            animate={{ opacity: [0.2, 1, 0.2], y: [0, 5, 0] }}
-            transition={{
-              duration: 1.6,
-              repeat: Infinity,
-              delay: i * 0.18,
-              ease: "easeInOut",
-            }}
-          >
-            <ChevronDown size={16} strokeWidth={2} style={{ color: "#EB7300" }} />
-          </motion.div>
-        ))}
-      </motion.div>
     </motion.section>
   );
 }

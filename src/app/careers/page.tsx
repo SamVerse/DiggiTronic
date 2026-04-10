@@ -5,7 +5,7 @@ import { motion, Variants, useScroll, useTransform, useMotionValue, useSpring, u
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
-import { ChevronDown, Check } from "lucide-react";
+import { Check } from "lucide-react";
 import Link from "next/link";
 import LenisScroll from "@/components/lenis-scroll";
 import Navbar from "@/components/navbar";
@@ -350,36 +350,24 @@ export default function CareersPage() {
               </Link>
               <Link
                 href="/about"
-                className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full font-black text-sm border transition-colors"
+                className="group relative inline-flex items-center gap-2 px-7 py-3.5 rounded-full font-black text-sm border transition-colors"
                 style={{ borderColor: "rgba(255,255,255,0.15)", color: "rgba(255,255,255,0.6)" }}
               >
+                <div
+                  className="absolute inset-0 rounded-full bg-linear-to-r from-[#AD390E] to-[#FFC93E] pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-200"
+                  style={{
+                    padding: "1.5px",
+                    mask: "linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)",
+                    WebkitMask: "linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)",
+                    maskComposite: "exclude",
+                    WebkitMaskComposite: "xor",
+                  }}
+                />
                 Learn About Us
               </Link>
             </motion.div>
           </div>
 
-          <motion.div
-            className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 pointer-events-none select-none"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 1.3, duration: 0.8 }}
-          >
-            <span
-              className="text-[8px] font-mono uppercase tracking-[0.5em]"
-              style={{ color: "rgba(255,255,255,0.3)" }}
-            >
-              Scroll
-            </span>
-            {[0, 1, 2].map((i) => (
-              <motion.div
-                key={i}
-                animate={{ opacity: [0.2, 1, 0.2], y: [0, 5, 0] }}
-                transition={{ duration: 1.6, repeat: Infinity, delay: i * 0.18, ease: "easeInOut" }}
-              >
-                <ChevronDown size={16} strokeWidth={2} style={{ color: "#EB7300" }} />
-              </motion.div>
-            ))}
-          </motion.div>
         </motion.section>
 
         {/* ══ CULTURE SECTION ═══════════════════════════════════════ */}
@@ -782,9 +770,19 @@ export default function CareersPage() {
             >
               <Link
                 href="/careers/listings"
-                className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full font-black text-sm border transition-all hover:border-[#EB7300]/50"
+                className="group relative inline-flex items-center gap-2 px-8 py-3.5 rounded-full font-black text-sm border transition-all"
                 style={{ borderColor: "rgba(235,115,0,0.3)", color: "#EB7300" }}
               >
+                <div
+                  className="absolute inset-0 rounded-full bg-linear-to-r from-[#AD390E] to-[#FFC93E] pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-200"
+                  style={{
+                    padding: "1.5px",
+                    mask: "linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)",
+                    WebkitMask: "linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)",
+                    maskComposite: "exclude",
+                    WebkitMaskComposite: "xor",
+                  }}
+                />
                 View All Open Positions
                 <span className="text-base">→</span>
               </Link>

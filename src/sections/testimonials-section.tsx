@@ -74,7 +74,7 @@ export default function TestimonialsSection() {
     if (isHovered) return;
     const id = setInterval(() => {
       setActiveIndex((i) => (i + 1) % TESTIMONIALS.length);
-    }, 6000);
+    }, 5000);
     return () => clearInterval(id);
   }, [isHovered]);
 
@@ -97,8 +97,9 @@ export default function TestimonialsSection() {
     <motion.section
       ref={sectionRef}
       data-navbar-theme="light"
-      className="relative z-10 w-full bg-white overflow-hidden rounded-t-[2rem]"
+      className="relative z-10 w-full overflow-hidden rounded-t-[2rem]"
       style={{
+        backgroundColor: '#ffffff',
         boxShadow: "0 -16px 60px rgba(0,0,0,0.3)",
         y: sectionY,
       }}
@@ -134,12 +135,12 @@ export default function TestimonialsSection() {
           viewport={{ once: false, margin: "-50px" }}
           variants={staggerContainer}
         >
-          <motion.p
+          {/* <motion.p
             variants={fadeUp}
             className="text-[9px] uppercase font-mono tracking-[0.55em] text-gray-400 mb-4"
           >
             What clients say
-          </motion.p>
+          </motion.p> */}
           <motion.h2
             variants={fadeUp}
             className="font-black leading-[0.9] tracking-tight text-gray-900"

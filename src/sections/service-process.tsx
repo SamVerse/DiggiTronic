@@ -95,11 +95,11 @@ export default function ServiceProcess() {
           <div ref={containerRef} className="flex flex-col">
             <div className="relative flex flex-col">
               <div
-                className="absolute left-4 top-4 bottom-4 w-px"
+                className="absolute left-4 top-4 bottom-4 w-px z-0"
                 style={{ background: "rgba(255,255,255,0.06)" }}
               />
               <motion.div
-                className="absolute left-4 top-4 w-px"
+                className="absolute left-4 top-4 w-px z-0"
                 style={{ background: "linear-gradient(to bottom, #EB7300, rgba(235,115,0,0.1))", originY: 0 }}
                 animate={{ height: `${((activeStep + 1) / STEPS.length) * 100}%` }}
                 transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
@@ -114,7 +114,7 @@ export default function ServiceProcess() {
                   <motion.button
                     key={step.num}
                     onClick={() => setActiveStep(i)}
-                    className="relative flex items-center gap-5 py-5 text-left group"
+                    className="relative z-10 flex items-center gap-5 py-5 text-left group"
                     initial={{ opacity: 0, x: -20 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: false, margin: "-40px" }}
@@ -126,8 +126,8 @@ export default function ServiceProcess() {
                         background: isActive
                           ? "#EB7300"
                           : isDone
-                          ? "rgba(235,115,0,0.25)"
-                          : "rgba(255,255,255,0.05)",
+                          ? "linear-gradient(rgba(235,115,0,0.25), rgba(235,115,0,0.25)), #050505"
+                          : "linear-gradient(rgba(255,255,255,0.05), rgba(255,255,255,0.05)), #050505",
                         border: `1px solid ${isActive ? "#EB7300" : isDone ? "rgba(235,115,0,0.4)" : "rgba(255,255,255,0.1)"}`,
                         boxShadow: isActive ? "0 0 16px rgba(235,115,0,0.35)" : "none",
                       }}
@@ -155,14 +155,7 @@ export default function ServiceProcess() {
                       </div>
                     </div>
 
-                    {isActive && (
-                      <motion.div
-                        className="w-1.5 h-1.5 rounded-full shrink-0"
-                        style={{ background: "#EB7300" }}
-                        layoutId="active-dot"
-                        transition={{ type: "spring", stiffness: 400, damping: 30 }}
-                      />
-                    )}
+                    {/* Dot indicator removed as requested */}
                   </motion.button>
                 );
               })}

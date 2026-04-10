@@ -372,12 +372,22 @@ export default function ApplyClient({ job }: { job: Job }) {
               <motion.button
                 type="submit"
                 disabled={submitState !== "idle"}
-                className="relative w-full rounded-2xl py-4 font-black text-sm text-white overflow-hidden"
-                style={{ background: "linear-gradient(135deg, #EB7300, #ff9a00)" }}
-                whileHover={submitState === "idle" ? { y: -2, boxShadow: "0 10px 30px rgba(235,115,0,0.4)" } : {}}
+                className="group relative w-full rounded-2xl py-4 font-black text-sm text-white overflow-hidden border"
+                style={{ borderColor: "rgba(255,255,255,0.15)" }}
+                whileHover={submitState === "idle" ? { y: -2 } : {}}
                 whileTap={submitState === "idle" ? { scale: 0.98 } : {}}
                 transition={{ type: "spring", stiffness: 300, damping: 25 }}
               >
+                <div
+                  className="absolute inset-0 rounded-2xl bg-linear-to-r from-[#AD390E] to-[#FFC93E] pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-200"
+                  style={{
+                    padding: "1.5px",
+                    mask: "linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)",
+                    WebkitMask: "linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)",
+                    maskComposite: "exclude",
+                    WebkitMaskComposite: "xor",
+                  }}
+                />
                 {submitState === "loading" && (
                   <motion.div
                     className="absolute bottom-0 left-0 h-[3px]"

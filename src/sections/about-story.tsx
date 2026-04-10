@@ -79,13 +79,13 @@ export default function AboutStory() {
             viewport={{ once: false, margin: "-80px" }}
             variants={staggerContainer}
           >
-            <motion.p
+            {/* <motion.p
               variants={fadeLeft}
               className="text-[9px] uppercase font-mono tracking-[0.55em] mb-6"
               style={{ color: "#EB7300" }}
             >
               Our Story
-            </motion.p>
+            </motion.p> */}
 
             <motion.h2
               variants={fadeLeft}

@@ -13,7 +13,6 @@ import {
   AnimatePresence,
 } from "framer-motion";
 import Hyperspeed from "@/components/Hyperspeed";
-import { ChevronDown } from "lucide-react";
 
 const VALUE_LABELS = [
   "Growth.",
@@ -74,45 +73,6 @@ function RotatingValue() {
   );
 }
 
-function ScrollHint() {
-  return (
-    <motion.div
-      className="flex flex-col items-center gap-1.5 select-none pointer-events-none"
-      initial={{ opacity: 0, y: 10 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ delay: 1.4, duration: 0.8, ease: "easeOut" }}
-    >
-      <span
-        className="text-[11px] uppercase font-mono tracking-[0.45em]"
-        style={{ color: "rgba(255,255,255,0.45)" }}
-      >
-        Scroll
-      </span>
-
-      {/* Three staggered chevrons — pulse downward */}
-      <div className="flex flex-col items-center gap-0">
-        {[0, 1, 2].map((i) => (
-          <motion.div
-            key={i}
-            animate={{ opacity: [0.3, 1, 0.3], y: [0, 5, 0] }}
-            transition={{
-              duration: 1.6,
-              repeat: Infinity,
-              delay: i * 0.18,
-              ease: "easeInOut",
-            }}
-          >
-            <ChevronDown
-              size={18}
-              strokeWidth={2}
-              style={{ color: "rgba(255,90,0,0.95)" }}
-            />
-          </motion.div>
-        ))}
-      </div>
-    </motion.div>
-  );
-}
 
 export default function ServicesCTA() {
   const containerRef = useRef<HTMLElement | null>(null);
@@ -192,9 +152,9 @@ export default function ServicesCTA() {
         background: 0,
         shoulderLines: 1250072,
         brokenLines: 1250072,
-        leftCars: [16715818, 15415358, 16715818],
-        rightCars: [14342906, 12499683, 9410532],
-        sticks: 14342906,
+        leftCars: [16777215, 16731392, 16777215],
+        rightCars: [16738816, 16777215, 15430400],
+        sticks: 16731392,
       },
     }),
     []
@@ -258,7 +218,7 @@ export default function ServicesCTA() {
         className="relative z-30 flex h-full flex-col items-center justify-center text-center px-6 pointer-events-none"
         style={{ opacity: contentOpacity, y: contentY }}
       >
-        <motion.p
+        {/* <motion.p
           className="text-[9px] uppercase font-mono mb-6 tracking-[0.55em]"
           style={{ color: "rgba(255,255,255,0.35)" }}
           initial={{ opacity: 0, y: 10 }}
@@ -267,7 +227,7 @@ export default function ServicesCTA() {
           transition={{ delay: 0.2, duration: 0.6 }}
         >
           Full-service digital studio
-        </motion.p>
+        </motion.p> */}
 
         <h2
           ref={titleRef}
@@ -296,16 +256,14 @@ export default function ServicesCTA() {
           className="mt-10 flex flex-col items-center gap-8"
         >
           <div className="flex flex-col mb-2 items-center gap-1 text-2xl md:text-3xl font-black">
-            <span style={{ color: "rgba(255,255,255,0.88)" }}>We deliver</span>
+            <span style={{ color: "rgba(255,255,255,0.99)" }}>We deliver</span>
             <RotatingValue />
           </div>
 
-          <div
+          {/* <div
             className="w-px h-8"
             style={{ background: "rgba(255,255,255,0.22)" }}
-          />
-
-          <ScrollHint />
+          /> */}
         </div>
       </motion.div>
     </motion.section>

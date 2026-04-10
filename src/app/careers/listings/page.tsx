@@ -207,9 +207,19 @@ export default function ListingsPage() {
                         <Link
                           href={`/careers/${job.slug}/apply`}
                           onClick={(e) => e.stopPropagation()}
-                          className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-black border transition-colors hover:border-[#EB7300]/50 hover:text-[#EB7300]"
+                          className="group relative inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-black border transition-colors"
                           style={{ borderColor: "rgba(255,255,255,0.1)", color: "rgba(255,255,255,0.5)" }}
                         >
+                          <div
+                            className="absolute inset-0 rounded-full bg-linear-to-r from-[#AD390E] to-[#FFC93E] pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-200"
+                            style={{
+                              padding: "1.5px",
+                              mask: "linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)",
+                              WebkitMask: "linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)",
+                              maskComposite: "exclude",
+                              WebkitMaskComposite: "xor",
+                            }}
+                          />
                           Apply Now
                         </Link>
                       </div>

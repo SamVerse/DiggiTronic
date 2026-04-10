@@ -2,8 +2,6 @@
 
 import { useRef, useEffect } from "react";
 import { motion, useScroll, useTransform, useMotionValue, useSpring } from "framer-motion";
-// tiltX/tiltY removed — visual container is static
-import { ChevronDown } from "lucide-react";
 import Link from "next/link";
 import type { ServiceData } from "@/data/services";
 import { SERVICE_VISUALS } from "@/components/service-visuals";
@@ -155,12 +153,22 @@ export default function ServiceHero({ service }: { service: ServiceData }) {
                 <span className="text-base">→</span>
               </Link>
             </motion.div>
-            <motion.div whileHover={{ y: -2 }} transition={{ type: "spring", stiffness: 300, damping: 25 }}>
+            <motion.div whileHover={{ y: -2 }} transition={{ type: "spring", stiffness: 300, damping: 25 }} className="group">
               <Link
                 href="/about"
-                className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full font-black text-sm border transition-colors"
+                className="relative inline-flex items-center gap-2 px-7 py-3.5 rounded-full font-black text-sm border transition-colors"
                 style={{ borderColor: "rgba(255,255,255,0.15)", color: "rgba(255,255,255,0.55)" }}
               >
+                <div
+                  className="absolute inset-0 rounded-full bg-linear-to-r from-[#AD390E] to-[#FFC93E] pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-200"
+                  style={{
+                    padding: "1.5px",
+                    mask: "linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)",
+                    WebkitMask: "linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)",
+                    maskComposite: "exclude",
+                    WebkitMaskComposite: "xor",
+                  }}
+                />
                 View Our Work
               </Link>
             </motion.div>
@@ -180,28 +188,6 @@ export default function ServiceHero({ service }: { service: ServiceData }) {
         </motion.div>
       </div>
 
-      <motion.div
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 pointer-events-none select-none"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.3, duration: 0.8 }}
-      >
-        <span
-          className="text-[8px] font-mono uppercase tracking-[0.5em]"
-          style={{ color: "rgba(255,255,255,0.3)" }}
-        >
-          Scroll
-        </span>
-        {[0, 1, 2].map((i) => (
-          <motion.div
-            key={i}
-            animate={{ opacity: [0.2, 1, 0.2], y: [0, 5, 0] }}
-            transition={{ duration: 1.6, repeat: Infinity, delay: i * 0.18, ease: "easeInOut" }}
-          >
-            <ChevronDown size={16} strokeWidth={2} style={{ color: "#EB7300" }} />
-          </motion.div>
-        ))}
-      </motion.div>
     </motion.section>
   );
 }

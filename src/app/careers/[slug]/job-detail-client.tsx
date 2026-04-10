@@ -226,14 +226,25 @@ export default function JobDetailClient({ job }: { job: Job }) {
               variants={fadeUp}
             >
               <motion.div
-                whileHover={{ y: -3, boxShadow: "0 12px 36px rgba(235,115,0,0.35)" }}
+                whileHover={{ y: -3 }}
                 transition={{ type: "spring", stiffness: 300, damping: 25 }}
+                className="group"
               >
                 <Link
                   href={`/careers/${job.slug}/apply`}
-                  className="flex items-center justify-center gap-3 w-full rounded-2xl py-5 font-black text-base text-white"
-                  style={{ background: "linear-gradient(135deg, #EB7300, #ff9a00)", boxShadow: "0 4px 24px rgba(235,115,0,0.25)" }}
+                  className="relative flex items-center justify-center gap-3 w-full rounded-2xl py-5 font-black text-base text-white border"
+                  style={{ borderColor: "rgba(255,255,255,0.15)" }}
                 >
+                  <div
+                    className="absolute inset-0 rounded-2xl bg-linear-to-r from-[#AD390E] to-[#FFC93E] pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-200"
+                    style={{
+                      padding: "1.5px",
+                      mask: "linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)",
+                      WebkitMask: "linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)",
+                      maskComposite: "exclude",
+                      WebkitMaskComposite: "xor",
+                    }}
+                  />
                   Apply for this Position
                   <span className="text-xl">→</span>
                 </Link>
