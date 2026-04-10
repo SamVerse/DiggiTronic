@@ -68,15 +68,13 @@ function StarRating() {
 export default function TestimonialsSection() {
   const sectionRef = useRef<HTMLElement>(null);
   const [activeIndex, setActiveIndex] = useState(0);
-  const [isHovered, setIsHovered] = useState(false);
 
   useEffect(() => {
-    if (isHovered) return;
     const id = setInterval(() => {
       setActiveIndex((i) => (i + 1) % TESTIMONIALS.length);
-    }, 5000);
+    }, 7000);
     return () => clearInterval(id);
-  }, [isHovered]);
+  }, [activeIndex]);
 
   const { scrollYProgress } = useScroll({
     target: sectionRef,
@@ -103,8 +101,6 @@ export default function TestimonialsSection() {
         boxShadow: "0 -16px 60px rgba(0,0,0,0.3)",
         y: sectionY,
       }}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
     >
       <motion.div
         aria-hidden
