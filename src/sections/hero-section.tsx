@@ -4,6 +4,7 @@ import { useRef } from "react";
 import { ArrowRight } from "lucide-react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import HeroGlobe from "@/components/hero-globe";
+import Link from "next/link";
 import LightRays from "@/components/LightRays";
 
 export default function HeroSection() {
@@ -49,6 +50,7 @@ export default function HeroSection() {
 
         <div className="relative z-10 flex flex-col items-center w-full px-4">
           <motion.a
+            href="/contact"
             className="flex items-center mt-48 gap-2 border border-slate-800 bg-slate-900/50 text-gray-300 rounded-full px-4 py-2 backdrop-blur-sm"
             initial={{ y: -20, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
@@ -102,11 +104,11 @@ export default function HeroSection() {
             viewport={{ once: true }}
             transition={{ type: "spring", stiffness: 320, damping: 70, mass: 1 }}
           >
-            <button className="flex items-center gap-2 bg-[#ff4d00] hover:bg-[#ff6a00] font-medium transition text-white active:scale-95 rounded-full px-8 h-12 shadow-[0_0_20px_rgba(255,77,0,0.3)]">
+            <Link href="/contact" className="flex items-center gap-2 bg-[#ff4d00] hover:bg-[#ff6a00] font-medium transition text-white active:scale-95 rounded-full px-8 h-12 shadow-[0_0_20px_rgba(255,77,0,0.3)]">
               Book a Free Consultation
               <ArrowRight className="size-5" />
-            </button>
-            <button className="group relative border border-slate-700 text-gray-300 active:scale-95 hover:bg-white/5 transition rounded-full px-8 h-12">
+            </Link>
+            <Link href="/#agency-statement" className="group flex items-center justify-center relative border border-slate-700 text-gray-300 active:scale-95 hover:bg-white/5 transition rounded-full px-8 h-12">
               <div
                 className="absolute inset-0 rounded-full bg-linear-to-r from-[#AD390E] to-[#FFC93E] pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-200"
                 style={{
@@ -117,8 +119,8 @@ export default function HeroSection() {
                   WebkitMaskComposite: "xor",
                 }}
               />
-              View Our Services
-            </button>
+              Explore Our Approach
+            </Link>
           </motion.div>
 
         </div>

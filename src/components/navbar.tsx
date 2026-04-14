@@ -20,13 +20,13 @@ function getNavbarTheme(el: Element | null): "light" | "dark" | null {
 }
 
 const MOBILE_SERVICES = [
-    "Video Production",
-    "Social Media",
-    "Development",
-    "Marketing",
-    "SEO",
-    "AI Services",
-    "Graphics & Animation",
+    { name: "Video Production", href: "/services/video-production" },
+    { name: "Social Media", href: "/services/social-media" },
+    { name: "Development", href: "/services/development" },
+    { name: "Marketing", href: "/services/marketing" },
+    { name: "SEO", href: "/services/seo" },
+    { name: "AI Services", href: "/services/ai-services" },
+    { name: "Graphics & Animation", href: "/services/graphics-animation" },
 ];
 
 export default function Navbar() {
@@ -257,14 +257,14 @@ export default function Navbar() {
                         <div key={link.href} className="flex flex-col items-center gap-2">
                             <span className="text-slate-200 font-semibold">{link.text}</span>
                             <div className="flex flex-col items-center gap-1.5">
-                                {MOBILE_SERVICES.map((name) => (
+                                {MOBILE_SERVICES.map((item) => (
                                     <Link
-                                        key={name}
-                                        href="/#services"
+                                        key={item.name}
+                                        href={item.href}
                                         onClick={() => setIsMenuOpen(false)}
                                         className="text-slate-400 hover:text-white text-sm transition-colors duration-200"
                                     >
-                                        {name}
+                                        {item.name}
                                     </Link>
                                 ))}
                             </div>

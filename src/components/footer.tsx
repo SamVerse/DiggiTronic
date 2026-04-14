@@ -4,18 +4,20 @@ import Image from "next/image";
 import { motion, Variants } from "framer-motion";
 
 const COMPANY_LINKS = [
-    { label: "About", href: "#" },
-    { label: "Services", href: "#" },
-    { label: "Careers", href: "#" },
-    { label: "Blog", href: "#" },
+    { label: "About", href: "/about" },
+    { label: "Services", href: "/#services" },
+    { label: "Careers", href: "/careers" },
+    { label: "Blog", href: "/blogs" },
 ];
 
 const SERVICE_LINKS = [
-    { label: "Brand Design", href: "#" },
-    { label: "Web Development", href: "#" },
-    { label: "Digital Marketing", href: "#" },
-    { label: "AI Solutions", href: "#" },
-    { label: "SEO Strategy", href: "#" },
+    { label: "Graphics & Animation", href: "/services/graphics-animation" },
+    { label: "Video Production", href: "/services/video-production" },
+    { label: "Social Media", href: "/services/social-media" },
+    { label: "Development", href: "/services/development" },
+    { label: "Marketing", href: "/services/marketing" },
+    { label: "SEO", href: "/services/seo" },
+    { label: "AI Services", href: "/services/ai-services" },
 ];
 
 const LEGAL_LINKS = [
@@ -157,7 +159,7 @@ export default function Footer() {
                             Ready to grow?
                         </p>
                         <motion.a
-                            href="#"
+                            href="/contact"
                             className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full font-black text-sm text-white shrink-0"
                             style={{
                                 background: "linear-gradient(135deg, #ff4d00, #ff6a00)",

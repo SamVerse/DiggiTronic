@@ -196,6 +196,7 @@ export default function ServicesCTA() {
 
   return (
     <motion.section
+      id="services"
       ref={containerRef}
       className="relative z-20 h-screen w-full overflow-hidden max-w-none bg-[#050505]"
       style={{ y: sectionY, filter: sectionFilter }}

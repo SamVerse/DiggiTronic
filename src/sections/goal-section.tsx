@@ -9,8 +9,12 @@ import {
   Megaphone,
   Palette,
   Target,
+  Film,
+  Share2,
+  Code,
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
+import Link from "next/link";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -22,6 +26,7 @@ interface GoalTab {
   title: string;
   description: string;
   cta: string;
+  href: string;
   accent: string;
   metricTitle: string;
   metricValue: string;
@@ -29,6 +34,7 @@ interface GoalTab {
   timelineLabel: string;
   timelineValue: string;
   primaryCta: string;
+  primaryHref: string;
   cardTitle: string;
   cardValue: string;
   cardSub: string;
@@ -46,6 +52,7 @@ const tabs: GoalTab[] = [
     description:
       "We start by understanding your brand, goals, and audience. Our strategic planning aligns creativity, marketing, and technology to build a clear roadmap for growth.",
     cta: "View process",
+    href: "/services/seo",
     accent: "#EB7300",
     metricTitle: "Growth roadmap",
     metricValue: "3-phase plan",
@@ -53,6 +60,7 @@ const tabs: GoalTab[] = [
     timelineLabel: "Estimated timeline",
     timelineValue: "~ 3 months",
     primaryCta: "View roadmap",
+    primaryHref: "/services/seo",
     cardTitle: "Key focus",
     cardValue: "4 Goals",
     cardSub: "Positioning, funnel, offer, KPI",
@@ -68,6 +76,7 @@ const tabs: GoalTab[] = [
     description:
       "From branding to UI/UX and motion graphics, we design experiences that look premium, feel intuitive, and leave a lasting impression.",
     cta: "See designs",
+    href: "/services/graphics-animation",
     accent: "#7DD3FF",
     metricTitle: "Design system",
     metricValue: "12 Assets",
@@ -75,6 +84,7 @@ const tabs: GoalTab[] = [
     timelineLabel: "Delivery window",
     timelineValue: "2–4 weeks",
     primaryCta: "View designs",
+    primaryHref: "/services/graphics-animation",
     cardTitle: "Design status",
     cardValue: "8 Screens",
     cardSub: "Web & mobile",
@@ -90,6 +100,7 @@ const tabs: GoalTab[] = [
     description:
       "We combine SEO, social media, paid ads, and content to attract the right audience and convert attention into measurable results.",
     cta: "Explore marketing",
+    href: "/services/marketing",
     accent: "#FFB86B",
     metricTitle: "Campaign focus",
     metricValue: "Multi-channel",
@@ -97,6 +108,7 @@ const tabs: GoalTab[] = [
     timelineLabel: "Sprint length",
     timelineValue: "4 weeks",
     primaryCta: "View campaign",
+    primaryHref: "/services/marketing",
     cardTitle: "Lead goal",
     cardValue: "1,200",
     cardSub: "Qualified leads",
@@ -106,12 +118,85 @@ const tabs: GoalTab[] = [
     icon: Megaphone,
   },
   {
+    id: "video",
+    label: "Video",
+    title: "STORIES THAT MOVE AUDIENCES",
+    description:
+      "We craft cinematic video content — from brand films and 2D/3D animations to motion graphics and logo reveals — that stops the scroll and drives engagement.",
+    cta: "View productions",
+    href: "/services/video-production",
+    accent: "#F97316",
+    metricTitle: "Production pipeline",
+    metricValue: "150+ Videos",
+    metricSub: "All formats",
+    timelineLabel: "Turnaround",
+    timelineValue: "1–3 weeks",
+    primaryCta: "View portfolio",
+    primaryHref: "/services/video-production",
+    cardTitle: "Engagement lift",
+    cardValue: "3x",
+    cardSub: "Avg view rate",
+    cardBadge: "Proven",
+    listTitle: "Video formats",
+    listItems: ["2D & 3D Animation", "Motion Graphics", "Brand Films"],
+    icon: Film,
+  },
+  {
+    id: "social",
+    label: "Social",
+    title: "CONTENT THAT CREATES COMMUNITY",
+    description:
+      "We build social presences that grow audiences, spark conversations, and convert followers into loyal brand advocates across every platform.",
+    cta: "Explore social",
+    href: "/services/social-media",
+    accent: "#EC4899",
+    metricTitle: "Reach generated",
+    metricValue: "5M+",
+    metricSub: "Impressions",
+    timelineLabel: "Growth sprint",
+    timelineValue: "4–8 weeks",
+    primaryCta: "View results",
+    primaryHref: "/services/social-media",
+    cardTitle: "Engagement",
+    cardValue: "3x",
+    cardSub: "Avg lift",
+    cardBadge: "+280%",
+    listTitle: "Key platforms",
+    listItems: ["Instagram", "LinkedIn", "YouTube"],
+    icon: Share2,
+  },
+  {
+    id: "development",
+    label: "Dev",
+    title: "ENGINEERED TO PERFORM",
+    description:
+      "We build digital products that are fast, scalable, and beautiful — from handcrafted websites and web apps to cross-platform mobile applications.",
+    cta: "See our work",
+    href: "/services/development",
+    accent: "#38BDF8",
+    metricTitle: "Products launched",
+    metricValue: "80+",
+    metricSub: "Web & Mobile",
+    timelineLabel: "Sprint cycle",
+    timelineValue: "2–6 weeks",
+    primaryCta: "View projects",
+    primaryHref: "/services/development",
+    cardTitle: "Uptime avg",
+    cardValue: "99.9%",
+    cardSub: "Reliability",
+    cardBadge: "Stable",
+    listTitle: "Tech stack",
+    listItems: ["Next.js & React", "Mobile Apps", "UI/UX Design"],
+    icon: Code,
+  },
+  {
     id: "ai",
     label: "AI & Tech",
     title: "POWERED BY AI & TECHNOLOGY",
     description:
       "From AI videos and automation to custom tools and analytics, we use technology to scale efficiency and performance.",
     cta: "Discover AI",
+    href: "/services/ai-services",
     accent: "#A78BFA",
     metricTitle: "Automation stack",
     metricValue: "6 Workflows",
@@ -119,6 +204,7 @@ const tabs: GoalTab[] = [
     timelineLabel: "Optimization",
     timelineValue: "30 days",
     primaryCta: "View stack",
+    primaryHref: "/services/ai-services",
     cardTitle: "Efficiency gain",
     cardValue: "+26%",
     cardSub: "Time saved",
@@ -138,7 +224,7 @@ export default function GoalSection() {
   const titleRef = useRef<HTMLHeadingElement | null>(null);
   const labelRef = useRef<HTMLParagraphElement | null>(null);
   const descriptionRef = useRef<HTMLParagraphElement | null>(null);
-  const buttonRef = useRef<HTMLButtonElement | null>(null);
+  const buttonRef = useRef<HTMLAnchorElement | null>(null);
   const visualsRef = useRef<HTMLDivElement | null>(null);
 
   useGSAP(
@@ -331,7 +417,7 @@ export default function GoalSection() {
         <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(255,255,255,0.04)_1px,transparent_1px),linear-gradient(180deg,rgba(255,255,255,0.04)_1px,transparent_1px)] bg-size-[48px_48px] opacity-40"></div>
 
         <div className="relative z-10 flex flex-col gap-10 lg:flex-row">
-          <div className="flex flex-row lg:flex-col items-center self-center lg:-space-y-3">
+          <div className="flex flex-row lg:flex-col items-center self-center lg:-space-y-2 gap-0.5 lg:gap-0">
             {tabs.map((tab, index) => {
               const Icon = tab.icon;
               const isActive = index === activeIndex;
@@ -340,10 +426,9 @@ export default function GoalSection() {
                   key={tab.id}
                   type="button"
                   onClick={() => handleTabClick(index)}
-                  // aria-pressed={isActive ? "true" : "false"}
                   aria-label={tab.label}
-                  className={`group relative flex h-12 w-12 items-center justify-center rounded-full border transition-all duration-300 overflow-hidden ${isActive
-                    ? "border-white/40  text-black shadow-[0_0_25px_rgba(255,255,255,0.2)] scale-105"
+                  className={`group relative flex h-10 w-10 items-center justify-center rounded-full border transition-all duration-300 overflow-hidden ${isActive
+                    ? "border-white/40 text-black shadow-[0_0_25px_rgba(255,255,255,0.2)] scale-105"
                     : "border-white/10 bg-black text-white/60 hover:text-white hover:bg-white/10 hover:border-white/20"
                     }`}
                 >
@@ -351,7 +436,7 @@ export default function GoalSection() {
                     className={`absolute inset-0 rounded-full bg-white transition-transform duration-300 ease-out ${isActive ? "scale-100" : "scale-0"
                       }`}
                   />
-                  <Icon className="size-5 relative z-10" />
+                  <Icon className="size-4 relative z-10" />
                 </button>
               );
             })}
@@ -384,13 +469,13 @@ export default function GoalSection() {
               >
                 {active.description}
               </p>
-              <button
-                type="button"
+              <Link
+                href={active.href}
                 ref={buttonRef}
                 className="mt-6 inline-flex items-center rounded-full bg-white/10 px-6 py-2 text-sm font-semibold text-white transition-all duration-300 hover:bg-white/20 hover:scale-[1.02] active:scale-95"
               >
                 {active.cta}
-              </button>
+              </Link>
             </div>
 
             <div ref={visualsRef} className="relative w-full max-w-xl">
@@ -435,13 +520,13 @@ export default function GoalSection() {
                     <span>{active.timelineValue}</span>
                   </div>
 
-                  <button
-                    type="button"
+                  <Link
+                    href={active.primaryHref}
                     className="mt-4 inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-1.5 text-xs font-semibold text-white transition hover:bg-white/20"
                   >
                     {active.primaryCta}
                     <span className="text-base">🚀</span>
-                  </button>
+                  </Link>
                 </div>
 
                 {/* CARD — KPI SNAPSHOT */}
