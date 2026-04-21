@@ -109,8 +109,8 @@ export function SocialVisual() {
   const p4x = useTransform(smoothX, [-0.5, 0.5], [-13, 13]);   // reach — far
   const p5x = useTransform(smoothX, [-0.5, 0.5], [10, -10]);   // eng rate
 
-  const curX = useMotionValue(-120);
-  const curY = useMotionValue(-120);
+  const curX = useMotionValue(-9999);
+  const curY = useMotionValue(-9999);
 
   const onMove = (e: React.MouseEvent<HTMLDivElement>) => {
     const r = containerRef.current?.getBoundingClientRect();
@@ -122,7 +122,7 @@ export function SocialVisual() {
   };
   const onLeave = () => {
     rawX.set(0); rawY.set(0);
-    curX.set(-120); curY.set(-120);
+    curX.set(-9999); curY.set(-9999);
   };
 
   return (

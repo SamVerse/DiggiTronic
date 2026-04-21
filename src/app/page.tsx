@@ -1,5 +1,4 @@
 import AgencyStatement from "@/sections/agency-statement";
-import AgencyStatementGLB from "@/sections/agency-statement-glb";
 import GoalSection from "@/sections/goal-section";
 import HeroSection from "@/sections/hero-section";
 import ServicesCTA from "@/sections/services-cta";
@@ -18,7 +17,6 @@ export default function Page() {
       <main className="relative">
         <HeroSection />
         <AgencyStatement />
-        {/* <AgencyStatementGLB /> */}
         <ServicesCTA />
         <GoalSection />
         <ClientsSection />

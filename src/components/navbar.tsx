@@ -1,10 +1,11 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Menu, X, ChevronDown } from "lucide-react";
+import { Menu, X, ChevronDown, ArrowRight, Film, Share2, Code, Megaphone, Search, Cpu, Palette } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import ServicesDropdown from "./services-dropdown";
+import type { LucideIcon } from "lucide-react";
 
 const NAV_H = 72; // matches h-18 (4.5rem)
 
@@ -19,14 +20,14 @@ function getNavbarTheme(el: Element | null): "light" | "dark" | null {
     return null;
 }
 
-const MOBILE_SERVICES = [
-    { name: "Video Production", href: "/services/video-production" },
-    { name: "Social Media", href: "/services/social-media" },
-    { name: "Development", href: "/services/development" },
-    { name: "Marketing", href: "/services/marketing" },
-    { name: "SEO", href: "/services/seo" },
-    { name: "AI Services", href: "/services/ai-services" },
-    { name: "Graphics & Animation", href: "/services/graphics-animation" },
+const MOBILE_SERVICES: { name: string; href: string; icon: LucideIcon }[] = [
+    { name: "Video Production", href: "/services/video-production", icon: Film },
+    { name: "Social Media", href: "/services/social-media", icon: Share2 },
+    { name: "Development", href: "/services/development", icon: Code },
+    { name: "Marketing", href: "/services/marketing", icon: Megaphone },
+    { name: "SEO", href: "/services/seo", icon: Search },
+    { name: "AI Services", href: "/services/ai-services", icon: Cpu },
+    { name: "Graphics & Animation", href: "/services/graphics-animation", icon: Palette },
 ];
 
 export default function Navbar() {
@@ -35,6 +36,7 @@ export default function Navbar() {
     const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
     const [isLightSection, setIsLightSection] = useState(false);
     const [isServicesOpen, setIsServicesOpen] = useState(false);
+    const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
 
     useEffect(() => {
         const update = () => {
@@ -248,46 +250,199 @@ export default function Navbar() {
                 </button>
             </motion.nav>
 
-            <div
-                className={`fixed inset-0 z-100 bg-black/60 backdrop-blur flex flex-col items-center justify-center text-lg gap-6 lg:hidden transition-transform duration-400 ${isMenuOpen ? "translate-x-0" : "-translate-x-full"
-                    }`}
-            >
-                {navlinks.map((link) =>
-                    link.hasDropdown ? (
-                        <div key={link.href} className="flex flex-col items-center gap-2">
-                            <span className="text-slate-200 font-semibold">{link.text}</span>
-                            <div className="flex flex-col items-center gap-1.5">
-                                {MOBILE_SERVICES.map((item) => (
+            {/* ═══ MOBILE FULLSCREEN MENU ═══ */}
+            <AnimatePresence>
+                {isMenuOpen && (
+                    <motion.div
+                        className="fixed inset-0 z-[200] lg:hidden"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        transition={{ duration: 0.3 }}
+                    >
+                        {/* backdrop */}
+                        <motion.div
+                            className="absolute inset-0"
+                            style={{ background: "rgba(5,5,5,0.97)", backdropFilter: "blur(20px)" }}
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }}
+                        />
+
+                        {/* grain texture */}
+                        <div
+                            aria-hidden
+                            className="absolute inset-0 pointer-events-none opacity-[0.03]"
+                            style={{
+                                backgroundImage: "radial-gradient(circle, #ffffff 1px, transparent 1px)",
+                                backgroundSize: "20px 20px",
+                            }}
+                        />
+
+                        {/* orange glow — top-right */}
+                        <div
+                            aria-hidden
+                            className="absolute -top-20 -right-20 w-64 h-64 pointer-events-none"
+                            style={{
+                                background: "radial-gradient(circle, rgba(255,77,0,0.15) 0%, transparent 70%)",
+                                filter: "blur(60px)",
+                            }}
+                        />
+
+                        {/* content */}
+                        <div className="relative z-10 flex flex-col h-full">
+                            {/* header — logo + close */}
+                            <div className="flex items-center justify-between h-18 px-6">
+                                <Link href="/" onClick={() => setIsMenuOpen(false)}>
+                                    <img
+                                        src="/logo row.png"
+                                        alt="Diggitronic Logo"
+                                        className="h-14 w-35"
+                                        width={56}
+                                        height={56}
+                                    />
+                                </Link>
+                                <motion.button
+                                    onClick={() => setIsMenuOpen(false)}
+                                    className="relative flex items-center justify-center w-10 h-10 rounded-full border border-white/10"
+                                    aria-label="Close menu"
+                                    whileTap={{ scale: 0.9 }}
+                                >
+                                    <X size={18} className="text-white/70" />
+                                </motion.button>
+                            </div>
+
+                            {/* scrollable body */}
+                            <div className="flex-1 overflow-y-auto px-6 pt-4 pb-8">
+                                {/* ── primary nav links ── */}
+                                <motion.div
+                                    className="flex flex-col"
+                                    initial="hidden"
+                                    animate="visible"
+                                    variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.06, delayChildren: 0.1 } } }}
+                                >
+                                    {navlinks.map((link) =>
+                                        link.hasDropdown ? (
+                                            <motion.div
+                                                key={link.href}
+                                                variants={{ hidden: { opacity: 0, x: -30 }, visible: { opacity: 1, x: 0, transition: { duration: 0.5, ease: [0.16, 1, 0.3, 1] } } }}
+                                            >
+                                                <button
+                                                    onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
+                                                    className="w-full flex items-center justify-between py-4 border-b border-white/5"
+                                                >
+                                                    <span className="text-2xl font-black text-white uppercase tracking-tight">
+                                                        {link.text}
+                                                    </span>
+                                                    <motion.div
+                                                        animate={{ rotate: mobileServicesOpen ? 180 : 0 }}
+                                                        transition={{ duration: 0.3 }}
+                                                    >
+                                                        <ChevronDown size={20} className="text-[#ff4d00]" />
+                                                    </motion.div>
+                                                </button>
+
+                                                <AnimatePresence>
+                                                    {mobileServicesOpen && (
+                                                        <motion.div
+                                                            className="overflow-hidden"
+                                                            initial={{ height: 0, opacity: 0 }}
+                                                            animate={{ height: "auto", opacity: 1 }}
+                                                            exit={{ height: 0, opacity: 0 }}
+                                                            transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+                                                        >
+                                                            <div className="py-3 grid grid-cols-2 gap-2">
+                                                                {MOBILE_SERVICES.map((item, i) => {
+                                                                    const Icon = item.icon;
+                                                                    return (
+                                                                        <motion.div
+                                                                            key={item.name}
+                                                                            initial={{ opacity: 0, y: 10 }}
+                                                                            animate={{ opacity: 1, y: 0 }}
+                                                                            transition={{ delay: i * 0.04, duration: 0.3 }}
+                                                                        >
+                                                                            <Link
+                                                                                href={item.href}
+                                                                                onClick={() => setIsMenuOpen(false)}
+                                                                                className="flex items-center gap-2.5 rounded-xl px-3 py-3 transition-colors duration-200"
+                                                                                style={{
+                                                                                    border: "1px solid rgba(255,255,255,0.06)",
+                                                                                    background: "rgba(255,255,255,0.03)",
+                                                                                }}
+                                                                            >
+                                                                                <Icon size={15} color="#ff4d00" strokeWidth={2} />
+                                                                                <span className="text-xs font-semibold text-white/70">
+                                                                                    {item.name}
+                                                                                </span>
+                                                                            </Link>
+                                                                        </motion.div>
+                                                                    );
+                                                                })}
+                                                            </div>
+                                                        </motion.div>
+                                                    )}
+                                                </AnimatePresence>
+                                            </motion.div>
+                                        ) : (
+                                            <motion.div
+                                                key={link.href}
+                                                variants={{ hidden: { opacity: 0, x: -30 }, visible: { opacity: 1, x: 0, transition: { duration: 0.5, ease: [0.16, 1, 0.3, 1] } } }}
+                                            >
+                                                <Link
+                                                    href={link.href}
+                                                    onClick={() => setIsMenuOpen(false)}
+                                                    className="group flex items-center justify-between py-4 border-b border-white/5"
+                                                >
+                                                    <span className="text-2xl font-black text-white uppercase tracking-tight group-active:text-[#ff4d00] transition-colors">
+                                                        {link.text}
+                                                    </span>
+                                                    <ArrowRight size={18} className="text-white/20 group-active:text-[#ff4d00] transition-colors" />
+                                                </Link>
+                                            </motion.div>
+                                        )
+                                    )}
+                                </motion.div>
+
+                                {/* ── CTA button ── */}
+                                <motion.div
+                                    className="mt-8"
+                                    initial={{ opacity: 0, y: 20 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    transition={{ delay: 0.45, duration: 0.5 }}
+                                >
                                     <Link
-                                        key={item.name}
-                                        href={item.href}
+                                        href="/contact"
                                         onClick={() => setIsMenuOpen(false)}
-                                        className="text-slate-400 hover:text-white text-sm transition-colors duration-200"
+                                        className="flex items-center justify-center gap-2 w-full h-12 rounded-full font-black text-sm text-white"
+                                        style={{
+                                            background: "linear-gradient(135deg, #ff4d00, #ff6a00)",
+                                            boxShadow: "0 4px 24px rgba(255,77,0,0.3)",
+                                        }}
                                     >
-                                        {item.name}
+                                        Get a Quote
+                                        <ArrowRight size={16} />
                                     </Link>
-                                ))}
+                                </motion.div>
+
+                                {/* ── bottom info ── */}
+                                <motion.div
+                                    className="mt-10 flex items-center justify-between"
+                                    initial={{ opacity: 0 }}
+                                    animate={{ opacity: 1 }}
+                                    transition={{ delay: 0.55, duration: 0.5 }}
+                                >
+                                    <p className="text-[10px] uppercase tracking-[0.4em] font-mono" style={{ color: "rgba(255,255,255,0.2)" }}>
+                                        Diggitronic
+                                    </p>
+                                    <p className="text-[10px] font-mono" style={{ color: "rgba(255,255,255,0.15)" }}>
+                                        Design &middot; Marketing &middot; AI
+                                    </p>
+                                </motion.div>
                             </div>
                         </div>
-                    ) : (
-                        <Link
-                            key={link.href}
-                            href={link.href}
-                            onClick={() => setIsMenuOpen(false)}
-                            className="relative inline-flex items-center text-slate-200 hover:text-white transition-colors duration-200"
-                        >
-                            {link.text}
-                        </Link>
-                    )
+                    </motion.div>
                 )}
-                <button
-                    onClick={() => setIsMenuOpen(false)}
-                    className="active:ring-3 active:ring-white aspect-square size-10 p-1 items-center justify-center bg-slate-100 hover:bg-slate-200 transition text-black rounded-md flex mt-2"
-                    aria-label="Close menu"
-                >
-                    <X />
-                </button>
-            </div>
+            </AnimatePresence>
         </>
     );
 }
