@@ -87,7 +87,7 @@ function MarqueeRow({
           >
             <span
               className="w-1.5 h-1.5 rounded-full flex-shrink-0"
-              style={{ background: "#ff4d00", opacity: 0.7 }}
+              style={{ background: "#EB7300", opacity: 0.7 }}
             />
             <span
               className="text-xs font-medium tracking-widest uppercase"
@@ -170,7 +170,7 @@ export default function ClientsSection() {
             className="font-black leading-[0.9] tracking-tight"
             style={{
               fontSize: "clamp(2.4rem, 6vw, 5rem)",
-              color: "#ff4d00",
+              color: "#EB7300",
             }}
           >
             forward-thinking brands.

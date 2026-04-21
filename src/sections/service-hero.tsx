@@ -145,7 +145,7 @@ export default function ServiceHero({ service }: { service: ServiceData }) {
                 href="/contact"
                 className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full font-black text-sm text-white"
                 style={{
-                  background: "linear-gradient(135deg, #EB7300, #ff9a00)",
+                  background: "linear-gradient(135deg, #EB7300, #EB7300)",
                   boxShadow: "0 4px 24px rgba(235,115,0,0.3)",
                 }}
               >
@@ -154,8 +154,11 @@ export default function ServiceHero({ service }: { service: ServiceData }) {
               </Link>
             </motion.div>
             <motion.div whileHover={{ y: -2 }} transition={{ type: "spring", stiffness: 300, damping: 25 }} className="group">
-              <Link
-                href="/about"
+              <a
+                href={`/pdfs/${service.slug}.pdf`}
+                download={`${service.slug}-deck.pdf`}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="relative inline-flex items-center gap-2 px-7 py-3.5 rounded-full font-black text-sm border transition-colors"
                 style={{ borderColor: "rgba(255,255,255,0.15)", color: "rgba(255,255,255,0.55)" }}
               >
@@ -169,8 +172,8 @@ export default function ServiceHero({ service }: { service: ServiceData }) {
                     WebkitMaskComposite: "xor",
                   }}
                 />
-                View Our Work
-              </Link>
+                Download Deck
+              </a>
             </motion.div>
           </motion.div>
         </div>

@@ -57,7 +57,7 @@ function StarRating() {
   return (
     <div className="flex gap-1">
       {Array.from({ length: 5 }).map((_, i) => (
-        <svg key={i} width="14" height="14" viewBox="0 0 14 14" fill="#ff4d00">
+        <svg key={i} width="14" height="14" viewBox="0 0 14 14" fill="#EB7300">
           <path d="M7 1l1.55 3.14L12 4.74l-2.5 2.44.59 3.43L7 9.01l-3.09 1.6.59-3.43L2 4.74l3.45-.6z" />
         </svg>
       ))}
@@ -111,7 +111,7 @@ export default function TestimonialsSection() {
           className="font-black leading-none pl-4 md:pl-16"
           style={{
             fontSize: "clamp(14rem, 45vw, 56rem)",
-            color: "#ff4d00",
+            color: "#EB7300",
             opacity: 0.04,
             lineHeight: 0.8,
           }}
@@ -147,7 +147,7 @@ export default function TestimonialsSection() {
           <motion.h2
             variants={fadeUp}
             className="font-black leading-[0.9] tracking-tight"
-            style={{ fontSize: "clamp(2rem, 4vw, 4rem)", color: "#ff4d00" }}
+            style={{ fontSize: "clamp(2rem, 4vw, 4rem)", color: "#EB7300" }}
           >
             real words.
           </motion.h2>
@@ -185,7 +185,7 @@ export default function TestimonialsSection() {
                 <div className="mt-8 flex items-center gap-4">
                   <div
                     className="w-12 h-12 rounded-full flex items-center justify-center font-black text-lg text-white flex-shrink-0"
-                    style={{ background: "linear-gradient(135deg, #ff4d00, #ff6a00)" }}
+                    style={{ background: "linear-gradient(135deg, #EB7300, #EB7300)" }}
                   >
                     {active.name[0]}
                   </div>
@@ -214,7 +214,7 @@ export default function TestimonialsSection() {
                   {i === activeIndex && (
                     <motion.div
                       className="absolute inset-y-0 left-0 rounded-full"
-                      style={{ background: "#ff4d00" }}
+                      style={{ background: "#EB7300" }}
                       initial={{ scaleX: 0 }}
                       animate={{ scaleX: 1 }}
                       transition={{ duration: 6, ease: "linear" }}
@@ -250,7 +250,7 @@ export default function TestimonialsSection() {
                   <div className="flex gap-3 items-start">
                     <motion.div
                       className="w-0.5 self-stretch rounded-full flex-shrink-0 mt-1"
-                      animate={{ background: isActive ? "#ff4d00" : "transparent" }}
+                      animate={{ background: isActive ? "#EB7300" : "transparent" }}
                       transition={{ duration: 0.3 }}
                     />
                     <div>
@@ -262,7 +262,7 @@ export default function TestimonialsSection() {
                       </p>
                       <p
                         className="text-[10px] uppercase tracking-[0.25em] mt-0.5 transition-colors duration-300"
-                        style={{ color: isActive ? "#ff4d00" : "rgba(0,0,0,0.3)" }}
+                        style={{ color: isActive ? "#EB7300" : "rgba(0,0,0,0.3)" }}
                       >
                         {t.role} — {t.company}
                       </p>
@@ -314,7 +314,7 @@ export default function TestimonialsSection() {
               <div className="mt-6 flex items-center gap-3">
                 <div
                   className="w-10 h-10 rounded-full flex items-center justify-center font-black text-white flex-shrink-0"
-                  style={{ background: "linear-gradient(135deg, #ff4d00, #ff6a00)" }}
+                  style={{ background: "linear-gradient(135deg, #EB7300, #EB7300)" }}
                 >
                   {active.name[0]}
                 </div>
@@ -337,7 +337,7 @@ export default function TestimonialsSection() {
                 style={{
                   width: i === activeIndex ? "1.5rem" : "0.5rem",
                   height: "0.5rem",
-                  background: i === activeIndex ? "#ff4d00" : "rgba(0,0,0,0.15)",
+                  background: i === activeIndex ? "#EB7300" : "rgba(0,0,0,0.15)",
                 }}
                 aria-label={`Go to testimonial ${i + 1}`}
               />

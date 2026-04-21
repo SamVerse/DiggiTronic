@@ -88,7 +88,7 @@ export default function ServicesDropdown({ isOpen, isLightSection, onClose }: Pr
                     <div
                         className="absolute top-0 left-0 right-0 h-px"
                         style={{
-                            background: "linear-gradient(90deg, transparent, #ff4d00, transparent)",
+                            background: "linear-gradient(90deg, transparent, #EB7300, transparent)",
                             opacity: isDark ? 0.5 : 0.35,
                         }}
                     />
@@ -122,7 +122,7 @@ export default function ServicesDropdown({ isOpen, isLightSection, onClose }: Pr
                                 >
                                     <div
                                         className="absolute left-0 top-2 bottom-2 w-0.5 rounded-full origin-center scale-y-0 group-hover:scale-y-100 transition-transform duration-300 ease-out"
-                                        style={{ background: "#ff4d00" }}
+                                        style={{ background: "#EB7300" }}
                                     />
 
                                     <div className="flex-1 min-w-0 pl-1">
@@ -143,7 +143,7 @@ export default function ServicesDropdown({ isOpen, isLightSection, onClose }: Pr
                                     <ArrowRight
                                         size={13}
                                         className="shrink-0 opacity-0 -translate-x-1 transition-all duration-200 ease-out group-hover:opacity-100 group-hover:translate-x-0"
-                                        style={{ color: "#ff4d00" }}
+                                        style={{ color: "#EB7300" }}
                                     />
                                 </Link>
                             </motion.div>
@@ -166,7 +166,7 @@ export default function ServicesDropdown({ isOpen, isLightSection, onClose }: Pr
                             href="#services"
                             onClick={onClose}
                             className="group inline-flex items-center gap-1.5 text-[11px] font-semibold transition-colors duration-200"
-                            style={{ color: "#ff4d00" }}
+                            style={{ color: "#EB7300" }}
                         >
                             View all services
                             <ArrowRight

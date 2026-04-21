@@ -72,7 +72,7 @@ export default function AboutTeam() {
 
   const { scrollYProgress } = useScroll({
     target: sectionRef,
-    offset: ["start start", "end start"],
+    offset: ["end end", "end start"],
   });
 
   const sectionY = useTransform(scrollYProgress, [0, 1], ["0%", "80%"]);
@@ -193,7 +193,7 @@ export default function AboutTeam() {
               <div
                 className="w-[3px] self-stretch rounded-full flex-shrink-0 mt-1"
                 style={{
-                  background: "linear-gradient(to bottom, #EB7300, #FF4D00)",
+                  background: "linear-gradient(to bottom, #EB7300, #EB7300)",
                 }}
               />
               <p

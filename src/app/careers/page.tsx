@@ -343,7 +343,7 @@ export default function CareersPage() {
               <Link
                 href="/careers/listings"
                 className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full font-black text-sm text-white"
-                style={{ background: "linear-gradient(135deg, #EB7300, #ff9a00)", boxShadow: "0 4px 24px rgba(235,115,0,0.3)" }}
+                style={{ background: "linear-gradient(135deg, #EB7300, #EB7300)", boxShadow: "0 4px 24px rgba(235,115,0,0.3)" }}
               >
                 View Open Roles
                 <span className="text-base">→</span>

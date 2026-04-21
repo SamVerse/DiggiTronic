@@ -104,7 +104,7 @@ export default function Navbar() {
                 <Link href="/" className="text-2xl font-bold">
                     {/* Replace src with a dedicated dark-variant logo if available */}
                     <img
-                        className={`h-14 w-35 transition-[filter] duration-450 ease-out ${isLightSection ? "brightness-0" : ""
+                        className={`w-35 transition-[filter] duration-450 ease-out ${isLightSection ? "brightness-0" : ""
                             }`}
                         src="/logo row.png"
                         alt="Diggitronic Logo"
@@ -235,7 +235,7 @@ export default function Navbar() {
                 </div>
 
                 <div className="hidden lg:block space-x-3">
-                    <Link href="/contact" className="px-6 py-2 inline-block bg-[#ff4d00] hover:bg-[#ff6a00] font-medium transition text-white rounded-md active:scale-95">
+                    <Link href="/contact" className="px-6 py-2 inline-block bg-[#EB7300] hover:bg-[#EB7300] font-medium transition text-white rounded-md active:scale-95">
                         Get a Quote
                     </Link>
                 </div>
@@ -338,7 +338,7 @@ export default function Navbar() {
                                                         animate={{ rotate: mobileServicesOpen ? 180 : 0 }}
                                                         transition={{ duration: 0.3 }}
                                                     >
-                                                        <ChevronDown size={20} className="text-[#ff4d00]" />
+                                                        <ChevronDown size={20} className="text-[#EB7300]" />
                                                     </motion.div>
                                                 </button>
 
@@ -370,7 +370,7 @@ export default function Navbar() {
                                                                                     background: "rgba(255,255,255,0.03)",
                                                                                 }}
                                                                             >
-                                                                                <Icon size={15} color="#ff4d00" strokeWidth={2} />
+                                                                                <Icon size={15} color="#EB7300" strokeWidth={2} />
                                                                                 <span className="text-xs font-semibold text-white/70">
                                                                                     {item.name}
                                                                                 </span>
@@ -393,10 +393,10 @@ export default function Navbar() {
                                                     onClick={() => setIsMenuOpen(false)}
                                                     className="group flex items-center justify-between py-4 border-b border-white/5"
                                                 >
-                                                    <span className="text-2xl font-black text-white uppercase tracking-tight group-active:text-[#ff4d00] transition-colors">
+                                                    <span className="text-2xl font-black text-white uppercase tracking-tight group-active:text-[#EB7300] transition-colors">
                                                         {link.text}
                                                     </span>
-                                                    <ArrowRight size={18} className="text-white/20 group-active:text-[#ff4d00] transition-colors" />
+                                                    <ArrowRight size={18} className="text-white/20 group-active:text-[#EB7300] transition-colors" />
                                                 </Link>
                                             </motion.div>
                                         )
@@ -415,7 +415,7 @@ export default function Navbar() {
                                         onClick={() => setIsMenuOpen(false)}
                                         className="flex items-center justify-center gap-2 w-full h-12 rounded-full font-black text-sm text-white"
                                         style={{
-                                            background: "linear-gradient(135deg, #ff4d00, #ff6a00)",
+                                            background: "linear-gradient(135deg, #EB7300, #EB7300)",
                                             boxShadow: "0 4px 24px rgba(255,77,0,0.3)",
                                         }}
                                     >

@@ -222,7 +222,7 @@ export function SocialVisual() {
           </div>
           <div style={{ height: 3, background: "rgba(255,255,255,0.07)", borderRadius: 2 }}>
             <motion.div
-              style={{ height: "100%", background: "linear-gradient(90deg, #EB7300, #ff9a00)", borderRadius: 2 }}
+              style={{ height: "100%", background: "linear-gradient(90deg, #EB7300, #EB7300)", borderRadius: 2 }}
               initial={{ width: 0 }} animate={{ width: "84%" }}
               transition={{ delay: 2.5, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             />
@@ -457,7 +457,7 @@ export function MarketingVisual() {
           <div className="flex items-end gap-2" style={{ height: 100 }}>
             {bars.map((b, i) => (
               <motion.div key={i} className="flex-1 rounded-t-sm"
-                style={{ height: `${b.h}%`, background: i === bars.length - 1 ? "linear-gradient(to top, #EB7300, #ff9a00)" : `rgba(235,115,0,${0.18 + i * 0.05})`, originY: 1 }}
+                style={{ height: `${b.h}%`, background: i === bars.length - 1 ? "linear-gradient(to top, #EB7300, #EB7300)" : `rgba(235,115,0,${0.18 + i * 0.05})`, originY: 1 }}
                 initial={{ scaleY: 0 }} animate={{ scaleY: 1 }}
                 transition={{ delay: 0.3 + b.delay, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
               />
@@ -604,7 +604,7 @@ export function SeoVisual() {
                     style={{
                       height,
                       background: isTop
-                        ? "linear-gradient(to top, #EB7300, #ff9a00)"
+                        ? "linear-gradient(to top, #EB7300, #EB7300)"
                         : `rgba(235,115,0,${0.1 + i * 0.06})`,
                     }}
                   >

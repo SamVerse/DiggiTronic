@@ -157,7 +157,7 @@ export default function BlogDetailClient({ blog, relatedBlogs }: { blog: Blog; r
                 className="fixed top-0 left-0 right-0 h-[3px] z-[200] origin-left"
                 style={{
                     scaleX: smoothProgress,
-                    background: "linear-gradient(90deg, #EB7300, #ff9a00)",
+                    background: "linear-gradient(90deg, #EB7300, #EB7300)",
                 }}
             />
 
@@ -264,7 +264,7 @@ export default function BlogDetailClient({ blog, relatedBlogs }: { blog: Blog; r
                             <div
                                 className="w-10 h-10 rounded-full flex items-center justify-center text-xs font-black shrink-0"
                                 style={{
-                                    background: "linear-gradient(135deg, #EB7300, #ff9a00)",
+                                    background: "linear-gradient(135deg, #EB7300, #EB7300)",
                                     color: "#fff",
                                 }}
                             >

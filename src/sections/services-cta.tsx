@@ -60,7 +60,7 @@ function RotatingValue() {
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
-            background: "linear-gradient(90deg, #ff4d00, #ffb347)",
+            background: "linear-gradient(90deg, #EB7300, #EB7300)",
             WebkitBackgroundClip: "text",
             WebkitTextFillColor: "transparent",
             backgroundClip: "text",

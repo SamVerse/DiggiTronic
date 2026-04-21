@@ -228,7 +228,7 @@ export default function FloatingCubeOverlay() {
                         justifyContent: "center",
                       }}
                     >
-                      <Icon size={22} color="#ff4d00" strokeWidth={2.0} />
+                      <Icon size={22} color="#EB7300" strokeWidth={2.0} />
                     </div>
                   </motion.div>
                 </motion.div>

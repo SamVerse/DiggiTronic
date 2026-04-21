@@ -33,7 +33,7 @@ export default function HeroSection() {
         <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
           <LightRays
             raysOrigin="top-right"
-            raysColor="#ff4d00"
+            raysColor="#EB7300"
             raysSpeed={1.5}
             lightSpread={1.5}
             rayLength={4}
@@ -63,7 +63,7 @@ export default function HeroSection() {
               mass: 1,
             }}
           >
-            <div className="size-2.5 bg-[#ff4d00] rounded-full animate-pulse"></div>
+            <div className="size-2.5 bg-[#EB7300] rounded-full animate-pulse"></div>
             <span>Let’s Talk About Your Brand</span>
           </motion.a>
 
@@ -75,7 +75,7 @@ export default function HeroSection() {
             transition={{ type: "spring", stiffness: 240, damping: 70, mass: 1 }}
           >
             Your Growth Partner for Design, Marketing &{" "}
-            <span className="text-transparent bg-clip-text bg-linear-to-r from-orange-400 to-red-600">
+            <span className="text-transparent bg-clip-text bg-linear-to-r from-[#EB7300] to-[#EB7300]">
               AI Solutions
             </span>
           </motion.h1>
@@ -104,7 +104,7 @@ export default function HeroSection() {
             viewport={{ once: true }}
             transition={{ type: "spring", stiffness: 320, damping: 70, mass: 1 }}
           >
-            <Link href="/contact" className="flex items-center gap-2 bg-[#ff4d00] hover:bg-[#ff6a00] font-medium transition text-white active:scale-95 rounded-full px-8 h-12 shadow-[0_0_20px_rgba(255,77,0,0.3)]">
+            <Link href="/contact" className="flex items-center gap-2 bg-[#EB7300] hover:bg-[#EB7300] font-medium transition text-white active:scale-95 rounded-full px-8 h-12 shadow-[0_0_20px_rgba(255,77,0,0.3)]">
               Book a Free Consultation
               <ArrowRight className="size-5" />
             </Link>

@@ -150,7 +150,7 @@ export default function AboutValues() {
 
   const { scrollYProgress } = useScroll({
     target: sectionRef,
-    offset: ["start start", "end start"],
+    offset: ["end end", "end start"],
   });
   const sectionY = useTransform(scrollYProgress, [0, 1], ["0%", "60%"]);
 

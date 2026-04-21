@@ -59,7 +59,7 @@ export default function AgencyStatement() {
   /* ── Parallax effect when section scrolls out under the next section ── */
   const { scrollYProgress: parallaxProgress } = useScroll({
     target: sectionRef,
-    offset: ["start start", "end start"],
+    offset: ["end end", "end start"],
   });
 
   // Moves down by 30% of its height, making it scroll much slower than the viewport.
@@ -155,7 +155,7 @@ export default function AgencyStatement() {
           <motion.h2
             variants={popIn}
             className="font-black leading-[0.9] tracking-tight origin-left"
-            style={{ fontSize: "clamp(2.4rem, 10vw, 3.6rem)", color: "#ff4d00" }}
+            style={{ fontSize: "clamp(2.4rem, 10vw, 3.6rem)", color: "#EB7300" }}
           >
             brands that
           </motion.h2>
@@ -198,7 +198,7 @@ export default function AgencyStatement() {
           <div className="grid grid-cols-2 gap-x-8 gap-y-4">
             {STATS.map((stat) => (
               <motion.div key={stat.label} variants={fadeUp} className="group flex flex-col gap-0.5">
-                <span className="text-2xl font-black text-gray-900 group-hover:text-[#ff4d00] transition-colors duration-300">
+                <span className="text-2xl font-black text-gray-900 group-hover:text-[#EB7300] transition-colors duration-300">
                   <Counter value={stat.value} suffix={stat.suffix} />
                 </span>
                 <span className="text-[9px] uppercase tracking-[0.35em] text-gray-400">
@@ -243,7 +243,7 @@ export default function AgencyStatement() {
             <motion.h2
               variants={popIn}
               className="font-black leading-[0.87] tracking-tight block origin-left"
-              style={{ fontSize: "clamp(2rem, 3.2vw, 5rem)", color: "#ff4d00" }}
+              style={{ fontSize: "clamp(2rem, 3.2vw, 5rem)", color: "#EB7300" }}
             >
               brands that
             </motion.h2>
@@ -273,7 +273,7 @@ export default function AgencyStatement() {
             <div className="flex gap-6 xl:gap-12 flex-wrap">
               {STATS.map((stat) => (
                 <motion.div key={stat.label} variants={fadeUp} className="group flex flex-col gap-1">
-                  <span className="text-xl xl:text-3xl font-black text-gray-900 transition-colors duration-300 group-hover:text-[#ff4d00]">
+                  <span className="text-xl xl:text-3xl font-black text-gray-900 transition-colors duration-300 group-hover:text-[#EB7300]">
                     <Counter value={stat.value} suffix={stat.suffix} />
                   </span>
                   <span className="text-[9px] uppercase tracking-[0.35em] text-gray-400">
@@ -312,7 +312,7 @@ export default function AgencyStatement() {
                 <span className="text-[9px] uppercase tracking-[0.35em] text-gray-400 font-mono">
                   {item}
                 </span>
-                <span className="w-1 h-1 rounded-full flex-shrink-0 bg-[#ff4d00]" />
+                <span className="w-1 h-1 rounded-full flex-shrink-0 bg-[#EB7300]" />
               </span>
             )
           )}

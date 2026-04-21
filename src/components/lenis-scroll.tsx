@@ -12,10 +12,24 @@ if (typeof window !== "undefined") {
 
 export default function LenisScroll() {
   useEffect(() => {
+    // Detect if the device primarily uses touch (mobile phones/tablets)
+    const isTouchDevice =
+      "ontouchstart" in window ||
+      navigator.maxTouchPoints > 0 ||
+      window.matchMedia("(pointer: coarse)").matches;
+
+    // For touch devices, we rely entirely on the native, highly-optimized hardware momentum scroll.
+    // Lenis is known to sometimes cause "rigid" or "tough" scrolling drag on mobile devices
+    // due to main-thread processing loads during touch-drag interactions.
+    if (isTouchDevice) {
+      return;
+    }
+
     const lenis = new Lenis({
       duration: 1.2,
       smoothWheel: true,
       anchors: true,
+      touchMultiplier: 2,
     });
 
     // Forward Lenis scroll updates to the native scroll event (Navbar uses this)

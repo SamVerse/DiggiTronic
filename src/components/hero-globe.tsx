@@ -14,16 +14,16 @@ const GLOBE_CONFIG = {
   pointSize: 1.6,
   globeColor: "#050e1c",       // deep navy — the "earth" body
   showAtmosphere: true,
-  atmosphereColor: "#ff4d00",  // highly visible navy atmosphere
+  atmosphereColor: "#EB7300",  // highly visible navy atmosphere
   atmosphereAltitude: 0.25,
   emissive: "#0b1b31",
   emissiveIntensity: 0.8,
   shininess: 1.5,
   polygonColor: "rgba(255,255,255,0.85)", // bright white/blue landmasses
   ambientLight: "#3a5a80",
-  directionalLeftLight: "#ff4d00",  // orange key light = brand color bleed
+  directionalLeftLight: "#EB7300",  // orange key light = brand color bleed
   directionalTopLight: "#ffffff",
-  pointLight: "#ff6a00",
+  pointLight: "#EB7300",
   arcTime: 1800,
   arcLength: 0.92,
   rings: 1,
@@ -34,18 +34,18 @@ const GLOBE_CONFIG = {
 
 // Arc data — all orange brand color, spanning global routes
 const SAMPLE_ARCS = [
-  { order: 1, startLat: 40.71, startLng: -74.01, endLat: 51.51, endLng: -0.13, arcAlt: 0.32, color: "#ff4d00" },
-  { order: 2, startLat: 48.85, startLng: 2.35, endLat: 35.69, endLng: 139.69, arcAlt: 0.42, color: "#ff6a00" },
-  { order: 3, startLat: 1.35, startLng: 103.82, endLat: -33.87, endLng: 151.21, arcAlt: 0.28, color: "#ff4d00" },
+  { order: 1, startLat: 40.71, startLng: -74.01, endLat: 51.51, endLng: -0.13, arcAlt: 0.32, color: "#EB7300" },
+  { order: 2, startLat: 48.85, startLng: 2.35, endLat: 35.69, endLng: 139.69, arcAlt: 0.42, color: "#EB7300" },
+  { order: 3, startLat: 1.35, startLng: 103.82, endLat: -33.87, endLng: 151.21, arcAlt: 0.28, color: "#EB7300" },
   { order: 4, startLat: 19.43, startLng: -99.13, endLat: -23.55, endLng: -46.63, arcAlt: 0.35, color: "#ff8040" },
-  { order: 5, startLat: 55.75, startLng: 37.62, endLat: 28.61, endLng: 77.21, arcAlt: 0.3, color: "#ff4d00" },
-  { order: 6, startLat: 37.77, startLng: -122.4, endLat: 40.71, endLng: -74.01, arcAlt: 0.2, color: "#ff6a00" },
-  { order: 7, startLat: 25.2, startLng: 55.27, endLat: 48.85, endLng: 2.35, arcAlt: 0.25, color: "#ff4d00" },
+  { order: 5, startLat: 55.75, startLng: 37.62, endLat: 28.61, endLng: 77.21, arcAlt: 0.3, color: "#EB7300" },
+  { order: 6, startLat: 37.77, startLng: -122.4, endLat: 40.71, endLng: -74.01, arcAlt: 0.2, color: "#EB7300" },
+  { order: 7, startLat: 25.2, startLng: 55.27, endLat: 48.85, endLng: 2.35, arcAlt: 0.25, color: "#EB7300" },
   { order: 8, startLat: -1.29, startLng: 36.82, endLat: 51.51, endLng: -0.13, arcAlt: 0.38, color: "#ff8040" },
-  { order: 9, startLat: 13.75, startLng: 100.52, endLat: 22.32, endLng: 114.17, arcAlt: 0.18, color: "#ff6a00" },
-  { order: 10, startLat: 41.01, startLng: 28.97, endLat: 1.35, endLng: 103.82, arcAlt: 0.33, color: "#ff4d00" },
-  { order: 11, startLat: 52.37, startLng: 4.89, endLat: 40.71, endLng: -74.01, arcAlt: 0.29, color: "#ff6a00" },
-  { order: 12, startLat: -34.6, startLng: -58.38, endLat: 37.77, endLng: -122.4, arcAlt: 0.45, color: "#ff4d00" },
+  { order: 9, startLat: 13.75, startLng: 100.52, endLat: 22.32, endLng: 114.17, arcAlt: 0.18, color: "#EB7300" },
+  { order: 10, startLat: 41.01, startLng: 28.97, endLat: 1.35, endLng: 103.82, arcAlt: 0.33, color: "#EB7300" },
+  { order: 11, startLat: 52.37, startLng: 4.89, endLat: 40.71, endLng: -74.01, arcAlt: 0.29, color: "#EB7300" },
+  { order: 12, startLat: -34.6, startLng: -58.38, endLat: 37.77, endLng: -122.4, arcAlt: 0.45, color: "#EB7300" },
 ];
 
 export default function HeroGlobe() {

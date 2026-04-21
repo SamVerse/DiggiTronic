@@ -62,7 +62,7 @@ function CheckCircle() {
       />
       <motion.div
         className="relative z-10 flex items-center justify-center rounded-full"
-        style={{ width: 72, height: 72, background: "linear-gradient(135deg, #EB7300, #ff9a00)", boxShadow: "0 0 40px rgba(235,115,0,0.4)" }}
+        style={{ width: 72, height: 72, background: "linear-gradient(135deg, #EB7300, #EB7300)", boxShadow: "0 0 40px rgba(235,115,0,0.4)" }}
         initial={{ scale: 0, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         transition={{ delay: 0.1, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}

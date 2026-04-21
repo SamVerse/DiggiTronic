@@ -116,7 +116,7 @@ export default function ServiceCta({ service }: { service: ServiceData }) {
               href="/contact"
               className="inline-flex items-center gap-2 px-8 py-4 rounded-full font-black text-sm text-white"
               style={{
-                background: "linear-gradient(135deg, #EB7300, #ff9a00)",
+                background: "linear-gradient(135deg, #EB7300, #EB7300)",
                 boxShadow: "0 4px 28px rgba(235,115,0,0.35)",
               }}
             >

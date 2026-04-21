@@ -91,7 +91,7 @@ export default function Footer() {
             <div
                 className="absolute top-0 left-0 right-0 h-px"
                 style={{
-                    background: "linear-gradient(to right, #ff4d00, #ff6a00 30%, transparent 65%)",
+                    background: "linear-gradient(to right, #EB7300, #EB7300 30%, transparent 65%)",
                 }}
             />
 
@@ -139,8 +139,8 @@ export default function Footer() {
                         <Image
                             src="/logo row.png"
                             alt="Digitronic"
-                            width={48}
-                            height={48}
+                            width={55}
+                            height={55}
                             className="object-contain flex-shrink-0"
                         />
                         <div>
@@ -170,7 +170,7 @@ export default function Footer() {
                             href="/contact"
                             className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full font-black text-sm text-white shrink-0"
                             style={{
-                                background: "linear-gradient(135deg, #ff4d00, #ff6a00)",
+                                background: "linear-gradient(135deg, #EB7300, #EB7300)",
                                 boxShadow: "0 4px 24px rgba(255,77,0,0.3)",
                             }}
                             whileHover={{
@@ -282,7 +282,7 @@ export default function Footer() {
                                     href="mailto:hello@digitronic.in"
                                     className="text-sm font-medium transition-colors duration-200"
                                     style={{ color: "rgba(255,255,255,0.45)" }}
-                                    whileHover={{ x: 4, color: "#ff4d00" }}
+                                    whileHover={{ x: 4, color: "#EB7300" }}
                                     transition={{ type: "spring", stiffness: 400, damping: 28 }}
                                 >
                                     hello@digitronic.in
@@ -339,7 +339,7 @@ export default function Footer() {
                                 rel="noopener noreferrer"
                                 aria-label={label}
                                 style={{ color: "rgba(255,255,255,0.3)" }}
-                                whileHover={{ scale: 1.2, color: "#ff4d00" }}
+                                whileHover={{ scale: 1.2, color: "#EB7300" }}
                                 whileTap={{ scale: 0.9 }}
                                 transition={{ type: "spring", stiffness: 400, damping: 20 }}
                             >

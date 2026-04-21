@@ -79,7 +79,7 @@ function FaqItem({
       >
         <motion.span
           className="text-xs font-mono flex-shrink-0 mt-1 transition-colors duration-300"
-          animate={{ color: isOpen ? "#ff4d00" : "rgba(255,255,255,0.2)" }}
+          animate={{ color: isOpen ? "#EB7300" : "rgba(255,255,255,0.2)" }}
           transition={{ duration: 0.3 }}
           style={{ letterSpacing: "0.1em" }}
         >
@@ -100,7 +100,7 @@ function FaqItem({
           className="flex-shrink-0 mt-1 text-xl font-light leading-none"
           animate={{
             rotate: isOpen ? 45 : 0,
-            color: isOpen ? "#ff4d00" : "rgba(255,255,255,0.3)",
+            color: isOpen ? "#EB7300" : "rgba(255,255,255,0.3)",
           }}
           transition={{ type: "spring", stiffness: 300, damping: 24 }}
         >
@@ -123,7 +123,7 @@ function FaqItem({
                 initial={{ scaleX: 0 }}
                 animate={{ scaleX: 1 }}
                 transition={{ duration: 0.4, delay: 0.1 }}
-                style={{ background: "#ff4d00", transformOrigin: "left" }}
+                style={{ background: "#EB7300", transformOrigin: "left" }}
               />
               <p
                 className="leading-relaxed text-sm md:text-[15px]"
@@ -221,7 +221,7 @@ export default function FAQSection() {
             className="font-black leading-[0.87] tracking-tight"
             style={{
               fontSize: "clamp(2.4rem, 6vw, 5.5rem)",
-              color: "#ff4d00",
+              color: "#EB7300",
             }}
           >
             answers we've earned.

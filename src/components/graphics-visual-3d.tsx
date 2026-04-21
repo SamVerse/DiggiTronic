@@ -66,7 +66,7 @@ function createBrandCardTexture(): THREE.CanvasTexture {
   ctx.font = "500 12.5px 'Courier New', monospace";
   ctx.fillText("BRAND IDENTITY", 34, 244);
 
-  const swatches = ["#EB7300", "#FF9A00", "#1A3A5C", "rgba(255,255,255,0.82)"];
+  const swatches = ["#EB7300", "#EB7300", "#1A3A5C", "rgba(255,255,255,0.82)"];
   swatches.forEach((col, i) => {
     ctx.fillStyle = col;
     ctx.beginPath();
