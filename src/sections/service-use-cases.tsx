@@ -124,11 +124,10 @@ function UseCaseCard({
 
   return (
     <motion.div
-      className={`use-case-card relative rounded-2xl overflow-hidden col-span-full ${spanConfig.col}`}
+      className={`use-case-card relative rounded-2xl overflow-hidden flex flex-col p-[1px] col-span-full ${spanConfig.col}`}
       style={{
         minHeight: spanConfig.minH,
-        background: useCase.gradient,
-        border: "1px solid rgba(255,255,255,0.07)",
+        background: "rgba(255,255,255,0.02)",
         opacity: isHovered === false ? 0.35 : 1,
         transition: "opacity 0.4s ease",
         cursor: "default",
@@ -139,9 +138,23 @@ function UseCaseCard({
       transition={{ type: "spring", stiffness: 280, damping: 26 }}
     >
       <motion.div
+        className="absolute top-1/2 left-1/2 w-[250%] h-[250%] pointer-events-none"
+        style={{
+          x: "-50%",
+          y: "-50%",
+          background: `conic-gradient(from 0deg, transparent 0%, transparent 60%, ${accentColor} 80%, transparent 100%)`,
+        }}
+        animate={{ rotate: 360 }}
+        transition={{ repeat: Infinity, duration: 4, ease: "linear" }}
+      />
+      <div 
+        className="relative z-10 w-full flex-1 rounded-[15px] overflow-hidden flex flex-col"
+        style={{ background: useCase.gradient }}
+      >
+      <motion.div
         className="absolute inset-0 pointer-events-none"
-        style={{ background: "linear-gradient(to top, rgba(0,0,0,0.96) 0%, rgba(0,0,0,0.35) 55%, transparent 100%)" }}
-        animate={{ opacity: on ? 0.55 : 1 }}
+        style={{ background: "linear-gradient(to top, rgba(0,2,8,0.6) 0%, rgba(0,2,8,0.15) 55%, transparent 100%)" }}
+        animate={{ opacity: on ? 0.35 : 1 }}
         transition={{ duration: 0.35 }}
       />
 
@@ -152,28 +165,7 @@ function UseCaseCard({
         transition={{ duration: 0.45 }}
       />
 
-      {/* Scan-line — fast on hover, slow loop at rest */}
-      <div className="absolute inset-x-0 top-0 h-px overflow-hidden pointer-events-none">
-        <motion.div
-          className="absolute top-0 h-full"
-          style={{ width: "45%", background: `linear-gradient(90deg, transparent, ${accentColor}cc, transparent)` }}
-          animate={on
-            ? { x: ["−100%", "350%"] }
-            : { x: ["−100%", "350%"] }
-          }
-          transition={on
-            ? { duration: 0.65, ease: "easeInOut" }
-            : { duration: 2.8, ease: "easeInOut", repeat: Infinity, repeatDelay: 3.5 + index * 0.9 }
-          }
-        />
-      </div>
 
-      <motion.div
-        className="absolute left-0 top-0 bottom-0 w-[3px] rounded-full pointer-events-none"
-        style={{ background: `linear-gradient(to bottom, transparent, ${accentColor}, transparent)` }}
-        animate={{ opacity: on ? 1 : 0, scaleY: on ? 1 : 0.2 }}
-        transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-      />
 
       <div className="absolute top-6 left-7 flex items-center gap-3 z-10">
         <motion.span
@@ -268,6 +260,7 @@ function UseCaseCard({
           />
         </div>
       </motion.div>
+      </div>
     </motion.div>
   );
 }

@@ -79,16 +79,19 @@ export default function AboutTeam() {
   const imageY = useTransform(scrollYProgress, [0, 1], ["0%", "15%"]);
 
   return (
-    <motion.section
+    <section
       ref={sectionRef}
-      data-navbar-theme="light"
       className="relative z-10 w-full overflow-hidden rounded-t-[2rem]"
       style={{
         backgroundColor: "#ffffff",
-        boxShadow: "0 -16px 60px rgba(0,0,0,0.3)",
-        y: sectionY,
+        boxShadow: "0 -16px 60px rgba(0,0,0,0.3)"
       }}
     >
+      <motion.div
+        data-navbar-theme="light"
+        className="relative w-full"
+        style={{ y: sectionY }}
+      >
       {/* ── dot grid texture (behind image column) ── */}
       <div
         aria-hidden
@@ -324,6 +327,7 @@ export default function AboutTeam() {
           </motion.div>
         </div>
       </div>
-    </motion.section>
+      </motion.div>
+    </section>
   );
 }

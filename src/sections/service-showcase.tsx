@@ -12,7 +12,7 @@ const SHOWCASE_ITEMS = [
     metricLabel: "Brand Recognition",
     weeks: "6 weeks",
     result: "Exceptional",
-    color: "rgba(160,50,220,0.15)",
+    color: "rgba(160,50,220,0.45)",
     barWidth: 0.78,
   },
   {
@@ -22,7 +22,7 @@ const SHOWCASE_ITEMS = [
     metricLabel: "Return on Ad Spend",
     weeks: "3 months",
     result: "Outstanding",
-    color: "rgba(0,160,180,0.15)",
+    color: "rgba(0,160,180,0.45)",
     barWidth: 0.92,
   },
   {
@@ -32,7 +32,7 @@ const SHOWCASE_ITEMS = [
     metricLabel: "Total Impressions",
     weeks: "90 days",
     result: "Viral",
-    color: "rgba(50,110,255,0.15)",
+    color: "rgba(50,110,255,0.45)",
     barWidth: 0.65,
   },
   {
@@ -42,7 +42,7 @@ const SHOWCASE_ITEMS = [
     metricLabel: "Search Position",
     weeks: "6 months",
     result: "Dominant",
-    color: "rgba(50,220,100,0.15)",
+    color: "rgba(50,220,100,0.45)",
     barWidth: 0.88,
   },
   {
@@ -52,7 +52,7 @@ const SHOWCASE_ITEMS = [
     metricLabel: "Performance Score",
     weeks: "12 weeks",
     result: "Perfect",
-    color: "rgba(220,50,120,0.15)",
+    color: "rgba(220,50,120,0.45)",
     barWidth: 0.99,
   },
 ];
@@ -117,7 +117,7 @@ function ShowcaseCard({
       <div
         style={{
           height: 360,
-          background: `linear-gradient(155deg, ${item.color}, rgba(15,20,30,0.85))`,
+          background: `linear-gradient(155deg, ${item.color}, rgba(15,20,30,0.5))`,
           border: "1px solid rgba(255,255,255,0.08)",
           borderRadius: "1.5rem",
           position: "relative",

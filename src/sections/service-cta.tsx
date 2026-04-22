@@ -132,9 +132,12 @@ export default function ServiceCta({ service }: { service: ServiceData }) {
           </motion.div>
 
           <motion.div variants={fadeUp} whileHover={{ y: -3 }} transition={{ type: "spring", stiffness: 300, damping: 25 }} className="group">
-            <Link
-              href="/contact"
-              className="relative inline-flex items-center gap-2 px-8 py-4 rounded-full font-black text-sm border transition-all"
+            <a
+              href={`/pdfs/${service.slug}.pdf`}
+              download={`${service.slug}-deck.pdf`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="relative inline-flex items-center gap-2 px-7 py-3.5 rounded-full font-black text-sm border transition-colors"
               style={{ borderColor: "rgba(255,255,255,0.15)", color: "rgba(255,255,255,0.55)" }}
             >
               <div
@@ -147,8 +150,8 @@ export default function ServiceCta({ service }: { service: ServiceData }) {
                   WebkitMaskComposite: "xor",
                 }}
               />
-              Download Brochure
-            </Link>
+              Download Deck
+            </a>
           </motion.div>
         </motion.div>
 
