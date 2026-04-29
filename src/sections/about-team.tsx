@@ -10,8 +10,8 @@ import { Linkedin, ArrowUpRight, MapPin } from "lucide-react";
 const FOUNDER = {
   name: "Shashank Sharma",
   role: "Founder & Creative Director",
-  tagline: "Unlocking Growth Through Graphics & Social Media",
-  bio: "A creative visionary with boundless imagination, specializing in graphic design and strategic marketing. From stunning visual identities to high-impact digital campaigns — transforming brands through the power of design.",
+  tagline: "Good design can make people stop. Good branding makes them remember.",
+  bio: "DiggiTronic started with a simple love for design and creative work. Over time, it became about something much bigger helping brands present themselves better online and create a stronger connection with people. From logos and content to social media and marketing, every project is approached with attention, honesty, and the intention to create work that feels real to the brand. The idea has always been simple: create meaningful work that not only looks good, but also helps businesses grow with confidence.",
   image: "/images/blog/founder.jpeg",
   linkedin: "https://www.linkedin.com/in/shashank-sharma-00267b260/",
   skills: [

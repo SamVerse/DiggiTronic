@@ -74,14 +74,14 @@ export default function HeroSection() {
             viewport={{ once: true }}
             transition={{ type: "spring", stiffness: 240, damping: 70, mass: 1 }}
           >
-            Your Growth Partner for Design, Marketing &{" "}
+            Your growth partner for design, marketing &{" "}
             <span className="text-transparent bg-clip-text bg-linear-to-r from-[#EB7300] to-[#EB7300]">
-              AI Solutions
+              AI
             </span>
           </motion.h1>
 
           <motion.p
-            className="text-center text-gray-400 text-base max-w-lg mt-6 leading-relaxed"
+            className="text-center text-gray-400 text-base max-w-xl mt-6 leading-relaxed"
             initial={{ y: 50, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             viewport={{ once: true }}
@@ -93,8 +93,9 @@ export default function HeroSection() {
               mass: 1,
             }}
           >
-            We help businesses stand out with creative design, powerful marketing,
-            cutting-edge AI, and data-driven strategies that deliver real results.
+            We help brands look better, sell better, and grow faster, through
+            design, marketing, and smart systems that actually work in the real
+            world.
           </motion.p>
 
           <motion.div
@@ -105,7 +106,7 @@ export default function HeroSection() {
             transition={{ type: "spring", stiffness: 320, damping: 70, mass: 1 }}
           >
             <Link href="/contact" className="flex items-center gap-2 bg-[#EB7300] hover:bg-[#EB7300] font-medium transition text-white active:scale-95 rounded-full px-8 h-12 shadow-[0_0_20px_rgba(255,77,0,0.3)]">
-              Book a Free Consultation
+              Let’s build something that grows
               <ArrowRight className="size-5" />
             </Link>
             <Link href="/#agency-statement" className="group flex items-center justify-center relative border border-slate-700 text-gray-300 active:scale-95 hover:bg-white/5 transition rounded-full px-8 h-12">
@@ -119,7 +120,7 @@ export default function HeroSection() {
                   WebkitMaskComposite: "xor",
                 }}
               />
-              Explore Our Approach
+              Explore how we work
             </Link>
           </motion.div>
 

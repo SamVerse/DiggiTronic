@@ -150,26 +150,25 @@ export default function AgencyStatement() {
             className="font-black leading-[0.9] tracking-tight text-gray-900"
             style={{ fontSize: "clamp(2.4rem, 10vw, 3.6rem)" }}
           >
-            We build
+            We do more
           </motion.h2>
           <motion.h2
             variants={popIn}
             className="font-black leading-[0.9] tracking-tight origin-left"
             style={{ fontSize: "clamp(2.4rem, 10vw, 3.6rem)", color: "#EB7300" }}
           >
-            brands that
+            than simply
           </motion.h2>
           <motion.h2
             variants={fadeLeft}
             className="font-black leading-[0.9] tracking-tight text-gray-900"
             style={{ fontSize: "clamp(2.4rem, 10vw, 3.6rem)" }}
           >
-            move markets.
+            create brands.
           </motion.h2>
 
           <motion.p variants={fadeUp} className="mt-5 text-gray-500 text-sm leading-relaxed max-w-sm">
-            From bold identities to precision-crafted digital systems — we partner
-            with ambitious brands to create work that lasts and scales.
+            We fix what’s not working, build what’s missing, and scale what has potential.
           </motion.p>
         </motion.div>
 
@@ -238,26 +237,25 @@ export default function AgencyStatement() {
               className="font-black leading-[0.87] tracking-tight text-gray-900 block"
               style={{ fontSize: "clamp(2rem, 3.2vw, 5rem)" }}
             >
-              We build
+              We do more
             </motion.h2>
             <motion.h2
               variants={popIn}
               className="font-black leading-[0.87] tracking-tight block origin-left"
               style={{ fontSize: "clamp(2rem, 3.2vw, 5rem)", color: "#EB7300" }}
             >
-              brands that
+              than simply
             </motion.h2>
             <motion.h2
               variants={fadeLeft}
               className="font-black leading-[0.87] tracking-tight text-gray-900 block"
               style={{ fontSize: "clamp(2rem, 3.2vw, 5rem)" }}
             >
-              move markets.
+              create brands.
             </motion.h2>
 
             <motion.p variants={fadeUp} className="mt-6 max-w-xs text-gray-500 text-sm xl:text-[15px] leading-relaxed">
-              From bold identities to precision-crafted digital systems — we partner
-              with ambitious brands to create work that lasts and scales.
+              We fix what’s not working, build what’s missing, and scale what has potential.
             </motion.p>
           </motion.div>
 

@@ -248,8 +248,8 @@ export default function ServicesCTA() {
           className="mt-6 text-base md:text-lg max-w-xl leading-relaxed"
           style={{ color: "rgba(255,255,255,0.5)" }}
         >
-          From creative design and video production to marketing, SEO, and AI
-          solutions — we deliver strategies that create real impact.
+          Branding. Websites. Marketing. AI. Content. Everything under one roof,
+          so you don’t have to handle 5 separate vendors.
         </p>
 
         <div

@@ -18,22 +18,22 @@ const VALUES = [
   {
     num: "01",
     title: "Bold Thinking",
-    body: "We challenge conventional approaches and pursue ideas with fearless conviction. Safe choices don't build iconic brands.",
+    body: "We believe great brands stand out when they’re willing to do things differently. We’re always open to fresh ideas, creative risks, and approaches that help businesses leave a stronger impression.",
   },
   {
     num: "02",
-    title: "Strategic Precision",
-    body: "Every move is deliberate. We design strategies that are targeted, measured, and built to compound over time.",
+    title: "Purposeful Strategy",
+    body: "Every design, campaign, and decision should have a reason behind it. We focus on creating work that not only looks good, but also supports long term growth.",
   },
   {
     num: "03",
-    title: "Creative Excellence",
-    body: "From design to video — craft, quality, and beauty are non-negotiable standards at every touchpoint.",
+    title: "Attention to Quality",
+    body: "Whether it’s branding, content, videos, or marketing, we care deeply about the details. Good work comes from consistency, thought, and taking the extra step.",
   },
   {
     num: "04",
-    title: "Reliable Partnership",
-    body: "We show up, follow through, and treat every client's business as our own. Your growth is our success.",
+    title: "Growing Together",
+    body: "We see every client relationship as a partnership. We stay involved, communicate honestly, and work closely with brands as they grow over time.",
   },
 ];
 

@@ -99,7 +99,7 @@ export default function AboutVision() {
               className="font-black leading-[0.95] tracking-tight text-gray-900"
               style={{ fontSize: "clamp(2rem, 3.5vw, 3.5rem)" }}
             >
-              To become a globally recognized digital growth partner.
+              To help brands grow with clarity, creativity, and a strong digital presence.
             </h2>
 
             <motion.div
@@ -109,8 +109,9 @@ export default function AboutVision() {
             />
 
             <p className="text-sm md:text-base leading-relaxed text-gray-500 max-w-md">
-              Delivering classic, bold, and transformative digital strategies that
-              help brands rise above the noise — locally and globally.
+              We want to create work that not only looks good, but also helps
+              businesses connect with the right audience, build trust, and grow
+              steadily in a competitive market.
             </p>
           </motion.div>
 
@@ -141,7 +142,7 @@ export default function AboutVision() {
               className="font-black leading-[0.95] tracking-tight text-gray-900"
               style={{ fontSize: "clamp(2rem, 3.5vw, 3.5rem)" }}
             >
-              To empower businesses with innovative digital solutions.
+              Building stronger brands through thoughtful digital work
             </h2>
 
             <motion.div
@@ -151,8 +152,9 @@ export default function AboutVision() {
             />
 
             <p className="text-sm md:text-base leading-relaxed text-gray-500 max-w-md">
-              Combining creativity, strategy, and technology to build systems that
-              compound — turning ambition into measurable, lasting growth.
+              We believe good marketing is not just about visibility. It’s about
+              building a strong foundation that helps brands connect better, grow
+              consistently, and create long term value.
             </p>
           </motion.div>
 

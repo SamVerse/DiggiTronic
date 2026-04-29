@@ -9,8 +9,8 @@ import {
   useSpring,
 } from "framer-motion";
 
-const LINE_ONE = ["WE", "DON'T", "JUST", "BUILD", "BRANDS."];
-const LINE_TWO = ["WE", "ENGINEER", "DIGITAL", "IMPACT."];
+const LINE_ONE = ["ALL", "YOUR", "DIGITAL", "NEEDS."];
+const LINE_TWO = ["ONE", "TEAM", "THAT", "ACTUALLY", "GETS", "IT."];
 
 export default function AboutHero() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -137,8 +137,8 @@ export default function AboutHero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.9, duration: 0.8, ease: "easeOut" }}
         >
-          DiggiTronic blends creativity, strategy, and technology to transform
-          ambitious ideas into measurable growth.
+          We work across design, marketing, tech, and automation, not as
+          separate services, but as one connected system.
         </motion.p>
       </div>
 

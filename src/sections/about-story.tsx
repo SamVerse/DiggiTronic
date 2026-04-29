@@ -121,7 +121,10 @@ export default function AboutStory() {
             >
               DiggiTronic was founded with a single conviction: that every brand —
               from scrappy startups to established enterprises — deserves a digital
-              presence that truly reflects its ambition.
+              presence that truly reflects its ambition. We&apos;re a full-service
+              digital studio combining graphic design, performance marketing, SEO,
+              video production, social media, and AI solutions under one roof — so
+              your brand grows with coherence, consistency, and momentum.
             </motion.p>
 
             <motion.p
@@ -129,10 +132,17 @@ export default function AboutStory() {
               className="text-sm md:text-base leading-relaxed"
               style={{ color: "rgba(255,255,255,0.45)" }}
             >
-              We're a full-service digital studio combining graphic design,
-              performance marketing, SEO, video production, social media, and AI
-              solutions under one roof — so your brand grows with coherence,
-              consistency, and momentum.
+              Built with the idea that good brands deserve better digital
+              presence. DiggiTronic started with a simple belief that every
+              business, whether it&apos;s just starting out or already growing,
+              deserves branding and marketing that genuinely represents who they
+              are. Over time, we built a team that brings design, marketing,
+              content, SEO, video production, social media, and AI solutions
+              together in one place. Not just to offer services, but to help
+              brands grow in a way that feels clear, consistent, and actually
+              connected across every platform. We focus on creating work that
+              looks good, communicates better, and helps businesses build a
+              stronger presence both online and offline.
             </motion.p>
           </motion.div>
 

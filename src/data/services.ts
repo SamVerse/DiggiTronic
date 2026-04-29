@@ -43,15 +43,15 @@ export const SERVICES: ServiceData[] = [
   {
     slug: "video-production",
     title: "Video Production",
-    tagline: "Stories that move audiences.",
+    tagline: "Videos people actually want to watch.",
     description:
-      "We craft cinematic video content that stops the scroll, builds brand authority, and drives real engagement. From concept to final cut.",
+      "We create video content that feels natural, engaging, and true to your brand. From planning and shooting to editing and final delivery, every video is made to help your brand connect better with people and leave a lasting impression.",
     visualKey: "video",
     overview: {
       headline: "Content that earns attention in a world that's learned to ignore it.",
-      body: "Video is no longer optional — it's the dominant medium for brand communication. We produce everything from brand films and explainer animations to social-first content, combining cinematic quality with strategic storytelling that converts viewers into customers.",
+      body: "Video has become one of the most important ways for brands to connect with people today. We create everything from brand videos and reels to explainer content and social media campaigns, with a focus on storytelling that feels engaging, clear, and true to your brand.",
       highlight:
-        "Every frame is intentional. Every second is earned. We don't just make videos — we craft visual stories that people actually watch.",
+        "Every shot is created with purpose and attention to detail. More than just making videos, we focus on telling stories that feel real, hold attention, and connect naturally with people.",
     },
     offerings: [
       { icon: "Film", title: "2D Animation", desc: "Flat and motion graphic animations that simplify complex ideas." },
@@ -94,15 +94,15 @@ export const SERVICES: ServiceData[] = [
   {
     slug: "social-media",
     title: "Social Media",
-    tagline: "Content that creates community.",
+    tagline: "Social media today is not just about posting regularly it's about creating content people actually connect with.",
     description:
-      "We build social presences that grow audiences, spark conversations, and convert followers into loyal brand advocates.",
+      "We help brands build a stronger presence through thoughtful content, creative storytelling, and platform specific strategies that feel natural to the audience.",
     visualKey: "social",
     overview: {
       headline: "Your audience is on social. The question is whether they're noticing you.",
-      body: "Social media is a battlefield for attention. We help brands cut through the noise with platform-native strategies, scroll-stopping content, and community management that turns casual followers into committed fans. From Instagram to LinkedIn, we own the feed.",
+      body: "From Instagram to LinkedIn, we focus on creating content that reflects your brand, starts conversations, and helps build a genuine community over time. Every post is created with intention, not just to fill a feed.",
       highlight:
-        "We don't post to fill a calendar. We post with purpose — every piece of content is part of a larger strategy built to grow your brand.",
+        "We focus on creating content that feels natural, engaging, and true to your brand across every platform.",
     },
     offerings: [
       { icon: "Megaphone", title: "Social Media Marketing", desc: "End-to-end social strategy, content creation, and community management." },
@@ -143,9 +143,9 @@ export const SERVICES: ServiceData[] = [
   {
     slug: "development",
     title: "Development",
-    tagline: "Engineered to perform.",
+    tagline: "Websites and platforms made to grow with you.",
     description:
-      "We build digital products that are fast, scalable, and beautiful — from handcrafted websites to full-stack web applications.",
+      "We create websites and digital platforms that are clean, fast, easy to use, and designed to give people a better experience. From simple business websites to custom web applications, everything is built with both performance and design in mind.",
     visualKey: "dev",
     overview: {
       headline: "Your digital presence is your most important salesperson.",
@@ -194,9 +194,9 @@ export const SERVICES: ServiceData[] = [
   {
     slug: "marketing",
     title: "Marketing",
-    tagline: "Campaigns built to convert.",
+    tagline: "Marketing that helps your business grow.",
     description:
-      "We run data-driven marketing campaigns across every channel — paid, organic, influencer, and email — to acquire, convert, and retain customers.",
+      "We create and manage marketing campaigns that help brands reach the right audience, generate better engagement, and get meaningful results. From paid ads and influencer campaigns to email marketing and organic growth, every strategy is built around what works best for your business.",
     visualKey: "marketing",
     overview: {
       headline: "Marketing that pays for itself — and then some.",
@@ -245,15 +245,15 @@ export const SERVICES: ServiceData[] = [
   {
     slug: "seo",
     title: "SEO",
-    tagline: "Visibility that compounds.",
+    tagline: "Helping your brand get discovered naturally.",
     description:
-      "We engineer organic visibility for ambitious brands — combining technical precision, content intelligence, and authority building to dominate search rankings.",
+      "We improve your online visibility through SEO strategies, content, and website optimization that help the right people find your business. The focus is on building steady, long term growth and a stronger presence on search engines.",
     visualKey: "seo",
     overview: {
       headline: "The best marketing you can invest in is ranking #1 when it matters.",
-      body: "Search is intent-based — users who find you through organic search are already looking for what you offer. We build SEO strategies that improve rankings, drive qualified traffic, and compound over time. From deep technical audits to content programs, we own your search presence end-to-end.",
+      body: "People usually search when they already need something and that’s where good SEO makes a difference. We help brands improve their visibility through better website structure, content, and search strategy so the right audience can find them more easily.",
       highlight:
-        "SEO is a long game, and we play it seriously. We don't chase hacks — we build authority that lasts.",
+        "From technical improvements to content planning, we focus on building a strong search presence that grows steadily over time. No shortcuts or quick tricks, just consistent work that helps your brand build trust and long term visibility online.",
     },
     offerings: [
       { icon: "Trophy", title: "Website Ranking", desc: "Keyword research, on-page optimisation, and authority building to rank for high-intent terms." },
@@ -346,9 +346,9 @@ export const SERVICES: ServiceData[] = [
   {
     slug: "graphics-animation",
     title: "Graphics & Animation",
-    tagline: "Visual identity that commands attention.",
+    tagline: "Design that helps your brand stand out.",
     description:
-      "We design visual systems, brand identities, and animated assets that elevate every touchpoint of your brand — from logo to interface.",
+      "We create brand identities, visuals, and creative assets that give your business a strong and consistent look across every platform. From logos and brand guidelines to social media creatives and motion design, everything is designed to feel clear, memorable, and true to your brand.",
     visualKey: "graphics",
     overview: {
       headline: "Great design is the silent salesperson working around the clock for your brand.",
