@@ -335,7 +335,7 @@ export default function CareersPage() {
             </motion.p>
 
             <motion.div
-              className="mt-10 flex flex-col sm:flex-row gap-4 justify-center"
+              className="mt-10 flex flex-col sm:flex-row gap-4 justify-center items-center"
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1.1, duration: 0.7, ease: "easeOut" }}

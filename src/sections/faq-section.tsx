@@ -195,7 +195,7 @@ export default function FAQSection() {
       <div className="relative z-10 max-w-5xl mx-auto px-6 md:px-12 py-24 md:py-32">
 
         <motion.div
-          className="mb-16 md:mb-20"
+          className="mb-16 md:mb-20 text-center"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: false, margin: "-80px" }}
