@@ -90,8 +90,8 @@ export default function AboutHero() {
           {LINE_ONE.map((word, i) => (
             <span key={i} className="overflow-hidden inline-block">
               <motion.span
-                className="inline-block font-black text-white"
-                style={{ fontSize: "clamp(2.2rem, 5.5vw, 6rem)", lineHeight: 0.9 }}
+                className="inline-block font-black text-white pt-2 pb-1"
+                style={{ fontSize: "clamp(2.2rem, 5.5vw, 6rem)", lineHeight: 1.1 }}
                 initial={{ y: "110%", opacity: 0 }}
                 animate={{ y: "0%", opacity: 1 }}
                 transition={{
@@ -106,14 +106,14 @@ export default function AboutHero() {
           ))}
         </h1>
 
-        <h1 className="flex flex-wrap justify-center gap-x-[1.2em] gap-y-0 mt-1">
+        <h1 className="flex flex-wrap justify-center gap-x-[1.2em] gap-y-0 -mt-[0.2em]">
           {LINE_TWO.map((word, i) => (
             <span key={i} className="overflow-hidden inline-block">
               <motion.span
-                className="inline-block font-black"
+                className="inline-block font-black pt-2 pb-1"
                 style={{
                   fontSize: "clamp(2.2rem, 5.5vw, 6rem)",
-                  lineHeight: 0.9,
+                  lineHeight: 1.1,
                   color: i === LINE_TWO.length - 1 ? "#EB7300" : "white",
                 }}
                 initial={{ y: "110%", opacity: 0 }}

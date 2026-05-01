@@ -68,7 +68,7 @@ export default function HeroSection() {
           </motion.a>
 
           <motion.h1
-            className="text-center text-4xl leading-[0.95] md:text-6xl md:leading-[0.9] mt-6 font-bold max-w-4xl text-white"
+            className="text-center text-4xl leading-[1.15] md:text-6xl md:leading-[1.1] mt-6 font-bold max-w-4xl text-white"
             initial={{ y: 50, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             viewport={{ once: true }}

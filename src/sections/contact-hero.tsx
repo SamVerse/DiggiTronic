@@ -119,10 +119,10 @@ export default function ContactHero() {
           {LINE_ONE.map((word, i) => (
             <span key={i} className="overflow-hidden inline-block">
               <motion.span
-                className="inline-block font-black text-white"
+                className="inline-block font-black text-white pt-2 pb-1"
                 style={{
                   fontSize: "clamp(2.2rem, 5.5vw, 6rem)",
-                  lineHeight: 0.9,
+                  lineHeight: 1.1,
                   letterSpacing: "-0.02em",
                 }}
                 initial={{ y: "110%", opacity: 0 }}
@@ -140,14 +140,14 @@ export default function ContactHero() {
         </h1>
 
         {/* Line 2 — accent color */}
-        <h1 className="flex flex-wrap justify-center gap-x-[0.3em] mt-1">
+        <h1 className="flex flex-wrap justify-center gap-x-[0.3em] -mt-[0.2em]">
           {LINE_TWO.map((word, i) => (
             <span key={i} className="overflow-hidden inline-block">
               <motion.span
-                className="inline-block font-black"
+                className="inline-block font-black pt-2 pb-1"
                 style={{
                   fontSize: "clamp(2.2rem, 5.5vw, 6rem)",
-                  lineHeight: 0.9,
+                  lineHeight: 1.1,
                   letterSpacing: "-0.02em",
                   color: "#EB7300",
                 }}

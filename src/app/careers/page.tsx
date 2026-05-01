@@ -308,8 +308,8 @@ export default function CareersPage() {
                       return (
                         <div key={wi} className="overflow-hidden">
                           <motion.span
-                            className="block"
-                            style={{ color: isLast ? "#EB7300" : "#ffffff" }}
+                            className="block pt-2 pb-1"
+                            style={{ color: isLast ? "#EB7300" : "#ffffff", lineHeight: 1.1 }}
                             initial={{ y: "110%", opacity: 0 }}
                             animate={{ y: "0%", opacity: 1 }}
                             transition={{ delay: 0.2 + wordIdx * 0.06, duration: 0.75, ease: [0.16, 1, 0.3, 1] }}

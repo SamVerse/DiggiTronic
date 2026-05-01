@@ -137,9 +137,10 @@ export default function BlogHero() {
                                     return (
                                         <div key={wi} className="overflow-hidden">
                                             <motion.span
-                                                className="block"
+                                                className="block pt-2 pb-1"
                                                 style={{
                                                     color: isAccentLine ? "#EB7300" : "#ffffff",
+                                                    lineHeight: 1.1,
                                                 }}
                                                 initial={{ y: "110%", opacity: 0 }}
                                                 animate={{ y: "0%", opacity: 1 }}

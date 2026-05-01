@@ -261,12 +261,12 @@ export default function ContactSplit() {
             <div className="flex flex-col gap-1 mb-8">
               {[
                 { text: "Your Vision.", color: "white" },
-                { text: "Our Creativity.", color: "#EB7300" },
+                { text: "Our Plan.", color: "#EB7300" },
                 { text: "Real Growth.", color: "white" },
               ].map((line, i) => (
                 <div key={i} className="overflow-hidden">
                   <motion.span
-                    className="block font-black tracking-tight leading-[0.9]"
+                    className="block font-black tracking-tight leading-[1.1] pt-2 pb-1"
                     style={{
                       fontSize: "clamp(2.2rem, 4vw, 4.2rem)",
                       color: line.color,
