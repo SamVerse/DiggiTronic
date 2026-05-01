@@ -36,13 +36,10 @@ function RotatingValue() {
   }, []);
 
   return (
-    /* Ghost spacer reserves width of the longest word so the row
-       never shifts. The rotating span sits absolutely on top. */
     <span
       className="relative pb-4 font-black overflow-hidden"
       style={{ display: "inline-block", lineHeight: "1" }}
     >
-      {/* Invisible width anchor — longest label */}
       <span aria-hidden style={{ visibility: "hidden", pointerEvents: "none" }}>
         Performance.
       </span>
@@ -234,13 +231,9 @@ export default function ServicesCTA() {
           ref={titleRef}
           className="text-4xl md:text-5xl lg:text-6xl font-black uppercase tracking-tight [word-spacing:1rem] leading-tight max-w-5xl mx-auto text-white"
         >
-          <span className="word inline-block">All</span>{" "}
-          <span className="word inline-block">Digital</span>{" "}
-          <span className="word inline-block">Solutions,</span>
+          Branding. Websites.
           <br className="hidden md:block" />
-          <span className="word inline-block">One</span>{" "}
-          <span className="word inline-block">Growth</span>{" "}
-          <span className="word inline-block">Partner.</span>
+          Marketing. AI. Content.
         </h2>
 
         <p
@@ -248,8 +241,8 @@ export default function ServicesCTA() {
           className="mt-6 text-base md:text-lg max-w-xl leading-relaxed"
           style={{ color: "rgba(255,255,255,0.5)" }}
         >
-          Branding. Websites. Marketing. AI. Content. Everything under one roof,
-          so you don’t have to handle 5 separate vendors.
+          Everything under one roof, so you don’t have to handle 5 separate
+          vendors.
         </p>
 
         <div

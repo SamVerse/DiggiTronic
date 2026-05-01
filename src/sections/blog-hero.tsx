@@ -10,9 +10,9 @@ import {
 } from "framer-motion";
 
 const HERO_LINES = [
-    { words: ["INSIGHTS"], accent: false },
-    { words: ["THAT", "POWER"], accent: false },
-    { words: ["DIGITAL", "GROWTH"], accent: true },
+    { words: ["Insights"], accent: false },
+    { words: ["That", "Power"], accent: false },
+    { words: ["Digital", "Growth"], accent: true },
 ];
 
 export default function BlogHero() {

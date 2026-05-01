@@ -48,7 +48,7 @@ const tabs: GoalTab[] = [
   {
     id: "strategy",
     label: "Strategy",
-    title: "DEFINE YOUR GROWTH STRATEGY",
+    title: "Define Your Growth Strategy",
     description:
       "We start by understanding your brand, goals, and audience. Our strategic planning aligns creativity, marketing, and technology to build a clear roadmap for growth.",
     cta: "View process",
@@ -72,7 +72,7 @@ const tabs: GoalTab[] = [
   {
     id: "design",
     label: "Design",
-    title: "DESIGN THAT BUILDS TRUST",
+    title: "Design That Build Trust",
     description:
       "From branding to UI/UX and motion graphics, we design experiences that look premium, feel intuitive, and leave a lasting impression.",
     cta: "See designs",
@@ -96,7 +96,7 @@ const tabs: GoalTab[] = [
   {
     id: "marketing",
     label: "Marketing",
-    title: "MARKET WITH PRECISION",
+    title: "Marketing With Precision",
     description:
       "We combine SEO, social media, paid ads, and content to attract the right audience and convert attention into measurable results.",
     cta: "Explore marketing",
@@ -120,7 +120,7 @@ const tabs: GoalTab[] = [
   {
     id: "video",
     label: "Video",
-    title: "STORIES THAT MOVE AUDIENCES",
+    title: "Stories That Move Audiences",
     description:
       "We craft cinematic video content — from brand films and 2D/3D animations to motion graphics and logo reveals — that stops the scroll and drives engagement.",
     cta: "View productions",
@@ -144,7 +144,7 @@ const tabs: GoalTab[] = [
   {
     id: "social",
     label: "Social",
-    title: "CONTENT THAT CREATES COMMUNITY",
+    title: "Content That Create Community",
     description:
       "We build social presences that grow audiences, spark conversations, and convert followers into loyal brand advocates across every platform.",
     cta: "Explore social",
@@ -168,7 +168,7 @@ const tabs: GoalTab[] = [
   {
     id: "development",
     label: "Dev",
-    title: "ENGINEERED TO PERFORM",
+    title: "Engineered To Perform",
     description:
       "We build digital products that are fast, scalable, and beautiful — from handcrafted websites and web apps to cross-platform mobile applications.",
     cta: "See our work",
@@ -192,7 +192,7 @@ const tabs: GoalTab[] = [
   {
     id: "ai",
     label: "AI & Tech",
-    title: "POWERED BY AI & TECHNOLOGY",
+    title: "Powered By AI & Technology",
     description:
       "From AI videos and automation to custom tools and analytics, we use technology to scale efficiency and performance.",
     cta: "Discover AI",
@@ -452,7 +452,7 @@ export default function GoalSection() {
               </p>
               <h2
                 ref={titleRef}
-                className="mt-3 text-3xl md:text-4xl lg:text-5xl font-black uppercase text-white"
+                className="mt-3 text-3xl md:text-4xl lg:text-5xl font-black leading-[0.9] text-white"
               >
                 {active.title.split(" ").map((word, idx) => (
                   <span

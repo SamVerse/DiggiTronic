@@ -142,14 +142,14 @@ export default function TestimonialsSection() {
             className="font-black leading-[0.9] tracking-tight text-gray-900"
             style={{ fontSize: "clamp(2rem, 4vw, 4rem)" }}
           >
-            Real results,
+            Real Results,
           </motion.h2>
           <motion.h2
             variants={fadeUp}
             className="font-black leading-[0.9] tracking-tight"
             style={{ fontSize: "clamp(2rem, 4vw, 4rem)", color: "#EB7300" }}
           >
-            real words.
+            Real Words.
           </motion.h2>
         </motion.div>
 

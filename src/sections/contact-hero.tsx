@@ -9,8 +9,8 @@ import {
   useSpring,
 } from "framer-motion";
 
-const LINE_ONE = ["LET'S", "BUILD", "SOMETHING"];
-const LINE_TWO = ["EXTRAORDINARY."];
+const LINE_ONE = ["Let's", "Build", "Something"];
+const LINE_TWO = ["Extraordinary."];
 
 export default function ContactHero() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -119,10 +119,10 @@ export default function ContactHero() {
           {LINE_ONE.map((word, i) => (
             <span key={i} className="overflow-hidden inline-block">
               <motion.span
-                className="inline-block font-black uppercase text-white"
+                className="inline-block font-black text-white"
                 style={{
                   fontSize: "clamp(2.2rem, 5.5vw, 6rem)",
-                  lineHeight: 1.0,
+                  lineHeight: 0.9,
                   letterSpacing: "-0.02em",
                 }}
                 initial={{ y: "110%", opacity: 0 }}
@@ -144,10 +144,10 @@ export default function ContactHero() {
           {LINE_TWO.map((word, i) => (
             <span key={i} className="overflow-hidden inline-block">
               <motion.span
-                className="inline-block font-black uppercase"
+                className="inline-block font-black"
                 style={{
                   fontSize: "clamp(2.2rem, 5.5vw, 6rem)",
-                  lineHeight: 1.0,
+                  lineHeight: 0.9,
                   letterSpacing: "-0.02em",
                   color: "#EB7300",
                 }}

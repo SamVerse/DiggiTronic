@@ -24,9 +24,9 @@ const stagger: Variants = {
 };
 
 const HERO_LINES = [
-  { words: ["BUILD", "THE", "FUTURE"], orange: false },
-  { words: ["OF", "DIGITAL"], orange: false },
-  { words: ["WITH", "US."], orange: true },
+  { words: ["Build", "The", "Future"], orange: false },
+  { words: ["Of", "Digital"], orange: false },
+  { words: ["With", "Us."], orange: true },
 ];
 
 const PILLARS = [

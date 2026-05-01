@@ -68,13 +68,13 @@ export default function HeroSection() {
           </motion.a>
 
           <motion.h1
-            className="text-center text-4xl leading-12 md:text-6xl md:leading-tight mt-6 font-bold max-w-4xl text-white"
+            className="text-center text-4xl leading-[0.95] md:text-6xl md:leading-[0.9] mt-6 font-bold max-w-4xl text-white"
             initial={{ y: 50, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             viewport={{ once: true }}
             transition={{ type: "spring", stiffness: 240, damping: 70, mass: 1 }}
           >
-            Your growth partner for design, marketing &{" "}
+            Your Growth Partner For Design, Marketing &{" "}
             <span className="text-transparent bg-clip-text bg-linear-to-r from-[#EB7300] to-[#EB7300]">
               AI
             </span>

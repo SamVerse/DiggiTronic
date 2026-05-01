@@ -11,7 +11,11 @@ const FOUNDER = {
   name: "Shashank Sharma",
   role: "Founder & Creative Director",
   tagline: "Good design can make people stop. Good branding makes them remember.",
-  bio: "DiggiTronic started with a simple love for design and creative work. Over time, it became about something much bigger helping brands present themselves better online and create a stronger connection with people. From logos and content to social media and marketing, every project is approached with attention, honesty, and the intention to create work that feels real to the brand. The idea has always been simple: create meaningful work that not only looks good, but also helps businesses grow with confidence.",
+  bio: [
+    "DiggiTronic was built on the belief that good creative work should feel natural, thoughtful, and true to the people behind the brand. What started as a small passion for design slowly turned into a creative studio focused on helping businesses find their voice online.",
+    "Today, DiggiTronic works across branding, content, social media, and digital marketing & creating work that feels clean, relevant, and easy for people to connect with. Every brand has its own story, personality, and way of speaking, and the approach has always been about understanding that first before creating anything.",
+    "Rather than chasing every trend, the focus stays on building a strong and lasting presence through ideas that feel human, visuals that feel intentional, and strategies that actually make sense for the brand.",
+  ],
   image: "/images/blog/founder.jpeg",
   linkedin: "https://www.linkedin.com/in/shashank-sharma-00267b260/",
   skills: [
@@ -214,12 +218,17 @@ export default function AboutTeam() {
               </motion.div>
 
               {/* bio */}
-              <motion.p
-                variants={fadeUp}
-                className="text-sm md:text-base leading-relaxed text-gray-500 max-w-lg mb-8"
-              >
-                {FOUNDER.bio}
-              </motion.p>
+              <div className="flex flex-col gap-4 mb-8">
+                {FOUNDER.bio.map((para, i) => (
+                  <motion.p
+                    key={i}
+                    variants={fadeUp}
+                    className="text-sm md:text-base leading-relaxed text-gray-500 max-w-lg"
+                  >
+                    {para}
+                  </motion.p>
+                ))}
+              </div>
 
               {/* skill tags */}
               <motion.div

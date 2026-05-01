@@ -89,17 +89,17 @@ export default function AboutStory() {
 
             <motion.h2
               variants={fadeLeft}
-              className="font-black leading-[1.0] tracking-tight text-white"
-              style={{ fontSize: "clamp(2rem, 4vw, 3.8rem)" }}
+              className="font-black leading-[0.9] tracking-tight text-white"
+              style={{ fontSize: "clamp(1.8rem, 4vw, 3.2rem)" }}
             >
-              A studio born from
+              Built with the idea that
             </motion.h2>
             <motion.h2
               variants={fadeLeft}
-              className="font-black leading-[1.0] tracking-tight"
-              style={{ fontSize: "clamp(2rem, 4vw, 3.8rem)", color: "#EB7300" }}
+              className="font-black leading-[0.9] tracking-tight"
+              style={{ fontSize: "clamp(1.8rem, 4vw, 3.2rem)", color: "#EB7300" }}
             >
-              bold ambition.
+              good brands deserve better digital presence.
             </motion.h2>
 
             <motion.div
@@ -116,33 +116,34 @@ export default function AboutStory() {
 
             <motion.p
               variants={fadeUp}
-              className="text-sm md:text-base leading-relaxed mb-5"
+              className="text-sm md:text-base leading-relaxed mb-6"
               style={{ color: "rgba(255,255,255,0.55)" }}
             >
-              DiggiTronic was founded with a single conviction: that every brand —
-              from scrappy startups to established enterprises — deserves a digital
-              presence that truly reflects its ambition. We&apos;re a full-service
-              digital studio combining graphic design, performance marketing, SEO,
-              video production, social media, and AI solutions under one roof — so
-              your brand grows with coherence, consistency, and momentum.
+              DiggiTronic started with a simple belief that every business,
+              whether it&apos;s just starting out or already growing, deserves
+              branding and marketing that genuinely represents who they are.
+            </motion.p>
+
+            <motion.p
+              variants={fadeUp}
+              className="text-sm md:text-base leading-relaxed mb-6"
+              style={{ color: "rgba(255,255,255,0.45)" }}
+            >
+              Over time, we built a team that brings design, marketing, content,
+              SEO, video production, social media, and AI solutions together in
+              one place. Not just to offer services, but to help brands grow in
+              a way that feels clear, consistent, and actually connected across
+              every platform.
             </motion.p>
 
             <motion.p
               variants={fadeUp}
               className="text-sm md:text-base leading-relaxed"
-              style={{ color: "rgba(255,255,255,0.45)" }}
+              style={{ color: "rgba(255,255,255,0.35)" }}
             >
-              Built with the idea that good brands deserve better digital
-              presence. DiggiTronic started with a simple belief that every
-              business, whether it&apos;s just starting out or already growing,
-              deserves branding and marketing that genuinely represents who they
-              are. Over time, we built a team that brings design, marketing,
-              content, SEO, video production, social media, and AI solutions
-              together in one place. Not just to offer services, but to help
-              brands grow in a way that feels clear, consistent, and actually
-              connected across every platform. We focus on creating work that
-              looks good, communicates better, and helps businesses build a
-              stronger presence both online and offline.
+              We focus on creating work that looks good, communicates better,
+              and helps businesses build a stronger presence both online and
+              offline.
             </motion.p>
           </motion.div>
 
