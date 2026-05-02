@@ -25,8 +25,7 @@ const stagger: Variants = {
 
 const HERO_LINES = [
   { words: ["Build", "The", "Future"], orange: false },
-  { words: ["Of", "Digital"], orange: false },
-  { words: ["With", "Us."], orange: true },
+  { words: ["Of", "Digital", "With", "Us."], orange: true },
 ];
 
 const PILLARS = [
@@ -299,7 +298,7 @@ export default function CareersPage() {
               {HERO_LINES.map((line, li) => (
                 <div key={li} className="overflow-hidden">
                   <div
-                    className="font-black flex flex-wrap justify-center gap-x-[0.25em] leading-[0.9]"
+                    className={`font-black flex flex-wrap justify-center gap-x-[0.25em] leading-[1.3] ${li > 0 ? "-mt-[0.35em]" : ""}`}
                     style={{ fontSize: "clamp(2.2rem, 5.5vw, 6rem)", letterSpacing: "-0.03em" }}
                   >
                     {line.words.map((word, wi) => {
@@ -308,8 +307,8 @@ export default function CareersPage() {
                       return (
                         <div key={wi} className="overflow-hidden">
                           <motion.span
-                            className="block pt-2 pb-1"
-                            style={{ color: isLast ? "#EB7300" : "#ffffff", lineHeight: 1.1 }}
+                            className="block pt-4 pb-4"
+                            style={{ color: isLast ? "#EB7300" : "#ffffff", lineHeight: 1.3 }}
                             initial={{ y: "110%", opacity: 0 }}
                             animate={{ y: "0%", opacity: 1 }}
                             transition={{ delay: 0.2 + wordIdx * 0.06, duration: 0.75, ease: [0.16, 1, 0.3, 1] }}

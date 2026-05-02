@@ -22,11 +22,11 @@ function HeadlineLine({
       {words.map((word, wi) => (
         <div key={wi} className="overflow-hidden">
           <motion.span
-            className="block font-black"
+            className="block font-black pt-2 pb-2"
             style={{
               color,
               fontSize: "clamp(2.2rem, 7vw, 6rem)",
-              lineHeight: 0.92,
+              lineHeight: 1.1,
               letterSpacing: "-0.03em",
             }}
             initial={{ y: "110%", opacity: 0 }}

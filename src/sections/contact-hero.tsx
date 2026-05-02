@@ -115,14 +115,17 @@ export default function ContactHero() {
           Let's Talk
         </motion.p>
 
-        <h1 className="flex flex-wrap justify-center gap-x-[0.3em]">
+        <h1 
+          className="flex flex-wrap justify-center gap-x-[0.3em] leading-[1.3]"
+          style={{ fontSize: "clamp(2.2rem, 5.5vw, 6rem)" }}
+        >
           {LINE_ONE.map((word, i) => (
             <span key={i} className="overflow-hidden inline-block">
               <motion.span
-                className="inline-block font-black text-white pt-2 pb-1"
+                className="inline-block font-black text-white pt-4 pb-4"
                 style={{
                   fontSize: "clamp(2.2rem, 5.5vw, 6rem)",
-                  lineHeight: 1.1,
+                  lineHeight: 1.3,
                   letterSpacing: "-0.02em",
                 }}
                 initial={{ y: "110%", opacity: 0 }}
@@ -140,14 +143,17 @@ export default function ContactHero() {
         </h1>
 
         {/* Line 2 — accent color */}
-        <h1 className="flex flex-wrap justify-center gap-x-[0.3em] -mt-[0.2em]">
+        <h1 
+          className="flex flex-wrap justify-center gap-x-[0.3em] -mt-[0.35em] leading-[1.3]"
+          style={{ fontSize: "clamp(2.2rem, 5.5vw, 6rem)" }}
+        >
           {LINE_TWO.map((word, i) => (
             <span key={i} className="overflow-hidden inline-block">
               <motion.span
-                className="inline-block font-black pt-2 pb-1"
+                className="inline-block font-black pt-4 pb-4"
                 style={{
                   fontSize: "clamp(2.2rem, 5.5vw, 6rem)",
-                  lineHeight: 1.1,
+                  lineHeight: 1.3,
                   letterSpacing: "-0.02em",
                   color: "#EB7300",
                 }}

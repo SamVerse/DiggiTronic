@@ -86,10 +86,10 @@ export default function ServiceHero({ service }: { service: ServiceData }) {
             {words.map((word, wi) => (
               <div key={wi} className="overflow-hidden">
                 <motion.span
-                  className="block font-black text-white"
+                  className="block font-black text-white pt-2 pb-2"
                   style={{
                     fontSize: "clamp(2.8rem, 7vw, 6.5rem)",
-                    lineHeight: 0.92,
+                    lineHeight: 1.1,
                     letterSpacing: "-0.035em",
                   }}
                   initial={{ y: "110%", opacity: 0 }}

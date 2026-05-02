@@ -10,8 +10,7 @@ import {
 } from "framer-motion";
 
 const HERO_LINES = [
-    { words: ["Insights"], accent: false },
-    { words: ["That", "Power"], accent: false },
+    { words: ["Insights", "That", "Power"], accent: false },
     { words: ["Digital", "Growth"], accent: true },
 ];
 
@@ -122,7 +121,7 @@ export default function BlogHero() {
                     {HERO_LINES.map((line, li) => (
                         <div key={li} className="overflow-hidden">
                             <div
-                                className="font-black flex flex-wrap justify-center gap-x-[0.25em] leading-[0.9]"
+                                className={`font-black flex flex-wrap justify-center gap-x-[0.25em] leading-[1.3] ${li > 0 ? "-mt-[0.35em]" : ""}`}
                                 style={{
                                     fontSize: "clamp(2.2rem, 5.5vw, 6rem)",
                                     letterSpacing: "-0.03em",
@@ -137,10 +136,10 @@ export default function BlogHero() {
                                     return (
                                         <div key={wi} className="overflow-hidden">
                                             <motion.span
-                                                className="block pt-2 pb-1"
+                                                className="block pt-4 pb-4"
                                                 style={{
                                                     color: isAccentLine ? "#EB7300" : "#ffffff",
-                                                    lineHeight: 1.1,
+                                                    lineHeight: 1.3,
                                                 }}
                                                 initial={{ y: "110%", opacity: 0 }}
                                                 animate={{ y: "0%", opacity: 1 }}

@@ -229,9 +229,9 @@ export default function ServicesCTA() {
 
         <h2
           ref={titleRef}
-          className="text-4xl md:text-5xl lg:text-6xl font-black uppercase tracking-tight [word-spacing:1rem] leading-tight max-w-5xl mx-auto text-white"
+          className="text-4xl md:text-5xl lg:text-6xl font-black uppercase tracking-tight [word-spacing:1rem] leading-[1.1] max-w-5xl mx-auto text-white"
         >
-          Branding. Websites.
+          Branding. Websites.{" "}
           <br className="hidden md:block" />
           Marketing. AI. Content.
         </h2>

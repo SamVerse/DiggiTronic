@@ -89,14 +89,14 @@ export default function AboutStory() {
 
             <motion.h2
               variants={fadeLeft}
-              className="font-black leading-[0.9] tracking-tight text-white"
+              className="font-black leading-[1.1] tracking-tight text-white"
               style={{ fontSize: "clamp(1.8rem, 4vw, 3.2rem)" }}
             >
               Built with the idea that
             </motion.h2>
             <motion.h2
               variants={fadeLeft}
-              className="font-black leading-[0.9] tracking-tight"
+              className="font-black leading-[1.1] tracking-tight -mt-[0.15em]"
               style={{ fontSize: "clamp(1.8rem, 4vw, 3.2rem)", color: "#EB7300" }}
             >
               good brands deserve better digital presence.

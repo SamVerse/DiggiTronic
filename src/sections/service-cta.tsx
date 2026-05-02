@@ -72,11 +72,11 @@ export default function ServiceCta({ service }: { service: ServiceData }) {
           {words.map((word, wi) => (
             <motion.span
               key={wi}
-              className="font-black inline-block"
+              className="font-black inline-block pt-2 pb-2"
               style={{
                 color: word.endsWith("?") ? "#EB7300" : "#ffffff",
                 fontSize: "clamp(2.2rem, 6vw, 5.5rem)",
-                lineHeight: 0.92,
+                lineHeight: 1.1,
                 letterSpacing: "-0.035em",
               }}
               initial={{ y: 30, opacity: 0 }}
