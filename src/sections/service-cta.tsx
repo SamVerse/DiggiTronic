@@ -68,29 +68,71 @@ export default function ServiceCta({ service }: { service: ServiceData }) {
         </motion.p>
 
         {/* Headline — reveal */}
-        <div className="flex flex-wrap justify-center gap-x-[0.22em] mb-6">
-          {words.map((word, wi) => (
-            <motion.span
-              key={wi}
-              className="font-black inline-block pt-2 pb-2"
-              style={{
-                color: word.endsWith("?") ? "#EB7300" : "#ffffff",
-                fontSize: "clamp(2.2rem, 6vw, 5.5rem)",
-                lineHeight: 1.1,
-                letterSpacing: "-0.035em",
-              }}
-              initial={{ y: 30, opacity: 0 }}
-              whileInView={{ y: 0, opacity: 1 }}
-              viewport={{ once: false, margin: "-60px" }}
-              transition={{
-                delay: 0.1 + wi * 0.08,
-                duration: 0.75,
-                ease: [0.16, 1, 0.3, 1],
-              }}
-            >
-              {word}
-            </motion.span>
-          ))}
+        <div className="flex flex-wrap justify-center gap-x-3 md:gap-x-4 lg:gap-x-5 mb-6">
+          <div className="flex flex-nowrap gap-x-3 md:gap-x-4 lg:gap-x-5">
+            {[ "Ready", "to", "elevate" ].map((word, wi) => (
+              <motion.span
+                key={wi}
+                className="font-black inline-block pt-2 pb-2"
+                style={{
+                  color: "#ffffff",
+                  fontSize: "clamp(1.8rem, 6vw, 5.5rem)",
+                  lineHeight: 1.1,
+                  letterSpacing: "-0.035em",
+                }}
+                initial={{ y: 30, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                viewport={{ once: false, margin: "-60px" }}
+                transition={{
+                  delay: 0.1 + wi * 0.08,
+                  duration: 0.75,
+                  ease: [0.16, 1, 0.3, 1],
+                }}
+              >
+                {word}
+              </motion.span>
+            ))}
+          </div>
+
+          <motion.span
+            className="font-black inline-block pt-2 pb-2"
+            style={{
+              color: "#ffffff",
+              fontSize: "clamp(1.8rem, 6vw, 5.5rem)",
+              lineHeight: 1.1,
+              letterSpacing: "-0.035em",
+            }}
+            initial={{ y: 30, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            viewport={{ once: false, margin: "-60px" }}
+            transition={{
+              delay: 0.1 + 3 * 0.08,
+              duration: 0.75,
+              ease: [0.16, 1, 0.3, 1],
+            }}
+          >
+            your
+          </motion.span>
+
+          <motion.span
+            className="font-black inline-block pt-2 pb-2"
+            style={{
+              color: "#EB7300",
+              fontSize: "clamp(1.8rem, 6vw, 5.5rem)",
+              lineHeight: 1.1,
+              letterSpacing: "-0.035em",
+            }}
+            initial={{ y: 30, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            viewport={{ once: false, margin: "-60px" }}
+            transition={{
+              delay: 0.1 + 4 * 0.08,
+              duration: 0.75,
+              ease: [0.16, 1, 0.3, 1],
+            }}
+          >
+            {service.title}?
+          </motion.span>
         </div>
 
         <motion.p

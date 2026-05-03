@@ -96,7 +96,7 @@ export default function AboutVision() {
             </p>
 
             <h2
-              className="font-black leading-[0.95] tracking-tight text-gray-900"
+              className="font-black leading-[1.2] tracking-tight text-gray-900"
               style={{ fontSize: "clamp(2rem, 3.5vw, 3.5rem)" }}
             >
               To help brands grow with clarity, creativity, and a strong digital presence.
@@ -139,7 +139,7 @@ export default function AboutVision() {
             </p>
 
             <h2
-              className="font-black leading-[0.95] tracking-tight text-gray-900"
+              className="font-black leading-[1.2] tracking-tight text-gray-900"
               style={{ fontSize: "clamp(2rem, 3.5vw, 3.5rem)" }}
             >
               Building stronger brands through thoughtful digital work

@@ -109,14 +109,14 @@ export default function AboutExpertise() {
           </motion.p>
           <motion.h2
             variants={fadeUp}
-            className="font-black leading-[1.1] tracking-tight text-white"
+            className="font-black leading-[1.3] tracking-tight text-white"
             style={{ fontSize: "clamp(2.2rem, 5vw, 4.5rem)" }}
           >
             Expertise That
           </motion.h2>
           <motion.h2
             variants={fadeUp}
-            className="font-black leading-[1.1] tracking-tight -mt-[0.15em]"
+            className="font-black leading-[1.3] tracking-tight -mt-[0.15em]"
             style={{ fontSize: "clamp(2.2rem, 5vw, 4.5rem)", color: "#EB7300" }}
           >
             Drives Growth.

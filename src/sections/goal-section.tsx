@@ -452,7 +452,7 @@ export default function GoalSection() {
               </p>
               <h2
                 ref={titleRef}
-                className="mt-3 text-3xl md:text-4xl lg:text-5xl font-black leading-[0.9] text-white"
+                className="mt-3 text-3xl md:text-4xl lg:text-5xl font-black leading-[1.3] text-white"
               >
                 {active.title.split(" ").map((word, idx) => (
                   <span

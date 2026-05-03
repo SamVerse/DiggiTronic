@@ -87,14 +87,14 @@ export default function AboutHero() {
         </motion.p>
 
         <h1 
-          className="flex flex-wrap justify-center gap-x-[0.25em] gap-y-0 leading-[1.3]"
-          style={{ fontSize: "clamp(2.2rem, 5.5vw, 6rem)" }}
+          className="flex flex-wrap justify-center gap-x-[0.25em] gap-y-0 leading-[1.1]"
+          style={{ fontSize: "clamp(1.8rem, 5.5vw, 6rem)" }}
         >
           {LINE_ONE.map((word, i) => (
             <span key={i} className="overflow-hidden inline-block">
               <motion.span
-                className="inline-block font-black text-white pt-4 pb-4"
-                style={{ fontSize: "clamp(2.2rem, 5.5vw, 6rem)", lineHeight: 1.3 }}
+                className="inline-block font-black text-white pt-1 pb-2"
+                style={{ fontSize: "clamp(1.8rem, 5.5vw, 6rem)", lineHeight: 1.1 }}
                 initial={{ y: "110%", opacity: 0 }}
                 animate={{ y: "0%", opacity: 1 }}
                 transition={{
@@ -110,16 +110,16 @@ export default function AboutHero() {
         </h1>
 
         <h1 
-          className="flex flex-wrap justify-center gap-x-[0.25em] gap-y-0 -mt-[0.35em] leading-[1.3]"
-          style={{ fontSize: "clamp(2.2rem, 5.5vw, 6rem)" }}
+          className="flex flex-wrap justify-center gap-x-[0.25em] gap-y-0 -mt-[0.1em] leading-[1.1]"
+          style={{ fontSize: "clamp(1.8rem, 5.5vw, 6rem)" }}
         >
           {LINE_TWO.map((word, i) => (
             <span key={i} className="overflow-hidden inline-block">
               <motion.span
-                className="inline-block font-black pt-4 pb-4"
+                className="inline-block font-black pt-1 pb-2"
                 style={{
-                  fontSize: "clamp(2.2rem, 5.5vw, 6rem)",
-                  lineHeight: 1.3,
+                  fontSize: "clamp(1.8rem, 5.5vw, 6rem)",
+                  lineHeight: 1.1,
                   color: i === LINE_TWO.length - 1 ? "#EB7300" : "white",
                 }}
                 initial={{ y: "110%", opacity: 0 }}

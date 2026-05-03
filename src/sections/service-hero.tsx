@@ -84,12 +84,12 @@ export default function ServiceHero({ service }: { service: ServiceData }) {
           {/* Headline — word-clip reveal */}
           <div className="mb-6 flex flex-wrap gap-x-[0.2em]">
             {words.map((word, wi) => (
-              <div key={wi} className="overflow-hidden">
+              <div key={wi} className={`overflow-hidden ${word === '&' ? 'ml-[0.45em]' : ''}`}>
                 <motion.span
-                  className="block font-black text-white pt-2 pb-2"
+                  className="block font-black text-white pt-2 pb-2 pr-[0.05em]"
                   style={{
                     fontSize: "clamp(2.8rem, 7vw, 6.5rem)",
-                    lineHeight: 1.1,
+                    lineHeight: 1.25,
                     letterSpacing: "-0.035em",
                   }}
                   initial={{ y: "110%", opacity: 0 }}

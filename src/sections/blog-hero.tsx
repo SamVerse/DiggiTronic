@@ -120,27 +120,27 @@ export default function BlogHero() {
                 <div className="mb-8">
                     {HERO_LINES.map((line, li) => (
                         <div key={li} className="overflow-hidden">
-                            <div
-                                className={`font-black flex flex-wrap justify-center gap-x-[0.25em] leading-[1.3] ${li > 0 ? "-mt-[0.35em]" : ""}`}
-                                style={{
-                                    fontSize: "clamp(2.2rem, 5.5vw, 6rem)",
-                                    letterSpacing: "-0.03em",
-                                }}
-                            >
-                                {line.words.map((word, wi) => {
-                                    const isAccentLine = line.accent;
-                                    const isLastWord =
-                                        li === HERO_LINES.length - 1 &&
-                                        wi === line.words.length - 1;
-                                    const idx = wordIndex++;
-                                    return (
-                                        <div key={wi} className="overflow-hidden">
-                                            <motion.span
-                                                className="block pt-4 pb-4"
-                                                style={{
-                                                    color: isAccentLine ? "#EB7300" : "#ffffff",
-                                                    lineHeight: 1.3,
-                                                }}
+                                <div
+                                    className={`font-black flex flex-wrap justify-center gap-x-[0.25em] leading-[1.1] ${li > 0 ? "-mt-[0.1em]" : ""}`}
+                                    style={{
+                                        fontSize: "clamp(1.8rem, 5.5vw, 6rem)",
+                                        letterSpacing: "-0.03em",
+                                    }}
+                                >
+                                    {line.words.map((word, wi) => {
+                                        const isAccentLine = line.accent;
+                                        const isLastWord =
+                                            li === HERO_LINES.length - 1 &&
+                                            wi === line.words.length - 1;
+                                        const idx = wordIndex++;
+                                        return (
+                                            <div key={wi} className="overflow-hidden">
+                                                <motion.span
+                                                    className="block pt-1 pb-2"
+                                                    style={{
+                                                        color: isAccentLine ? "#EB7300" : "#ffffff",
+                                                        lineHeight: 1.1,
+                                                    }}
                                                 initial={{ y: "110%", opacity: 0 }}
                                                 animate={{ y: "0%", opacity: 1 }}
                                                 transition={{

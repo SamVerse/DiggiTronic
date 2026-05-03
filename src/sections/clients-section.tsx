@@ -4,21 +4,15 @@ import { useRef } from "react";
 import { motion, useScroll, useTransform, Variants } from "framer-motion";
 
 const CLIENTS_ROW1 = [
-  "NovaTech",
-  "PrimeEdge",
-  "Stellarify",
-  "Nexcore",
-  "Luminary",
-  "Brandshift",
+  "Master App",
+  "Motiveminds Consulting Pvt Ltd",
+  "The Freelancer Venture",
 ];
 
 const CLIENTS_ROW2 = [
-  "Quantum Labs",
-  "Deepwave",
-  "Strategos",
-  "Ironclad",
-  "Elevate",
-  "Zenith",
+  "Adsflourish",
+  "Sponsica",
+  "Genzocial",
 ];
 
 const fadeUp: Variants = {

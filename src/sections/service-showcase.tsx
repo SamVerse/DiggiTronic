@@ -185,7 +185,7 @@ function ShowcaseCard({
                 color: "#EB7300",
                 fontSize: "clamp(2rem, 3.5vw, 2.8rem)",
                 letterSpacing: "-0.04em",
-                lineHeight: 1,
+                lineHeight: 1.2,
                 marginBottom: 4,
               }}
             >
@@ -241,7 +241,7 @@ function ShowcaseCard({
               color: "#ffffff",
               fontSize: "1rem",
               letterSpacing: "-0.02em",
-              lineHeight: 1.2,
+              lineHeight: 1.3,
               flex: 1,
               display: "flex",
               alignItems: "center",

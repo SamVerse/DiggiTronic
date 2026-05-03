@@ -147,21 +147,21 @@ export default function AgencyStatement() {
 
           <motion.h2
             variants={fadeLeft}
-            className="font-black leading-[1.1] tracking-tight text-gray-900"
+            className="font-black leading-[1.2] tracking-tight text-gray-900"
             style={{ fontSize: "clamp(2.4rem, 10vw, 3.6rem)" }}
           >
             We do more
           </motion.h2>
           <motion.h2
             variants={popIn}
-            className="font-black leading-[1.1] tracking-tight origin-left -mt-[0.2em]"
+            className="font-black leading-[1.2] tracking-tight origin-left -mt-[0.2em]"
             style={{ fontSize: "clamp(2.4rem, 10vw, 3.6rem)", color: "#EB7300" }}
           >
             than simply
           </motion.h2>
           <motion.h2
             variants={fadeLeft}
-            className="font-black leading-[1.1] tracking-tight text-gray-900 -mt-[0.2em]"
+            className="font-black leading-[1.2] tracking-tight text-gray-900 -mt-[0.2em]"
             style={{ fontSize: "clamp(2.4rem, 10vw, 3.6rem)" }}
           >
             create brands.
@@ -234,21 +234,21 @@ export default function AgencyStatement() {
 
             <motion.h2
               variants={fadeLeft}
-              className="font-black leading-[1.1] tracking-tight text-gray-900 block"
+              className="font-black leading-[1.2] tracking-tight text-gray-900 block"
               style={{ fontSize: "clamp(2rem, 3.2vw, 5rem)" }}
             >
               We do more
             </motion.h2>
             <motion.h2
               variants={popIn}
-              className="font-black leading-[1.1] tracking-tight block origin-left -mt-[0.15em]"
+              className="font-black leading-[1.2] tracking-tight block origin-left -mt-[0.15em]"
               style={{ fontSize: "clamp(2rem, 3.2vw, 5rem)", color: "#EB7300" }}
             >
               than simply
             </motion.h2>
             <motion.h2
               variants={fadeLeft}
-              className="font-black leading-[1.1] tracking-tight text-gray-900 block -mt-[0.15em]"
+              className="font-black leading-[1.2] tracking-tight text-gray-900 block -mt-[0.15em]"
               style={{ fontSize: "clamp(2rem, 3.2vw, 5rem)" }}
             >
               create brands.
