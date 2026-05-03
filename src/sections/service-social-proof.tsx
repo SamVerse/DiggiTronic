@@ -129,7 +129,7 @@ export default function ServiceSocialProof({
             className="font-black text-white"
             style={{ fontSize: "clamp(2rem, 4.5vw, 3.5rem)", lineHeight: 0.95, letterSpacing: "-0.025em" }}
           >
-            What clients say
+            What Clients Say
           </motion.h2>
         </motion.div>
 

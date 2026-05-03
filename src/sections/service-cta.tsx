@@ -70,7 +70,7 @@ export default function ServiceCta({ service }: { service: ServiceData }) {
         {/* Headline — reveal */}
         <div className="flex flex-wrap justify-center gap-x-3 md:gap-x-4 lg:gap-x-5 mb-6">
           <div className="flex flex-nowrap gap-x-3 md:gap-x-4 lg:gap-x-5">
-            {[ "Ready", "to", "elevate" ].map((word, wi) => (
+            {["Ready", "To", "Elevate"].map((word, wi) => (
               <motion.span
                 key={wi}
                 className="font-black inline-block pt-2 pb-2"
@@ -111,7 +111,7 @@ export default function ServiceCta({ service }: { service: ServiceData }) {
               ease: [0.16, 1, 0.3, 1],
             }}
           >
-            your
+            Your
           </motion.span>
 
           <motion.span

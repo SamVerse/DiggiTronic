@@ -19,7 +19,7 @@ const stagger: Variants = {
 const INFO = [
   {
     label: "Office Address",
-    value: "Business Bay, Dubai, UAE",
+    value: "Dwarka, Delhi, India 110075",
     sub: "Available for global clients",
   },
   {
@@ -29,7 +29,7 @@ const INFO = [
   },
   {
     label: "Email",
-    value: "hello@digitronic.com",
+    value: "Support@diggitronic.com",
     sub: "Replies within 24 hours",
   },
 ];

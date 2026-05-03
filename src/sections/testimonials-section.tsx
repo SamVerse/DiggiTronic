@@ -135,14 +135,14 @@ export default function TestimonialsSection() {
             variants={fadeUp}
             className="text-[9px] uppercase font-mono tracking-[0.55em] text-gray-400 mb-4"
           >
-            What clients say
+            What Clients Say
           </motion.p> */}
           <motion.h2
             variants={fadeUp}
             className="font-black leading-[1.1] tracking-tight text-gray-900"
             style={{ fontSize: "clamp(2rem, 4vw, 4rem)" }}
           >
-            Real Results,
+            What Clients Say
           </motion.h2>
           <motion.h2
             variants={fadeUp}

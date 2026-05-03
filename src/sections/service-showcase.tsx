@@ -344,7 +344,7 @@ export default function ServiceShowcase({ service }: { service: ServiceData }) {
               className="font-black text-white"
               style={{ fontSize: "clamp(2rem, 4.5vw, 3.5rem)", lineHeight: 0.95, letterSpacing: "-0.025em" }}
             >
-              Featured showcase
+              Featured Showcase
             </h2>
             <p
               className="text-[10px] font-mono uppercase tracking-[0.4em]"

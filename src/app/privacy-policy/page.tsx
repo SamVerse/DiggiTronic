@@ -104,12 +104,12 @@ export default function PrivacyPolicyPage() {
               Legal
             </motion.p>
 
-            <div className="overflow-hidden mb-4">
+            <div className="overflow-hidden mb-4 py-2">
               <motion.h1
-                className="font-black text-white"
+                className="font-black text-white pt-1 pb-2"
                 style={{
                   fontSize: "clamp(3rem, 9vw, 8rem)",
-                  lineHeight: 0.95,
+                  lineHeight: 1.1,
                   letterSpacing: "-0.03em",
                 }}
                 initial={{ y: "110%", opacity: 0 }}

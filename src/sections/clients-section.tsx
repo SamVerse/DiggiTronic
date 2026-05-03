@@ -167,7 +167,7 @@ export default function ClientsSection() {
           </motion.h2>
           <motion.h2
             variants={fadeUp}
-            className="font-black leading-[1.1] tracking-tight -mt-[0.15em]"
+            className="font-black leading-[1.1] tracking-tight mt-2"
             style={{
               fontSize: "clamp(2.4rem, 6vw, 5rem)",
               color: "#EB7300",

@@ -746,11 +746,11 @@ export default function CareersPage() {
               <motion.h2
                 variants={fadeUp}
                 className="font-black text-white"
-                style={{ fontSize: "clamp(2rem, 4.5vw, 3.8rem)", lineHeight: 0.95, letterSpacing: "-0.025em" }}
+                style={{ fontSize: "clamp(2rem, 4.5vw, 3.8rem)", lineHeight: 1.2, letterSpacing: "-0.025em" }}
               >
-                We're hiring across
+                We're Hiring Across
                 <br />
-                departments.
+                Departments.
               </motion.h2>
             </motion.div>
 

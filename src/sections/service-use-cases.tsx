@@ -312,7 +312,7 @@ export default function ServiceUseCases({ useCases, slug }: { useCases: UseCase[
               className="font-black text-white"
               style={{ fontSize: "clamp(2rem, 4.5vw, 3.5rem)", lineHeight: 0.95, letterSpacing: "-0.025em" }}
             >
-              Where we apply it
+              Where We Apply It
             </h2>
             <p className="text-[12px] font-mono uppercase tracking-[0.3em]" style={{ color: layout.accent, opacity: 0.85 }}>
               Hover to explore
