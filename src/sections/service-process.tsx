@@ -84,7 +84,7 @@ export default function ServiceProcess() {
             className="font-black text-white"
             style={{ fontSize: "clamp(2rem, 4.5vw, 3.5rem)", lineHeight: 0.95, letterSpacing: "-0.025em" }}
           >
-            How we work
+            How We Work
           </motion.h2>
         </motion.div>
 

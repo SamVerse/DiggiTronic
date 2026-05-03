@@ -295,7 +295,7 @@ export const SERVICES: ServiceData[] = [
   {
     slug: "ai-services",
     title: "AI Services",
-    tagline: "Intelligence, automated.",
+    tagline: "Intelligence, Automated.",
     description:
       "We build and deploy AI-powered solutions that scale your content, automate workflows, and create experiences that feel like the future.",
     visualKey: "ai",

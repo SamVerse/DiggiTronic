@@ -108,7 +108,7 @@ export default function PrivacyPolicyPage() {
               <motion.h1
                 className="font-black text-white pt-1 pb-2"
                 style={{
-                  fontSize: "clamp(3rem, 9vw, 8rem)",
+                  fontSize: "clamp(3rem, 9vw, 6.5rem)",
                   lineHeight: 1.1,
                   letterSpacing: "-0.03em",
                 }}

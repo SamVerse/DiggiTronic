@@ -295,13 +295,13 @@ export default function Footer() {
                         <ul className="flex flex-col gap-3">
                             <li>
                                 <motion.a
-                                    href="mailto:hello@digitronic.in"
+                                    href="mailto:Support@diggitronic.com"
                                     className="text-sm font-medium transition-colors duration-200"
                                     style={{ color: "rgba(255,255,255,0.45)" }}
                                     whileHover={{ x: 4, color: "#EB7300" }}
                                     transition={{ type: "spring", stiffness: 400, damping: 28 }}
                                 >
-                                    hello@digitronic.in
+                                    Support@diggitronic.com
                                 </motion.a>
                             </li>
                             <li>

@@ -114,12 +114,12 @@ export default function TermsPage() {
               Legal
             </motion.p>
 
-            <div className="overflow-hidden mb-4">
+            <div className="overflow-hidden mb-4 py-2">
               <motion.h1
-                className="font-black text-white"
+                className="font-black text-white pt-1 pb-2"
                 style={{
-                  fontSize: "clamp(2.4rem, 8vw, 7.5rem)",
-                  lineHeight: 0.95,
+                  fontSize: "clamp(2.4rem, 8vw, 6rem)",
+                  lineHeight: 1.1,
                   letterSpacing: "-0.03em",
                 }}
                 initial={{ y: "110%", opacity: 0 }}
