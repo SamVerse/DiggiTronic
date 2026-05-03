@@ -7,12 +7,18 @@ const CLIENTS_ROW1 = [
   "Master App",
   "Motiveminds Consulting Pvt Ltd",
   "The Freelancer Venture",
+  "Iron clad",
+  "Elevata",
+  "flexfitnesszone",
 ];
 
 const CLIENTS_ROW2 = [
   "Adsflourish",
   "Sponsica",
   "Genzocial",
+  "Nova tech",
+  "Market Prymaid",
+  "Angel One",
 ];
 
 const fadeUp: Variants = {

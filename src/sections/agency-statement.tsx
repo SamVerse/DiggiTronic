@@ -150,21 +150,21 @@ export default function AgencyStatement() {
             className="font-black leading-[1.2] tracking-tight text-gray-900"
             style={{ fontSize: "clamp(2.4rem, 10vw, 3.6rem)" }}
           >
-            We do more
+            We Do More
           </motion.h2>
           <motion.h2
             variants={popIn}
             className="font-black leading-[1.2] tracking-tight origin-left -mt-[0.2em]"
             style={{ fontSize: "clamp(2.4rem, 10vw, 3.6rem)", color: "#EB7300" }}
           >
-            than simply
+            Than Simply
           </motion.h2>
           <motion.h2
             variants={fadeLeft}
             className="font-black leading-[1.2] tracking-tight text-gray-900 -mt-[0.2em]"
             style={{ fontSize: "clamp(2.4rem, 10vw, 3.6rem)" }}
           >
-            create brands.
+            Create Brands.
           </motion.h2>
 
           <motion.p variants={fadeUp} className="mt-5 text-gray-500 text-sm leading-relaxed max-w-sm">
@@ -237,21 +237,21 @@ export default function AgencyStatement() {
               className="font-black leading-[1.2] tracking-tight text-gray-900 block"
               style={{ fontSize: "clamp(2rem, 3.2vw, 5rem)" }}
             >
-              We do more
+              We Do More
             </motion.h2>
             <motion.h2
               variants={popIn}
               className="font-black leading-[1.2] tracking-tight block origin-left -mt-[0.15em]"
               style={{ fontSize: "clamp(2rem, 3.2vw, 5rem)", color: "#EB7300" }}
             >
-              than simply
+              Than Simply
             </motion.h2>
             <motion.h2
               variants={fadeLeft}
               className="font-black leading-[1.2] tracking-tight text-gray-900 block -mt-[0.15em]"
               style={{ fontSize: "clamp(2rem, 3.2vw, 5rem)" }}
             >
-              create brands.
+              Create Brands.
             </motion.h2>
 
             <motion.p variants={fadeUp} className="mt-6 max-w-xs text-gray-500 text-sm xl:text-[15px] leading-relaxed">
