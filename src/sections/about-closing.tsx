@@ -8,9 +8,9 @@ import {
 } from "framer-motion";
 
 const LINES = [
-  { text: "YOU THINK.", color: "white" },
-  { text: "WE CREATE.", color: "#EB7300" },
-  { text: "WE SCALE.", color: "white" },
+  { text: "Your vision.", color: "white" },
+  { text: "Our creativity.", color: "#EB7300" },
+  { text: "Real growth.", color: "white" },
 ];
 
 export default function AboutClosing() {
@@ -76,7 +76,7 @@ export default function AboutClosing() {
           {LINES.map((line, lineIdx) => (
             <motion.span
               key={lineIdx}
-              className="block font-black uppercase leading-none tracking-[-0.02em]"
+              className="block font-black leading-none tracking-[-0.02em]"
               style={{
                 fontSize: "clamp(2.5rem, 8vw, 7rem)",
                 color: line.color,
