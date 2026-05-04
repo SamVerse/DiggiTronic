@@ -12,8 +12,8 @@ const FOUNDER = {
   role: "Founder & Creative Director",
   tagline: "Good design can make people stop. Good branding makes them remember.",
   bio: [
-    "DiggiTronic was built on the belief that good creative work should feel natural, thoughtful, and true to the people behind the brand. What started as a small passion for design slowly turned into a creative studio focused on helping businesses find their voice online.",
-    "Today, DiggiTronic works across branding, content, social media, and digital marketing & creating work that feels clean, relevant, and easy for people to connect with. Every brand has its own story, personality, and way of speaking, and the approach has always been about understanding that first before creating anything.",
+    "Diggitronic was built on the belief that good creative work should feel natural, thoughtful, and true to the people behind the brand. What started as a small passion for design slowly turned into a creative studio focused on helping businesses find their voice online.",
+    "Today, Diggitronic works across branding, content, social media, and digital marketing & creating work that feels clean, relevant, and easy for people to connect with. Every brand has its own story, personality, and way of speaking, and the approach has always been about understanding that first before creating anything.",
     "Rather than chasing every trend, the focus stays on building a strong and lasting presence through ideas that feel human, visuals that feel intentional, and strategies that actually make sense for the brand.",
   ],
   image: "/images/blog/founder.jpeg",
@@ -21,7 +21,7 @@ const FOUNDER = {
   skills: [
     "Photoshop",
     "Illustrator",
-    "Canva",
+    "Figma",
     "Brand Identity",
     "Digital Marketing",
   ],

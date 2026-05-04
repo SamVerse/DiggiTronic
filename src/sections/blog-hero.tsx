@@ -166,7 +166,7 @@ export default function BlogHero() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.9, duration: 0.75, ease: "easeOut" }}
                 >
-                    Explore ideas, strategies, and industry insights from the DiggiTronic
+                    Explore ideas, strategies, and industry insights from the Diggitronic
                     team.
                 </motion.p>
             </div>

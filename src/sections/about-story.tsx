@@ -119,7 +119,7 @@ export default function AboutStory() {
               className="text-sm md:text-base leading-relaxed mb-6"
               style={{ color: "rgba(255,255,255,0.55)" }}
             >
-              DiggiTronic started with a simple belief that every business,
+              Diggitronic started with a simple belief that every business,
               whether it&apos;s just starting out or already growing, deserves
               branding and marketing that genuinely represents who they are.
             </motion.p>

@@ -142,7 +142,7 @@ export default function ContactInfo() {
             className="text-[11px] font-mono uppercase tracking-[0.5em]"
             style={{ color: "rgba(255,255,255,0.2)" }}
           >
-            DiggiTronic
+            Diggitronic
           </p>
           <p
             className="text-[11px] font-mono uppercase tracking-[0.5em]"

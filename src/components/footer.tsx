@@ -118,14 +118,14 @@ export default function Footer() {
                 <span
                     className="font-black leading-none text-center"
                     style={{
-                        fontSize: "clamp(3rem, 15vw, 16rem)",
+                        fontSize: "clamp(2.5rem, 14vw, 15rem)",
                         color: "#ffffff",
                         opacity: 0.1,
                         letterSpacing: "-0.04em",
                         transform: "translateY(15%)",
                     }}
                 >
-                    DIGITRONIC
+                    DIGGITRONIC
                 </span>
             </div>
 
@@ -154,7 +154,7 @@ export default function Footer() {
                     <div className="flex items-center gap-4">
                         <Image
                             src="/logo row.png"
-                            alt="Digitronic"
+                            alt="Diggitronic"
                             width={55}
                             height={55}
                             className="object-contain flex-shrink-0"
@@ -164,7 +164,7 @@ export default function Footer() {
                                 className="font-black text-white"
                                 style={{ fontSize: "clamp(1rem, 1.5vw, 1.2rem)" }}
                             >
-                                Digitronic
+                                Diggitronic
                             </p>
                             <p
                                 className="text-xs mt-0.5 max-w-xs leading-relaxed"
@@ -335,7 +335,7 @@ export default function Footer() {
                         className="text-xs font-mono"
                         style={{ color: "rgba(255,255,255,0.2)", letterSpacing: "0.05em" }}
                     >
-                        &copy; {year} Digitronic. All rights reserved.
+                        &copy; {year} Diggitronic. All rights reserved.
                     </p>
 
 
@@ -346,7 +346,7 @@ export default function Footer() {
                             { Icon: TwitterIcon, href: "https://x.com/diggitronic", label: "Twitter" },
                             { Icon: InstagramIcon, href: "https://www.instagram.com/diggitronic/", label: "Instagram" },
                             { Icon: YouTubeIcon, href: "https://www.youtube.com/@diggitronic", label: "YouTube" },
-                            { Icon: LinkedInIcon, href: "https://www.linkedin.com/company/diggitronic.com/?viewAsMember=true", label: "LinkedIn" },
+                            { Icon: LinkedInIcon, href: "https://www.linkedin.com/company/diggitronic.com", label: "LinkedIn" },
                             { Icon: PinterestIcon, href: "https://in.pinterest.com/Diggitronic/", label: "Pinterest" },
                             { Icon: BehanceIcon, href: "https://www.behance.net/shashanksharma34", label: "Behance" },
                         ].map(({ Icon, href, label }) => (

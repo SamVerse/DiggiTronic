@@ -19,47 +19,47 @@ const SECTIONS = [
   {
     num: "01",
     title: "Acceptance of Terms",
-    body: `By accessing our website, submitting an enquiry, or engaging DiggiTronic for any service, you confirm that you have read, understood, and agree to be bound by these Terms & Conditions. If you do not agree with any part of these terms, please discontinue use of our website and services immediately.`,
+    body: `By accessing our website, submitting an enquiry, or engaging Diggitronic for any service, you confirm that you have read, understood, and agree to be bound by these Terms & Conditions. If you do not agree with any part of these terms, please discontinue use of our website and services immediately.`,
   },
   {
     num: "02",
     title: "Services Provided",
-    body: `DiggiTronic offers a range of digital growth services including graphic design, search engine optimisation (SEO), social media marketing, content creation, video production, web development, and AI-driven solutions. The exact scope of service for each engagement is defined in a separate project agreement or proposal issued prior to commencement. These terms complement — and do not replace — any specific project agreement.`,
+    body: `Diggitronic offers a range of digital growth services including graphic design, search engine optimisation (SEO), social media marketing, content creation, video production, web development, and AI-driven solutions. The exact scope of service for each engagement is defined in a separate project agreement or proposal issued prior to commencement. These terms complement — and do not replace — any specific project agreement.`,
   },
   {
     num: "03",
     title: "Client Responsibilities",
-    body: `To enable us to deliver exceptional results, clients are expected to provide timely, accurate, and complete briefs; offer feedback within agreed timelines; and ensure they hold all necessary rights, permissions, and licences for any assets, content, or materials submitted to DiggiTronic. Delays or inaccuracies caused by the client may affect delivery timelines and are not the responsibility of DiggiTronic.`,
+    body: `To enable us to deliver exceptional results, clients are expected to provide timely, accurate, and complete briefs; offer feedback within agreed timelines; and ensure they hold all necessary rights, permissions, and licences for any assets, content, or materials submitted to Diggitronic. Delays or inaccuracies caused by the client may affect delivery timelines and are not the responsibility of Diggitronic.`,
   },
   {
     num: "04",
     title: "Intellectual Property",
-    body: `Upon receipt of full and final payment for a project, ownership of the agreed deliverables transfers to the client. Until that point, all work-in-progress, concepts, and deliverables remain the intellectual property of DiggiTronic. We retain the right to display completed work in our portfolio, case studies, and marketing materials, unless explicitly agreed otherwise in writing. Any pre-existing tools, frameworks, methodologies, or proprietary systems used in delivery remain the property of DiggiTronic.`,
+    body: `Upon receipt of full and final payment for a project, ownership of the agreed deliverables transfers to the client. Until that point, all work-in-progress, concepts, and deliverables remain the intellectual property of Diggitronic. We retain the right to display completed work in our portfolio, case studies, and marketing materials, unless explicitly agreed otherwise in writing. Any pre-existing tools, frameworks, methodologies, or proprietary systems used in delivery remain the property of Diggitronic.`,
   },
   {
     num: "05",
     title: "Payment Terms",
-    body: `Payment schedules are outlined in individual project proposals. Unless otherwise agreed, a deposit — typically 50% — is required before work commences and is non-refundable. Remaining balances are due upon project completion or at agreed milestones. Late payments beyond the specified due date may result in work being paused until payment is received. DiggiTronic reserves the right to charge reasonable late fees on overdue invoices.`,
+    body: `Payment schedules are outlined in individual project proposals. Unless otherwise agreed, a deposit — typically 50% — is required before work commences and is non-refundable. Remaining balances are due upon project completion or at agreed milestones. Late payments beyond the specified due date may result in work being paused until payment is received. Diggitronic reserves the right to charge reasonable late fees on overdue invoices.`,
   },
   {
     num: "06",
     title: "Revisions & Scope",
-    body: `The number of revision rounds included in each service is specified in the project proposal. Revisions are defined as minor adjustments within the agreed scope. Requests that constitute a material change in direction, additional deliverables, or scope expansion will be quoted separately. DiggiTronic will not proceed with scope-expanded work without written client approval of an updated proposal.`,
+    body: `The number of revision rounds included in each service is specified in the project proposal. Revisions are defined as minor adjustments within the agreed scope. Requests that constitute a material change in direction, additional deliverables, or scope expansion will be quoted separately. Diggitronic will not proceed with scope-expanded work without written client approval of an updated proposal.`,
   },
   {
     num: "07",
     title: "Confidentiality",
-    body: `Both DiggiTronic and its clients agree to treat each other's proprietary and confidential information with strict discretion. Neither party will disclose the other's trade secrets, financial terms, strategy, or commercially sensitive data to third parties without prior written consent. This obligation survives the termination of any project or business relationship between the parties.`,
+    body: `Both Diggitronic and its clients agree to treat each other's proprietary and confidential information with strict discretion. Neither party will disclose the other's trade secrets, financial terms, strategy, or commercially sensitive data to third parties without prior written consent. This obligation survives the termination of any project or business relationship between the parties.`,
   },
   {
     num: "08",
     title: "Limitation of Liability",
-    body: `DiggiTronic's liability for any claim arising from services provided — whether in contract, tort, or otherwise — is limited to the total fees paid by the client for the specific service in question during the preceding 12 months. We are not liable for any indirect, consequential, special, or punitive damages, including but not limited to loss of revenue, loss of data, or reputational damage, even if we have been advised of the possibility of such damages.`,
+    body: `Diggitronic's liability for any claim arising from services provided — whether in contract, tort, or otherwise — is limited to the total fees paid by the client for the specific service in question during the preceding 12 months. We are not liable for any indirect, consequential, special, or punitive damages, including but not limited to loss of revenue, loss of data, or reputational damage, even if we have been advised of the possibility of such damages.`,
   },
   {
     num: "09",
     title: "Termination",
-    body: `Either party may terminate an active engagement by providing a minimum of 14 calendar days' written notice. Upon termination, the client is obligated to pay for all work completed up to the termination date, calculated on a pro-rata basis or at agreed milestone rates. Work produced to the point of termination remains the property of DiggiTronic until all outstanding payments are settled.`,
+    body: `Either party may terminate an active engagement by providing a minimum of 14 calendar days' written notice. Upon termination, the client is obligated to pay for all work completed up to the termination date, calculated on a pro-rata basis or at agreed milestone rates. Work produced to the point of termination remains the property of Diggitronic until all outstanding payments are settled.`,
   },
   {
     num: "10",
@@ -69,7 +69,7 @@ const SECTIONS = [
   {
     num: "11",
     title: "Contact Us",
-    body: `If you have questions about these Terms & Conditions, require clarification on any clause, or wish to negotiate specific terms for your project, please reach out to us at: hello@digitronic.com. We are happy to discuss and tailor arrangements where appropriate.`,
+    body: `If you have questions about these Terms & Conditions, require clarification on any clause, or wish to negotiate specific terms for your project, please reach out to us at: hello@diggitronic.com. We are happy to discuss and tailor arrangements where appropriate.`,
   },
 ];
 
@@ -153,7 +153,7 @@ export default function TermsPage() {
               viewport={{ once: false, margin: "-40px" }}
               transition={{ duration: 0.7, ease: "easeOut" }}
             >
-              These Terms &amp; Conditions govern your use of the DiggiTronic website and the services we provide. By engaging us, you agree to these terms in full. Please read them carefully before proceeding.
+              These Terms &amp; Conditions govern your use of the Diggitronic website and the services we provide. By engaging us, you agree to these terms in full. Please read them carefully before proceeding.
             </motion.p>
 
             <div className="flex flex-col gap-12">

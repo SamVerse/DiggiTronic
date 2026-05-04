@@ -45,7 +45,7 @@ const stagger: Variants = {
 const TESTIMONIALS = [
   {
     quote:
-      "DiggiTronic doesn't just deliver work — they deliver outcomes. Every project has exceeded our expectations in quality and results.",
+      "Diggitronic doesn't just deliver work — they deliver outcomes. Every project has exceeded our expectations in quality and results.",
     author: "Marcus Webb",
     role: "CEO, Growth Ventures",
     initial: "M",

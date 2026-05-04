@@ -331,7 +331,7 @@ export default function Navbar() {
                                                     onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
                                                     className="w-full flex items-center justify-between py-4 border-b border-white/5"
                                                 >
-                                                    <span className="text-2xl font-black text-white uppercase tracking-tight">
+                                                    <span className="text-2xl font-black text-white tracking-tight">
                                                         {link.text}
                                                     </span>
                                                     <motion.div
@@ -393,7 +393,7 @@ export default function Navbar() {
                                                     onClick={() => setIsMenuOpen(false)}
                                                     className="group flex items-center justify-between py-4 border-b border-white/5"
                                                 >
-                                                    <span className="text-2xl font-black text-white uppercase tracking-tight group-active:text-[#EB7300] transition-colors">
+                                                    <span className="text-2xl font-black text-white tracking-tight group-active:text-[#EB7300] transition-colors">
                                                         {link.text}
                                                     </span>
                                                     <ArrowRight size={18} className="text-white/20 group-active:text-[#EB7300] transition-colors" />

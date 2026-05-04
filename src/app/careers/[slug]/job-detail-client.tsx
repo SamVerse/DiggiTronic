@@ -57,10 +57,10 @@ export default function JobDetailClient({ job }: { job: Job }) {
             {/* Title — word-clip reveal */}
             <div className="mb-7 flex flex-wrap justify-center gap-x-[0.22em]">
               {words.map((word, wi) => (
-                <div key={wi} className="overflow-hidden">
+                <div key={wi} className="overflow-hidden pb-2">
                   <motion.span
                     className="block font-black text-white"
-                    style={{ fontSize: "clamp(2.8rem, 8vw, 7rem)", lineHeight: 0.95, letterSpacing: "-0.03em" }}
+                    style={{ fontSize: "clamp(2.8rem, 8vw, 7rem)", lineHeight: 1.15, letterSpacing: "-0.03em" }}
                     initial={{ y: "110%", opacity: 0 }}
                     animate={{ y: "0%", opacity: 1 }}
                     transition={{ delay: 0.15 + wi * 0.08, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}

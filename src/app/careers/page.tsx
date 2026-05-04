@@ -405,7 +405,7 @@ export default function CareersPage() {
                   Where bold ideas meet relentless execution.
                 </motion.h2>
                 <motion.p variants={fadeUp} className="text-sm leading-[1.9] mb-5" style={{ color: "rgba(255,255,255,0.45)" }}>
-                  At DiggiTronic, we don't believe in cookie-cutter work environments. We've built a culture where ambitious people thrive — one that blends structured process with genuine creative latitude.
+                  At Diggitronic, we don't believe in cookie-cutter work environments. We've built a culture where ambitious people thrive — one that blends structured process with genuine creative latitude.
                 </motion.p>
                 <motion.p variants={fadeUp} className="text-sm leading-[1.9]" style={{ color: "rgba(255,255,255,0.45)" }}>
                   Whether you're a designer, developer, or growth strategist, you'll collaborate with people who care deeply about quality, push each other to grow, and celebrate wins as a team.
@@ -476,9 +476,9 @@ export default function CareersPage() {
                 className="font-black text-white"
                 style={{ fontSize: "clamp(2rem, 4.5vw, 3.8rem)", lineHeight: 0.95, letterSpacing: "-0.025em" }}
               >
-                Proven performance,
+                Proven Performance,
                 <br />
-                <span style={{ color: "#EB7300" }}>real results.</span>
+                <span style={{ color: "#EB7300" }}>Real Results.</span>
               </motion.h2>
             </motion.div>
 
@@ -627,7 +627,7 @@ export default function CareersPage() {
                       className="text-[9px] font-mono uppercase tracking-[0.4em] opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                       style={{ color: "#EB7300" }}
                     >
-                      Since 2023
+                      Since 2020
                     </span>
                     <div
                       className="w-8 h-8 rounded-full flex items-center justify-center border opacity-0 group-hover:opacity-100 transition-opacity duration-300"
@@ -671,7 +671,7 @@ export default function CareersPage() {
               variants={stagger}
             >
               <motion.p variants={fadeUp} className="text-[9px] font-mono uppercase tracking-[0.55em] mb-4" style={{ color: "#EB7300" }}>
-                Why DiggiTronic
+                Why Diggitronic
               </motion.p>
               <motion.h2
                 variants={fadeUp}

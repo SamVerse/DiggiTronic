@@ -158,7 +158,7 @@ function SuccessPanel() {
         className="text-[10px] font-mono uppercase tracking-[0.4em]"
         style={{ color: "rgba(235,115,0,0.6)" }}
       >
-        DiggiTronic
+        Diggitronic
       </p>
     </motion.div>
   );

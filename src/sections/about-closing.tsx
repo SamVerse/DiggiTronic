@@ -112,7 +112,7 @@ export default function AboutClosing() {
           viewport={{ once: false, margin: "-60px" }}
           transition={{ delay: 0.8, duration: 0.8, ease: "easeOut" }}
         >
-          DiggiTronic
+          Diggitronic
         </motion.p>
       </div>
     </motion.section>

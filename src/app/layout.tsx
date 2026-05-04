@@ -25,21 +25,21 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL || "http://localhost:3000"),
   title: {
-    default: "Digitronic",
-    template: "%s | Digitronic",
+    default: "Diggitronic",
+    template: "%s | Diggitronic",
   },
-  description: "Digitronic marketing and AI solutions.",
+  description: "Diggitronic marketing and AI solutions.",
   openGraph: {
-    title: "Digitronic",
-    description: "Digitronic marketing and AI solutions.",
+    title: "Diggitronic",
+    description: "Diggitronic marketing and AI solutions.",
     url: "/",
-    siteName: "Digitronic",
+    siteName: "Diggitronic",
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Digitronic - Marketing and AI Solutions",
+        alt: "Diggitronic - Marketing and AI Solutions",
       },
     ],
     locale: "en_US",
@@ -47,8 +47,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Digitronic",
-    description: "Digitronic marketing and AI solutions.",
+    title: "Diggitronic",
+    description: "Diggitronic marketing and AI solutions.",
     images: ["/og-image.png"],
   },
   robots: {

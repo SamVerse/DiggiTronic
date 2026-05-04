@@ -74,7 +74,7 @@ export default function AboutVision() {
 
           {/* ── VISION ── */}
           <motion.div
-            className="lg:pr-20 pb-16 lg:pb-0 flex flex-col justify-center"
+            className="lg:pr-20 pb-16 lg:pb-0 flex flex-col justify-start relative"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: false, margin: "-80px" }}
@@ -82,7 +82,7 @@ export default function AboutVision() {
           >
             <span
               aria-hidden
-              className="absolute z-[-1] -top-4 left-0 font-black text-gray-100 pointer-events-none select-none hidden lg:block"
+              className="absolute z-[-1] -top-4 right-0 font-black text-gray-100 pointer-events-none select-none hidden lg:block"
               style={{ fontSize: "8rem", lineHeight: 1, userSelect: "none" }}
             >
               01
@@ -117,7 +117,7 @@ export default function AboutVision() {
 
           {/* ── MISSION ── */}
           <motion.div
-            className="lg:pl-20 pt-16 lg:pt-0 border-t lg:border-t-0 border-gray-100 flex flex-col justify-center"
+            className="lg:pl-20 pt-16 lg:pt-0 border-t lg:border-t-0 border-gray-100 flex flex-col justify-start relative"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: false, margin: "-80px" }}

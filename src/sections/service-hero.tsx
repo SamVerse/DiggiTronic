@@ -78,7 +78,7 @@ export default function ServiceHero({ service }: { service: ServiceData }) {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
           >
-            {service.title} — DiggiTronic
+            {service.title} — Diggitronic
           </motion.p>
 
           {/* Headline — word-clip reveal */}

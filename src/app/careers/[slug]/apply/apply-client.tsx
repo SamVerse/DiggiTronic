@@ -306,10 +306,10 @@ export default function ApplyClient({ job }: { job: Job }) {
               Apply for
             </motion.p>
 
-            <div className="overflow-hidden">
+            <div className="overflow-hidden pb-2">
               <motion.h1
                 className="font-black"
-                style={{ fontSize: "clamp(2.2rem, 7vw, 6rem)", lineHeight: 0.95, letterSpacing: "-0.03em", color: "#EB7300" }}
+                style={{ fontSize: "clamp(2.2rem, 7vw, 6rem)", lineHeight: 1.15, letterSpacing: "-0.03em", color: "#EB7300" }}
                 initial={{ y: "110%", opacity: 0 }}
                 animate={{ y: "0%", opacity: 1 }}
                 transition={{ delay: 0.2, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}

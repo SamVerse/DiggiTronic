@@ -7,9 +7,9 @@ import { getBlogs } from "@/lib/blogs";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-    title: "Blog | DiggiTronic — Insights That Power Digital Growth",
+    title: "Blog | Diggitronic — Insights That Power Digital Growth",
     description:
-        "Explore ideas, strategies, and industry insights on branding, SEO, web design, marketing, and technology from the DiggiTronic team.",
+        "Explore ideas, strategies, and industry insights on branding, SEO, web design, marketing, and technology from the Diggitronic team.",
 };
 
 export default async function BlogsPage() {

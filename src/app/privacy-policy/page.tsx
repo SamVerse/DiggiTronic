@@ -29,7 +29,7 @@ const SECTIONS = [
   {
     num: "03",
     title: "Data Sharing",
-    body: `DiggiTronic does not sell your personal data. We may share your information with trusted third-party service providers — such as cloud hosting platforms, project management tools, and analytics services — only to the extent necessary to operate our business. All third-party processors we work with are GDPR-compliant and prohibited from using your data for their own purposes.`,
+    body: `Diggitronic does not sell your personal data. We may share your information with trusted third-party service providers — such as cloud hosting platforms, project management tools, and analytics services — only to the extent necessary to operate our business. All third-party processors we work with are GDPR-compliant and prohibited from using your data for their own purposes.`,
   },
   {
     num: "04",
@@ -39,12 +39,12 @@ const SECTIONS = [
   {
     num: "05",
     title: "Data Retention",
-    body: `Enquiry and project-related data is retained for up to 24 months from the date of your last interaction with us, unless you request earlier deletion or a longer retention period is required by law. You may request the deletion of your personal data at any time by emailing hello@digitronic.com, and we will process your request within 30 days.`,
+    body: `Enquiry and project-related data is retained for up to 24 months from the date of your last interaction with us, unless you request earlier deletion or a longer retention period is required by law. You may request the deletion of your personal data at any time by emailing hello@diggitronic.com, and we will process your request within 30 days.`,
   },
   {
     num: "06",
     title: "Your Rights",
-    body: `Depending on your jurisdiction, you may have the right to access the personal data we hold about you, request corrections, request erasure, restrict processing, or request data portability. If you are located in the European Economic Area or United Kingdom, these rights are guaranteed under GDPR. California residents retain similar rights under CCPA. To exercise any of these rights, please contact us at hello@digitronic.com.`,
+    body: `Depending on your jurisdiction, you may have the right to access the personal data we hold about you, request corrections, request erasure, restrict processing, or request data portability. If you are located in the European Economic Area or United Kingdom, these rights are guaranteed under GDPR. California residents retain similar rights under CCPA. To exercise any of these rights, please contact us at hello@diggitronic.com.`,
   },
   {
     num: "07",
@@ -59,7 +59,7 @@ const SECTIONS = [
   {
     num: "09",
     title: "Contact Us",
-    body: `If you have any questions about this Privacy Policy or wish to exercise your data rights, please contact us at: hello@digitronic.com. We are committed to addressing your concerns promptly and transparently.`,
+    body: `If you have any questions about this Privacy Policy or wish to exercise your data rights, please contact us at: hello@diggitronic.com. We are committed to addressing your concerns promptly and transparently.`,
   },
 ];
 
@@ -143,7 +143,7 @@ export default function PrivacyPolicyPage() {
               viewport={{ once: false, margin: "-40px" }}
               transition={{ duration: 0.7, ease: "easeOut" }}
             >
-              At DiggiTronic, we are committed to protecting your privacy and handling your personal data with transparency and care. This Privacy Policy explains what information we collect, how we use it, and the rights you have over your data.
+              At Diggitronic, we are committed to protecting your privacy and handling your personal data with transparency and care. This Privacy Policy explains what information we collect, how we use it, and the rights you have over your data.
             </motion.p>
 
             <div className="flex flex-col gap-12">

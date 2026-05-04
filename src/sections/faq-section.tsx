@@ -33,7 +33,7 @@ const FAQ_ITEMS: FaqItem[] = [
     a: "We audit your existing processes, identify where AI can reduce friction or multiply output, then build and integrate the right tools — whether that's LLM-powered workflows, automation pipelines, or custom AI tooling. We focus on measurable efficiency gains, not AI for its own sake.",
   },
   {
-    q: "What makes Digitronic different from other agencies?",
+    q: "What makes Diggitronic different from other agencies?",
     a: "We don't separate strategy from execution. You get senior-level thinking applied to every deliverable — not handed off down a chain. We also believe in systems over one-off outputs: our work compounds. Design, marketing, and AI living together under one roof means nothing gets lost in translation.",
   },
   {

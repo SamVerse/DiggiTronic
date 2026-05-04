@@ -29,7 +29,7 @@ export const BLOGS: Blog[] = [
     title: "The Future of Digital Branding",
     category: "Branding",
     date: "2025-02-10",
-    author: "DiggiTronic Team",
+    author: "Diggitronic Team",
     readTime: "7 min read",
     excerpt:
       "How modern brands are evolving in a digital-first world — and what it takes to stay relevant in an era of constant disruption.",
@@ -54,7 +54,7 @@ export const BLOGS: Blog[] = [
 
       <h2>The Role of Motion in Brand Perception</h2>
       <p>Micro-interactions, scroll animations, and page transitions have become the new handshake of digital branding. They communicate personality in ways that static elements simply can't. A playful bounce tells users the brand is approachable. A sleek fade implies sophistication.</p>
-      <p>At DiggiTronic, we've seen firsthand how motion design can increase brand recall by up to 40%. When every interaction feels intentional, users don't just remember the brand — they feel it.</p>
+      <p>At Diggitronic, we've seen firsthand how motion design can increase brand recall by up to 40%. When every interaction feels intentional, users don't just remember the brand — they feel it.</p>
 
       <div class="blog-callout">
         <strong>Key Insight:</strong> Brands that invest in motion design see significantly higher engagement rates and brand recall compared to static-only approaches.
@@ -74,7 +74,7 @@ export const BLOGS: Blog[] = [
     title: "SEO Strategies That Will Dominate 2025",
     category: "SEO",
     date: "2025-02-14",
-    author: "DiggiTronic Team",
+    author: "Diggitronic Team",
     readTime: "9 min read",
     excerpt:
       "The search landscape is changing rapidly. Here's how to stay ahead with strategies that align with where Google is heading.",
@@ -97,7 +97,7 @@ export const BLOGS: Blog[] = [
 
       <blockquote>
         <p>"The future of SEO is not about ranking for keywords. It's about becoming the definitive source for a topic."</p>
-        <cite>— DiggiTronic SEO Team</cite>
+        <cite>— Diggitronic SEO Team</cite>
       </blockquote>
 
       <h2>Core Web Vitals: Still Critical</h2>
@@ -122,13 +122,13 @@ export const BLOGS: Blog[] = [
     title: "How to Build Websites That Convert",
     category: "Web Design",
     date: "2025-02-18",
-    author: "DiggiTronic Team",
+    author: "Diggitronic Team",
     readTime: "8 min read",
     excerpt:
       "A deep dive into conversion-driven design strategies that turn visitors into customers without sacrificing aesthetics.",
     coverImage: "https://yissbsrdgroglsghzkoq.supabase.co/storage/v1/object/public/blog-images/3.png",
     content: `
-      <p class="blog-intro">Beautiful websites that don't convert are expensive art projects. At DiggiTronic, we believe the best digital experiences are ones where stunning design and conversion performance work in perfect harmony.</p>
+      <p class="blog-intro">Beautiful websites that don't convert are expensive art projects. At Diggitronic, we believe the best digital experiences are ones where stunning design and conversion performance work in perfect harmony.</p>
 
       <h2>The Psychology of Digital Persuasion</h2>
       <p>Every design decision influences user behavior. Color choices trigger emotional responses. Layout patterns guide eye movement. Typography affects readability and trust. Understanding these psychological principles is the foundation of conversion-driven design.</p>
@@ -170,7 +170,7 @@ export const BLOGS: Blog[] = [
     title: "The Untapped Power of Content Marketing",
     category: "Marketing",
     date: "2025-02-25",
-    author: "DiggiTronic Team",
+    author: "Diggitronic Team",
     readTime: "6 min read",
     excerpt:
       "Why content marketing remains the highest-ROI channel for digital growth — and how to do it right in 2025.",
@@ -214,7 +214,7 @@ export const BLOGS: Blog[] = [
     title: "How AI Is Transforming Digital Agencies",
     category: "Technology",
     date: "2025-03-01",
-    author: "DiggiTronic Team",
+    author: "Diggitronic Team",
     readTime: "10 min read",
     excerpt:
       "From automated workflows to AI-assisted creativity, here's how artificial intelligence is reshaping the agency landscape.",
@@ -230,14 +230,14 @@ export const BLOGS: Blog[] = [
         <figcaption>AI platforms act as an amplifying layer for human creativity.</figcaption>
       </figure>
 
-      <p>At DiggiTronic, we've integrated AI tools into our workflow not to replace our team, but to supercharge them. Our designers use AI to rapidly explore visual directions. Our copywriters use it to overcome blank-page syndrome. Our strategists use it to analyze competitive landscapes in hours instead of days.</p>
+      <p>At Diggitronic, we've integrated AI tools into our workflow not to replace our team, but to supercharge them. Our designers use AI to rapidly explore visual directions. Our copywriters use it to overcome blank-page syndrome. Our strategists use it to analyze competitive landscapes in hours instead of days.</p>
 
       <h2>Automated Workflows and Efficiency</h2>
       <p>AI-powered automation is transforming agency operations. From automated reporting and social media scheduling to intelligent project management and client communication, the administrative overhead of agency life is being drastically reduced.</p>
 
       <blockquote>
         <p>"AI won't replace agencies. But agencies that use AI will replace those that don't."</p>
-        <cite>— DiggiTronic Leadership</cite>
+        <cite>— Diggitronic Leadership</cite>
       </blockquote>
 
       <h2>Personalization at Scale</h2>
@@ -259,7 +259,7 @@ export const BLOGS: Blog[] = [
     title: "The Definitive Social Media Strategy Guide",
     category: "Marketing",
     date: "2025-03-05",
-    author: "DiggiTronic Team",
+    author: "Diggitronic Team",
     readTime: "8 min read",
     excerpt:
       "A no-fluff guide to building a social media presence that actually drives business results in 2025.",
@@ -302,7 +302,7 @@ export const BLOGS: Blog[] = [
     title: "Why Typography Makes or Breaks Web Design",
     category: "Web Design",
     date: "2025-03-08",
-    author: "DiggiTronic Team",
+    author: "Diggitronic Team",
     readTime: "5 min read",
     excerpt:
       "Typography is the invisible architecture of the web. Here's why getting it right is the difference between good and extraordinary.",
@@ -345,7 +345,7 @@ export const BLOGS: Blog[] = [
     title: "Crafting Brand Identity in the Digital Age",
     category: "Branding",
     date: "2025-03-12",
-    author: "DiggiTronic Team",
+    author: "Diggitronic Team",
     readTime: "7 min read",
     excerpt:
       "How to build a brand identity that resonates across every digital touchpoint — from website to social media to email.",

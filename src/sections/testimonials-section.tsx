@@ -15,7 +15,7 @@ const TESTIMONIALS: Testimonial[] = [
   {
     id: 1,
     quote:
-      "Digitronic completely redefined how we present ourselves online. From brand identity to web presence, they brought a level of craft and strategy that genuinely moved the needle for our business.",
+      "Diggitronic completely redefined how we present ourselves online. From brand identity to web presence, they brought a level of craft and strategy that genuinely moved the needle for our business.",
     name: "Alex Harrison",
     role: "CEO",
     company: "NovaTech Solutions",
@@ -23,7 +23,7 @@ const TESTIMONIALS: Testimonial[] = [
   {
     id: 2,
     quote:
-      "Working with Digitronic was a revelation. They didn't just design — they listened, understood our market, and built a brand system that now earns us deals before we ever get on a call.",
+      "Working with Diggitronic was a revelation. They didn't just design — they listened, understood our market, and built a brand system that now earns us deals before we ever get on a call.",
     name: "Priya Mehta",
     role: "CMO",
     company: "Strategos Inc.",
@@ -31,7 +31,7 @@ const TESTIMONIALS: Testimonial[] = [
   {
     id: 3,
     quote:
-      "The AI workflow integrations Digitronic built for us cut our internal overhead by 60%. This team operates at a different level — they're part strategist, part engineer, part creative director.",
+      "The AI workflow integrations Diggitronic built for us cut our internal overhead by 60%. This team operates at a different level — they're part strategist, part engineer, part creative director.",
     name: "Marcus Chen",
     role: "Founder",
     company: "Quantum Labs",

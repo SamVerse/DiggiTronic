@@ -16,7 +16,7 @@ export async function generateMetadata({
   const service = getServiceBySlug(slug);
   if (!service) return {};
   return {
-    title: `${service.title} — DiggiTronic`,
+    title: `${service.title} — Diggitronic`,
     description: service.description,
   };
 }

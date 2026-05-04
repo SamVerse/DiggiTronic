@@ -110,7 +110,7 @@ export default function AgencyStatement() {
       >
         <img
           src="/logo col.png"
-          alt="Digitronic Watermark"
+          alt="Diggitronic Watermark"
           className="pointer-events-none"
           style={{
             height: "clamp(16rem, 30vw, 28rem)",

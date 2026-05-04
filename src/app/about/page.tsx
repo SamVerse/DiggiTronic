@@ -11,9 +11,9 @@ import AboutClosing from "@/sections/about-closing";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "About Us | Digitronic",
+  title: "About Us | Diggitronic",
   description:
-    "Learn about DiggiTronic — your digital growth partner for design, marketing & AI.",
+    "Learn about Diggitronic — your digital growth partner for design, marketing & AI.",
 };
 
 export default function AboutPage() {

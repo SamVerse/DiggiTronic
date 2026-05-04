@@ -85,7 +85,7 @@ export const SERVICES: ServiceData[] = [
     stat2: { value: 98, suffix: "%", label: "Client Satisfaction" },
     stat3: { value: 40, suffix: "+", label: "Brands Served" },
     testimonial: {
-      quote: "DiggiTronic transformed our brand story into a visual masterpiece. Our video content now gets 3x the engagement it used to.",
+      quote: "Diggitronic transformed our brand story into a visual masterpiece. Our video content now gets 3x the engagement it used to.",
       author: "Arjun Mehta",
       role: "Marketing Director",
     },
@@ -134,7 +134,7 @@ export const SERVICES: ServiceData[] = [
     stat2: { value: 40, suffix: "+", label: "Brands Managed" },
     stat3: { value: 3, suffix: "x", label: "Avg Engagement Lift" },
     testimonial: {
-      quote: "Our Instagram went from 2k to 28k followers in 4 months. The content quality and strategy from DiggiTronic is unmatched.",
+      quote: "Our Instagram went from 2k to 28k followers in 4 months. The content quality and strategy from Diggitronic is unmatched.",
       author: "Sara Al-Rashidi",
       role: "Brand Manager",
     },
@@ -185,7 +185,7 @@ export const SERVICES: ServiceData[] = [
     stat2: { value: 99, suffix: "%", label: "Uptime (Avg)" },
     stat3: { value: 40, suffix: "+", label: "Happy Clients" },
     testimonial: {
-      quote: "The website DiggiTronic built for us increased our demo bookings by 60% in the first month. Exceptional work.",
+      quote: "The website Diggitronic built for us increased our demo bookings by 60% in the first month. Exceptional work.",
       author: "Liam Chen",
       role: "Founder, TechStartup",
     },
@@ -236,7 +236,7 @@ export const SERVICES: ServiceData[] = [
     stat2: { value: 60, suffix: "+", label: "Campaigns Run" },
     stat3: { value: 98, suffix: "%", label: "Client Retention" },
     testimonial: {
-      quote: "Our paid campaigns with DiggiTronic delivered a 4.2x ROAS in the first quarter. They genuinely understand performance marketing.",
+      quote: "Our paid campaigns with Diggitronic delivered a 4.2x ROAS in the first quarter. They genuinely understand performance marketing.",
       author: "Nour Khalid",
       role: "CMO, E-commerce Brand",
     },
@@ -286,7 +286,7 @@ export const SERVICES: ServiceData[] = [
     stat2: { value: 50, suffix: "+", label: "Sites Optimised" },
     stat3: { value: 12, suffix: "mo", label: "Avg Time to Rank #1" },
     testimonial: {
-      quote: "We went from page 4 to position 1 for our main keyword in under 6 months. DiggiTronic's SEO team is the real deal.",
+      quote: "We went from page 4 to position 1 for our main keyword in under 6 months. Diggitronic's SEO team is the real deal.",
       author: "Priya Sharma",
       role: "Founder, HealthBrand",
     },
@@ -337,7 +337,7 @@ export const SERVICES: ServiceData[] = [
     stat2: { value: 70, suffix: "%", label: "Cost Reduction (Avg)" },
     stat3: { value: 30, suffix: "+", label: "AI Projects Deployed" },
     testimonial: {
-      quote: "We produce 10x more content now with AI pipelines DiggiTronic built. It's completely changed how we operate.",
+      quote: "We produce 10x more content now with AI pipelines Diggitronic built. It's completely changed how we operate.",
       author: "Omar Al-Farsi",
       role: "Head of Content",
     },
@@ -390,7 +390,7 @@ export const SERVICES: ServiceData[] = [
     stat2: { value: 98, suffix: "%", label: "Client Satisfaction" },
     stat3: { value: 5, suffix: "+", label: "Years of Craft" },
     testimonial: {
-      quote: "Our rebrand by DiggiTronic completely transformed how customers perceive us. The attention to detail is extraordinary.",
+      quote: "Our rebrand by Diggitronic completely transformed how customers perceive us. The attention to detail is extraordinary.",
       author: "Fatima Zahra",
       role: "CEO, Fashion Brand",
     },
