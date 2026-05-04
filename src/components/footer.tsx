@@ -118,7 +118,7 @@ export default function Footer() {
                 <span
                     className="font-black leading-none text-center"
                     style={{
-                        fontSize: "clamp(4rem, 20vw, 22rem)",
+                        fontSize: "clamp(3rem, 15vw, 16rem)",
                         color: "#ffffff",
                         opacity: 0.1,
                         letterSpacing: "-0.04em",
