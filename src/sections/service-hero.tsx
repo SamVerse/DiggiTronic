@@ -67,7 +67,7 @@ export default function ServiceHero({ service }: { service: ServiceData }) {
       />
 
       <div
-        className="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-[1fr_1fr] gap-12 lg:gap-16 items-center"
+        className="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-[1fr_1fr] gap-0 md:gap-12 lg:gap-16 items-center"
         style={{ paddingTop: "8rem", paddingBottom: "6rem" }}
       >
         <div className="flex flex-col">
@@ -179,13 +179,13 @@ export default function ServiceHero({ service }: { service: ServiceData }) {
         </div>
 
         <motion.div
-          className="relative flex items-center justify-center"
+          className="relative flex items-center justify-center -mt-24 lg:mt-0"
           initial={{ opacity: 0, x: 30 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.4, duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
         >
           {/* Visual component — no box, no tilt */}
-          <div className="relative w-full" style={{ minHeight: 500 }}>
+          <div className="relative w-full min-h-[250px] lg:min-h-[500px]">
             {Visual && <Visual />}
           </div>
         </motion.div>
