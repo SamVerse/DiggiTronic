@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import { motion, Variants } from "framer-motion";
 import { Search, Lightbulb, Zap, BarChart2, Rocket } from "lucide-react";
 
@@ -49,6 +49,13 @@ const stagger: Variants = {
 export default function ServiceProcess() {
   const [activeStep, setActiveStep] = useState(0);
   const containerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setActiveStep((prev) => (prev + 1) % STEPS.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, [activeStep]);
 
   return (
     <section
