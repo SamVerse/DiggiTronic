@@ -15,13 +15,21 @@ const TESTIMONIALS: Testimonial[] = [
   {
     id: 1,
     quote:
+      "Impressive service and technical skill. Diggitronic delivered our project on time and with great precision. Their team is knowledgeable and easy to work with definitely a go to choice for future collaborations.",
+    name: "Chhavi",
+    role: "Founder",
+    company: "Parasils",
+  },
+  {
+    id: 2,
+    quote:
       "Diggitronic completely redefined how we present ourselves online. From brand identity to web presence, they brought a level of craft and strategy that genuinely moved the needle for our business.",
     name: "Alex Harrison",
     role: "CEO",
     company: "NovaTech Solutions",
   },
   {
-    id: 2,
+    id: 3,
     quote:
       "Working with Diggitronic was a revelation. They didn't just design — they listened, understood our market, and built a brand system that now earns us deals before we ever get on a call.",
     name: "Priya Mehta",
@@ -29,7 +37,7 @@ const TESTIMONIALS: Testimonial[] = [
     company: "Strategos Inc.",
   },
   {
-    id: 3,
+    id: 4,
     quote:
       "The AI workflow integrations Diggitronic built for us cut our internal overhead by 60%. This team operates at a different level — they're part strategist, part engineer, part creative director.",
     name: "Marcus Chen",
